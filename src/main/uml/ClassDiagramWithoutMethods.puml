@@ -1,0 +1,47 @@
+@startuml
+
+
+class User {
+    -id: int
+    -PersInf: persinf
+    -ProfInf: profinf
+}
+
+class PersInf {
+    -FIO: String
+    -phoneNumber: String
+    -email: String
+}
+
+class ProfInf {
+    -skills: List<Skill>
+    -inf: String
+    -exp: int
+}
+
+class Skill {
+    -name: String
+    -lvl: String
+    -cost: Double
+}
+
+
+
+class DataBaseManager {
+    -url: String
+    -user: String
+    -password: String
+}
+
+class UserPOJO{
+    -dbconnect: DataBaseManager
+}
+
+User --> PersInf : include
+User --> ProfInf : include
+ProfInf --> Skill : include
+DataBaseManager <-- UserPOJO : include
+UserPOJO <-- User : include
+
+
+@enduml
