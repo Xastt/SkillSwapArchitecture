@@ -7,13 +7,16 @@ import org.slf4j.LoggerFactory;
 
 public class SkillSwapClient {
     Logger logger = LoggerFactory.getLogger(Main.class);
+
     //Logger logger = Logger.getLogger(Main.class);
+
     SkillSwapClient() {
         logger.debug("SkillSwapClient: starting app...");
         logBasicSystemInfo();
     }
+
     private void logBasicSystemInfo(){
-        logger.info("Launching app...");
+        logger.info("Launching application...");
         logger.info(
                 "Operating System: " + System.getProperty("os.name") + " "
                         + System.getProperty("os.version") );
