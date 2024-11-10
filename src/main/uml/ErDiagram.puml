@@ -1,0 +1,26 @@
+@startuml
+
+entity "PersInf" {
+    +id: int
+    +Surname: String
+    +Name: String
+    +phoneNumber: String
+    +email: String
+}
+
+entity "ProfInf" {
+    +skills: List<Skill>
+    +persDescription: String
+    +exp: int
+}
+
+entity "Skill" {
+    +name: String
+    +skillDescription: String
+    +cost: Double
+}
+
+PersInf ||--o{ ProfInf
+ProfInf ||--o{ Skill
+
+@enduml
