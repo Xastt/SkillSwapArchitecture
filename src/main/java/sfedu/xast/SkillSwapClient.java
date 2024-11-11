@@ -1,12 +1,12 @@
 package sfedu.xast;
 
-
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 public class SkillSwapClient {
-    Logger logger = LoggerFactory.getLogger(Main.class);
+
+    Logger logger = LoggerFactory.getLogger(SkillSwapClient.class);
 
     //Logger logger = Logger.getLogger(Main.class);
 
