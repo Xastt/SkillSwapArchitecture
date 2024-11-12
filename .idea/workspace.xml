@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add logging method, enviroment.properties, Constants and ConfigurationUtil classes">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/SkillSwapClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/SkillSwapClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/SkillSwapClient.java" afterDir="false" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Change er and class diagram">
+      <change beforePath="$PROJECT_DIR$/src/main/uml/ErDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/uml/ErDiagram.puml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +19,7 @@
         <option value="module-info" />
         <option value="Class" />
         <option value="JUnit3 Test Class" />
+        <option value="UML Class" />
       </list>
     </option>
   </component>
@@ -44,14 +41,14 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.Main.executor": "Run",
-    "DefaultPlantUmlFileTemplate": "UML Sequence",
+    "DefaultPlantUmlFileTemplate": "UML Class",
     "JUnit.SkillSwapClientTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Downloads/JUnitGenerator.jar",
+    "last_opened_file_path": "D:/JavaProj/Theory/MultiThreading+Tests",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,6 +57,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.4",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
@@ -142,7 +140,7 @@
       <workItem from="1731259855882" duration="613000" />
       <workItem from="1731322350704" duration="5107000" />
       <workItem from="1731349380638" duration="380000" />
-      <workItem from="1731405478611" duration="3615000" />
+      <workItem from="1731405478611" duration="8739000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -192,7 +190,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731349432437</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add Tests :o">
+      <option name="closed" value="true" />
+      <created>1731412089839</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731412089840</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Change er and class diagram">
+      <option name="closed" value="true" />
+      <created>1731416070163</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731416070163</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +218,8 @@
     <MESSAGE value="Add logger and er-diagramm" />
     <MESSAGE value="Add logging method" />
     <MESSAGE value="Add logging method, enviroment.properties, Constants and ConfigurationUtil classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add logging method, enviroment.properties, Constants and ConfigurationUtil classes" />
+    <MESSAGE value="Add Tests :o" />
+    <MESSAGE value="Change er and class diagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change er and class diagram" />
   </component>
 </project>

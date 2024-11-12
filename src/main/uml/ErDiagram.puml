@@ -1,48 +1,47 @@
 @startuml
 
 entity PersInf {
-    +id: int
-    +Surname: String
-    +Name: String
-    +phoneNumber: String
-    +email: String
+    +id: serial
+    +Surname: varchar(40)
+    +Name: varchar(40)
+    +phoneNumber: varchar(40)
+    +email: varchar(40)
 }
 
 entity ProfInf {
-    +skillName: String
-    +skillDescription: String
-    +cost: Double
-    +persDescription: String
+    +PersInfId: int
+    +skillName: varchar(40)
+    +skillDescription: varchar(40)
+    +cost: numeric(6,2)
+    +persDescription: varchar(40)
     +exp: int
 }
 
 entity SkillExchange {
-    +exchangeId: int
+    +exchangeId: serial
+    +persId: int
 }
 
 entity Review {
-    +reviewId: int
+    +reviewId: serial
     +rating: int
-    +comment: String
+    +comment: varchar
+    +persId: int
 }
 
 entity Transaction {
-    +transactionId: int
+    +transactionId: serial
     +dateTime: DateTime
-    +status: Status
+    +status: varchar(30)
+    +persId: int
 }
 
-enum Status {
-    COMPLETED
-    IN_PROCESS
-    CANCELED
-}
+
 
 PersInf ||--o{ ProfInf : "OneToMany"
 SkillExchange ||--|| PersInf : "OneToOne"
 Review ||--|| PersInf : "OneToMany"
 Transaction ||--|| PersInf : "OneToMany"
-Transaction ||--|| Status : "OneToOne"
 
 @enduml
 
