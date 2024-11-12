@@ -15,7 +15,7 @@ public class SkillSwapClient {
         logBasicSystemInfo();
     }
 
-    private void logBasicSystemInfo(){
+    public void logBasicSystemInfo(){
         logger.info("Launching application...");
         logger.info(
                 "Operating System: " + System.getProperty("os.name") + " "
