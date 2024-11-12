@@ -1,6 +1,6 @@
 @startuml
 
-entity "PersInf" {
+entity PersInf {
     +id: int
     +Surname: String
     +Name: String
@@ -8,19 +8,41 @@ entity "PersInf" {
     +email: String
 }
 
-entity "ProfInf" {
-    +skills: List<Skill>
+entity ProfInf {
+    +skillName: String
+    +skillDescription: String
+    +cost: Double
     +persDescription: String
     +exp: int
 }
 
-entity "Skill" {
-    +name: String
-    +skillDescription: String
-    +cost: Double
+entity SkillExchange {
+    +exchangeId: int
 }
 
-PersInf ||--o{ ProfInf
-ProfInf ||--o{ Skill
+entity Review {
+    +reviewId: int
+    +rating: int
+    +comment: String
+}
+
+entity Transaction {
+    +transactionId: int
+    +dateTime: DateTime
+    +status: Status
+}
+
+enum Status {
+    COMPLETED
+    IN_PROCESS
+    CANCELED
+}
+
+PersInf ||--o{ ProfInf : "OneToMany"
+SkillExchange ||--|| PersInf : "OneToOne"
+Review ||--|| PersInf : "OneToMany"
+Transaction ||--|| PersInf : "OneToMany"
+Transaction ||--|| Status : "OneToOne"
 
 @enduml
+

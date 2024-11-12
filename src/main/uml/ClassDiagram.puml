@@ -1,92 +1,60 @@
 @startuml
 
-
-class User {
-    -id: int
-    -PersInf: persinf
-    -ProfInf: profinf
-    +addPersInf()
-    +chgPersInf()
-    +findSkill()
-    +provideSkill()
-    +getId(): int
-    +setId(id: int)
-    +getPersInf(): PersInf
-    +setPersInf(persInf: PersInf)
-    +getProfInf(): ProfInf
-    +setProfInf(profInf: ProfInf)
-}
-
 class PersInf {
-    -FIO: String
+    -id: int
+    -Surname: String
+    -Name: String
     -phoneNumber: String
     -email: String
-    +addPhoneNumber()
-    +addFIO()
-    +addEmail()
-    +chgPhoneNumber()
-    +chgFIO()
-    +chgEmail()
-    +getFIO(): String
-    +setFIO(fio: String)
-    +getPhoneNumber(): String
-    +setPhoneNumber(phoneNumber: String)
-    +getEmail(): String
-    +setEmail(email: String)
 }
 
 class ProfInf {
-    -skills: List<Skill>
-    -inf: String
-    -exp: int
-    +addInf()
-    +addSkill()
-    +addExp()
-    +chgInf()
-    +chgSkill()
-    +chgExp()
-    +getSkills(): List<Skill>
-    +setSkills(skills: List<Skill>)
-    +getInf(): String
-    +setInf(inf: String)
-    +getExp(): int
-    +setExp(exp: int)
-}
-
-class Skill {
-    -name: String
-    -lvl: String
+    -skillName: String
+    -skillDescription: String
     -cost: Double
-    +getName(): String
-    +setName(name: String)
-    +getLvl(): String
-    +setLvl(lvl: String)
-    +getCost(): Double
-    +setCost(cost: Double)
+    -persDescription: String
+    -exp: int
+}
+
+class SkillExchange {
+    -exchangeId: int
+    -skillOffered: PersInf
+    -skillRequested: PersInfInf
+    -userOffering: PersInf
+    -userRequesting: PersInf
 }
 
 
 
-class DataBaseManager {
-    -url: String
-    -user: String
-    -password: String
-    +getConncection(): Connection
+class Review {
+    -reviewId: int
+    -rating: int
+    -comment: String
+    -user: PersInf
+    -skill: PersInf
 }
 
-class UserDAO{
-    -dbconnect: DataBaseManager
-    +saveUser(user: User)
-    +getUser(id: int)
-    +updateUser(user: User)
-    +deleteUser(id: int)
+class Transaction {
+    -transactionId: int
+    -dateTime: DateTime
+    -status: Status
+    -user1: PersInf
+    -user2: PersInf
+    -skillOfferedByUser1: PersInf
+    -skillRequestedByUser2: PersInf
 }
 
-User --> PersInf : include
-User --> ProfInf : include
-ProfInf --> Skill : include
-DataBaseManager <-- UserDAO : include
-UserDAO <-- User : include
+enum Status {
+    COMPLETED
+    IN PROCESS
+    CANCELED
+}
+
+PersInf <-- ProfInf
+SkillExchange --> PersInf
+Review --> PersInf
+Transaction --> PersInf
+Transaction --> Status
 
 
 @enduml
