@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Change er and class diagram">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Edit er-diagram, add types">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/uml/ClassDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/uml/ClassDiagram.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/uml/ErDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/uml/ErDiagram.puml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,31 +39,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Main.executor": "Run",
-    "DefaultPlantUmlFileTemplate": "UML Class",
-    "JUnit.SkillSwapClientTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/JavaProj/Theory/MultiThreading+Tests",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.4",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
+    &quot;JUnit.SkillSwapClientTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit3&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaProj/Architec/SkillSwap&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JavaProj\Architec\SkillSwap\src\main\uml" />
@@ -141,6 +143,17 @@
       <workItem from="1731322350704" duration="5107000" />
       <workItem from="1731349380638" duration="380000" />
       <workItem from="1731405478611" duration="8739000" />
+      <workItem from="1731418565084" duration="250000" />
+      <workItem from="1731485853426" duration="126000" />
+      <workItem from="1731505578728" duration="19000" />
+      <workItem from="1731603062266" duration="2603000" />
+      <workItem from="1731672676231" duration="103000" />
+      <workItem from="1731676754726" duration="50000" />
+      <workItem from="1731678890135" duration="1318000" />
+      <workItem from="1731686573478" duration="33000" />
+      <workItem from="1731689351769" duration="696000" />
+      <workItem from="1731693499136" duration="515000" />
+      <workItem from="1731738547106" duration="2858000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -206,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731416070163</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Edit er-diagram, add types">
+      <option name="closed" value="true" />
+      <created>1731418595678</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1731418595678</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +241,7 @@
     <MESSAGE value="Add logging method, enviroment.properties, Constants and ConfigurationUtil classes" />
     <MESSAGE value="Add Tests :o" />
     <MESSAGE value="Change er and class diagram" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change er and class diagram" />
+    <MESSAGE value="Edit er-diagram, add types" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit er-diagram, add types" />
   </component>
 </project>
