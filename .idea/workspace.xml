@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Edit er-diagram, add types">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Delete comments in SkillSwapClient.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/uml/ClassDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/uml/ClassDiagram.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/uml/ErDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/uml/ErDiagram.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/SkillSwapClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/SkillSwapClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/SkillSwapClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/SkillSwapClientTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +155,10 @@
       <workItem from="1731689351769" duration="696000" />
       <workItem from="1731693499136" duration="515000" />
       <workItem from="1731738547106" duration="2858000" />
+      <workItem from="1731932081809" duration="571000" />
+      <workItem from="1731942233899" duration="63000" />
+      <workItem from="1732471591749" duration="60000" />
+      <workItem from="1732553577179" duration="2530000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -227,7 +232,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731418595678</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Edit ErDiagram.puml, ClassDiagram.puml. Final version">
+      <option name="closed" value="true" />
+      <created>1731932294126</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731932294126</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Delete comments in SkillSwapClient.java">
+      <option name="closed" value="true" />
+      <created>1731932643623</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1731932643623</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +263,8 @@
     <MESSAGE value="Add Tests :o" />
     <MESSAGE value="Change er and class diagram" />
     <MESSAGE value="Edit er-diagram, add types" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit er-diagram, add types" />
+    <MESSAGE value="Edit ErDiagram.puml, ClassDiagram.puml. Final version" />
+    <MESSAGE value="Delete comments in SkillSwapClient.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete comments in SkillSwapClient.java" />
   </component>
 </project>

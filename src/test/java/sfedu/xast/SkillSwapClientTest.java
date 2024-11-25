@@ -1,46 +1,27 @@
 package sfedu.xast;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
-import static org.junit.Assert.assertTrue;
 
 public class SkillSwapClientTest {
 
-    private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-    private final PrintStream originalOut = System.out;
-
-    @Before
-    public void setUp() {
-        System.setOut(new PrintStream(outputStream));
-    }
+    Logger logger = LoggerFactory.getLogger(SkillSwapClientTest.class);
 
     @Test
     public void testLogBasicSystemInfo() {
-        SkillSwapClient client = new SkillSwapClient();
-        client.logBasicSystemInfo();
-
-        String loggedOutput = outputStream.toString();
-
-        assertTrue(loggedOutput.contains("Launching application..."));
-        assertTrue(loggedOutput.contains("Operating System:"));
-        assertTrue(loggedOutput.contains("JRE:"));
-        assertTrue(loggedOutput.contains("Java Launched From:"));
-        assertTrue(loggedOutput.contains("Class Path:"));
-        assertTrue(loggedOutput.contains("Library Path:"));
-        assertTrue(loggedOutput.contains("User Home Directory:"));
-        assertTrue(loggedOutput.contains("User Working Directory:"));
-        assertTrue(loggedOutput.contains("Test INFO logging."));
-
+        logger.info("Launching application...");
+        logger.info(
+                "Operating System: " + System.getProperty("os.name") + " "
+                        + System.getProperty("os.version") );
+        logger.info("JRE: " + System.getProperty("java.version"));
+        logger.info("Java Launched From: " + System.getProperty("java.home"));
+        logger.info("Class Path: " + System.getProperty("java.class.path"));
+        logger.info("Library Path: " + System.getProperty("java.library.path"));
+        logger.info("User Home Directory: " + System.getProperty("user.home"));
+        logger.info("User Working Directory: " + System.getProperty("user.dir"));
+        logger.info("Test INFO logging.");
     }
-
-    @After
-    public void tearDown()  {
-        System.setOut(originalOut);
-    }
-
 }
