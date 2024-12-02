@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Change logs and tests">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/XmlUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/YamlUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/ConfigTest.java" afterDir="false" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add methods for working with different types of files">
+      <change afterPath="$PROJECT_DIR$/output.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/constantProperties.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/constantsXML.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/constantsYAML.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/ConfigurationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/ConfigurationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/ConfigurationUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/uml/ErDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/uml/ErDiagram.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/XmlUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/XmlUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/YamlUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/YamlUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/enviroment.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/enviroment.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/ConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/ConfigTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,31 +47,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
-    &quot;JUnit.SkillSwapClientTest.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit3&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/JavaProj/Architec/SkillSwap&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.4&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.ConfigurationUtil.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.XmlUtil.executor": "Run",
+    "Application.YamlUtil.executor": "Run",
+    "DefaultPlantUmlFileTemplate": "UML Class",
+    "JUnit.ConfigurationTest.testCRUDWithProperties.executor": "Run",
+    "JUnit.ConfigurationTest.testCRUDWithXML.executor": "Run",
+    "JUnit.SkillSwapClientTest.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/JavaProj/Architec/SkillSwap",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.4",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JavaProj\Architec\SkillSwap\src\main\uml" />
@@ -77,19 +85,20 @@
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaProj\Architec\SkillSwap\src\main\resources" />
       <recent name="D:\JavaProj\Architec\SkillSwap\src\main\logs" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="sfedu.xast" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SkillSwapClientTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.Main" />
+  <component name="RunManager" selected="JUnit.ConfigurationTest">
+    <configuration name="ConfigurationUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.utils.ConfigurationUtil" />
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sfedu.xast.*" />
+          <option name="PATTERN" value="sfedu.xast.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,7 +106,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SkillSwapClientTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="YamlUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.utils.YamlUtil" />
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigurationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -106,16 +128,51 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.SkillSwapClientTest" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.ConfigurationTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigurationTest.testCRUDWithProperties" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.ConfigurationTest" />
+      <option name="METHOD_NAME" value="testCRUDWithProperties" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigurationTest.testCRUDWithXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.ConfigurationTest" />
+      <option name="METHOD_NAME" value="testCRUDWithXML" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SkillSwapClientTest" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ConfigurationTest" />
+        <item itemvalue="Application.YamlUtil" />
+        <item itemvalue="JUnit.ConfigurationTest.testCRUDWithProperties" />
+        <item itemvalue="Application.ConfigurationUtil" />
+        <item itemvalue="JUnit.ConfigurationTest.testCRUDWithXML" />
       </list>
     </recent_temporary>
   </component>
@@ -172,6 +229,7 @@
       <workItem from="1732908106165" duration="842000" />
       <workItem from="1733124127876" duration="299000" />
       <workItem from="1733128265583" duration="1242000" />
+      <workItem from="1733144966354" duration="5071000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -269,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732556435470</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add methods for working with different types of files">
+      <option name="closed" value="true" />
+      <created>1733145053717</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1733145053717</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +353,7 @@
     <MESSAGE value="Edit ErDiagram.puml, ClassDiagram.puml. Final version" />
     <MESSAGE value="Delete comments in SkillSwapClient.java" />
     <MESSAGE value="Change logs and tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change logs and tests" />
+    <MESSAGE value="Add methods for working with different types of files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add methods for working with different types of files" />
   </component>
 </project>

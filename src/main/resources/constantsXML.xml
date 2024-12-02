@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><catalog>
+
+    <skill>
+        <name>Programming on JAVA</name>
+        <author>Joshua Bloch</author>
+        <price>3200</price>
+    </skill>
+
+</catalog>

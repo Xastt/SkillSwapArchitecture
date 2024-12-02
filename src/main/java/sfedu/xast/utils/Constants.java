@@ -3,7 +3,7 @@ package sfedu.xast.utils;
 public class Constants {
     public final String APP_NAME = "SkillSwap";
     public final String PATH_TO_DB = "sfedu.xast";
-    public static final String CONFIG_PROPERTIES = "config.properties";
-    public static final String CONFIG_YML = "config.yml";
-    public static final String CONFIG_XML = "config.xml";
+    public static final String CONFIG_PROPERTIES = "src/main/resources/constantProperties.properties";
+    public static final String CONFIG_YML = "src/main/resources/constantsYAML.yaml";
+    public static final String CONFIG_XML = "src/main/resources/constantsXML.xml";
 }

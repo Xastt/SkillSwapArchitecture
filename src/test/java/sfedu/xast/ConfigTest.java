@@ -10,6 +10,7 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 
 public class ConfigTest {
+
     @Test
     public void testGetPlanets() {
         List<String> planets = Arrays.asList("Земля", "Сатурн", "Марс", "Венера");
