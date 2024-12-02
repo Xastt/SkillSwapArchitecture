@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add methods for working with different types of files">
-      <change afterPath="$PROJECT_DIR$/output.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/constantProperties.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/constantsXML.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/constantsYAML.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/ConfigurationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/ConfigurationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/ConfigurationUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/XmlUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/XmlUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/YamlUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/YamlUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/enviroment.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/enviroment.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/ConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/ConfigTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add methods for working with different types of files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +43,7 @@
     "Application.XmlUtil.executor": "Run",
     "Application.YamlUtil.executor": "Run",
     "DefaultPlantUmlFileTemplate": "UML Class",
+    "JUnit.ConfigurationTest.executor": "Run",
     "JUnit.ConfigurationTest.testCRUDWithProperties.executor": "Run",
     "JUnit.ConfigurationTest.testCRUDWithXML.executor": "Run",
     "JUnit.SkillSwapClientTest.executor": "Run",
@@ -229,7 +218,7 @@
       <workItem from="1732908106165" duration="842000" />
       <workItem from="1733124127876" duration="299000" />
       <workItem from="1733128265583" duration="1242000" />
-      <workItem from="1733144966354" duration="5071000" />
+      <workItem from="1733144966354" duration="5382000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -335,7 +324,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733145053717</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add methods for working with different types of files">
+      <option name="closed" value="true" />
+      <created>1733150374653</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733150374653</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

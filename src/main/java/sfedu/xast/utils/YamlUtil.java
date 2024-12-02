@@ -7,7 +7,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-//удаляет все, что написано было раннее
 public class YamlUtil {
 
     private Map<String, Object> yamlMap;
@@ -61,11 +60,4 @@ public class YamlUtil {
             e.printStackTrace();
         }
     }
-
-    public static void main(String[] args) {
-
-
-         // Должно вернуть null
-    }
-
 }
