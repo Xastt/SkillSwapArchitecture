@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Delete comments in SkillSwapClient.java">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Change logs and tests">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/XmlUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/YamlUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/ConfigTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/SkillSwapClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/SkillSwapClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/SkillSwapClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/SkillSwapClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/ConfigurationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/ConfigurationUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/uml/ErDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/uml/ErDiagram.puml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +24,9 @@
       <list>
         <option value="UML Sequence" />
         <option value="module-info" />
-        <option value="Class" />
         <option value="JUnit3 Test Class" />
         <option value="UML Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -71,6 +75,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaProj\Architec\SkillSwap\src\main\logs" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="sfedu.xast" />
@@ -158,7 +165,13 @@
       <workItem from="1731932081809" duration="571000" />
       <workItem from="1731942233899" duration="63000" />
       <workItem from="1732471591749" duration="60000" />
-      <workItem from="1732553577179" duration="2530000" />
+      <workItem from="1732553577179" duration="3535000" />
+      <workItem from="1732624798577" duration="24000" />
+      <workItem from="1732863766991" duration="244000" />
+      <workItem from="1732871888872" duration="32000" />
+      <workItem from="1732908106165" duration="842000" />
+      <workItem from="1733124127876" duration="299000" />
+      <workItem from="1733128265583" duration="1242000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -248,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731932643623</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Change logs and tests">
+      <option name="closed" value="true" />
+      <created>1732556435470</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732556435470</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +286,7 @@
     <MESSAGE value="Edit er-diagram, add types" />
     <MESSAGE value="Edit ErDiagram.puml, ClassDiagram.puml. Final version" />
     <MESSAGE value="Delete comments in SkillSwapClient.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete comments in SkillSwapClient.java" />
+    <MESSAGE value="Change logs and tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change logs and tests" />
   </component>
 </project>
