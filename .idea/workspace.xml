@@ -87,9 +87,9 @@
       <recent name="sfedu.xast" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConfigurationTest.testCRUDWithYAML">
-    <configuration name="ConfigurationUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.utils.ConfigurationUtil" />
+  <component name="RunManager" selected="JUnit.ConfigTest.testGetMonths">
+    <configuration name="YamlUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.utils.YamlUtil" />
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -101,15 +101,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="YamlUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.utils.YamlUtil" />
+    <configuration name="ConfigTest.testGetMonths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sfedu.xast.utils.*" />
+          <option name="PATTERN" value="sfedu.xast.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.ConfigTest" />
+      <option name="METHOD_NAME" value="testGetMonths" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -163,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ConfigTest.testGetMonths" />
         <item itemvalue="JUnit.ConfigurationTest.testCRUDWithYAML" />
         <item itemvalue="JUnit.ConfigurationTest.testCRUDWithProperties" />
         <item itemvalue="Application.YamlUtil" />
         <item itemvalue="JUnit.ConfigurationTest" />
-        <item itemvalue="Application.ConfigurationUtil" />
       </list>
     </recent_temporary>
   </component>
