@@ -15,13 +15,14 @@ public class YamlUtil {
     public YamlUtil(String filePath) {
         this.filePath = filePath;
         Yaml yaml = new Yaml();
-        try(InputStream in = getClass().getClassLoader().getResourceAsStream(filePath)) {
-            if(in != null) {
-                yamlMap = yaml.load(in);
-            }else{
+        try (InputStream in = new FileInputStream(filePath)) {
+            yamlMap = yaml.load(in);
+            if (yamlMap == null) {
                 yamlMap = new LinkedHashMap<>();
             }
-        }catch(Exception e) {
+        } catch (FileNotFoundException e) {
+            yamlMap = new LinkedHashMap<>(); // Если файл не найден, создаем новый Map
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

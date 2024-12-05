@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add methods for working with different types of files" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="fix some problems">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/YamlUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/YamlUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/constantProperties.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/constantProperties.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/constantsYAML.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/constantsYAML.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +51,7 @@
     "JUnit.ConfigurationTest.executor": "Run",
     "JUnit.ConfigurationTest.testCRUDWithProperties.executor": "Run",
     "JUnit.ConfigurationTest.testCRUDWithXML.executor": "Run",
+    "JUnit.ConfigurationTest.testCRUDWithYAML.executor": "Run",
     "JUnit.SkillSwapClientTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
@@ -81,7 +87,7 @@
       <recent name="sfedu.xast" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConfigurationTest">
+  <component name="RunManager" selected="JUnit.ConfigurationTest.testCRUDWithYAML">
     <configuration name="ConfigurationUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.utils.ConfigurationUtil" />
       <module name="SkillSwap" />
@@ -139,7 +145,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigurationTest.testCRUDWithXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConfigurationTest.testCRUDWithYAML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -149,7 +155,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast" />
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.ConfigurationTest" />
-      <option name="METHOD_NAME" value="testCRUDWithXML" />
+      <option name="METHOD_NAME" value="testCRUDWithYAML" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ConfigurationTest" />
-        <item itemvalue="Application.YamlUtil" />
+        <item itemvalue="JUnit.ConfigurationTest.testCRUDWithYAML" />
         <item itemvalue="JUnit.ConfigurationTest.testCRUDWithProperties" />
+        <item itemvalue="Application.YamlUtil" />
+        <item itemvalue="JUnit.ConfigurationTest" />
         <item itemvalue="Application.ConfigurationUtil" />
-        <item itemvalue="JUnit.ConfigurationTest.testCRUDWithXML" />
       </list>
     </recent_temporary>
   </component>
@@ -219,6 +225,10 @@
       <workItem from="1733124127876" duration="299000" />
       <workItem from="1733128265583" duration="1242000" />
       <workItem from="1733144966354" duration="5382000" />
+      <workItem from="1733159330519" duration="540000" />
+      <workItem from="1733246120303" duration="26000" />
+      <workItem from="1733246530947" duration="34000" />
+      <workItem from="1733383192061" duration="1145000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -332,7 +342,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733150374653</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix some problems">
+      <option name="closed" value="true" />
+      <created>1733159396728</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733159396728</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +369,7 @@
     <MESSAGE value="Delete comments in SkillSwapClient.java" />
     <MESSAGE value="Change logs and tests" />
     <MESSAGE value="Add methods for working with different types of files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add methods for working with different types of files" />
+    <MESSAGE value="fix some problems" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix some problems" />
   </component>
 </project>
