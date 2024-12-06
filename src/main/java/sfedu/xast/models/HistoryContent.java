@@ -14,9 +14,9 @@ public class HistoryContent {
     private String id;
     private String className;
     private LocalDateTime createdDate;
-    private String actor;
+    private String actor = "system";
     private String methodName;
-    private Map<String, Object> object; //для хранения состояния объекта
+    private Map<String, Object> object; //для хранения состояния JSON
     private Status status;
 
     public enum Status{
@@ -25,6 +25,5 @@ public class HistoryContent {
 
     public HistoryContent() {
         this.createdDate = LocalDateTime.now();
-        this.actor = "system";
     }
 }

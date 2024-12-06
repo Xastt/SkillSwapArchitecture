@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="change ConfigTest">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/HistoryContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/repository/HistoryContentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/service/HistoryContentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/repository/HistoryContentRepositoryTest.java" afterDir="false" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add repository, service, model for test working with MongoDB">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/JsonConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/HistoryContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/HistoryContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/repository/HistoryContentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/repository/HistoryContentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/service/HistoryContentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/service/HistoryContentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/repository/HistoryContentRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/repository/HistoryContentRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +24,8 @@
         <option value="module-info" />
         <option value="UML Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit3 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -57,6 +56,8 @@
     "JUnit.ConfigurationTest.testCRUDWithProperties.executor": "Run",
     "JUnit.ConfigurationTest.testCRUDWithXML.executor": "Run",
     "JUnit.ConfigurationTest.testCRUDWithYAML.executor": "Run",
+    "JUnit.HistoryContentRepositoryTest.executor": "Run",
+    "JUnit.HistoryContentRepositoryTest.testSave.executor": "Run",
     "JUnit.SkillSwapClientTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -99,20 +100,7 @@
       <recent name="sfedu.xast" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConfigTest.testGetMonths">
-    <configuration name="YamlUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.utils.YamlUtil" />
-      <module name="SkillSwap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sfedu.xast.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.HistoryContentRepositoryTest">
     <configuration name="ConfigTest.testGetMonths" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
@@ -125,21 +113,6 @@
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.ConfigTest" />
       <option name="METHOD_NAME" value="testGetMonths" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConfigurationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SkillSwap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sfedu.xast.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.ConfigurationTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -176,13 +149,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HistoryContentRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast.repository" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.repository.HistoryContentRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HistoryContentRepositoryTest.testSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast.repository" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.repository.HistoryContentRepositoryTest" />
+      <option name="METHOD_NAME" value="testSave" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HistoryContentRepositoryTest" />
+        <item itemvalue="JUnit.HistoryContentRepositoryTest.testSave" />
         <item itemvalue="JUnit.ConfigTest.testGetMonths" />
         <item itemvalue="JUnit.ConfigurationTest.testCRUDWithYAML" />
         <item itemvalue="JUnit.ConfigurationTest.testCRUDWithProperties" />
-        <item itemvalue="Application.YamlUtil" />
-        <item itemvalue="JUnit.ConfigurationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -246,7 +250,7 @@
       <workItem from="1733383192061" duration="2604000" />
       <workItem from="1733386318438" duration="1356000" />
       <workItem from="1733410692897" duration="23000" />
-      <workItem from="1733481270130" duration="2110000" />
+      <workItem from="1733481270130" duration="3676000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -384,7 +388,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733384601574</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Add repository, service, model for test working with MongoDB">
+      <option name="closed" value="true" />
+      <created>1733483653844</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1733483653844</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,6 +418,7 @@
     <MESSAGE value="fix some problems" />
     <MESSAGE value="change YamlUtil" />
     <MESSAGE value="change ConfigTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="change ConfigTest" />
+    <MESSAGE value="Add repository, service, model for test working with MongoDB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add repository, service, model for test working with MongoDB" />
   </component>
 </project>

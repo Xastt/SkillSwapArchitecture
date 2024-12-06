@@ -10,6 +10,7 @@ import java.util.Map;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 @DataMongoTest
 public class HistoryContentRepositoryTest extends TestCase {
 
@@ -22,13 +23,14 @@ public class HistoryContentRepositoryTest extends TestCase {
         historyContent.setClassName("TestClass");
         historyContent.setMethodName("testMethod");
         historyContent.setStatus(HistoryContent.Status.SUCCESS);
-        historyContent.setObject(Map.of("key", "value"));
 
         HistoryContent saved = repository.save(historyContent);
 
         assertThat(saved).isNotNull();
         assertThat(saved.getId()).isNotNull();
         assertThat(saved.getClassName()).isEqualTo("TestClass");
+        assertThat(saved.getMethodName()).isEqualTo("testMethod");
+        assertThat(saved.getStatus()).isEqualTo(HistoryContent.Status.SUCCESS);
     }
 
 
