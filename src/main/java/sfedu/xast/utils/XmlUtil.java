@@ -1,21 +1,18 @@
 package sfedu.xast.utils;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 
 public class XmlUtil {
+    Logger logger = LoggerFactory.getLogger(XmlUtil.class);
+
     private Document document;
     private String filePath;
 
@@ -27,7 +24,7 @@ public class XmlUtil {
             document = builder.parse(filePath);
             document.getDocumentElement().normalize();
         }catch(Exception e){
-            e.printStackTrace();
+            logger.error("Can not load properties from file: {}",e.getMessage());
         }
     }
 
@@ -52,7 +49,7 @@ public class XmlUtil {
             nodeList.item(0).setTextContent(newTextContent);
             saveChanges();
         } else {
-            System.out.println("Элемент с тегом '" + tagName + "' не найден.");
+            logger.error("Can not update element with tag name: {}, not found", tagName);
         }
     }
 
@@ -63,7 +60,7 @@ public class XmlUtil {
             nodeToRemove.getParentNode().removeChild(nodeToRemove);
             saveChanges();
         } else {
-            System.out.println("Элемент с тегом '" + tagName + "' не найден.");
+            logger.error("Can not delete element with tag name: {}, not found", tagName);
         }
     }
 
@@ -75,7 +72,7 @@ public class XmlUtil {
             StreamResult result = new StreamResult(new File(filePath));
             transformer.transform(source, result);
         } catch (TransformerException e) {
-            e.printStackTrace();
+            logger.error("Can not save changes to file: {}",e.getMessage());
         }
     }
     }

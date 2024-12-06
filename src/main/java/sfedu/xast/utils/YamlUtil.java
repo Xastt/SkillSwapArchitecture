@@ -4,10 +4,13 @@ import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 public class YamlUtil {
+
+    Logger logger = LoggerFactory.getLogger(YamlUtil.class);
 
     private Map<String, Object> yamlMap;
     private String filePath;
@@ -23,7 +26,7 @@ public class YamlUtil {
         } catch (FileNotFoundException e) {
             yamlMap = new LinkedHashMap<>(); // Если файл не найден, создаем новый Map
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Can not load properties from file: {}",e.getMessage());
         }
     }
 
@@ -41,7 +44,7 @@ public class YamlUtil {
             yamlMap.put(key, newValue);
             save();
         } else {
-            System.out.println("Ключ '" + key + "' не найден.");
+            logger.error("Can not update key: {} to value: {}",key,newValue);
         }
     }
 
@@ -49,7 +52,7 @@ public class YamlUtil {
         if (yamlMap.remove(key) != null) {
             save();
         } else {
-            System.out.println("Ключ '" + key + "' не найден.");
+            logger.error("Can not delete key: {}, not found",key);
         }
     }
 
@@ -58,7 +61,7 @@ public class YamlUtil {
         try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(filePath), StandardCharsets.UTF_8)) {
             yaml.dump(yamlMap, writer);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Can not save yaml file: {}",e.getMessage());
         }
     }
 }

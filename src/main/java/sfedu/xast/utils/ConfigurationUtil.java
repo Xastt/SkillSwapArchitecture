@@ -1,12 +1,16 @@
 package sfedu.xast.utils;
 
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+
 
 public class ConfigurationUtil {
+
+    Logger logger = LoggerFactory.getLogger(ConfigurationUtil.class);
+
     private Properties properties;
     private String filePath;
 
@@ -16,7 +20,7 @@ public class ConfigurationUtil {
         try(FileInputStream fis = new FileInputStream(filePath)){
             properties.load(fis);
         }catch(IOException e){
-            e.printStackTrace();
+            logger.error("Can not load properties from file: {}", e.getMessage());
         }
     }
 
@@ -34,7 +38,7 @@ public class ConfigurationUtil {
             properties.setProperty(key, newValue);
             saveProperties();
         } else {
-            System.out.println("Свойство с ключом '" + key + "' не найдено.");
+            logger.error("Can not update key {}, not found", key);
         }
     }
 
@@ -42,7 +46,7 @@ public class ConfigurationUtil {
         if (properties.remove(key) != null) {
             saveProperties();
         } else {
-            System.out.println("Свойство с ключом '" + key + "' не найдено.");
+            logger.error("Can not delete key {}, not found", key);
         }
     }
 
@@ -50,7 +54,7 @@ public class ConfigurationUtil {
         try (FileOutputStream fos = new FileOutputStream(filePath)) {
             properties.store(fos, null);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Can not save properties to file: {}", e.getMessage());
         }
     }
 }

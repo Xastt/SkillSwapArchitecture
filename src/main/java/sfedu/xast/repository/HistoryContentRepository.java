@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import sfedu.xast.models.HistoryContent;
 
 
-//@Repository
+@Repository
 public interface HistoryContentRepository extends MongoRepository<HistoryContent, String> {
     //пока что тут пусто....
 }
