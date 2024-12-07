@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Change files">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderMongo.java" afterDir="false" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Change sout to loggers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/repository/HistoryContentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/repository/HistoryContentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/ConfigurationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/ConfigurationUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/XmlUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/XmlUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/YamlUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/YamlUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/ConfigurationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/ConfigurationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/HistoryContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/HistoryContent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +248,8 @@
       <workItem from="1733481270130" duration="3775000" />
       <workItem from="1733485686566" duration="1061000" />
       <workItem from="1733505144845" duration="5020000" />
-      <workItem from="1733513261953" duration="1486000" />
+      <workItem from="1733513261953" duration="1646000" />
+      <workItem from="1733592583741" duration="915000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -407,7 +403,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733485046406</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Change sout to loggers">
+      <option name="closed" value="true" />
+      <created>1733514907984</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1733514907984</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,6 +435,7 @@
     <MESSAGE value="change ConfigTest" />
     <MESSAGE value="Add repository, service, model for test working with MongoDB" />
     <MESSAGE value="Change files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change files" />
+    <MESSAGE value="Change sout to loggers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change sout to loggers" />
   </component>
 </project>
