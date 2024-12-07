@@ -14,7 +14,7 @@ public class HistoryContent {
     private String actor = "system";
     private String methodName;
     private Map<String, Object> object; //для хранения состояния JSON
-    private Status status;
+    private String status;
 
     public enum Status{
         SUCCESS, FAULT

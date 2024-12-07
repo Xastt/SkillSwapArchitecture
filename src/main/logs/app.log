@@ -10,3 +10,21 @@
 12-06 22:54:22 INFO  ConfigurationTest - Value of element is 5
 12-06 22:54:22 INFO  ConfigurationTest - Updated value of element is 3
 12-06 22:54:22 INFO  ConfigurationTest - Delete element
+
+12-07 21:27:55 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+12-07 21:27:55 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+12-07 21:27:55 INFO  cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
+12-07 21:27:55 INFO  connection - Opened connection [connectionId{localValue:1}] to localhost:27017
+12-07 21:27:55 DEBUG cluster - Checking status of localhost:27017
+12-07 21:27:55 DEBUG command - Sending command '{ "ismaster" : 1, "$db" : "admin" }' with request id 4 to database admin on connection [connectionId{localValue:1}] to server localhost:27017
+12-07 21:27:55 DEBUG command - Execution of command with request id 4 completed successfully in 8.44 ms on connection [connectionId{localValue:1}] to server localhost:27017
+12-07 21:27:55 INFO  cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[8, 0, 3]}, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15827200}
+12-07 21:27:55 DEBUG cluster - Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=15.8 ms, state=CONNECTED}]
+12-07 21:27:55 INFO  connection - Opened connection [connectionId{localValue:2}] to localhost:27017
+12-07 21:27:55 DEBUG command - Sending command '{ "insert" : "historyContent", "ordered" : true, "$db" : "test", "documents" : [{ "_id" : { "$oid" : "675493ab8e78d72430854b19" }, "className" : "YourClassName", "createdDate" : "2024-12-07T21:27:55.4559297", "actor" : "user", "methodName" : "methodName", "object" : { "Architecture" : "So good!" }, "status" : "SUCCESS" }] }' with request id 8 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+12-07 21:27:55 DEBUG command - Execution of command with request id 8 completed successfully in 7.88 ms on connection [connectionId{localValue:2}] to server localhost:27017
+12-07 21:27:55 DEBUG command - Sending command '{ "find" : "historyContent", "$db" : "test", "$readPreference" : { "mode" : "primaryPreferred" } }' with request id 9 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+12-07 21:27:55 DEBUG command - Execution of command with request id 9 completed successfully in 48.42 ms on connection [connectionId{localValue:2}] to server localhost:27017
+12-07 21:27:55 INFO  connection - Closed connection [connectionId{localValue:2}] to localhost:27017 because the pool has been closed.
+12-07 21:27:55 DEBUG connection - Closing connection connectionId{localValue:2}
+12-07 21:27:55 DEBUG connection - Closing connection connectionId{localValue:1}
