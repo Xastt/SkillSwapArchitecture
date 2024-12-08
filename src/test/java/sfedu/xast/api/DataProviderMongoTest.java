@@ -10,7 +10,7 @@ public class DataProviderMongoTest {
     @Test
     public void testCRUDWithMongoDB(){
         DataProviderMongo dataProvider = new DataProviderMongo("test", "historyContent");
-        // Создание нового объекта HistoryContent
+
         HistoryContent content = new HistoryContent();
         content.setId("1");
         content.setClassName("ExampleClass");
@@ -18,18 +18,14 @@ public class DataProviderMongoTest {
         content.setObject(Map.of("key1", "value1", "key2", "value2"));
         content.setStatus(HistoryContent.Status.SUCCESS);
 
-        // Вставка в базу данных
         dataProvider.insertHistoryContent(content);
 
-        // Чтение из базы данных
         HistoryContent retrieved = dataProvider.findHistoryContentById("1");
         System.out.println(retrieved);
 
-        // Обновление объекта
         content.setStatus(HistoryContent.Status.FAULT);
         dataProvider.updateHistoryContent(content);
 
-        // Удаление объекта
         dataProvider.deleteHistoryContent("1");
     }
 }

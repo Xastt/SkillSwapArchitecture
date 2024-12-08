@@ -1,9 +1,6 @@
 package sfedu.xast.api;
 
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.*;
 import com.mongodb.client.model.Filters;
 import org.bson.Document;
 import sfedu.xast.models.HistoryContent;
@@ -14,7 +11,6 @@ public class DataProviderMongo {
     private final MongoCollection<Document> collection;
 
     public DataProviderMongo(String databaseName, String collectionName) {
-        // Подключаемся к MongoDB
         MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
         MongoDatabase database = mongoClient.getDatabase(databaseName);
         this.collection = database.getCollection(collectionName);
@@ -46,11 +42,10 @@ public class DataProviderMongo {
             if (objectDoc != null) {
                 historyContent.setObject(objectDoc);
             }
-            //historyContent.setObject(doc.get("object", HashMap.class));
             historyContent.setStatus(HistoryContent.Status.valueOf(doc.getString("status")));
             return historyContent;
         }
-        return null; // или выбросить исключение, если не найдено
+        return null;
     }
 
     public void updateHistoryContent(HistoryContent historyContent) {
