@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Change pom.xml, DataProviderMongo, HistoryContent">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderMongoTest.java" afterDir="false" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add interaction with MongoDB. Two methdos, are works successfully">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderMongo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderMongo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/HistoryContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/HistoryContent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/repository/HistoryContentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/service/HistoryContentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/JsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/JsonConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logs/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderMongoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderMongoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +25,8 @@
         <option value="module-info" />
         <option value="UML Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit3 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -59,6 +59,7 @@
     "JUnit.ConfigurationTest.testCRUDWithXML.executor": "Run",
     "JUnit.ConfigurationTest.testCRUDWithYAML.executor": "Run",
     "JUnit.DataProviderMongoTest.testCRUDMongoOperations.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDWithMongoDB.executor": "Run",
     "JUnit.HistoryContentRepositoryTest.executor": "Run",
     "JUnit.HistoryContentRepositoryTest.testSave.executor": "Run",
     "JUnit.SkillSwapClientTest.executor": "Run",
@@ -68,7 +69,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/JavaProj/Architec/SkillSwap",
+    "last_opened_file_path": "D:/JavaProj/SBER-SCHOOL/MultiModuling",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -104,13 +105,26 @@
       <recent name="sfedu.xast" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DataProviderMongoTest.testCRUDMongoOperations">
+  <component name="RunManager" selected="JUnit.DataProviderMongoTest.testCRUDWithMongoDB">
     <configuration name="DataProviderMongo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderMongo" />
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.Main" />
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -149,32 +163,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HistoryContentRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataProviderMongoTest.testCRUDWithMongoDB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sfedu.xast.repository.*" />
+          <option name="PATTERN" value="sfedu.xast.api.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.repository" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.repository.HistoryContentRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HistoryContentRepositoryTest.testSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SkillSwap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sfedu.xast.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.repository" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.repository.HistoryContentRepositoryTest" />
-      <option name="METHOD_NAME" value="testSave" />
+      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderMongoTest" />
+      <option name="METHOD_NAME" value="testCRUDWithMongoDB" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -182,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataProviderMongoTest.testCRUDWithMongoDB" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.DataProviderMongoTest.testCRUDMongoOperations" />
         <item itemvalue="Application.DataProviderMongo" />
         <item itemvalue="JUnit.ConfigurationTest" />
-        <item itemvalue="JUnit.HistoryContentRepositoryTest" />
-        <item itemvalue="JUnit.HistoryContentRepositoryTest.testSave" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +253,9 @@
       <workItem from="1733485686566" duration="1061000" />
       <workItem from="1733505144845" duration="5020000" />
       <workItem from="1733513261953" duration="1646000" />
-      <workItem from="1733592583741" duration="3452000" />
+      <workItem from="1733592583741" duration="5319000" />
+      <workItem from="1733654969382" duration="58000" />
+      <workItem from="1733664434972" duration="2892000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -424,7 +425,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733593675456</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Add interaction with MongoDB. Two methdos, are works successfully">
+      <option name="closed" value="true" />
+      <created>1733596364850</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1733596364850</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,6 +459,7 @@
     <MESSAGE value="Change files" />
     <MESSAGE value="Change sout to loggers" />
     <MESSAGE value="Change pom.xml, DataProviderMongo, HistoryContent" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change pom.xml, DataProviderMongo, HistoryContent" />
+    <MESSAGE value="Add interaction with MongoDB. Two methdos, are works successfully" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add interaction with MongoDB. Two methdos, are works successfully" />
   </component>
 </project>

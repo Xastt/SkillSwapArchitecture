@@ -1,33 +1,35 @@
 package sfedu.xast.api;
 
-
 import org.junit.Test;
 import sfedu.xast.models.HistoryContent;
 
-import java.util.List;
 import java.util.Map;
 
-public class DataProviderMongoTest{
+public class DataProviderMongoTest {
 
     @Test
-    public void testCRUDMongoOperations() {
-        DataProviderMongo dataProvider = new DataProviderMongo();
+    public void testCRUDWithMongoDB(){
+        DataProviderMongo dataProvider = new DataProviderMongo("test", "historyContent");
+        // Создание нового объекта HistoryContent
+        HistoryContent content = new HistoryContent();
+        content.setId("1");
+        content.setClassName("ExampleClass");
+        content.setMethodName("exampleMethod");
+        content.setObject(Map.of("key1", "value1", "key2", "value2"));
+        content.setStatus(HistoryContent.Status.SUCCESS);
 
-        HistoryContent newEntry = new HistoryContent();
-        newEntry.setClassName("YourClassName");
-        newEntry.setActor("user");
-        newEntry.setMethodName("methodName");
-        newEntry.setObject(Map.of("Architecture", "So good!"));
-        newEntry.setStatus("SUCCESS");
+        // Вставка в базу данных
+        dataProvider.insertHistoryContent(content);
 
-        dataProvider.create(newEntry);
+        // Чтение из базы данных
+        HistoryContent retrieved = dataProvider.findHistoryContentById("1");
+        System.out.println(retrieved);
 
-        List<HistoryContent> allEntries = dataProvider.findAll();
-        allEntries.forEach(entry -> System.out.println(entry.getClassName()));
+        // Обновление объекта
+        content.setStatus(HistoryContent.Status.FAULT);
+        dataProvider.updateHistoryContent(content);
 
-        dataProvider.close();
+        // Удаление объекта
+        dataProvider.deleteHistoryContent("1");
     }
-
-
-
 }
