@@ -29,3 +29,31 @@
 12-08 17:16:03 DEBUG command - Execution of command with request id 10 completed successfully in 3.15 ms on connection [connectionId{localValue:2}] to server localhost:27017
 12-08 17:16:03 DEBUG command - Sending command '{ "delete" : "historyContent", "ordered" : true, "$db" : "test", "deletes" : [{ "q" : { "id" : "1" }, "limit" : 1 }] }' with request id 11 to database test on connection [connectionId{localValue:2}] to server localhost:27017
 12-08 17:16:03 DEBUG command - Execution of command with request id 11 completed successfully in 2.31 ms on connection [connectionId{localValue:2}] to server localhost:27017
+12-09 20:26:03 INFO  ConfigurationTest - New PROPERTY element created successfully!
+12-09 20:26:03 INFO  ConfigurationTest - Value of new property key is newValue
+12-09 20:26:03 INFO  ConfigurationTest - Updated value of new property key is updatedValue
+12-09 20:26:03 INFO  ConfigurationTest - Delete new property key
+12-09 20:26:03 INFO  ConfigurationTest - New YAML element created successfully!
+12-09 20:26:03 INFO  ConfigurationTest - Value of new yaml key is newValue
+12-09 20:26:03 INFO  ConfigurationTest - Updated value of new yaml key is updatedValue
+12-09 20:26:03 INFO  ConfigurationTest - Delete new yaml key
+12-09 20:26:04 INFO  ConfigurationTest - New XML element created successfully!
+12-09 20:26:04 INFO  ConfigurationTest - Value of element is 5
+12-09 20:26:04 INFO  ConfigurationTest - Updated value of element is 3
+12-09 20:26:04 INFO  ConfigurationTest - Delete element
+12-09 20:30:03 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+12-09 20:30:03 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+12-09 20:30:03 INFO  cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
+12-09 20:30:03 INFO  connection - Opened connection [connectionId{localValue:1}] to localhost:27017
+12-09 20:30:03 DEBUG cluster - Checking status of localhost:27017
+12-09 20:30:03 DEBUG command - Sending command '{ "ismaster" : 1, "$db" : "admin" }' with request id 4 to database admin on connection [connectionId{localValue:1}] to server localhost:27017
+12-09 20:30:03 DEBUG command - Execution of command with request id 4 completed successfully in 5.69 ms on connection [connectionId{localValue:1}] to server localhost:27017
+12-09 20:30:03 INFO  cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[8, 0, 3]}, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=12806700}
+12-09 20:30:03 DEBUG cluster - Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=12.8 ms, state=CONNECTED}]
+12-09 20:30:03 INFO  connection - Opened connection [connectionId{localValue:2}] to localhost:27017
+12-09 20:30:03 DEBUG command - Sending command '{ "insert" : "historyContent", "ordered" : true, "$db" : "test", "documents" : [{ "_id" : { "$oid" : "6757291ba601bf1d1c85620b" }, "id" : "1", "className" : "ExampleClass", "createdDate" : "2024-12-09T20:30:03.425975", "actor" : "system", "methodName" : "exampleMethod", "object" : { "key1" : "value1", "key2" : "value2" }, "status" : "SUCCESS" }] }' with request id 8 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+12-09 20:30:03 DEBUG command - Execution of command with request id 8 completed successfully in 31.62 ms on connection [connectionId{localValue:2}] to server localhost:27017
+12-09 20:30:03 DEBUG command - Sending command '{ "find" : "historyContent", "filter" : { "id" : "1" }, "limit" : 1, "singleBatch" : true, "$db" : "test", "$readPreference" : { "mode" : "primaryPreferred" } }' with request id 9 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+12-09 20:30:03 DEBUG command - Execution of command with request id 9 completed successfully in 13.06 ms on connection [connectionId{localValue:2}] to server localhost:27017
+12-09 20:30:03 DEBUG command - Sending command '{ "update" : "historyContent", "ordered" : true, "$db" : "test", "updates" : [{ "q" : { "id" : "1" }, "u" : { "$set" : { "className" : "ExampleClass", "createdDate" : "2024-12-09T20:30:03.425975", "actor" : "system", "methodName" : "exampleMethod", "object" : { "key1" : "value1", "key2" : "value2" }, "status" : "FAULT" } } }] }' with request id 10 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+12-09 20:30:03 DEBUG command - Execution of command with request id 10 completed successfully in 9.02 ms on connection [connectionId{localValue:2}] to server localhost:27017

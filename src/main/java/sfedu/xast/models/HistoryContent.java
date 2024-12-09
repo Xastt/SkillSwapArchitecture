@@ -13,7 +13,7 @@ public class HistoryContent {
     private LocalDateTime createdDate;
     private String actor = "system";
     private String methodName;
-    private Map<String, Object> object; //для хранения состояния JSON
+    private Map<String, Object> object;
     private Status status;
 
     public enum Status{
