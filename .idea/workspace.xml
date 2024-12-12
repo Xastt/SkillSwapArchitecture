@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add DataProviderCsv with all CRUD operations">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderCsvTest.java" afterDir="false" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Test DataProviderCsv + use junit-jupiter instead junit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderXml.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/PersInfList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderXmlTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/ConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/ConfigTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/ConfigurationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/ConfigurationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/SkillSwapClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/SkillSwapClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderMongoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderMongoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logs/app.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +22,10 @@
         <option value="UML Sequence" />
         <option value="module-info" />
         <option value="UML Class" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="JUnit3 Test Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -59,16 +58,20 @@
     "JUnit.ConfigurationTest.testCRUDWithXML.executor": "Run",
     "JUnit.ConfigurationTest.testCRUDWithYAML.executor": "Run",
     "JUnit.DataProviderCsvTest.executor": "Run",
+    "JUnit.DataProviderCsvTest.testDeleteRecord.executor": "Run",
+    "JUnit.DataProviderCsvTest.testGetRecordById.executor": "Run",
     "JUnit.DataProviderCsvTest.testSaveRecord.executor": "Run",
     "JUnit.DataProviderMongoTest.executor": "Run",
     "JUnit.DataProviderMongoTest.testCRUDMongoOperations.executor": "Run",
     "JUnit.DataProviderMongoTest.testCRUDWithMongoDB.executor": "Run",
+    "JUnit.DataProviderXmlTest.executor": "Run",
     "JUnit.HistoryContentRepositoryTest.executor": "Run",
     "JUnit.HistoryContentRepositoryTest.testSave.executor": "Run",
     "JUnit.SkillSwapClientTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/JavaProj/SBER-SCHOOL/JavaSberSchool",
@@ -95,6 +98,7 @@
       <recent name="D:\JavaProj\Architec\SkillSwap\src\main\uml" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -108,21 +112,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.DataProviderCsvTest">
-    <configuration name="ConfigurationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SkillSwap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sfedu.xast.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.ConfigurationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DataProviderCsvTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
@@ -138,7 +127,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderCsvTest.testSaveRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataProviderCsvTest.testDeleteRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -148,13 +137,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast.api" />
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderCsvTest" />
-      <option name="METHOD_NAME" value="testSaveRecord" />
+      <option name="METHOD_NAME" value="testDeleteRecord" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderMongoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataProviderCsvTest.testGetRecordById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -163,13 +152,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast.api" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderMongoTest" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderCsvTest" />
+      <option name="METHOD_NAME" value="testGetRecordById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataProviderXmlTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderXmlTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderMongoTest.testCRUDWithMongoDB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataProviderXmlTest.testInitDataSourceLoadsDataFromXml" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -178,8 +183,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast.api" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderMongoTest" />
-      <option name="METHOD_NAME" value="testCRUDWithMongoDB" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderXmlTest" />
+      <option name="METHOD_NAME" value="testInitDataSourceLoadsDataFromXml" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -188,10 +193,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DataProviderCsvTest" />
-        <item itemvalue="JUnit.DataProviderCsvTest.testSaveRecord" />
-        <item itemvalue="JUnit.DataProviderMongoTest" />
-        <item itemvalue="JUnit.ConfigurationTest" />
-        <item itemvalue="JUnit.DataProviderMongoTest.testCRUDWithMongoDB" />
+        <item itemvalue="JUnit.DataProviderXmlTest" />
+        <item itemvalue="JUnit.DataProviderXmlTest.testInitDataSourceLoadsDataFromXml" />
+        <item itemvalue="JUnit.DataProviderCsvTest.testDeleteRecord" />
+        <item itemvalue="JUnit.DataProviderCsvTest.testGetRecordById" />
       </list>
     </recent_temporary>
   </component>
@@ -266,7 +271,8 @@
       <workItem from="1733761979984" duration="4367000" />
       <workItem from="1733839271074" duration="266000" />
       <workItem from="1733902473420" duration="16000" />
-      <workItem from="1733991287987" duration="2947000" />
+      <workItem from="1733991287987" duration="3011000" />
+      <workItem from="1734001978368" duration="2521000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -476,7 +482,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733993447634</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Test DataProviderCsv + use junit-jupiter instead junit">
+      <option name="closed" value="true" />
+      <created>1733994284846</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1733994284846</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,6 +521,7 @@
     <MESSAGE value="Clean Code" />
     <MESSAGE value="Add try/catch in DataProviderMongo" />
     <MESSAGE value="Add DataProviderCsv with all CRUD operations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add DataProviderCsv with all CRUD operations" />
+    <MESSAGE value="Test DataProviderCsv + use junit-jupiter instead junit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test DataProviderCsv + use junit-jupiter instead junit" />
   </component>
 </project>
