@@ -2,15 +2,10 @@ package sfedu.xast.api;
 
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import sfedu.xast.models.PersInf;
-import sfedu.xast.models.PersInfList;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import org.slf4j.*;
+import sfedu.xast.models.*;
+import java.io.*;
+import java.util.*;
 
 public class DataProviderXml implements IDataProvider <PersInf>{
 

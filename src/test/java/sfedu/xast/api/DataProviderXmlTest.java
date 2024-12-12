@@ -1,12 +1,7 @@
 package sfedu.xast.api;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.simpleframework.xml.Serializer;
-import org.simpleframework.xml.core.Persister;
+import org.junit.jupiter.api.*;
 import sfedu.xast.models.PersInf;
-import sfedu.xast.models.PersInfList;
 
 import java.io.File;
 import java.util.Arrays;

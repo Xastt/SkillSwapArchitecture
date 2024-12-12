@@ -1,18 +1,11 @@
 package sfedu.xast.api;
 
-import com.opencsv.CSVReader;
-import com.opencsv.CSVWriter;
+import com.opencsv.*;
 import com.opencsv.exceptions.CsvValidationException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 import sfedu.xast.models.PersInf;
-
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.*;
+import java.util.*;
 
 public class DataProviderCsv implements IDataProvider<PersInf> {
 
