@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Clean Code">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add try/catch in DataProviderMongo">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/PersInf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderMongo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderMongo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/HistoryContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/HistoryContent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logs/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/constantProperties.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/constantProperties.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +255,10 @@
       <workItem from="1733654969382" duration="58000" />
       <workItem from="1733664434972" duration="3454000" />
       <workItem from="1733742723522" duration="38000" />
-      <workItem from="1733761979984" duration="3620000" />
+      <workItem from="1733761979984" duration="4367000" />
+      <workItem from="1733839271074" duration="266000" />
+      <workItem from="1733902473420" duration="16000" />
+      <workItem from="1733991287987" duration="749000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -452,7 +452,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733667794367</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Add try/catch in DataProviderMongo">
+      <option name="closed" value="true" />
+      <created>1733765989892</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1733765989892</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,6 +489,7 @@
     <MESSAGE value="Add interaction with MongoDB. Two methdos, are works successfully" />
     <MESSAGE value="Add interaction with MongoDB" />
     <MESSAGE value="Clean Code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean Code" />
+    <MESSAGE value="Add try/catch in DataProviderMongo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add try/catch in DataProviderMongo" />
   </component>
 </project>
