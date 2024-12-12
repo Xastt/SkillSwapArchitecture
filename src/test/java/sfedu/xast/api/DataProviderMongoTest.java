@@ -1,6 +1,6 @@
 package sfedu.xast.api;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import sfedu.xast.models.HistoryContent;
 
 import java.util.Map;
