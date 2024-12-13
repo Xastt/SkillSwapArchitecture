@@ -4,11 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Clean code">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/test.xml" afterDir="false" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Show, how tests works">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/dao/PersInfDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/exceptions/FileLoadErrorException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/PersForApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/FileLoad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/GetDatabaseConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/enviroment_origin.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/dao/PersInfDaoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/utils/FileLoadTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderXml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderXml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/PersInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/PersInf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/PersInfList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/PersInfList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logs/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/enviroment.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/enviroment.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderCsvTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderCsvTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderXmlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderXmlTest.java" afterDir="false" />
     </list>
@@ -25,8 +39,8 @@
         <option value="UML Class" />
         <option value="Interface" />
         <option value="JUnit3 Test Class" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -67,8 +81,11 @@
     "JUnit.DataProviderMongoTest.testCRUDWithMongoDB.executor": "Run",
     "JUnit.DataProviderXmlTest.executor": "Run",
     "JUnit.DataProviderXmlTest.testInitDataSourceLoadsDataFromXml.executor": "Run",
+    "JUnit.FileLoadTest.checkValidFileName.executor": "Run",
     "JUnit.HistoryContentRepositoryTest.executor": "Run",
     "JUnit.HistoryContentRepositoryTest.testSave.executor": "Run",
+    "JUnit.PersInfDaoTest.executor": "Run",
+    "JUnit.PersInfDaoTest.testCRUDMethods.executor": "Run",
     "JUnit.SkillSwapClientTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
@@ -108,12 +125,14 @@
       <recent name="D:\JavaProj\Architec\SkillSwap\src\main\logs" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="sfedu.xast.utils" />
+      <recent name="sfedu.xast.dao" />
       <recent name="sfedu.xast.api" />
       <recent name="sfedu.xast.repository" />
       <recent name="sfedu.xast" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DataProviderCsvTest">
+  <component name="RunManager" selected="JUnit.FileLoadTest.checkInValidFileName">
     <configuration name="DataProviderCsvTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
@@ -129,64 +148,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderCsvTest.testDeleteRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileLoadTest.checkInValidFileName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="PATTERN" value="sfedu.xast.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderCsvTest" />
-      <option name="METHOD_NAME" value="testDeleteRecord" />
+      <option name="PACKAGE_NAME" value="sfedu.xast.utils" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.utils.FileLoadTest" />
+      <option name="METHOD_NAME" value="checkInValidFileName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderCsvTest.testGetRecordById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileLoadTest.checkValidFileName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="PATTERN" value="sfedu.xast.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderCsvTest" />
-      <option name="METHOD_NAME" value="testGetRecordById" />
+      <option name="PACKAGE_NAME" value="sfedu.xast.utils" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.utils.FileLoadTest" />
+      <option name="METHOD_NAME" value="checkValidFileName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderXmlTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PersInfDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="PATTERN" value="sfedu.xast.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderXmlTest" />
+      <option name="PACKAGE_NAME" value="sfedu.xast.dao" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.dao.PersInfDaoTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderXmlTest.testInitDataSourceLoadsDataFromXml" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PersInfDaoTest.testCRUDMethods" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="PATTERN" value="sfedu.xast.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderXmlTest" />
-      <option name="METHOD_NAME" value="testInitDataSourceLoadsDataFromXml" />
+      <option name="PACKAGE_NAME" value="sfedu.xast.dao" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.dao.PersInfDaoTest" />
+      <option name="METHOD_NAME" value="testCRUDMethods" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -194,11 +213,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FileLoadTest.checkInValidFileName" />
+        <item itemvalue="JUnit.FileLoadTest.checkValidFileName" />
+        <item itemvalue="JUnit.PersInfDaoTest" />
+        <item itemvalue="JUnit.PersInfDaoTest.testCRUDMethods" />
         <item itemvalue="JUnit.DataProviderCsvTest" />
-        <item itemvalue="JUnit.DataProviderXmlTest" />
-        <item itemvalue="JUnit.DataProviderXmlTest.testInitDataSourceLoadsDataFromXml" />
-        <item itemvalue="JUnit.DataProviderCsvTest.testDeleteRecord" />
-        <item itemvalue="JUnit.DataProviderCsvTest.testGetRecordById" />
       </list>
     </recent_temporary>
   </component>
@@ -276,7 +295,9 @@
       <workItem from="1733991287987" duration="3011000" />
       <workItem from="1734001978368" duration="3939000" />
       <workItem from="1734008280078" duration="141000" />
-      <workItem from="1734097151265" duration="2890000" />
+      <workItem from="1734097151265" duration="3877000" />
+      <workItem from="1734111246484" duration="64000" />
+      <workItem from="1734111481240" duration="5777000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -510,7 +531,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734005972121</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Show, how tests works">
+      <option name="closed" value="true" />
+      <created>1734101376506</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1734101376506</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,7 +547,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add logger and er-diagramm" />
     <MESSAGE value="Add logging method" />
     <MESSAGE value="Add logging method, enviroment.properties, Constants and ConfigurationUtil classes" />
     <MESSAGE value="Add Tests :o" />
@@ -543,6 +571,7 @@
     <MESSAGE value="Test DataProviderCsv + use junit-jupiter instead junit" />
     <MESSAGE value="Add working with csv documents(CRUD operations)" />
     <MESSAGE value="Clean code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean code" />
+    <MESSAGE value="Show, how tests works" />
+    <option name="LAST_COMMIT_MESSAGE" value="Show, how tests works" />
   </component>
 </project>

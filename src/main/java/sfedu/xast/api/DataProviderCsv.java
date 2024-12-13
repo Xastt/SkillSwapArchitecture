@@ -3,16 +3,16 @@ package sfedu.xast.api;
 import com.opencsv.*;
 import com.opencsv.exceptions.CsvValidationException;
 import org.slf4j.*;
-import sfedu.xast.models.PersInf;
+import sfedu.xast.models.PersForApi;
 import java.io.*;
 import java.util.*;
 
-public class DataProviderCsv implements IDataProvider<PersInf> {
+public class DataProviderCsv implements IDataProvider<PersForApi> {
 
     Logger logger = LoggerFactory.getLogger(DataProviderCsv.class);
 
     private String csvFilePath;
-    private List<PersInf> persInfList;
+    private List<PersForApi> persInfList;
 
     public DataProviderCsv(String csvFilePath) {
         this.csvFilePath = csvFilePath;
@@ -20,7 +20,7 @@ public class DataProviderCsv implements IDataProvider<PersInf> {
     }
 
     @Override
-    public void saveRecord(PersInf record) {
+    public void saveRecord(PersForApi record) {
         try(CSVWriter writer = new CSVWriter(new FileWriter(csvFilePath, true))) {
             String[] values = {String.valueOf(record.getId()), record.getName()};
             writer.writeNext(values);
@@ -34,7 +34,7 @@ public class DataProviderCsv implements IDataProvider<PersInf> {
     public void deleteRecord(Long id) {
         persInfList.removeIf(record -> record.getId().equals(id));
         try(CSVWriter writer = new CSVWriter(new FileWriter(csvFilePath))){
-            for(PersInf record : persInfList){
+            for(PersForApi record : persInfList){
                 String[] values = {String.valueOf(record.getId()), record.getName()};
                 writer.writeNext(values);
             }
@@ -45,7 +45,7 @@ public class DataProviderCsv implements IDataProvider<PersInf> {
     }
 
     @Override
-    public PersInf getRecordById(Long id) {
+    public PersForApi getRecordById(Long id) {
         return persInfList.stream().filter(record -> record.getId().equals(id)).findFirst().orElse(null);
     }
 
@@ -65,7 +65,7 @@ public class DataProviderCsv implements IDataProvider<PersInf> {
                 while((nextLine = reader.readNext())!=null){
                     Long id = Long.parseLong(nextLine[0]);
                     String name = nextLine[1];
-                    persInfList.add(new PersInf(id, name));
+                    persInfList.add(new PersForApi(id, name));
                 }
             }catch (IOException | CsvValidationException e){
                 logger.error(e.getMessage());

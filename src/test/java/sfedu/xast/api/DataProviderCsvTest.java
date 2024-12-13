@@ -2,9 +2,7 @@ package sfedu.xast.api;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.*;
-import sfedu.xast.models.PersInf;
-
-import java.io.File;
+import sfedu.xast.models.PersForApi;
 
 public class DataProviderCsvTest{
 
@@ -26,18 +24,18 @@ public class DataProviderCsvTest{
 
     @Test
     public void testSaveRecord(){
-        PersInf record = new PersInf(1L, "Test1");
+        PersForApi record = new PersForApi(1L, "Test1");
         dataProviderCsv.saveRecord(record);
-        PersInf retrieved = dataProviderCsv.getRecordById(1L);
+        PersForApi retrieved = dataProviderCsv.getRecordById(1L);
         assertNotNull(retrieved);
         assertEquals("Test1", retrieved.getName());
     }
 
     @Test
     public void testGetRecordById(){
-        PersInf record = new PersInf(1L, "Test1");
+        PersForApi record = new PersForApi(1L, "Test1");
         dataProviderCsv.saveRecord(record);
-        PersInf retrieved = dataProviderCsv.getRecordById(1L);
+        PersForApi retrieved = dataProviderCsv.getRecordById(1L);
         assertNotNull(retrieved);
         assertEquals(1L, retrieved.getId());
         assertEquals("Test1", retrieved.getName());
@@ -45,10 +43,10 @@ public class DataProviderCsvTest{
 
     @Test
     public void testDeleteRecord(){
-        PersInf record = new PersInf(1L, "Test1");
+        PersForApi record = new PersForApi(1L, "Test1");
         dataProviderCsv.saveRecord(record);
         dataProviderCsv.deleteRecord(1L);
-        PersInf retrieved = dataProviderCsv.getRecordById(1L);
+        PersForApi retrieved = dataProviderCsv.getRecordById(1L);
         assertNull(retrieved);
     }
 

@@ -7,12 +7,12 @@ import sfedu.xast.models.*;
 import java.io.*;
 import java.util.*;
 
-public class DataProviderXml implements IDataProvider <PersInf>{
+public class DataProviderXml implements IDataProvider <PersForApi>{
 
     Logger logger = LoggerFactory.getLogger(DataProviderXml.class);
 
     private String xmlFilePath;
-    private List<PersInf> persInfList;
+    private List<PersForApi> persInfList;
 
     public DataProviderXml(String xmlFilePath){
         this.xmlFilePath = xmlFilePath;
@@ -20,7 +20,7 @@ public class DataProviderXml implements IDataProvider <PersInf>{
     }
 
     @Override
-    public void saveRecord(PersInf record) {
+    public void saveRecord(PersForApi record) {
         persInfList.add(record);
         Serializer serializer = new Persister();
         PersInfList persInfWrapper = new PersInfList(persInfList);
@@ -44,7 +44,7 @@ public class DataProviderXml implements IDataProvider <PersInf>{
     }
 
     @Override
-    public PersInf getRecordById(Long id) {
+    public PersForApi getRecordById(Long id) {
         return persInfList.stream().filter(record -> record.getId().equals(id)).findFirst().orElse(null);
     }
 

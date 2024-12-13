@@ -1,10 +1,7 @@
 package sfedu.xast.api;
 
 import org.junit.jupiter.api.*;
-import sfedu.xast.models.PersInf;
-
-import java.io.File;
-import java.util.Arrays;
+import sfedu.xast.models.PersForApi;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -28,16 +25,16 @@ class DataProviderXmlTest {
 
     @Test
     void saveRecordTest() {
-        PersInf record = new PersInf(1L, "Test1");
+        PersForApi record = new PersForApi(1L, "Test1");
         dataProviderXml.saveRecord(record);
-        PersInf retrievedRecord = dataProviderXml.getRecordById(1L);
+        PersForApi retrievedRecord = dataProviderXml.getRecordById(1L);
         assertNotNull(retrievedRecord);
         assertEquals("Test1", retrievedRecord.getName());
     }
 
     @Test
     void deleteRecordTest() {
-        PersInf record = new PersInf(1L, "Test1");
+        PersForApi record = new PersForApi(1L, "Test1");
         dataProviderXml.saveRecord(record);
         dataProviderXml.deleteRecord(1L);
         assertNull(dataProviderXml.getRecordById(1L));
@@ -45,9 +42,9 @@ class DataProviderXmlTest {
 
     @Test
     void getRecordById() {
-        PersInf record = new PersInf(1L, "Test1");
+        PersForApi record = new PersForApi(1L, "Test1");
         dataProviderXml.saveRecord(record);
-        PersInf retrievedRecord = dataProviderXml.getRecordById(1L);
+        PersForApi retrievedRecord = dataProviderXml.getRecordById(1L);
         assertNotNull(retrievedRecord);
         assertEquals("Test1", retrievedRecord.getName());
         assertEquals(1L, retrievedRecord.getId());

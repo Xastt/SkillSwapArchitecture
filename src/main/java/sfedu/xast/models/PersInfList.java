@@ -9,21 +9,21 @@ import java.util.List;
 @Root
 public class PersInfList {
     @ElementList(inline = true)
-    private List<PersInf> records;
+    private List<PersForApi> records;
 
     public PersInfList() {
         this.records = new ArrayList<>();
     }
 
-    public PersInfList(List<PersInf> records) {
+    public PersInfList(List<PersForApi> records) {
         this.records = records;
     }
 
-    public List<PersInf> getRecords() {
+    public List<PersForApi> getRecords() {
         return records;
     }
 
-    public void setRecords(List<PersInf> records) {
+    public void setRecords(List<PersForApi> records) {
         this.records = records;
     }
 }

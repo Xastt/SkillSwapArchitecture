@@ -32,3 +32,4 @@
 12-12 14:31:19 ERROR DataProviderXml - Transform of class [Lsfedu.xast.models.PersInf; not supported
 12-12 14:31:19 ERROR DataProviderXml - Transform of class [Lsfedu.xast.models.PersInf; not supported
 
+12-13 22:10:54 ERROR FileLoadTest - Could not load file: test.txt
