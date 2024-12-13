@@ -32,5 +32,3 @@
 12-12 14:31:19 ERROR DataProviderXml - Transform of class [Lsfedu.xast.models.PersInf; not supported
 12-12 14:31:19 ERROR DataProviderXml - Transform of class [Lsfedu.xast.models.PersInf; not supported
 
-
-12-12 15:16:38 ERROR DataProviderXml - INIT RECORD Constructor not matched for class sfedu.xast.models.PersInf

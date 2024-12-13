@@ -9,20 +9,20 @@ import java.io.File;
 public class DataProviderCsvTest{
 
     private DataProviderCsv dataProviderCsv;
-    private String testCsvFilePath = "test.csv";
+    private String testCsvFilePath = "src/test/resources/test.csv";
 
     @BeforeEach
     public void setUp() {
         dataProviderCsv = new DataProviderCsv(testCsvFilePath);
     }
 
-    @AfterEach
+    /*@AfterEach
     public void tearDown() {
         File file = new File(testCsvFilePath);
         if (file.exists()) {
             file.delete();
         }
-    }
+    }*/
 
     @Test
     public void testSaveRecord(){

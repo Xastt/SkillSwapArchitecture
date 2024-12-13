@@ -11,20 +11,20 @@ import static org.junit.jupiter.api.Assertions.*;
 class DataProviderXmlTest {
 
     private DataProviderXml dataProviderXml;
-    private String testXmlFilePath = "test.xml";
+    private String testXmlFilePath = "src/test/resources/test.xml";
 
     @BeforeEach
     void setUp() {
         dataProviderXml = new DataProviderXml(testXmlFilePath);
     }
 
-    @AfterEach
+    /*@AfterEach
     void tearDown() {
         File file = new File(testXmlFilePath);
         if (file.exists()) {
             file.delete();
         }
-    }
+    }*/
 
     @Test
     void saveRecordTest() {
