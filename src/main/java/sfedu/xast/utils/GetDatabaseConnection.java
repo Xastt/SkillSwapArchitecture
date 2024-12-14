@@ -13,12 +13,12 @@ public class GetDatabaseConnection {
         if (connection == null) {
             Properties props = new Properties();
             try(InputStream input = GetDatabaseConnection.class.getClassLoader().
-                    getResourceAsStream("src/main/resources/enviroment.properties")) {
+                    getResourceAsStream("database.properties")) {
                 props.load(input);
             }
-            String url = props.getProperty("url");
-            String user = props.getProperty("user");
-            String password = props.getProperty("password");
+            String url = props.getProperty("db.url");
+            String user = props.getProperty("db.user");
+            String password = props.getProperty("db.password");
             connection = DriverManager.getConnection(url, user, password);
         }
         return connection;

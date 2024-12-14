@@ -22,6 +22,14 @@ class PersInfDaoTest {
     }
 
     @Test
+    public void shouldGetJdbcConnection() throws SQLException, IOException {
+        try(Connection connection = GetDatabaseConnection.getConnection()) {
+            assertTrue(connection.isValid(1));
+            assertFalse(connection.isClosed());
+        }
+    }
+
+    @Test
     void testCRUDMethods() throws SQLException {
         PersInf persInf = new PersInf(1L, "Jackie Chan", "jackie@mail.ru");
 
@@ -29,7 +37,7 @@ class PersInfDaoTest {
 
         PersInf retrievedUser = persInfDao.read(persInf.getId());
         assertNotNull(retrievedUser);
-        assertEquals("Test User", retrievedUser.getName());
+        assertEquals("Jackie Chan", retrievedUser.getName());
 
         retrievedUser.setName("Updated User");
         persInfDao.update(retrievedUser);
