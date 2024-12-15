@@ -5,8 +5,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ProfInf extends PersInf{
+public class ProfInf {
 
+    private PersInf persId;
     private String skillName;
     private String skillDescription;
     private Double cost;
@@ -14,9 +15,7 @@ public class ProfInf extends PersInf{
     private int exp;
     private int rating;
 
-    public ProfInf(Long id, String surname, String name, String phoneNumber, String email,
-                   String skillName, String skillDescription, Double cost, String persDescription, int exp, int rating) {
-        super(id, surname, name, phoneNumber, email);
+    public ProfInf(String skillName, String skillDescription, Double cost, String persDescription, int exp, int rating) {
         this.skillName = skillName;
         this.skillDescription = skillDescription;
         this.cost = cost;
@@ -24,4 +23,5 @@ public class ProfInf extends PersInf{
         this.exp = exp;
         this.rating = rating;
     }
+
 }

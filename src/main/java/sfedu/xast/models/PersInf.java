@@ -6,6 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PersInf {
+    //CHANGE TYPE OF ID
     private Long id;
     private String surname;
     private String name;
