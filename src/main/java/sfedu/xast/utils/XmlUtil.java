@@ -49,7 +49,7 @@ public class XmlUtil {
             nodeList.item(0).setTextContent(newTextContent);
             saveChanges();
         } else {
-            logger.error("Can not update element with tag name: {}, not found", tagName);
+            logger.error("Can not update element with tag surname: {}, not found", tagName);
         }
     }
 
@@ -60,7 +60,7 @@ public class XmlUtil {
             nodeToRemove.getParentNode().removeChild(nodeToRemove);
             saveChanges();
         } else {
-            logger.error("Can not delete element with tag name: {}, not found", tagName);
+            logger.error("Can not delete element with tag surname: {}, not found", tagName);
         }
     }
 

@@ -3,6 +3,8 @@ package sfedu.xast.api;
 import org.junit.jupiter.api.*;
 import sfedu.xast.models.PersForApi;
 
+import java.io.File;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataProviderXmlTest {
@@ -15,13 +17,13 @@ class DataProviderXmlTest {
         dataProviderXml = new DataProviderXml(testXmlFilePath);
     }
 
-    /*@AfterEach
+    @AfterEach
     void tearDown() {
         File file = new File(testXmlFilePath);
         if (file.exists()) {
             file.delete();
         }
-    }*/
+    }
 
     @Test
     void saveRecordTest() {

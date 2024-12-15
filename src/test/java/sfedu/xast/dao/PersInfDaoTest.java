@@ -31,18 +31,21 @@ class PersInfDaoTest {
 
     @Test
     void testCRUDMethods() throws SQLException {
-        PersInf persInf = new PersInf(1L, "Jackie Chan", "jackie@mail.ru");
+        PersInf persInf = new PersInf(1L, "Jackie","Chan","+79180540546", "jackie@mail.ru");
 
         persInfDao.create(persInf);
 
         PersInf retrievedUser = persInfDao.read(persInf.getId());
         assertNotNull(retrievedUser);
-        assertEquals("Jackie Chan", retrievedUser.getName());
+        assertEquals("Jackie", retrievedUser.getSurname());
+        assertEquals("Chan", retrievedUser.getName());
+        assertEquals("+79180540546", retrievedUser.getEmail());
+        assertEquals("jackie@mail.ru", retrievedUser.getEmail());
 
-        retrievedUser.setName("Updated User");
+        retrievedUser.setSurname("Updated User");
         persInfDao.update(retrievedUser);
         PersInf updatedUser = persInfDao.read(retrievedUser.getId());
-        assertEquals("Updated User", updatedUser.getName());
+        assertEquals("Updated User", updatedUser.getSurname());
 
         persInfDao.delete(updatedUser.getId());
         assertNull(persInfDao.read(updatedUser.getId()));

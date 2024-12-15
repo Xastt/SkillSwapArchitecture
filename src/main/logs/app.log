@@ -33,3 +33,4 @@
 12-12 14:31:19 ERROR DataProviderXml - Transform of class [Lsfedu.xast.models.PersInf; not supported
 
 12-13 22:10:54 ERROR FileLoadTest - Could not load file: test.txt
+12-15 19:46:16 ERROR DataProviderXml - INIT RECORD Element 'persInf' does not have a match in class sfedu.xast.models.PersInfList at line 2

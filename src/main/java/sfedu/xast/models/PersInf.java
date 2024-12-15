@@ -7,12 +7,16 @@ import lombok.Setter;
 @Setter
 public class PersInf {
     private Long id;
+    private String surname;
     private String name;
+    private String phoneNumber;
     private String email;
 
-    public PersInf(Long id, String name, String email) {
+    public PersInf(Long id, String surname, String name, String phoneNumber, String email) {
         this.id = id;
+        this.surname = name;
         this.name = name;
+        this.phoneNumber = phoneNumber;
         this.email = email;
     }
 }

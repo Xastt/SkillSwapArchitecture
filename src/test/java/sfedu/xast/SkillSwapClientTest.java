@@ -14,7 +14,7 @@ public class SkillSwapClientTest {
     public void testLogBasicSystemInfo() {
         logger.info("Launching application...");
         logger.info(
-                "Operating System: " + System.getProperty("os.name") + " "
+                "Operating System: " + System.getProperty("os.surname") + " "
                         + System.getProperty("os.version") );
         logger.info("JRE: " + System.getProperty("java.version"));
         logger.info("Java Launched From: " + System.getProperty("java.home"));
