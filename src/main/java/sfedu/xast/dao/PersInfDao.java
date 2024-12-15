@@ -79,7 +79,8 @@ public class PersInfDao {
                             rs.getString("surname"),
                             rs.getString("name"),
                             rs.getString("phoneNumber"),
-                            rs.getString("email")));
+                            rs.getString("email")
+                    ));
                 }
             }
         return users;
