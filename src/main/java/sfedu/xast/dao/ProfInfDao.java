@@ -58,7 +58,7 @@ public class ProfInfDao {
             ps.setString(2, profInf.getSkillDescription());
             ps.setDouble(3, profInf.getCost());
             ps.setString(4, profInf.getPersDescription());
-            ps.setDouble(5, profInf.getRating());
+            ps.setDouble(5, profInf.getExp());
             ps.setDouble(6, profInf.getRating());
         }
     }
