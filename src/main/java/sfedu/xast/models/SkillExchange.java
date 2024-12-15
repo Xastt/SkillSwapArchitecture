@@ -3,7 +3,7 @@ package sfedu.xast.models;
 import lombok.Getter;
 import lombok.Setter;
 
-//ID
+//ID Add
 @Getter
 @Setter
 public class SkillExchange {
