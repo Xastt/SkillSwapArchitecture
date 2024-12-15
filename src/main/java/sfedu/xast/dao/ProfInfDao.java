@@ -50,6 +50,7 @@ public class ProfInfDao {
         }
     }
 
+    //TYPE OF ID
     public void update(ProfInf profInf) throws SQLException {
         String sql = "UPDATE profInf SET skillName = ?, skillDescription = ?, cost = ?, persDescription = ?, exp = ?, rating = ? WHERE id = ?";
         try(PreparedStatement ps = connection.prepareStatement(sql)) {
