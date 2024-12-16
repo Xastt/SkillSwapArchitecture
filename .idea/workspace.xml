@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add new class with working with data">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/dao/ProfInfDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/ProfInf.java" afterDir="false" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="add all models">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/dao/PersInfDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/dao/PersInfDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/PersInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/PersInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/XmlUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/XmlUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logs/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/SkillSwapClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/SkillSwapClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderXmlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderXmlTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/dao/PersInfDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/dao/PersInfDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/ProfInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/ProfInf.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +24,7 @@
         <option value="Interface" />
         <option value="JUnit3 Test Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -289,7 +283,9 @@
       <workItem from="1734111246484" duration="64000" />
       <workItem from="1734111481240" duration="6600000" />
       <workItem from="1734161441458" duration="3645000" />
-      <workItem from="1734280170319" duration="1606000" />
+      <workItem from="1734280170319" duration="5443000" />
+      <workItem from="1734354528377" duration="52000" />
+      <workItem from="1734355325088" duration="2946000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -563,16 +559,89 @@
       <option name="project" value="LOCAL" />
       <updated>1734166751223</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Add new class with working with data">
+      <option name="closed" value="true" />
+      <created>1734281878365</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1734281878365</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Add new class with working with data">
+      <option name="closed" value="true" />
+      <created>1734283699971</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1734283699971</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Add new class with working with data">
+      <option name="closed" value="true" />
+      <created>1734283738436</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1734283738436</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Add new class with working with data">
+      <option name="closed" value="true" />
+      <created>1734283860624</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1734283860624</updated>
+    </task>
+    <task id="LOCAL-00039" summary="PersInfDao, ProfInfDao, Status - added">
+      <option name="closed" value="true" />
+      <created>1734284861985</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1734284861985</updated>
+    </task>
+    <task id="LOCAL-00040" summary="add all models">
+      <option name="closed" value="true" />
+      <created>1734285530434</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1734285530434</updated>
+    </task>
+    <task id="LOCAL-00041" summary="add all models">
+      <option name="closed" value="true" />
+      <created>1734285599651</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1734285599651</updated>
+    </task>
+    <task id="LOCAL-00042" summary="add all models">
+      <option name="closed" value="true" />
+      <created>1734285633028</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1734285633028</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Edit er-diagram, add types" />
-    <MESSAGE value="Edit ErDiagram.puml, ClassDiagram.puml. Final version" />
     <MESSAGE value="Delete comments in SkillSwapClient.java" />
     <MESSAGE value="Change logs and tests" />
     <MESSAGE value="Add methods for working with different types of files" />
@@ -596,6 +665,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="delete test class" />
     <MESSAGE value="Add new class with working with data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new class with working with data" />
+    <MESSAGE value="PersInfDao, ProfInfDao, Status - added" />
+    <MESSAGE value="add all models" />
+    <option name="LAST_COMMIT_MESSAGE" value="add all models" />
   </component>
 </project>

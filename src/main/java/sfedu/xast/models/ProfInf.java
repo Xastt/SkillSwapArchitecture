@@ -7,15 +7,17 @@ import lombok.Setter;
 @Setter
 public class ProfInf {
 
-    private PersInf persId;
+    private String persId;
     private String skillName;
     private String skillDescription;
     private Double cost;
     private String persDescription;
-    private int exp;
-    private int rating;
+    private Double exp;
+    private Double rating;
 
-    public ProfInf(String skillName, String skillDescription, Double cost, String persDescription, int exp, int rating) {
+    public ProfInf(String persId, String skillName, String skillDescription,
+                   Double cost, String persDescription, Double exp, Double rating) {
+        this.persId = persId;
         this.skillName = skillName;
         this.skillDescription = skillDescription;
         this.cost = cost;
@@ -23,5 +25,4 @@ public class ProfInf {
         this.exp = exp;
         this.rating = rating;
     }
-
 }

@@ -1,6 +1,7 @@
 package sfedu.xast.dao;
 
 import sfedu.xast.models.PersInf;
+import sfedu.xast.models.ProfInf;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-//TODO MUST CREATE TABLE persInf !!!
+//TODO CREATE TABLE persInf !!!
 
 public class PersInfDao {
     private Connection connection;
@@ -18,14 +19,28 @@ public class PersInfDao {
         this.connection = connection;
     }
 
-    public void create(PersInf persInf) throws SQLException {
-        String sql = "INSERT INTO persInf (surname, name, phoneNumber, email) VALUES (?,?,?,?)";
-        try (PreparedStatement ps = connection.prepareStatement(sql)) {
-            ps.setString(1, persInf.getSurname());
-            ps.setString(2, persInf.getName());
-            ps.setString(3, persInf.getPhoneNumber());
-            ps.setString(4, persInf.getEmail());
+    public void create(PersInf persInf, ProfInf profInf) throws SQLException {
+
+        String sqlPersInf = "INSERT INTO persInf (id, surname, name, phoneNumber, email) VALUES (?,?,?,?,?)";
+        try (PreparedStatement ps = connection.prepareStatement(sqlPersInf)) {
+            ps.setString(1, persInf.getId());
+            ps.setString(2, persInf.getSurname());
+            ps.setString(3, persInf.getName());
+            ps.setString(4, persInf.getPhoneNumber());
+            ps.setString(5, persInf.getEmail());
             ps.executeUpdate();
+        }
+
+        String insertProfSql = "INSERT INTO profInf (pers_id, skill_name, skill_description, cost, pers_description, exp, rating) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement profStmt = connection.prepareStatement(insertProfSql)) {
+            profStmt.setString(1, profInf.getPersId());
+            profStmt.setString(2, profInf.getSkillName());
+            profStmt.setString(3, profInf.getSkillDescription());
+            profStmt.setDouble(4, profInf.getCost());
+            profStmt.setString(5, profInf.getPersDescription());
+            profStmt.setDouble(6, profInf.getExp());
+            profStmt.setDouble(7, profInf.getRating());
+            profStmt.executeUpdate();
         }
     }
 
