@@ -5,19 +5,18 @@ import lombok.Setter;
 
 import java.util.UUID;
 
-//ID
 @Getter
 @Setter
 public class Review {
     private String reviewId;
-    private int rating;
+    private Double rating;
     private String comment;
-    private PersInf reviewer;
-    private PersInf userEvaluated;
-    private PersInf skill;
+    private String reviewer;
+    private String userEvaluated;
+    private String skill;
 
-    public Review(int rating, String comment,
-                  PersInf reviewer, PersInf userEvaluated, PersInf skill) {
+    public Review(Double rating, String comment,
+                  String reviewer, String userEvaluated, String skill) {
         this.reviewId = UUID.randomUUID().toString();
         this.rating = rating;
         this.comment = comment;

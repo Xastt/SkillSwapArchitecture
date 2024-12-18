@@ -7,11 +7,11 @@ import java.util.UUID;
 @Setter
 public class SkillExchange {
     private String exchangeId;
-    private ProfInf skillOffered;
-    private PersInf userOffering;
-    private PersInf userRequesting;
+    private String skillOffered;
+    private String userOffering;
+    private String userRequesting;
 
-    public SkillExchange(ProfInf skillOffered, PersInf userRequesting, PersInf userOffering) {
+    public SkillExchange(String skillOffered, String userRequesting, String userOffering) {
         this.exchangeId = UUID.randomUUID().toString();
         this.skillOffered = skillOffered;
         this.userRequesting = userRequesting;
