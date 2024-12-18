@@ -14,7 +14,7 @@ class FileLoadTest {
 
     @Test
     public void checkValidFileName() {
-        String validFileName = "src/test/resources/test.txt";
+        String validFileName = Constants.ValidFileName;
         try {
             fileLoad.loadFile(validFileName);
         } catch (FileLoadErrorException e) {
@@ -28,6 +28,5 @@ class FileLoadTest {
         assertThrows(FileLoadErrorException.class,
                 () -> fileLoad.loadFile(validFileName));
     }
-
 
 }

@@ -7,4 +7,5 @@ public class Constants {
     public static final String CONFIG_YML = "src/main/resources/constantsYAML.yaml";
     public static final String CONFIG_XML = "src/main/resources/constantsXML.xml";
     public static final String DataBaseUrl = "mongodb://localhost:27017";
+    public static final String ValidFileName = "src/test/resources/test.txt";
 }

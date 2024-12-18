@@ -1,8 +1,6 @@
 package sfedu.xast.models;
 
-import lombok.Getter;
-import lombok.Setter;
-
+import lombok.*;
 import java.util.UUID;
 
 @Getter
