@@ -1,23 +1,19 @@
 package sfedu.xast.models;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import java.util.UUID;
 
-//ID
 @Getter
 @Setter
 public class SkillExchange {
-    private int exchangeId;
-    private PersInf skillOffered;
-    private PersInf skillRequested;
+    private String exchangeId;
+    private ProfInf skillOffered;
     private PersInf userOffering;
     private PersInf userRequesting;
 
-    public SkillExchange(int exchangeId, PersInf skillOffered, PersInf skillRequested,
-                         PersInf userRequesting, PersInf userOffering) {
-        this.exchangeId = exchangeId;
+    public SkillExchange(ProfInf skillOffered, PersInf userRequesting, PersInf userOffering) {
+        this.exchangeId = UUID.randomUUID().toString();
         this.skillOffered = skillOffered;
-        this.skillRequested = skillRequested;
         this.userRequesting = userRequesting;
         this.userOffering = userOffering;
     }

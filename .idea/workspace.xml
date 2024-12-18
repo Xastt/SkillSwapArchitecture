@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Create all CRUD-operations with models: ProfInf, PersInf">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderPSQLTest.java" afterDir="false" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/dao/PersInfDaoTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +31,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -306,7 +304,7 @@
       <workItem from="1734373585057" duration="847000" />
       <workItem from="1734448019835" duration="20000" />
       <workItem from="1734458155922" duration="2360000" />
-      <workItem from="1734504204170" duration="4367000" />
+      <workItem from="1734504204170" duration="6308000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -660,7 +658,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734507539899</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Add tests">
+      <option name="closed" value="true" />
+      <created>1734509609257</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1734509609257</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Add tests">
+      <option name="closed" value="true" />
+      <created>1734509668082</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1734509668082</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,7 +693,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add methods for working with different types of files" />
     <MESSAGE value="fix some problems" />
     <MESSAGE value="change YamlUtil" />
     <MESSAGE value="change ConfigTest" />
@@ -704,6 +717,7 @@
     <MESSAGE value="add all models" />
     <MESSAGE value="change type of id in persinf and profinf and add auto gen id" />
     <MESSAGE value="Create all CRUD-operations with models: ProfInf, PersInf" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create all CRUD-operations with models: ProfInf, PersInf" />
+    <MESSAGE value="Add tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add tests" />
   </component>
 </project>

@@ -14,7 +14,7 @@ public class PersInf {
 
     public PersInf(String surname, String name, String phoneNumber, String email) {
         this.id = UUID.randomUUID().toString();
-        this.surname = name;
+        this.surname = surname;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;

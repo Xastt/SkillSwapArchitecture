@@ -1,7 +1,7 @@
 @startuml
 
 class PersInf {
-    -id: int
+    -id: String
     -Surname: String
     -Name: String
     -phoneNumber: String
@@ -13,14 +13,13 @@ class ProfInf {
     -skillDescription: String
     -cost: Double
     -persDescription: String
-    -exp: int
-    -rating: int
+    -exp: double
+    -rating: double
 }
 
 class SkillExchange {
-    -exchangeId: int
+    -exchangeId: String
     -skillOffered: PersInf
-    -skillRequested: PersInfInf
     -userOffering: PersInf
     -userRequesting: PersInf
 }
@@ -28,15 +27,15 @@ class SkillExchange {
 
 
 class Review {
-    -reviewId: int
-    -rating: int
+    -reviewId: String
+    -rating: double
     -comment: String
     -user: PersInf
     -skill: PersInf
 }
 
 class Transaction {
-    -transactionId: int
+    -transactionId: String
     -dateTime: DateTime
     -status: Status
     -user1: PersInf
