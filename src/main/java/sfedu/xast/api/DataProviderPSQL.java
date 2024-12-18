@@ -1,9 +1,11 @@
 package sfedu.xast.api;
 
+import sfedu.xast.Status;
 import sfedu.xast.models.*;
 
 import java.io.*;
 import java.sql.*;
+import java.sql.Date;
 import java.util.*;
 
 public class DataProviderPSQL {
@@ -38,12 +40,13 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public String createPersInf(PersInf persInf) throws SQLException {
-        String sqlPersInf = "INSERT INTO persInf (surname, name, phoneNumber, email) VALUES (?,?,?,?)";//return id
+        String sqlPersInf = "INSERT INTO persInf (id, surname, name, phoneNumber, email) VALUES (?,?,?,?,?)";//return id
         try (PreparedStatement ps = connection.prepareStatement(sqlPersInf, Statement.RETURN_GENERATED_KEYS)) {
-            ps.setString(1, persInf.getSurname());
-            ps.setString(2, persInf.getName());
-            ps.setString(3, persInf.getPhoneNumber());
-            ps.setString(4, persInf.getEmail());
+            ps.setString(1, persInf.getId());
+            ps.setString(2, persInf.getSurname());
+            ps.setString(3, persInf.getName());
+            ps.setString(4, persInf.getPhoneNumber());
+            ps.setString(5, persInf.getEmail());
             ps.executeUpdate();
 
             try (ResultSet rs = ps.getGeneratedKeys()) {
@@ -233,4 +236,67 @@ public class DataProviderPSQL {
         }
         return users;
     }
+
+    /**
+     * method, which add new data to the table skillExchange
+     * contains information about users and offering skill
+     * @param skillExchange
+     * @param profInf
+     * @param persInf
+     * @throws SQLException
+     */
+    public void createSkillExchange(SkillExchange skillExchange, ProfInf profInf, PersInf persInf1, PersInf persInf2) throws SQLException {
+        String sqlSkillExchange = "INSERT INTO skillExchange (exchangeId, skillOffered, userOffering, userRequesting) VALUES (?,?,?,?)";
+        try (PreparedStatement ps = connection.prepareStatement(sqlSkillExchange)) {
+            ps.setString(1, skillExchange.getExchangeId());
+            ps.setString(2, profInf.getSkillName());
+            ps.setString(3, persInf1.getId());
+            ps.setString(4, persInf2.getId());
+            ps.executeUpdate();
+        }
+    }
+
+    /**
+     * method, which add new data to the table review
+     * contains user review about provided skill
+     * @param review
+     * @param persInf1
+     * @param persInf2
+     * @param profInf
+     * @throws SQLException
+     */
+    public void createReview(Review review, PersInf persInf1, PersInf persInf2, ProfInf profInf) throws SQLException {
+        String sqlReview = "INSERT INTO review (reviewId, rating, comment, reviewer, userEvaluated, skill) VALUES (?,?,?,?,?,?)";
+        try (PreparedStatement ps = connection.prepareStatement(sqlReview)) {
+            ps.setString(1, review.getReviewId());
+            ps.setDouble(2, review.getRating());
+            ps.setString(3, review.getComment());
+            ps.setString(4, persInf1.getId());
+            ps.setString(5, persInf2.getId());
+            ps.setString(6, profInf.getSkillName());
+            ps.executeUpdate();
+        }
+    }
+
+    /**
+     * contains information abount skill exchange between usersa
+     * @param transaction
+     * @param persInf1
+     * @param persInf2
+     * @param status
+     * @param profInf
+     * @throws SQLException
+     */
+    public void createTransaction(Transaction transaction, PersInf persInf1, PersInf persInf2, Status status, ProfInf profInf) throws SQLException {
+        String sqlTransaction = "INSERT INTO transaction(transactionId, date, status, user1, user2, skillOffered) VALUES (?,?,?,?,?,?)";
+        try (PreparedStatement ps = connection.prepareStatement(sqlTransaction)) {
+            ps.setString(1, transaction.getTransactionId());
+            ps.setDate(2, new java.sql.Date(transaction.getDate().getTime()));
+            ps.setString(3, status.name());
+            ps.setString(4, persInf1.getEmail());
+            ps.setString(5, persInf2.getEmail());
+            ps.setString(6, profInf.getSkillName());
+        }
+    }
+
 }

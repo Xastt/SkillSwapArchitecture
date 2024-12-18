@@ -19,19 +19,18 @@ class ProfInf {
 
 class SkillExchange {
     -exchangeId: String
-    -skillOffered: PersInf
+    -skillOffered: ProfInf
     -userOffering: PersInf
     -userRequesting: PersInf
 }
-
-
 
 class Review {
     -reviewId: String
     -rating: double
     -comment: String
-    -user: PersInf
-    -skill: PersInf
+    -userEvaluated: PersInf
+    -reviewer: PersInf
+    -skill: ProfInf
 }
 
 class Transaction {
@@ -40,8 +39,7 @@ class Transaction {
     -status: Status
     -user1: PersInf
     -user2: PersInf
-    -skillOfferedByUser1: PersInf
-    -skillRequestedByUser2: PersInf
+    -skillOffered: ProfInf
 }
 
 enum Status {
