@@ -103,7 +103,7 @@ public class DataProviderPSQL {
     /**
      * reading records from table profInf using personal id
      * @param id
-     * @return
+     * @return record
      * @throws SQLException
      */
     public ProfInf readProfInf(String id) throws SQLException {
@@ -189,7 +189,7 @@ public class DataProviderPSQL {
 
     /**
      * getting all records from table persInf
-     * @return
+     * @return list of users in table persInf
      * @throws SQLException
      */
     public List<PersInf> readAllPersInf() throws SQLException {
@@ -211,7 +211,7 @@ public class DataProviderPSQL {
 
     /**
      * getting all records from table profInf
-     * @return
+     * @return list of users in table profInf
      * @throws SQLException
      */
     public List<ProfInf> readAllProfInf() throws SQLException {

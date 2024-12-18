@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="change type of id in persinf and profinf and add auto gen id">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Create all CRUD-operations with models: ProfInf, PersInf">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderPSQLTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/dao/PersInfDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/dao/PersInfDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/dao/ProfInfDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/dao/ProfInfDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/PersInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/PersInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/ProfInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/ProfInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/GetDatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/dao/PersInfDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/dao/PersInfDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/utils/FileLoadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/utils/FileLoadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/dao/PersInfDaoTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,14 +25,17 @@
         <option value="UML Class" />
         <option value="Interface" />
         <option value="JUnit3 Test Class" />
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -70,6 +70,7 @@
     "JUnit.DataProviderMongoTest.executor": "Run",
     "JUnit.DataProviderMongoTest.testCRUDMongoOperations.executor": "Run",
     "JUnit.DataProviderMongoTest.testCRUDWithMongoDB.executor": "Run",
+    "JUnit.DataProviderPSQLTest.shouldGetJdbcConnection.executor": "Run",
     "JUnit.DataProviderXmlTest.executor": "Run",
     "JUnit.DataProviderXmlTest.testInitDataSourceLoadsDataFromXml.executor": "Run",
     "JUnit.FileLoadTest.checkInValidFileName.executor": "Run",
@@ -82,6 +83,7 @@
     "JUnit.PersInfDaoTest.testCRUDMethods.executor": "Run",
     "JUnit.SkillSwapClientTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
@@ -123,16 +125,15 @@
       <recent name="sfedu.xast.api" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="sfedu.xast.api" />
       <recent name="sfedu.xast.utils" />
       <recent name="sfedu.xast.dao" />
-      <recent name="sfedu.xast.api" />
       <recent name="sfedu.xast.repository" />
       <recent name="sfedu.xast" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FileLoadTest">
-    <configuration name="DataProviderPSQL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderPSQL" />
+  <component name="RunManager" selected="JUnit.DataProviderPSQLTest.shouldGetJdbcConnection">
+    <configuration name="DataProviderPSQLTest.shouldGetJdbcConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -140,6 +141,10 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderPSQLTest" />
+      <option name="METHOD_NAME" value="shouldGetJdbcConnection" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -208,11 +213,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataProviderPSQLTest.shouldGetJdbcConnection" />
         <item itemvalue="JUnit.FileLoadTest" />
         <item itemvalue="JUnit.DataProviderXmlTest" />
         <item itemvalue="JUnit.PersInfDaoTest.testCRUDMethods" />
         <item itemvalue="JUnit.PersInfDaoTest.shouldGetJdbcConnection" />
-        <item itemvalue="Application.DataProviderPSQL" />
       </list>
     </recent_temporary>
   </component>
@@ -301,7 +306,7 @@
       <workItem from="1734373585057" duration="847000" />
       <workItem from="1734448019835" duration="20000" />
       <workItem from="1734458155922" duration="2360000" />
-      <workItem from="1734504204170" duration="3124000" />
+      <workItem from="1734504204170" duration="4367000" />
     </task>
     <task id="LOCAL-00001" summary="Change uml diagram">
       <option name="closed" value="true" />
@@ -647,7 +652,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734358576105</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Create all CRUD-operations with models: ProfInf, PersInf">
+      <option name="closed" value="true" />
+      <created>1734507539899</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1734507539899</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,7 +679,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change logs and tests" />
     <MESSAGE value="Add methods for working with different types of files" />
     <MESSAGE value="fix some problems" />
     <MESSAGE value="change YamlUtil" />
@@ -691,6 +703,7 @@
     <MESSAGE value="PersInfDao, ProfInfDao, Status - added" />
     <MESSAGE value="add all models" />
     <MESSAGE value="change type of id in persinf and profinf and add auto gen id" />
-    <option name="LAST_COMMIT_MESSAGE" value="change type of id in persinf and profinf and add auto gen id" />
+    <MESSAGE value="Create all CRUD-operations with models: ProfInf, PersInf" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create all CRUD-operations with models: ProfInf, PersInf" />
   </component>
 </project>
