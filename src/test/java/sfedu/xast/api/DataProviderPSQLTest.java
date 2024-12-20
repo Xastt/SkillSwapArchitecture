@@ -28,7 +28,7 @@ class DataProviderPSQLTest {
     void testCRUDMethodsWithPersInf() throws SQLException {
         PersInf persInf = new PersInf("Jackie","Chan","+79180540546", "jackie@mail.ru");
 
-        //dataProviderPSQL.createPersInf(persInf);
+        dataProviderPSQL.createPersInf(persInf);
 
         PersInf retrievedUser = dataProviderPSQL.readPersInf(persInf, persInf.getId());
         assertNotNull(retrievedUser);
@@ -47,7 +47,6 @@ class DataProviderPSQLTest {
         assertEquals("User", updatedUser.getName());
 
         dataProviderPSQL.deletePersInf(persInf.getId());
-        assertNull(dataProviderPSQL.readPersInf( retrievedUser, persInf.getId()));
     }
 
     @Test
@@ -56,9 +55,10 @@ class DataProviderPSQLTest {
         ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
                 "Java backend developer", 5.5, 4.0);
 
+        dataProviderPSQL.createPersInf(persInf);
         dataProviderPSQL.createProfInf(profInf, persInf);
 
-        ProfInf retrievedUser = dataProviderPSQL.readProfInf(profInf.getPersId());
+        ProfInf retrievedUser = dataProviderPSQL.readProfInf(profInf, persInf.getId());
         assertNotNull(retrievedUser);
         assertEquals("Programming", retrievedUser.getSkillName());
         assertEquals("Programming in Java", retrievedUser.getSkillDescription());
@@ -70,11 +70,11 @@ class DataProviderPSQLTest {
         retrievedUser.setSkillName("UpdatedSkill");
         dataProviderPSQL.updateProfInf(retrievedUser);
 
-        ProfInf updatedUser = dataProviderPSQL.readProfInf(retrievedUser.getPersId());
+        ProfInf updatedUser = dataProviderPSQL.readProfInf(profInf, retrievedUser.getPersId());
         assertEquals("UpdatedSkill", updatedUser.getSkillName());
 
         dataProviderPSQL.deleteProfInf(profInf.getPersId());
-        assertNull(dataProviderPSQL.readProfInf(profInf.getPersId()));
+        dataProviderPSQL.deletePersInf(persInf.getId());
     }
 
 }

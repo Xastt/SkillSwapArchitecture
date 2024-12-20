@@ -40,9 +40,9 @@ public class DataProviderPSQL {
      * @return personal id
      * @throws SQLException
      */
-    public String createPersInf(PersInf persInf) throws SQLException {
+    public void createPersInf(PersInf persInf) {
         String sqlPersInf = "INSERT INTO persInf (id, surname, name, phoneNumber, email) VALUES (?,?,?,?,?)";
-        try (PreparedStatement ps = connection.prepareStatement(sqlPersInf, Statement.RETURN_GENERATED_KEYS)) {
+        try (PreparedStatement ps = connection.prepareStatement(sqlPersInf)) {
             ps.setString(1, persInf.getId());
             ps.setString(2, persInf.getSurname());
             ps.setString(3, persInf.getName());
@@ -50,14 +50,10 @@ public class DataProviderPSQL {
             ps.setString(5, persInf.getEmail());
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
-            if (rs.next()) {
-                return rs.getString(1);
-            }
         }catch (SQLException e) {
             e.printStackTrace();
             //logger.error(e.getMessage());
         }
-        return null;
     }
 
     /**
@@ -67,7 +63,7 @@ public class DataProviderPSQL {
      * @return PersInf object
      * @throws SQLException
      */
-    public PersInf readPersInf(PersInf persInf, String id) throws SQLException {
+    public PersInf readPersInf(PersInf persInf, String id)  {
         String sql = "SELECT * FROM persInf WHERE id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, id);
@@ -119,7 +115,7 @@ public class DataProviderPSQL {
      * @param id
      * @throws SQLException
      */
-    public void deletePersInf(String id) throws SQLException {
+    public void deletePersInf(String id) {
         String sql = "DELETE FROM persInf WHERE id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, id);
@@ -130,30 +126,6 @@ public class DataProviderPSQL {
         }
     }
 
-    /**
-     * getting all records from table persInf
-     * @return list of users in table persInf
-     * @throws SQLException
-     */
-    public List<PersInf> readAllPersInf() throws SQLException {
-        List<PersInf> users = new ArrayList<>();
-        String sql = "SELECT * FROM persInf";
-        try (PreparedStatement ps = connection.prepareStatement(sql);
-             ResultSet rs = ps.executeQuery()){
-            while (rs.next()){
-                users.add(new PersInf(
-                        rs.getString("surname"),
-                        rs.getString("name"),
-                        rs.getString("phoneNumber"),
-                        rs.getString("email")
-                ));
-            }
-        }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
-        }
-        return users;
-    }
 
     /**
      * creating record in table profInf
@@ -161,8 +133,8 @@ public class DataProviderPSQL {
      * @param persInf
      * @throws SQLException
      */
-    public void createProfInf(ProfInf profInf, PersInf persInf) throws SQLException {
-        String insertProfSql = "INSERT INTO profInf (pers_id, skill_name, skill_description, cost, pers_description, exp, rating) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    public void createProfInf(ProfInf profInf, PersInf persInf) {
+        String insertProfSql = "INSERT INTO profInf (persId, skillName, skillDescription, cost, persDescription, exp, rating) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement profStmt = connection.prepareStatement(insertProfSql)) {
             profStmt.setString(1, persInf.getId());
             profStmt.setString(2, profInf.getSkillName());
@@ -184,25 +156,30 @@ public class DataProviderPSQL {
      * @return record
      * @throws SQLException
      */
-    public ProfInf readProfInf(String id) throws SQLException {
-        String sql = "SELECT * FROM profInf WHERE id = ?";
+    public ProfInf readProfInf(ProfInf profInf, String id) throws SQLException {
+        String sql = "SELECT * FROM profInf WHERE persId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, id);
-            try (ResultSet rs = ps.executeQuery()) {
+            ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
-                    return new ProfInf(
-                            rs.getString("id"),
-                            rs.getString("skillName"),
-                            rs.getString("skillDescription"),
-                            rs.getDouble("cost"),
-                            rs.getString("persDescription"),
-                            rs.getDouble("exp"),
-                            rs.getDouble("rating"));
+                    if(profInf != null ) {
+                        profInf.setSkillName(rs.getString("skillName"));
+                        profInf.setSkillDescription(rs.getString("skillDescription"));
+                        profInf.setCost(rs.getDouble("cost"));
+                        profInf.setPersDescription(rs.getString("persDescription"));
+                        profInf.setExp(rs.getDouble("exp"));
+                        profInf.setRating(rs.getDouble("rating"));
+                    }else{
+                        throw new SQLException("PersInf object must not be null");
+                    }
                 }else{
-                    throw new SQLException("Could not get personal information");
+                    throw new SQLException("Can't find person with id " + id);
                 }
-            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
+        return profInf;
     }
 
     /**
@@ -211,7 +188,10 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public void updateProfInf(ProfInf profInf) throws SQLException {
-        String sql = "UPDATE profInf SET skillName = ?, skillDescription = ?, cost = ?, persDescription = ?, exp = ?, rating = ? WHERE id = ?";
+        if (profInf == null) {
+            throw new SQLException("Profnf object must not be null");
+        }
+        String sql = "UPDATE profInf SET skillName = ?, skillDescription = ?, cost = ?, persDescription = ?, exp = ?, rating = ? WHERE persId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, profInf.getSkillName());
             ps.setString(2, profInf.getSkillDescription());
@@ -220,6 +200,10 @@ public class DataProviderPSQL {
             ps.setDouble(5, profInf.getExp());
             ps.setDouble(6, profInf.getRating());
             ps.setString(7, profInf.getPersId());
+            ps.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
     }
 
@@ -229,10 +213,13 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public void deleteProfInf(String id) throws SQLException {
-        String sql = "DELETE FROM profInf WHERE id = ?";
+        String sql = "DELETE FROM profInf WHERE persId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, id);
             ps.executeUpdate();
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
     }
 

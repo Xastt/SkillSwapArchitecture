@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="All crud methods with all models (x_x)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderPSQLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderPSQLTest.java" afterDir="false" />
     </list>
@@ -136,7 +135,7 @@
       <recent name="sfedu.xast" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DataProviderPSQLTest.testCRUDMethodsWithPersInf">
+  <component name="RunManager" selected="JUnit.DataProviderPSQLTest.testCRUDMethodsWithProfInf">
     <configuration name="DataProviderPSQLTest.shouldGetJdbcConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
@@ -218,8 +217,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithPersInf" />
         <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithProfInf" />
+        <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithPersInf" />
         <item itemvalue="JUnit.DataProviderPSQLTest.shouldGetJdbcConnection" />
         <item itemvalue="JUnit.DataProviderPSQLTest.testCreatePersInf" />
         <item itemvalue="JUnit.FileLoadTest" />
@@ -319,15 +318,7 @@
       <workItem from="1734633212522" duration="681000" />
       <workItem from="1734634397955" duration="1059000" />
       <workItem from="1734636616528" duration="275000" />
-      <workItem from="1734694384299" duration="2459000" />
-    </task>
-    <task id="LOCAL-00001" summary="Change uml diagram">
-      <option name="closed" value="true" />
-      <created>1731135297175</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1731135297175</updated>
+      <workItem from="1734694384299" duration="5960000" />
     </task>
     <task id="LOCAL-00002" summary="Add logger and er-diagramm">
       <option name="closed" value="true" />
@@ -713,7 +704,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734549767018</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="All crud methods with all models (x_x)">
+      <option name="closed" value="true" />
+      <created>1734700769703</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1734700769703</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
