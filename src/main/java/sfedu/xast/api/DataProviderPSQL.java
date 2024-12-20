@@ -314,27 +314,24 @@ public class DataProviderPSQL {
         }
     }
 
-
-
     /**
      * method, which add new data to the table review
      * contains user review about provided skill
      * @param review
-     * @param persInf1
-     * @param persInf2
-     * @param profInf
      * @throws SQLException
      */
-    public void createReview(Review review, PersInf persInf1, PersInf persInf2, ProfInf profInf) throws SQLException {
-        String sqlReview = "INSERT INTO review (reviewId, rating, comment, reviewer, userEvaluated, skill) VALUES (?,?,?,?,?,?)";
+    public void createReview(Review review) {
+        String sqlReview = "INSERT INTO review (reviewId, rating, comment, reviewer, userEvaluated) VALUES (?,?,?,?,?)";
         try (PreparedStatement ps = connection.prepareStatement(sqlReview)) {
             ps.setString(1, review.getReviewId());
             ps.setDouble(2, review.getRating());
             ps.setString(3, review.getComment());
-            ps.setString(4, persInf1.getId());
-            ps.setString(5, persInf2.getId());
-            ps.setString(6, profInf.getSkillName());
+            ps.setString(4, review.getReviewer());
+            ps.setString(5, review.getUserEvaluated());
             ps.executeUpdate();
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
     }
 
@@ -344,24 +341,28 @@ public class DataProviderPSQL {
      * @return new Review object
      * @throws SQLException
      */
-    public Review readReview(String reviewId) throws SQLException {
+    public Review readReview(Review review) throws SQLException {
         String sql = "SELECT * FROM review WHERE reviewId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
-            ps.setString(1, reviewId);
-            try (ResultSet rs = ps.executeQuery()) {
+            ps.setString(1, review.getReviewId());
+            ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
-                    return new Review(
-                            rs.getDouble("rating"),
-                            rs.getString("comment"),
-                            rs.getString("reviewer"),
-                            rs.getString("userEvaluated"),
-                            rs.getString("skill")
-                    );
+                    if(review != null){
+                        review.setRating(rs.getDouble("rating"));
+                        review.setComment(rs.getString("comment"));
+                        review.setReviewer(rs.getString("reviewer"));
+                        review.setUserEvaluated(rs.getString("userEvaluated"));
+                    }else{
+                        throw new SQLException("Review object must not be null");
+                    }
                 }else {
-                    throw new SQLException("Couldn't find review with id: " + reviewId);
+                    throw new SQLException("Couldn't find review with id: " + review.getReviewId());
                 }
-            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
+        return review;
     }
 
     /**
@@ -370,15 +371,17 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public void updateReview(Review review) throws SQLException {
-        String sql = "UPDATE review SET raiting = ?, comment = ?, reviewer = ?, userEvaluated = ?, skill = ? WHERE reviewId = ?";
+        String sql = "UPDATE review SET rating = ?, comment = ?, reviewer = ?, userEvaluated = ? WHERE reviewId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setDouble(1, review.getRating());
             ps.setString(2, review.getComment());
             ps.setString(3, review.getReviewer());
             ps.setString(4, review.getUserEvaluated());
-            ps.setString(5, review.getSkill());
-            ps.setString(6, review.getReviewId());
+            ps.setString(5, review.getReviewId());
             ps.executeUpdate();
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
     }
 
@@ -387,11 +390,14 @@ public class DataProviderPSQL {
      * @param reviewId
      * @throws SQLException
      */
-    public void deleteReview(String reviewId) throws SQLException {
+    public void deleteReview(Review review) throws SQLException {
         String sql = "DELETE FROM review WHERE reviewId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
-            ps.setString(1, reviewId);
+            ps.setString(1, review.getReviewId());
             ps.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
     }
 

@@ -108,5 +108,37 @@ class DataProviderPSQLTest {
         dataProviderPSQL.deleteSkillExchange(skillExchange.getExchangeId());
     }
 
+    @Test
+    void testCRUDMethodsWithReview() throws SQLException {
+        PersInf persInfReviewer = new PersInf("Bober","Curwa","+88005553535", "curwa@mail.ru");
+        PersInf persInfEvaluated = new PersInf("Jackie","Chan","+87005553636", "jackie@mail.ru");
+        ProfInf profInf = new ProfInf(persInfEvaluated.getId(), "Programming","Programming in Java", 2500.00,
+                "Java backend developer", 5.5, 4.0);
+        Review review = new Review(4.5, "Good job!", persInfReviewer.getId(), profInf.getPersId());
+
+        dataProviderPSQL.createPersInf(persInfReviewer);
+        dataProviderPSQL.createPersInf(persInfEvaluated);
+        dataProviderPSQL.createProfInf(profInf, persInfEvaluated);
+        dataProviderPSQL.createReview(review);
+
+        Review retrievedReview = dataProviderPSQL.readReview(review);
+        assertNotNull(retrievedReview);
+        assertEquals(4.5, retrievedReview.getRating());
+        assertEquals("Good job!", retrievedReview.getComment());
+        assertEquals(persInfReviewer.getId(), retrievedReview.getReviewer());
+        assertEquals(profInf.getPersId(), retrievedReview.getUserEvaluated());
+
+        retrievedReview.setComment("Not God Job!");
+        dataProviderPSQL.updateReview(retrievedReview);
+
+        Review updatedReview = dataProviderPSQL.readReview(retrievedReview);
+        assertEquals("Not God Job!", updatedReview.getComment());
+
+        dataProviderPSQL.deleteProfInf(profInf.getPersId());
+        dataProviderPSQL.deletePersInf(persInfReviewer.getId());
+        dataProviderPSQL.deletePersInf(persInfEvaluated.getId());
+        dataProviderPSQL.deleteSkillExchange(review.getReviewId());
+    }
+
 }
 
