@@ -77,5 +77,36 @@ class DataProviderPSQLTest {
         dataProviderPSQL.deletePersInf(persInf.getId());
     }
 
+    @Test
+    void testCRUDMethodsWithSkillExchange() throws SQLException {
+        PersInf persInfRequesting = new PersInf("Bober","Curwa","+88005553535", "curwa@mail.ru");
+        PersInf persInf = new PersInf("Jackie","Chan","+87005553636", "jackie@mail.ru");
+        ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
+                "Java backend developer", 5.5, 4.0);
+        SkillExchange skillExchange = new SkillExchange(profInf.getSkillName(),persInfRequesting.getId(),profInf.getPersId());
+
+        dataProviderPSQL.createPersInf(persInf);
+        dataProviderPSQL.createPersInf(persInfRequesting);
+        dataProviderPSQL.createProfInf(profInf, persInf);
+        dataProviderPSQL.createSkillExchange(skillExchange);
+
+        SkillExchange retrievedSkillExchange = dataProviderPSQL.readSkillExchange(skillExchange);
+        assertNotNull(retrievedSkillExchange);
+        assertEquals(persInfRequesting.getId(), retrievedSkillExchange.getUserRequesting());
+        assertEquals(profInf.getPersId(), retrievedSkillExchange.getUserOffering());
+        assertEquals(profInf.getSkillName(), retrievedSkillExchange.getSkillOffered());
+
+        retrievedSkillExchange.setSkillOffered("UpdatedSkill");
+        dataProviderPSQL.updateSkillExchange(retrievedSkillExchange);
+
+        SkillExchange updatedSkillExchange = dataProviderPSQL.readSkillExchange(retrievedSkillExchange);
+        assertEquals("UpdatedSkill", updatedSkillExchange.getSkillOffered());
+
+        dataProviderPSQL.deleteProfInf(profInf.getPersId());
+        dataProviderPSQL.deletePersInf(persInf.getId());
+        dataProviderPSQL.deletePersInf(persInfRequesting.getId());
+        dataProviderPSQL.deleteSkillExchange(skillExchange.getExchangeId());
+    }
+
 }
 

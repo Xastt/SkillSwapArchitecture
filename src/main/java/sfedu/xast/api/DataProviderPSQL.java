@@ -212,7 +212,7 @@ public class DataProviderPSQL {
      * @param id
      * @throws SQLException
      */
-    public void deleteProfInf(String id) throws SQLException {
+    public void deleteProfInf(String id) {
         String sql = "DELETE FROM profInf WHERE persId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, id);
@@ -224,46 +224,25 @@ public class DataProviderPSQL {
     }
 
     /**
-     * getting all records from table profInf
-     * @return list of users in table profInf
-     * @throws SQLException
-     */
-    public List<ProfInf> readAllProfInf() throws SQLException {
-        List<ProfInf> users = new ArrayList<>();
-        String sql = "SELECT * FROM profInf";
-        try (PreparedStatement ps = connection.prepareStatement(sql);
-             ResultSet rs = ps.executeQuery()) {
-            while (rs.next()) {
-                users.add(new ProfInf(
-                        rs.getString("id"),
-                        rs.getString("skillName"),
-                        rs.getString("skillDescription"),
-                        rs.getDouble("cost"),
-                        rs.getString("persDescription"),
-                        rs.getDouble("exp"),
-                        rs.getDouble("rating")
-                ));
-            }
-        }
-        return users;
-    }
-
-    /**
      * method, which add new data to the table skillExchange
      * contains information about users and offering skill
      * @param skillExchange
      * @param profInf
-     * @param persInf
+     * @param persInf1
+     * @param persInf2
      * @throws SQLException
      */
-    public void createSkillExchange(SkillExchange skillExchange, ProfInf profInf, PersInf persInf1, PersInf persInf2) throws SQLException {
+    public void createSkillExchange(SkillExchange skillExchange) {
         String sqlSkillExchange = "INSERT INTO skillExchange (exchangeId, skillOffered, userOffering, userRequesting) VALUES (?,?,?,?)";
         try (PreparedStatement ps = connection.prepareStatement(sqlSkillExchange)) {
             ps.setString(1, skillExchange.getExchangeId());
-            ps.setString(2, profInf.getSkillName());
-            ps.setString(3, persInf1.getId());
-            ps.setString(4, persInf2.getId());
+            ps.setString(2, skillExchange.getSkillOffered());
+            ps.setString(3, skillExchange.getUserOffering());
+            ps.setString(4, skillExchange.getUserRequesting());
             ps.executeUpdate();
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
     }
 
@@ -273,22 +252,28 @@ public class DataProviderPSQL {
      * @return SkillExchange object
      * @throws SQLException
      */
-    public SkillExchange readSkillExchange(String exchangeId) throws SQLException {
+    public SkillExchange readSkillExchange(SkillExchange skillExchange) {
         String sql = "SELECT * FROM skillExchange WHERE exchangeId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
-            ps.setString(1, exchangeId);
-            try (ResultSet rs = ps.executeQuery()) {
+            ps.setString(1, skillExchange.getExchangeId());
+            ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
-                    return new SkillExchange(
-                            rs.getString("skillOffered"),
-                            rs.getString("userOffering"),
-                            rs.getString("userRequesting")
-                    );
+                    if(skillExchange != null ) {
+                        skillExchange.setSkillOffered(rs.getString("skillOffered"));
+                        skillExchange.setUserOffering(rs.getString("userOffering"));
+                        skillExchange.setUserRequesting(rs.getString("userRequesting"));
+                    }else{
+                        throw new SQLException("SkillExchange object must not be null");
+                    }
                 }else{
-                    throw new SQLException("Couldn't find exchange with id: " + exchangeId);
+                    throw new SQLException("Couldn't find exchange with id: " + skillExchange.getExchangeId());
                 }
-            }
+
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
+        return skillExchange;
     }
 
     /**
@@ -297,6 +282,9 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public void updateSkillExchange(SkillExchange skillExchange) throws SQLException {
+        if (skillExchange == null) {
+            throw new SQLException("SkillExchange object must not be null");
+        }
         String sql = "UPDATE skillExchange SET skillOffered = ?, userOffering = ?, userRequesting = ? WHERE exchangeId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, skillExchange.getSkillOffered());
@@ -304,6 +292,9 @@ public class DataProviderPSQL {
             ps.setString(3, skillExchange.getUserRequesting());
             ps.setString(4, skillExchange.getExchangeId());
             ps.executeUpdate();
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
     }
 
@@ -312,35 +303,18 @@ public class DataProviderPSQL {
      * @param exchangeId
      * @throws SQLException
      */
-    public void deleteSkillExchange(String exchangeId) throws SQLException {
+    public void deleteSkillExchange(String exchangeId){
         String sql = "DELETE FROM skillExchange WHERE exchangeId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, exchangeId);
             ps.executeUpdate();
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
     }
 
-    /**
-     * getting all records from table skillExchange
-     * @return records from table skillExchange
-     * @throws SQLException
-     */
-    public List<SkillExchange> readAllSkillExchange() throws SQLException {
-        List<SkillExchange> exchanges = new ArrayList<>();
-        String sql = "SELECT * FROM skillExchange";
-        try (PreparedStatement ps = connection.prepareStatement(sql)) {
-            try (ResultSet rs = ps.executeQuery()) {
-                while (rs.next()) {
-                    exchanges.add(new SkillExchange(
-                            rs.getString("skillOffered"),
-                            rs.getString("userOffering"),
-                            rs.getString("userRequesting"))
-                    );
-                }
-            }
-        }
-        return exchanges;
-    }
+
 
     /**
      * method, which add new data to the table review
@@ -421,28 +395,6 @@ public class DataProviderPSQL {
         }
     }
 
-    /**
-     * getting all records from table review
-     * @return records from table review
-     * @throws SQLException
-     */
-    public List<Review> readAllReview() throws SQLException {
-        List<Review> reviews = new ArrayList<>();
-        String sql = "SELECT * FROM review";
-        try (PreparedStatement ps = connection.prepareStatement(sql)) {
-            try (ResultSet rs = ps.executeQuery()) {
-                while (rs.next()) {
-                    reviews.add(new Review(rs.getDouble("rating"),
-                            rs.getString("comment"),
-                            rs.getString("reviewer"),
-                            rs.getString("userEvaluated"),
-                            rs.getString("skill"))
-                    );
-                }
-            }
-        }
-        return reviews;
-    }
 
     /**
      * contains information abount skill exchange between usersa
@@ -528,29 +480,5 @@ public class DataProviderPSQL {
         }
     }
 
-    /**
-     * getting all records from table transaction
-     * @return Transaction object
-     * @throws SQLException
-     */
-    public List<Transaction> readAllTransaction() throws SQLException {
-        List<Transaction> transactions = new ArrayList<>();
-        String sql = "SELECT * FROM transaction";
-        try (PreparedStatement ps = connection.prepareStatement(sql)) {
-            try (ResultSet rs = ps.executeQuery()) {
-                while (rs.next()) {
-                    String statusString = rs.getString("status");
-                    Status status = Status.valueOf(statusString);
-                    transactions.add(new Transaction(
-                            rs.getDate("date"),
-                            status,
-                            rs.getString("user1"),
-                            rs.getString("user2"),
-                            rs.getString("skillOffered")
-                    ));
-                }
-            }
-        }
-        return transactions;
-    }
+
 }

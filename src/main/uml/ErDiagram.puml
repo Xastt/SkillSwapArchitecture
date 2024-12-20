@@ -22,7 +22,7 @@ entity ProfInf {
 }
 
 entity SkillExchange{
-    +exchangeId: serial
+    +exchangeId: String
     +skillOffered: varchar FK(ProfInf(skillName))
     +userOffering: int FK(ProfInf(PersInfId))
     +userRequesting: int FK(PersInf(id))
