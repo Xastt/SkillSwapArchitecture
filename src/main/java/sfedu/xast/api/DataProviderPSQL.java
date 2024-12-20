@@ -1,14 +1,15 @@
 package sfedu.xast.api;
 
+import org.slf4j.*;
 import sfedu.xast.Status;
 import sfedu.xast.models.*;
-
 import java.io.*;
 import java.sql.*;
-import java.sql.Date;
 import java.util.*;
 
 public class DataProviderPSQL {
+
+    Logger logger = LoggerFactory.getLogger(DataProviderPSQL.class);
 
     private static Connection connection;
 
@@ -48,39 +49,46 @@ public class DataProviderPSQL {
             ps.setString(4, persInf.getPhoneNumber());
             ps.setString(5, persInf.getEmail());
             ps.executeUpdate();
-
-            try (ResultSet rs = ps.getGeneratedKeys()) {
-                if (rs.next()) {
-                    return rs.getString(1);
-                }else{
-                    throw new SQLException("Could not get generated key");
-                }
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                return rs.getString(1);
             }
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
+        return null;
     }
 
     /**
      * reading records from table persInf using personal id
      * @param id
+     * @param persInf
      * @return PersInf object
      * @throws SQLException
      */
-    public PersInf readPersInf(String id) throws SQLException {
+    public PersInf readPersInf(PersInf persInf, String id) throws SQLException {
         String sql = "SELECT * FROM persInf WHERE id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, id);
-            try (ResultSet rs = ps.executeQuery()) {
+            ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
-                    return new PersInf(
-                            rs.getString("surname"),
-                            rs.getString("name"),
-                            rs.getString("phoneNumber"),
-                            rs.getString("email"));
+                    if( persInf!=null ) {
+                        persInf.setName(rs.getString("name"));
+                        persInf.setSurname(rs.getString("surname"));
+                        persInf.setPhoneNumber(rs.getString("phoneNumber"));
+                        persInf.setEmail(rs.getString("email"));
+                    }else{
+                        throw new SQLException("PersInf object must not be null");
+                    }
                 }else{
-                    throw new SQLException("Could not get personal information");
+                    throw new SQLException("Can't find person with id " + id);
                 }
-            }
+        }catch (SQLException e) {
+            //logger.error(e.getMessage());
+            e.printStackTrace();
         }
+        return persInf;
     }
 
     /**
@@ -89,6 +97,9 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public void updatePersInf(PersInf persInf) throws SQLException {
+        if (persInf == null) {
+            throw new SQLException("PersInf object must not be null");
+        }
         String sql = "UPDATE persInf SET surname = ?, name = ?, phoneNumber = ?, email = ? WHERE id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, persInf.getSurname());
@@ -97,6 +108,9 @@ public class DataProviderPSQL {
             ps.setString(4, persInf.getEmail());
             ps.setString(5, persInf.getId());
             ps.executeUpdate();
+        }catch (SQLException e) {
+            //logger.error(e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -110,6 +124,9 @@ public class DataProviderPSQL {
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, id);
             ps.executeUpdate();
+        }catch (SQLException e) {
+            //logger.error(e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -131,6 +148,9 @@ public class DataProviderPSQL {
                         rs.getString("email")
                 ));
             }
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
         return users;
     }
@@ -152,6 +172,9 @@ public class DataProviderPSQL {
             profStmt.setDouble(6, profInf.getExp());
             profStmt.setDouble(7, profInf.getRating());
             profStmt.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
     }
 

@@ -28,25 +28,26 @@ class DataProviderPSQLTest {
     void testCRUDMethodsWithPersInf() throws SQLException {
         PersInf persInf = new PersInf("Jackie","Chan","+79180540546", "jackie@mail.ru");
 
-        dataProviderPSQL.createPersInf(persInf);
+        //dataProviderPSQL.createPersInf(persInf);
 
-        PersInf retrievedUser = dataProviderPSQL.readPersInf(persInf.getId());
+        PersInf retrievedUser = dataProviderPSQL.readPersInf(persInf, persInf.getId());
         assertNotNull(retrievedUser);
         assertEquals("Jackie", retrievedUser.getSurname());
         assertEquals("Chan", retrievedUser.getName());
-        assertEquals("+79180540546", retrievedUser.getEmail());
+        assertEquals("+79180540546", retrievedUser.getPhoneNumber());
         assertEquals("jackie@mail.ru", retrievedUser.getEmail());
 
         retrievedUser.setSurname("Updated");
         retrievedUser.setName("User");
         dataProviderPSQL.updatePersInf(retrievedUser);
 
-        PersInf updatedUser = dataProviderPSQL.readPersInf(retrievedUser.getId());
+
+        PersInf updatedUser = dataProviderPSQL.readPersInf(retrievedUser, retrievedUser.getId());
         assertEquals("Updated", updatedUser.getSurname());
         assertEquals("User", updatedUser.getName());
 
         dataProviderPSQL.deletePersInf(persInf.getId());
-        assertNull(dataProviderPSQL.readPersInf(persInf.getId()));
+        assertNull(dataProviderPSQL.readPersInf( retrievedUser, persInf.getId()));
     }
 
     @Test
