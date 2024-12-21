@@ -38,7 +38,6 @@ public class DataProviderPSQL {
     /**
      * creating record in table persInf
      * @param persInf
-     * @return personal id
      * @throws SQLException
      */
     public void createPersInf(PersInf persInf) {
@@ -52,8 +51,7 @@ public class DataProviderPSQL {
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
         }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -82,8 +80,7 @@ public class DataProviderPSQL {
                     throw new SQLException("Can't find person with id " + id);
                 }
         }catch (SQLException e) {
-            //logger.error(e.getMessage());
-            e.printStackTrace();
+            logger.error(e.getMessage());
         }
         return persInf;
     }
@@ -106,8 +103,7 @@ public class DataProviderPSQL {
             ps.setString(5, persInf.getId());
             ps.executeUpdate();
         }catch (SQLException e) {
-            //logger.error(e.getMessage());
-            e.printStackTrace();
+            logger.error(e.getMessage());
         }
     }
 
@@ -122,8 +118,7 @@ public class DataProviderPSQL {
             ps.setString(1, id);
             ps.executeUpdate();
         }catch (SQLException e) {
-            //logger.error(e.getMessage());
-            e.printStackTrace();
+            logger.error(e.getMessage());
         }
     }
 
@@ -146,15 +141,15 @@ public class DataProviderPSQL {
             profStmt.setDouble(7, profInf.getRating());
             profStmt.executeUpdate();
         }catch (SQLException e){
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
     /**
      * reading records from table profInf using personal id
+     * @param profInf
      * @param id
-     * @return record
+     * @return ProfInf object
      * @throws SQLException
      */
     public ProfInf readProfInf(ProfInf profInf, String id) throws SQLException {
@@ -177,8 +172,7 @@ public class DataProviderPSQL {
                     throw new SQLException("Can't find person with id " + id);
                 }
         }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
         return profInf;
     }
@@ -203,8 +197,7 @@ public class DataProviderPSQL {
             ps.setString(7, profInf.getPersId());
             ps.executeUpdate();
         }catch (SQLException e){
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -219,8 +212,7 @@ public class DataProviderPSQL {
             ps.setString(1, id);
             ps.executeUpdate();
         }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -228,9 +220,6 @@ public class DataProviderPSQL {
      * method, which add new data to the table skillExchange
      * contains information about users and offering skill
      * @param skillExchange
-     * @param profInf
-     * @param persInf1
-     * @param persInf2
      * @throws SQLException
      */
     public void createSkillExchange(SkillExchange skillExchange) {
@@ -242,14 +231,13 @@ public class DataProviderPSQL {
             ps.setString(4, skillExchange.getUserRequesting());
             ps.executeUpdate();
         }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
     /**
      * reading records from table skillExchange using echangeId
-     * @param exchangeId
+     * @param skillExchange
      * @return SkillExchange object
      * @throws SQLException
      */
@@ -271,8 +259,7 @@ public class DataProviderPSQL {
                 }
 
         }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
         return skillExchange;
     }
@@ -294,8 +281,7 @@ public class DataProviderPSQL {
             ps.setString(4, skillExchange.getExchangeId());
             ps.executeUpdate();
         }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -310,8 +296,7 @@ public class DataProviderPSQL {
             ps.setString(1, exchangeId);
             ps.executeUpdate();
         }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -331,14 +316,13 @@ public class DataProviderPSQL {
             ps.setString(5, review.getUserEvaluated());
             ps.executeUpdate();
         }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
     /**
      * reading records from table review using reviewId
-     * @param reviewId
+     * @param review
      * @return new Review object
      * @throws SQLException
      */
@@ -360,8 +344,7 @@ public class DataProviderPSQL {
                     throw new SQLException("Couldn't find review with id: " + review.getReviewId());
                 }
         }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
         return review;
     }
@@ -381,14 +364,13 @@ public class DataProviderPSQL {
             ps.setString(5, review.getReviewId());
             ps.executeUpdate();
         }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
     /**
      * deleting records from table review by reviewId
-     * @param reviewId
+     * @param review
      * @throws SQLException
      */
     public void deleteReview(Review review) throws SQLException {
@@ -397,8 +379,7 @@ public class DataProviderPSQL {
             ps.setString(1, review.getReviewId());
             ps.executeUpdate();
         }catch (SQLException e){
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -406,10 +387,6 @@ public class DataProviderPSQL {
     /**
      * contains information abount skill exchange between usersa
      * @param transaction
-     * @param persInf1
-     * @param persInf2
-     * @param status
-     * @param profInf
      * @throws SQLException
      */
     public void createTransaction(Transaction transaction) throws SQLException {
@@ -421,8 +398,7 @@ public class DataProviderPSQL {
             ps.setString(4, transaction.getChangeId());
             ps.executeUpdate();
         }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -451,8 +427,7 @@ public class DataProviderPSQL {
                     throw new SQLException("Couldn't find transaction with id: " + transaction.getTransactionId());
                 }
         }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
         return transaction;
     }
@@ -460,10 +435,6 @@ public class DataProviderPSQL {
     /**
      *  updating records in table transaction using transactionId
      * @param transaction
-     * @param persInf1
-     * @param persInf2
-     * @param status
-     * @param profInf
      * @throws SQLException
      */
     public void updateTransaction(Transaction transaction) throws SQLException {
@@ -475,8 +446,7 @@ public class DataProviderPSQL {
             ps.setString(4, transaction.getTransactionId());
             ps.executeUpdate();
         }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
@@ -491,8 +461,7 @@ public class DataProviderPSQL {
             ps.setString(1, transaction.getTransactionId());
             ps.executeUpdate();
         }catch (SQLException e) {
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
