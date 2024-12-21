@@ -122,7 +122,6 @@ public class DataProviderPSQL {
         }
     }
 
-
     /**
      * creating record in table profInf
      * @param profInf
@@ -383,7 +382,6 @@ public class DataProviderPSQL {
         }
     }
 
-
     /**
      * contains information abount skill exchange between usersa
      * @param transaction
@@ -464,6 +462,4 @@ public class DataProviderPSQL {
             logger.error(e.getMessage());
         }
     }
-
-
 }
