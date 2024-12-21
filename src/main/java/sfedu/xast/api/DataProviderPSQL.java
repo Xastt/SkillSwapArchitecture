@@ -5,6 +5,7 @@ import sfedu.xast.Status;
 import sfedu.xast.models.*;
 import java.io.*;
 import java.sql.*;
+import java.sql.Date;
 import java.util.*;
 
 public class DataProviderPSQL {
@@ -411,15 +412,17 @@ public class DataProviderPSQL {
      * @param profInf
      * @throws SQLException
      */
-    public void createTransaction(Transaction transaction, PersInf persInf1, PersInf persInf2, Status status, ProfInf profInf) throws SQLException {
-        String sqlTransaction = "INSERT INTO transaction(transactionId, date, status, user1, user2, skillOffered) VALUES (?,?,?,?,?,?)";
+    public void createTransaction(Transaction transaction) throws SQLException {
+        String sqlTransaction = "INSERT INTO transaction(transactionId, date, status, changeId) VALUES (?,?,?,?)";
         try (PreparedStatement ps = connection.prepareStatement(sqlTransaction)) {
             ps.setString(1, transaction.getTransactionId());
-            ps.setDate(2, new java.sql.Date(transaction.getDate().getTime()));
-            ps.setString(3, status.name());
-            ps.setString(4, persInf1.getEmail());
-            ps.setString(5, persInf2.getEmail());
-            ps.setString(6, profInf.getSkillName());
+            ps.setDate(2,  new java.sql.Date(transaction.getDate().getTime()));
+            ps.setString(3, String.valueOf(transaction.getStatus()));
+            ps.setString(4, transaction.getChangeId());
+            ps.executeUpdate();
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
     }
 
@@ -433,22 +436,25 @@ public class DataProviderPSQL {
         String sql = "SELECT * FROM transaction WHERE transactionId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, transaction.getTransactionId());
-            try (ResultSet rs = ps.executeQuery()) {
+            ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
-                    String statusString = rs.getString("status");
-                    Status status = Status.valueOf(statusString);
-                    return new Transaction(
-                            rs.getDate("date"),
-                            status,
-                            rs.getString("user1"),
-                            rs.getString("user2"),
-                            rs.getString("skillOffered")
-                    );
+                    if(transaction != null){
+                        String statusString = rs.getString("status");
+                        Status status = Status.valueOf(statusString);
+                        transaction.setDate(rs.getDate("date"));
+                        transaction.setStatus(status);
+                        transaction.setChangeId(rs.getString("changeId"));
+                    }else{
+                        throw new SQLException("Transaction object must not be null");
+                    }
                 }else{
                     throw new SQLException("Couldn't find transaction with id: " + transaction.getTransactionId());
                 }
-            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
+        return transaction;
     }
 
     /**
@@ -460,16 +466,17 @@ public class DataProviderPSQL {
      * @param profInf
      * @throws SQLException
      */
-    public void updateTransaction(Transaction transaction, PersInf persInf1, PersInf persInf2, Status status, ProfInf profInf) throws SQLException {
-        String sql = "UPDATE transaction SET date = ?, status = ?, user1 = ?, user2 = ?, skillOffered = ? WHERE transactionId = ?";
+    public void updateTransaction(Transaction transaction) throws SQLException {
+        String sql = "UPDATE transaction SET date = ?, status = ?, changeId = ? WHERE transactionId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setDate(1, new java.sql.Date(transaction.getDate().getTime()));
-            ps.setString(2, status.name());
-            ps.setString(3, persInf1.getEmail());
-            ps.setString(4, persInf2.getEmail());
-            ps.setString(5, profInf.getSkillName());
-            ps.setString(6, transaction.getTransactionId());
+            ps.setString(2, String.valueOf(transaction.getStatus()));
+            ps.setString(3, transaction.getChangeId());
+            ps.setString(4, transaction.getTransactionId());
             ps.executeUpdate();
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
     }
 
@@ -483,6 +490,9 @@ public class DataProviderPSQL {
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, transaction.getTransactionId());
             ps.executeUpdate();
+        }catch (SQLException e) {
+            e.printStackTrace();
+            //logger.error(e.getMessage());
         }
     }
 

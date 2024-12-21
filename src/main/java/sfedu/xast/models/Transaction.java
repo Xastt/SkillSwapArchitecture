@@ -13,17 +13,12 @@ public class Transaction {
     private String transactionId;
     private Date date;
     private Status status;
-    private String user1;
-    private String user2;
-    private String skillOffered;
+    private String changeId;
 
-    public Transaction(Date date, Status status,
-                       String user1, String user2, String skillOffered) {
+    public Transaction(Status status, String changeId) {
         this.transactionId = UUID.randomUUID().toString();
-        this.date = date;
-        this.status = status;
-        this.user1 = user1;
-        this.user2 = user2;
-        this.skillOffered = skillOffered;
+        this.date = new Date();
+        this.status = Status.valueOf(status.name());
+        this.changeId = changeId;
     }
 }

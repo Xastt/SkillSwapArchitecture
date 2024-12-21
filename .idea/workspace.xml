@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="CRUD with PersInf, ProfInf, SkillExchange WORKS!!!!!!!">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="CRUD with PersInf, ProfInf, SkillExchange, Review WORKS!!!!!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/uml/ErDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/uml/ErDiagram.puml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderPSQLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderPSQLTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,11 +72,13 @@
     "JUnit.DataProviderMongoTest.executor": "Run",
     "JUnit.DataProviderMongoTest.testCRUDMongoOperations.executor": "Run",
     "JUnit.DataProviderMongoTest.testCRUDWithMongoDB.executor": "Run",
+    "JUnit.DataProviderPSQLTest.executor": "Run",
     "JUnit.DataProviderPSQLTest.shouldGetJdbcConnection.executor": "Run",
     "JUnit.DataProviderPSQLTest.testCRUDMethodsWithPersInf.executor": "Run",
     "JUnit.DataProviderPSQLTest.testCRUDMethodsWithProfInf.executor": "Run",
     "JUnit.DataProviderPSQLTest.testCRUDMethodsWithReview.executor": "Run",
     "JUnit.DataProviderPSQLTest.testCRUDMethodsWithSkillExchange.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransaction.executor": "Run",
     "JUnit.DataProviderPSQLTest.testCreatePersInf.executor": "Run",
     "JUnit.DataProviderXmlTest.executor": "Run",
     "JUnit.DataProviderXmlTest.testInitDataSourceLoadsDataFromXml.executor": "Run",
@@ -138,8 +141,8 @@
       <recent name="sfedu.xast" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DataProviderPSQLTest.testCRUDMethodsWithReview">
-    <configuration name="DataProviderPSQLTest.shouldGetJdbcConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DataProviderPSQLTest">
+    <configuration name="DataProviderPSQLTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -149,24 +152,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast.api" />
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderPSQLTest" />
-      <option name="METHOD_NAME" value="shouldGetJdbcConnection" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DataProviderPSQLTest.testCRUDMethodsWithPersInf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SkillSwap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sfedu.xast.api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderPSQLTest" />
-      <option name="METHOD_NAME" value="testCRUDMethodsWithPersInf" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -219,13 +205,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DataProviderPSQLTest.testCRUDMethodsWithTransaction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderPSQLTest" />
+      <option name="METHOD_NAME" value="testCRUDMethodsWithTransaction" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataProviderPSQLTest" />
+        <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransaction" />
         <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithReview" />
         <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithSkillExchange" />
         <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithProfInf" />
-        <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithPersInf" />
-        <item itemvalue="JUnit.DataProviderPSQLTest.shouldGetJdbcConnection" />
       </list>
     </recent_temporary>
   </component>
@@ -323,15 +325,8 @@
       <workItem from="1734634397955" duration="1059000" />
       <workItem from="1734636616528" duration="275000" />
       <workItem from="1734694384299" duration="6223000" />
-      <workItem from="1734717830647" duration="5206000" />
-    </task>
-    <task id="LOCAL-00004" summary="Add logging method">
-      <option name="closed" value="true" />
-      <created>1731222531351</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1731222531351</updated>
+      <workItem from="1734717830647" duration="5416000" />
+      <workItem from="1734761626727" duration="2673000" />
     </task>
     <task id="LOCAL-00005" summary="Add logging method, enviroment.properties, Constants and ConfigurationUtil classes">
       <option name="closed" value="true" />
@@ -717,7 +712,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734721298439</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="CRUD with PersInf, ProfInf, SkillExchange, Review WORKS!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1734723276121</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1734723276121</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -736,7 +739,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change sout to loggers" />
     <MESSAGE value="Change pom.xml, DataProviderMongo, HistoryContent" />
     <MESSAGE value="Add interaction with MongoDB. Two methdos, are works successfully" />
     <MESSAGE value="Add interaction with MongoDB" />
@@ -761,6 +763,7 @@
     <MESSAGE value="All crud methods with all models (x_x)" />
     <MESSAGE value="PersInf, ProfInf WORKS!!!!!!!" />
     <MESSAGE value="CRUD with PersInf, ProfInf, SkillExchange WORKS!!!!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRUD with PersInf, ProfInf, SkillExchange WORKS!!!!!!!" />
+    <MESSAGE value="CRUD with PersInf, ProfInf, SkillExchange, Review WORKS!!!!!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD with PersInf, ProfInf, SkillExchange, Review WORKS!!!!!!!" />
   </component>
 </project>

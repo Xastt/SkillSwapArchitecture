@@ -39,7 +39,7 @@ entity Review {
 }
 
 entity Transaction {
-    +transactionId: serial
+    +transactionId: String
     +dateTime: DateTime
     +status: varchar(30)
     +changeId: int FK(SkillExchange(exchangeId))

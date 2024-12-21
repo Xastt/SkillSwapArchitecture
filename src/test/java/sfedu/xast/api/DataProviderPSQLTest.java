@@ -1,8 +1,11 @@
 package sfedu.xast.api;
 
+import sfedu.xast.Status;
 import sfedu.xast.models.*;
 import java.io.*;
 import java.sql.*;
+import java.util.Date;
+
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -102,10 +105,10 @@ class DataProviderPSQLTest {
         SkillExchange updatedSkillExchange = dataProviderPSQL.readSkillExchange(retrievedSkillExchange);
         assertEquals("UpdatedSkill", updatedSkillExchange.getSkillOffered());
 
+        dataProviderPSQL.deleteSkillExchange(skillExchange.getExchangeId());
         dataProviderPSQL.deleteProfInf(profInf.getPersId());
         dataProviderPSQL.deletePersInf(persInf.getId());
         dataProviderPSQL.deletePersInf(persInfRequesting.getId());
-        dataProviderPSQL.deleteSkillExchange(skillExchange.getExchangeId());
     }
 
     @Test
@@ -134,11 +137,45 @@ class DataProviderPSQLTest {
         Review updatedReview = dataProviderPSQL.readReview(retrievedReview);
         assertEquals("Not God Job!", updatedReview.getComment());
 
+        dataProviderPSQL.deleteReview(retrievedReview);
+        dataProviderPSQL.deleteSkillExchange(review.getReviewId());
         dataProviderPSQL.deleteProfInf(profInf.getPersId());
         dataProviderPSQL.deletePersInf(persInfReviewer.getId());
         dataProviderPSQL.deletePersInf(persInfEvaluated.getId());
-        dataProviderPSQL.deleteSkillExchange(review.getReviewId());
+
     }
 
+    @Test
+    void testCRUDMethodsWithTransaction() throws SQLException {
+        PersInf persInfRequesting = new PersInf("Bober","Curwa","+88005553535", "curwa@mail.ru");
+        PersInf persInf = new PersInf("Jackie","Chan","+87005553636", "jackie@mail.ru");
+        ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
+                "Java backend developer", 5.5, 4.0);
+        SkillExchange skillExchange = new SkillExchange(profInf.getSkillName(),persInfRequesting.getId(),profInf.getPersId());
+        Transaction transaction = new Transaction(Status.COMPLETED, skillExchange.getExchangeId());
+
+        dataProviderPSQL.createPersInf(persInf);
+        dataProviderPSQL.createPersInf(persInfRequesting);
+        dataProviderPSQL.createProfInf(profInf, persInf);
+        dataProviderPSQL.createSkillExchange(skillExchange);
+        dataProviderPSQL.createTransaction(transaction);
+
+        Transaction retrievedTransaction = dataProviderPSQL.readTransaction(transaction);
+        assertNotNull(retrievedTransaction);
+        assertEquals(Status.COMPLETED, retrievedTransaction.getStatus());
+        assertEquals(skillExchange.getExchangeId(), transaction.getChangeId());
+
+        retrievedTransaction.setStatus(Status.IN_PROCESS);
+        dataProviderPSQL.updateTransaction(retrievedTransaction);
+
+        Transaction updatedTransaction = dataProviderPSQL.readTransaction(transaction);
+        assertEquals(Status.IN_PROCESS, updatedTransaction.getStatus());
+
+        dataProviderPSQL.deleteTransaction(transaction);
+        dataProviderPSQL.deleteSkillExchange(skillExchange.getExchangeId());
+        dataProviderPSQL.deleteProfInf(profInf.getPersId());
+        dataProviderPSQL.deletePersInf(persInf.getId());
+        dataProviderPSQL.deletePersInf(persInfRequesting.getId());
+    }
 }
 
