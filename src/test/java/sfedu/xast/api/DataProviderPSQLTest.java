@@ -176,5 +176,10 @@ class DataProviderPSQLTest {
         dataProviderPSQL.deletePersInf(persInf.getId());
         dataProviderPSQL.deletePersInf(persInfRequesting.getId());
     }
+
+    @Test
+    void testGetSkillByName() throws SQLException {
+        dataProviderPSQL.printProfInfList(dataProviderPSQL.readProfInfBySkillName("java"));
+    }
 }
 

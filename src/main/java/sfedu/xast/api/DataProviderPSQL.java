@@ -226,6 +226,53 @@ public class DataProviderPSQL {
         }
     }
 
+    public List<ProfInf> readProfInfBySkillName(String skillPart) throws SQLException {
+        String sql = "SELECT * FROM profInf WHERE skillName LIKE ?";
+        List<ProfInf> profInfList = new ArrayList<>();
+
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setString(1, "%" + skillPart + "%");
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                ProfInf profInf = new ProfInf();
+                profInf.setSkillName(rs.getString("skillName"));
+                profInf.setSkillDescription(rs.getString("skillDescription"));
+                profInf.setCost(rs.getDouble("cost"));
+                profInf.setPersDescription(rs.getString("persDescription"));
+                profInf.setExp(rs.getDouble("exp"));
+                profInf.setRating(rs.getDouble("rating"));
+                profInfList.add(profInf);
+            }
+
+            if (profInfList.isEmpty()) {
+                throw new SQLException("Can't find persons with skill name containing: " + skillPart);
+            }
+        } catch (SQLException e) {
+            logger.error(e.getMessage());
+            throw e;
+        }
+        return profInfList;
+    }
+
+    public void printProfInfList(List<ProfInf> profInfList) {
+        if (profInfList == null || profInfList.isEmpty()) {
+            System.out.println("Список профилей пуст.");
+            return;
+        }
+
+        for (ProfInf profInf : profInfList) {
+            System.out.println("Навык: " + profInf.getSkillName());
+            System.out.println("Описание навыка: " + profInf.getSkillDescription());
+            System.out.println("Стоимость: " + profInf.getCost());
+            System.out.println("Описание пользователя: " + profInf.getPersDescription());
+            System.out.println("Опыт: " + profInf.getExp());
+            System.out.println("Рейтинг: " + profInf.getRating());
+            System.out.println("-----------------------------"); // Разделитель для удобства
+        }
+    }
+
+
     /**
      * method, which add new data to the table skillExchange
      * contains information about users and offering skill

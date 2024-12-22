@@ -24,4 +24,6 @@ public class ProfInf {
         this.exp = exp;
         this.rating = rating;
     }
+
+    public ProfInf(){}
 }
