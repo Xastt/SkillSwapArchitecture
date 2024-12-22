@@ -226,6 +226,12 @@ public class DataProviderPSQL {
         }
     }
 
+    /**
+     * find person, which provide needed skillName
+     * @param skillPart
+     * @return
+     * @throws SQLException
+     */
     public List<ProfInf> readProfInfBySkillName(String skillPart) throws SQLException {
         String sql = "SELECT * FROM profInf WHERE skillName LIKE ?";
         List<ProfInf> profInfList = new ArrayList<>();
@@ -255,6 +261,10 @@ public class DataProviderPSQL {
         return profInfList;
     }
 
+    /**
+     * print persons with needed skill
+     * @param profInfList
+     */
     public void printProfInfList(List<ProfInf> profInfList) {
         if (profInfList == null || profInfList.isEmpty()) {
             System.out.println("Список профилей пуст.");
