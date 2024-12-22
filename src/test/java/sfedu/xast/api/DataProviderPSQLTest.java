@@ -1,6 +1,6 @@
 package sfedu.xast.api;
 
-import sfedu.xast.Status;
+import sfedu.xast.utils.Status;
 import sfedu.xast.models.*;
 import java.io.*;
 import java.sql.*;
@@ -130,13 +130,13 @@ class DataProviderPSQLTest {
         assertEquals(persInfReviewer.getId(), retrievedReview.getReviewer());
         assertEquals(profInf.getPersId(), retrievedReview.getUserEvaluated());
 
-        retrievedReview.setComment("Not God Job!");
-        dataProviderPSQL.updateReview(retrievedReview);
+        review.setComment("Not God Job!");
+        dataProviderPSQL.updateReview(review);
 
-        Review updatedReview = dataProviderPSQL.readReview(retrievedReview);
-        assertEquals("Not God Job!", updatedReview.getComment());
+        Review updatedReview = dataProviderPSQL.readReview(review);
+        assertEquals("Not God Job!", review.getComment());
 
-        dataProviderPSQL.deleteReview(retrievedReview);
+        dataProviderPSQL.deleteReview(review);
         dataProviderPSQL.deleteSkillExchange(review.getReviewId());
         dataProviderPSQL.deleteProfInf(profInf.getPersId());
         dataProviderPSQL.deletePersInf(persInfReviewer.getId());

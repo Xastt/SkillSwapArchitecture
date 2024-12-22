@@ -28,9 +28,11 @@
 12-09 20:30:03 DEBUG command - Execution of command with request id 10 completed successfully in 9.02 ms on connection [connectionId{localValue:2}] to server localhost:27017
 
 12-12 14:31:19 ERROR DataProviderXml - Transform of class [Lsfedu.xast.models.PersInf; not supported
-12-12 14:31:19 ERROR DataProviderXml - Transform of class [Lsfedu.xast.models.PersInf; not supported
-12-12 14:31:19 ERROR DataProviderXml - Transform of class [Lsfedu.xast.models.PersInf; not supported
-12-12 14:31:19 ERROR DataProviderXml - Transform of class [Lsfedu.xast.models.PersInf; not supported
+12-22 15:23:21 ERROR DataProviderPSQL - ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "skillexchange_pkey"
+  Подробности: Ключ "(exchangeid)=(2fb2693a-3bb2-47ca-9253-523b954f6993)" уже существует.
+12-22 15:23:21 ERROR DataProviderPSQL - ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "transaction_pkey"
+  Подробности: Ключ "(transactionid)=(fb7f95e8-7cd0-4db8-8ca7-a4baceb34841)" уже существует.
+12-22 15:27:51 ERROR DataProviderPSQL - ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "review_pkey"
+  Подробности: Ключ "(reviewid)=(d8e4e805-a4c8-42fb-a2ba-6688d3d22375)" уже существует.
 
-12-13 22:10:54 ERROR FileLoadTest - Could not load file: test.txt
 

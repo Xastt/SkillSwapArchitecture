@@ -1,11 +1,10 @@
 package sfedu.xast.api;
 
 import org.slf4j.*;
-import sfedu.xast.Status;
+import sfedu.xast.utils.Status;
 import sfedu.xast.models.*;
 import java.io.*;
 import java.sql.*;
-import java.sql.Date;
 import java.util.*;
 
 public class DataProviderPSQL {
@@ -40,7 +39,7 @@ public class DataProviderPSQL {
      * @param persInf
      * @throws SQLException
      */
-    public void createPersInf(PersInf persInf) {
+    public boolean createPersInf(PersInf persInf) {
         String sqlPersInf = "INSERT INTO persInf (id, surname, name, phoneNumber, email) VALUES (?,?,?,?,?)";
         try (PreparedStatement ps = connection.prepareStatement(sqlPersInf)) {
             ps.setString(1, persInf.getId());
@@ -48,10 +47,12 @@ public class DataProviderPSQL {
             ps.setString(3, persInf.getName());
             ps.setString(4, persInf.getPhoneNumber());
             ps.setString(5, persInf.getEmail());
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
+            return affectedRows > 0;
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            return false;
         }
     }
 
@@ -90,7 +91,7 @@ public class DataProviderPSQL {
      * @param persInf
      * @throws SQLException
      */
-    public void updatePersInf(PersInf persInf) throws SQLException {
+    public boolean updatePersInf(PersInf persInf) throws SQLException {
         if (persInf == null) {
             throw new SQLException("PersInf object must not be null");
         }
@@ -101,9 +102,11 @@ public class DataProviderPSQL {
             ps.setString(3, persInf.getPhoneNumber());
             ps.setString(4, persInf.getEmail());
             ps.setString(5, persInf.getId());
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            return false;
         }
     }
 
@@ -112,13 +115,15 @@ public class DataProviderPSQL {
      * @param id
      * @throws SQLException
      */
-    public void deletePersInf(String id) {
+    public boolean deletePersInf(String id) {
         String sql = "DELETE FROM persInf WHERE id = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, id);
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            return false;
         }
     }
 
@@ -128,7 +133,7 @@ public class DataProviderPSQL {
      * @param persInf
      * @throws SQLException
      */
-    public void createProfInf(ProfInf profInf, PersInf persInf) {
+    public boolean createProfInf(ProfInf profInf, PersInf persInf) {
         String insertProfSql = "INSERT INTO profInf (persId, skillName, skillDescription, cost, persDescription, exp, rating) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement profStmt = connection.prepareStatement(insertProfSql)) {
             profStmt.setString(1, persInf.getId());
@@ -138,9 +143,11 @@ public class DataProviderPSQL {
             profStmt.setString(5, profInf.getPersDescription());
             profStmt.setDouble(6, profInf.getExp());
             profStmt.setDouble(7, profInf.getRating());
-            profStmt.executeUpdate();
+            int affectedRows = profStmt.executeUpdate();
+            return affectedRows > 0;
         }catch (SQLException e){
             logger.error(e.getMessage());
+            return false;
         }
     }
 
@@ -181,7 +188,7 @@ public class DataProviderPSQL {
      * @param profInf
      * @throws SQLException
      */
-    public void updateProfInf(ProfInf profInf) throws SQLException {
+    public boolean updateProfInf(ProfInf profInf) throws SQLException {
         if (profInf == null) {
             throw new SQLException("Profnf object must not be null");
         }
@@ -194,9 +201,11 @@ public class DataProviderPSQL {
             ps.setDouble(5, profInf.getExp());
             ps.setDouble(6, profInf.getRating());
             ps.setString(7, profInf.getPersId());
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
         }catch (SQLException e){
             logger.error(e.getMessage());
+            return false;
         }
     }
 
@@ -205,13 +214,15 @@ public class DataProviderPSQL {
      * @param id
      * @throws SQLException
      */
-    public void deleteProfInf(String id) {
+    public boolean deleteProfInf(String id) {
         String sql = "DELETE FROM profInf WHERE persId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, id);
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            return false;
         }
     }
 
@@ -221,16 +232,18 @@ public class DataProviderPSQL {
      * @param skillExchange
      * @throws SQLException
      */
-    public void createSkillExchange(SkillExchange skillExchange) {
+    public boolean createSkillExchange(SkillExchange skillExchange) {
         String sqlSkillExchange = "INSERT INTO skillExchange (exchangeId, skillOffered, userOffering, userRequesting) VALUES (?,?,?,?)";
         try (PreparedStatement ps = connection.prepareStatement(sqlSkillExchange)) {
             ps.setString(1, skillExchange.getExchangeId());
             ps.setString(2, skillExchange.getSkillOffered());
             ps.setString(3, skillExchange.getUserOffering());
             ps.setString(4, skillExchange.getUserRequesting());
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            return false;
         }
     }
 
@@ -268,7 +281,7 @@ public class DataProviderPSQL {
      * @param skillExchange
      * @throws SQLException
      */
-    public void updateSkillExchange(SkillExchange skillExchange) throws SQLException {
+    public boolean updateSkillExchange(SkillExchange skillExchange) throws SQLException {
         if (skillExchange == null) {
             throw new SQLException("SkillExchange object must not be null");
         }
@@ -278,9 +291,11 @@ public class DataProviderPSQL {
             ps.setString(2, skillExchange.getUserOffering());
             ps.setString(3, skillExchange.getUserRequesting());
             ps.setString(4, skillExchange.getExchangeId());
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            return false;
         }
     }
 
@@ -289,13 +304,15 @@ public class DataProviderPSQL {
      * @param exchangeId
      * @throws SQLException
      */
-    public void deleteSkillExchange(String exchangeId){
+    public boolean deleteSkillExchange(String exchangeId){
         String sql = "DELETE FROM skillExchange WHERE exchangeId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, exchangeId);
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            return false;
         }
     }
 
@@ -305,7 +322,7 @@ public class DataProviderPSQL {
      * @param review
      * @throws SQLException
      */
-    public void createReview(Review review) {
+    public boolean createReview(Review review) {
         String sqlReview = "INSERT INTO review (reviewId, rating, comment, reviewer, userEvaluated) VALUES (?,?,?,?,?)";
         try (PreparedStatement ps = connection.prepareStatement(sqlReview)) {
             ps.setString(1, review.getReviewId());
@@ -313,9 +330,11 @@ public class DataProviderPSQL {
             ps.setString(3, review.getComment());
             ps.setString(4, review.getReviewer());
             ps.setString(5, review.getUserEvaluated());
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            return false;
         }
     }
 
@@ -353,7 +372,7 @@ public class DataProviderPSQL {
      * @param review
      * @throws SQLException
      */
-    public void updateReview(Review review) throws SQLException {
+    public boolean updateReview(Review review) throws SQLException {
         String sql = "UPDATE review SET rating = ?, comment = ?, reviewer = ?, userEvaluated = ? WHERE reviewId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setDouble(1, review.getRating());
@@ -361,9 +380,11 @@ public class DataProviderPSQL {
             ps.setString(3, review.getReviewer());
             ps.setString(4, review.getUserEvaluated());
             ps.setString(5, review.getReviewId());
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            return false;
         }
     }
 
@@ -372,13 +393,15 @@ public class DataProviderPSQL {
      * @param review
      * @throws SQLException
      */
-    public void deleteReview(Review review) throws SQLException {
+    public boolean deleteReview(Review review) throws SQLException {
         String sql = "DELETE FROM review WHERE reviewId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, review.getReviewId());
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
         }catch (SQLException e){
             logger.error(e.getMessage());
+            return false;
         }
     }
 
@@ -387,16 +410,18 @@ public class DataProviderPSQL {
      * @param transaction
      * @throws SQLException
      */
-    public void createTransaction(Transaction transaction) throws SQLException {
+    public boolean createTransaction(Transaction transaction) throws SQLException {
         String sqlTransaction = "INSERT INTO transaction(transactionId, date, status, changeId) VALUES (?,?,?,?)";
         try (PreparedStatement ps = connection.prepareStatement(sqlTransaction)) {
             ps.setString(1, transaction.getTransactionId());
             ps.setDate(2,  new java.sql.Date(transaction.getDate().getTime()));
             ps.setString(3, String.valueOf(transaction.getStatus()));
             ps.setString(4, transaction.getChangeId());
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            return false;
         }
     }
 
@@ -435,16 +460,18 @@ public class DataProviderPSQL {
      * @param transaction
      * @throws SQLException
      */
-    public void updateTransaction(Transaction transaction) throws SQLException {
+    public boolean updateTransaction(Transaction transaction) throws SQLException {
         String sql = "UPDATE transaction SET date = ?, status = ?, changeId = ? WHERE transactionId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setDate(1, new java.sql.Date(transaction.getDate().getTime()));
             ps.setString(2, String.valueOf(transaction.getStatus()));
             ps.setString(3, transaction.getChangeId());
             ps.setString(4, transaction.getTransactionId());
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            return false;
         }
     }
 
@@ -453,13 +480,15 @@ public class DataProviderPSQL {
      * @param transaction
      * @throws SQLException
      */
-    public void deleteTransaction(Transaction transaction) throws SQLException {
+    public boolean deleteTransaction(Transaction transaction) throws SQLException {
         String sql = "DELETE FROM transaction WHERE transactionId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, transaction.getTransactionId());
-            ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            return false;
         }
     }
 }

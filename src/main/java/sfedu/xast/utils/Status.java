@@ -1,4 +1,4 @@
-package sfedu.xast;
+package sfedu.xast.utils;
 
 public enum Status {
     COMPLETED,

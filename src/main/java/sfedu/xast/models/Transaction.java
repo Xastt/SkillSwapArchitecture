@@ -1,7 +1,7 @@
 package sfedu.xast.models;
 
 import lombok.*;
-import sfedu.xast.Status;
+import sfedu.xast.utils.Status;
 import java.util.*;
 
 @Getter
