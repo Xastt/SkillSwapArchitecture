@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add boolean">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add doc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/RunApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/RunApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/ProfInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/ProfInf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderPSQLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderPSQLTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,76 +49,76 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.ConfigurationUtil.executor": "Run",
-    "Application.DataProviderMongo.executor": "Run",
-    "Application.GetDatabaseConnection.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.RunApplication.executor": "Run",
-    "Application.XmlUtil.executor": "Run",
-    "Application.YamlUtil.executor": "Run",
-    "DefaultPlantUmlFileTemplate": "UML Class",
-    "JUnit.ConfigTest.testGetMonths.executor": "Run",
-    "JUnit.ConfigurationTest.executor": "Run",
-    "JUnit.ConfigurationTest.testCRUDWithProperties.executor": "Run",
-    "JUnit.ConfigurationTest.testCRUDWithXML.executor": "Run",
-    "JUnit.ConfigurationTest.testCRUDWithYAML.executor": "Run",
-    "JUnit.DataProviderCsvTest.executor": "Run",
-    "JUnit.DataProviderCsvTest.testDeleteRecord.executor": "Run",
-    "JUnit.DataProviderCsvTest.testGetRecordById.executor": "Run",
-    "JUnit.DataProviderCsvTest.testSaveRecord.executor": "Run",
-    "JUnit.DataProviderMongoTest.executor": "Run",
-    "JUnit.DataProviderMongoTest.testCRUDMongoOperations.executor": "Run",
-    "JUnit.DataProviderMongoTest.testCRUDWithMongoDB.executor": "Run",
-    "JUnit.DataProviderPSQLTest.executor": "Run",
-    "JUnit.DataProviderPSQLTest.shouldGetJdbcConnection.executor": "Run",
-    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithPersInf.executor": "Run",
-    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithProfInf.executor": "Run",
-    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithReview.executor": "Run",
-    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithSkillExchange.executor": "Run",
-    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransaction.executor": "Run",
-    "JUnit.DataProviderPSQLTest.testCreatePersInf.executor": "Run",
-    "JUnit.DataProviderPSQLTest.testGetSkillByName.executor": "Run",
-    "JUnit.DataProviderXmlTest.executor": "Run",
-    "JUnit.DataProviderXmlTest.testInitDataSourceLoadsDataFromXml.executor": "Run",
-    "JUnit.FileLoadTest.checkInValidFileName.executor": "Run",
-    "JUnit.FileLoadTest.checkValidFileName.executor": "Run",
-    "JUnit.FileLoadTest.executor": "Debug",
-    "JUnit.HistoryContentRepositoryTest.executor": "Run",
-    "JUnit.HistoryContentRepositoryTest.testSave.executor": "Run",
-    "JUnit.PersInfDaoTest.executor": "Run",
-    "JUnit.PersInfDaoTest.shouldGetJdbcConnection.executor": "Run",
-    "JUnit.PersInfDaoTest.testCRUDMethods.executor": "Run",
-    "JUnit.SkillSwapClientTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/JavaProj/Architec/SkillSwap",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.4",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.ConfigurationUtil.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DataProviderMongo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GetDatabaseConnection.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RunApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.XmlUtil.executor&quot;: &quot;Run&quot;,
+    &quot;Application.YamlUtil.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
+    &quot;JUnit.ConfigTest.testGetMonths.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ConfigurationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ConfigurationTest.testCRUDWithProperties.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ConfigurationTest.testCRUDWithXML.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ConfigurationTest.testCRUDWithYAML.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderCsvTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderCsvTest.testDeleteRecord.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderCsvTest.testGetRecordById.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderCsvTest.testSaveRecord.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderMongoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderMongoTest.testCRUDMongoOperations.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderMongoTest.testCRUDWithMongoDB.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderPSQLTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderPSQLTest.shouldGetJdbcConnection.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithPersInf.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithProfInf.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithReview.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithSkillExchange.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransaction.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderPSQLTest.testCreatePersInf.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderPSQLTest.testGetSkillByName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderXmlTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataProviderXmlTest.testInitDataSourceLoadsDataFromXml.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FileLoadTest.checkInValidFileName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FileLoadTest.checkValidFileName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FileLoadTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.HistoryContentRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HistoryContentRepositoryTest.testSave.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersInfDaoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersInfDaoTest.shouldGetJdbcConnection.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersInfDaoTest.testCRUDMethods.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SkillSwapClientTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaProj/Architec/SkillSwap&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mongo"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mongo&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JavaProj\Architec\SkillSwap\src\main\uml" />
@@ -337,23 +336,12 @@
       <workItem from="1734870006790" duration="89000" />
       <workItem from="1734870108075" duration="493000" />
       <workItem from="1734870617560" duration="2961000" />
-      <workItem from="1734884322567" duration="5188000" />
-    </task>
-    <task id="LOCAL-00010" summary="Edit ErDiagram.puml, ClassDiagram.puml. Final version">
-      <option name="closed" value="true" />
-      <created>1731932294126</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1731932294126</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Delete comments in SkillSwapClient.java">
-      <option name="closed" value="true" />
-      <created>1731932643623</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1731932643623</updated>
+      <workItem from="1734884322567" duration="6763000" />
+      <workItem from="1734934395636" duration="1958000" />
+      <workItem from="1734963691453" duration="228000" />
+      <workItem from="1734964658940" duration="3985000" />
+      <workItem from="1734978605028" duration="1009000" />
+      <workItem from="1735060067473" duration="579000" />
     </task>
     <task id="LOCAL-00012" summary="Change logs and tests">
       <option name="closed" value="true" />
@@ -731,7 +719,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734870809690</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Add main RunApplication and method, which find by skillName">
+      <option name="closed" value="true" />
+      <created>1734889969278</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1734889969278</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Add doc">
+      <option name="closed" value="true" />
+      <created>1734890026969</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1734890026969</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -750,8 +754,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Clean Code" />
-    <MESSAGE value="Add try/catch in DataProviderMongo" />
     <MESSAGE value="Add DataProviderCsv with all CRUD operations" />
     <MESSAGE value="Test DataProviderCsv + use junit-jupiter instead junit" />
     <MESSAGE value="Add working with csv documents(CRUD operations)" />
@@ -775,6 +777,8 @@
     <MESSAGE value="CRUD with all models WORKS!!!!!!!" />
     <MESSAGE value="Clean code, add logger" />
     <MESSAGE value="Add boolean" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add boolean" />
+    <MESSAGE value="Add main RunApplication and method, which find by skillName" />
+    <MESSAGE value="Add doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add doc" />
   </component>
 </project>

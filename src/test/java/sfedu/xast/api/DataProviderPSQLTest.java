@@ -134,7 +134,7 @@ class DataProviderPSQLTest {
         dataProviderPSQL.updateReview(review);
 
         Review updatedReview = dataProviderPSQL.readReview(review);
-        assertEquals("Not God Job!", review.getComment());
+        assertEquals("Not God Job!", updatedReview.getComment());
 
         dataProviderPSQL.deleteReview(review);
         dataProviderPSQL.deleteSkillExchange(review.getReviewId());

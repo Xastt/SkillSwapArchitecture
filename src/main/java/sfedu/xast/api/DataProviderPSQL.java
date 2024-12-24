@@ -278,10 +278,9 @@ public class DataProviderPSQL {
             System.out.println("Описание пользователя: " + profInf.getPersDescription());
             System.out.println("Опыт: " + profInf.getExp());
             System.out.println("Рейтинг: " + profInf.getRating());
-            System.out.println("-----------------------------"); // Разделитель для удобства
+            System.out.println("-----------------------------");
         }
     }
-
 
     /**
      * method, which add new data to the table skillExchange

@@ -1,10 +1,7 @@
 package sfedu.xast;
 
 import sfedu.xast.api.DataProviderPSQL;
-import sfedu.xast.models.PersInf;
-import sfedu.xast.models.ProfInf;
-import sfedu.xast.utils.ConfigurationUtil;
-
+import sfedu.xast.models.*;
 import java.io.IOException;
 import java.sql.*;
 import java.util.Scanner;
@@ -22,7 +19,7 @@ public class RunApplication {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Привет! Я, консольный клиент приложения SkillSwap(⌒‿⌒)\n" +
-                "Сперва давай пройдем регистрацию! \n" +
+                "Сперва, давай пройдем регистрацию! \n" +
                 "Тебе нужно будет ввести личные данные(ｏ・_・)ノ\n" +
                 "Фамилия:");
         String surname = sc.nextLine();
@@ -36,7 +33,6 @@ public class RunApplication {
         if(dataProviderPSQL.createPersInf(persInf)){
             System.out.println("Рад знакомству, " + persInf.getName() + " ( ˘⌣˘)♡(˘⌣˘ )");
         };
-
 
         while(flag) {
             System.out.println("Давай определимся, что ты хочешь (ｏ・_・)ノ\n" +
@@ -53,6 +49,12 @@ public class RunApplication {
                     String skillFind = sc.nextLine();
                     System.out.println("Вот, что мне удалось найти:");
                     dataProviderPSQL.printProfInfList(dataProviderPSQL.readProfInfBySkillName(skillFind));
+                    //System.out.println("Напиши имя выбранного навыка: ");
+                    //String skillName = sc.nextLine();
+                    //метод который сработает как readProfInf, но достанет человека не по ID, а по skillName, НО проблема
+                    // в том, что я не могу изначально передать какой-то объект, чтобы в него записалось => мне придется создать новый объект
+                    //который никак не будет связан c persInf
+                    //после этого(в случае успешного выполнения того, что выше) уже можно будет найти по айди запись в таблице PersInf.
                     flag = false;
                     break;
                 case 2:
@@ -72,7 +74,7 @@ public class RunApplication {
                     ProfInf profInf = new ProfInf(persInf.getId(),skillName,skillDescription,cost,persDescription,exp,0.0);
                     if(dataProviderPSQL.createProfInf(profInf, persInf)){
                         System.out.println("Отлично! Все данные записаны (⌒‿⌒)\n" +
-                                "Ожидайте, с вами буду связываться заинтересованные люди.");
+                                "Ожидайте, с вами будут связываться заинтересованные люди.");
                     }
                     flag = false;
                     break;
