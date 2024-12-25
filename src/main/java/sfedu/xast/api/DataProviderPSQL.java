@@ -232,23 +232,32 @@ public class DataProviderPSQL {
      * @return
      * @throws SQLException
      */
-    public List<ProfInf> readProfInfBySkillName(String skillPart) throws SQLException {
-        String sql = "SELECT * FROM profInf WHERE skillName LIKE ?";
-        List<ProfInf> profInfList = new ArrayList<>();
+    public List<SkillOut> readProfInfBySkillName(String skillPart) throws SQLException {
+        String sql = "SELECT ps.id, ps.surname, ps.name, ps.phonenumber, ps.email,\n" +
+                "\tpf.skillname, pf.skilldescription, pf.cost, pf.persdescription,\n" +
+                "\tpf.exp, pf.rating FROM persinf ps JOIN profinf pf ON\n" +
+                "\tps.id = pf.persid WHERE skillName LIKE ?";
+
+        List<SkillOut> profInfList = new ArrayList<>();
 
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, "%" + skillPart + "%");
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                ProfInf profInf = new ProfInf();
-                profInf.setSkillName(rs.getString("skillName"));
-                profInf.setSkillDescription(rs.getString("skillDescription"));
-                profInf.setCost(rs.getDouble("cost"));
-                profInf.setPersDescription(rs.getString("persDescription"));
-                profInf.setExp(rs.getDouble("exp"));
-                profInf.setRating(rs.getDouble("rating"));
-                profInfList.add(profInf);
+                SkillOut skillOut = new SkillOut();
+                skillOut.setId(rs.getString("id"));
+                skillOut.setSurname(rs.getString("surname"));
+                skillOut.setName(rs.getString("name"));
+                skillOut.setPhoneNumber(rs.getString("phonenumber"));
+                skillOut.setEmail(rs.getString("email"));
+                skillOut.setSkillName(rs.getString("skillName"));
+                skillOut.setSkillDescription(rs.getString("skillDescription"));
+                skillOut.setCost(rs.getDouble("cost"));
+                skillOut.setPersDescription(rs.getString("persDescription"));
+                skillOut.setExp(rs.getDouble("exp"));
+                skillOut.setRating(rs.getDouble("rating"));
+                profInfList.add(skillOut);
             }
 
             if (profInfList.isEmpty()) {
@@ -265,21 +274,56 @@ public class DataProviderPSQL {
      * print persons with needed skill
      * @param profInfList
      */
-    public void printProfInfList(List<ProfInf> profInfList) {
-        if (profInfList == null || profInfList.isEmpty()) {
+    public void printProfInfList(List<SkillOut> skillOutList) {
+        if (skillOutList == null || skillOutList.isEmpty()) {
             System.out.println("Список профилей пуст.");
             return;
         }
 
-        for (ProfInf profInf : profInfList) {
-            System.out.println("Навык: " + profInf.getSkillName());
-            System.out.println("Описание навыка: " + profInf.getSkillDescription());
-            System.out.println("Стоимость: " + profInf.getCost());
-            System.out.println("Описание пользователя: " + profInf.getPersDescription());
-            System.out.println("Опыт: " + profInf.getExp());
-            System.out.println("Рейтинг: " + profInf.getRating());
+        for (SkillOut skillOut : skillOutList) {
+            System.out.println("ID: " + skillOut.getId());
+            System.out.println("Фамилия: " + skillOut.getSurname());
+            System.out.println("Имя: " + skillOut.getName());
+            System.out.println("Номер телефона: " + skillOut.getPhoneNumber());
+            System.out.println("Электронная почта: " + skillOut.getEmail());
+            System.out.println("Навык: " + skillOut.getSkillName());
+            System.out.println("Описание навыка: " + skillOut.getSkillDescription());
+            System.out.println("Стоимость: " + skillOut.getCost());
+            System.out.println("Описание пользователя: " + skillOut.getPersDescription());
+            System.out.println("Опыт: " + skillOut.getExp());
+            System.out.println("Рейтинг: " + skillOut.getRating());
             System.out.println("-----------------------------");
         }
+    }
+
+    /**
+     * read information from table profinf using id
+     * @param id
+     * @return
+     * @throws SQLException
+     */
+    public ProfInf readProfInfWithId(String id) throws SQLException {
+        ProfInf profInf = new ProfInf();
+        String sql = "SELECT * FROM profInf WHERE persId = ?";
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                profInf.setPersId(rs.getString("persId"));
+                profInf.setSkillName(rs.getString("skillName"));
+                profInf.setSkillDescription(rs.getString("skillDescription"));
+                profInf.setCost(rs.getDouble("cost"));
+                profInf.setPersDescription(rs.getString("persDescription"));
+                profInf.setExp(rs.getDouble("exp"));
+                profInf.setRating(rs.getDouble("rating"));
+            } else {
+                throw new SQLException("Can't find person with id " + id);
+            }
+        } catch (SQLException e) {
+            logger.error(e.getMessage());
+            throw e; // Рекомендуется повторно выбрасывать исключение после логирования
+        }
+        return profInf; // Возвращаем новый объект ProfInf
     }
 
     /**
@@ -540,6 +584,28 @@ public class DataProviderPSQL {
         String sql = "DELETE FROM transaction WHERE transactionId = ?";
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, transaction.getTransactionId());
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
+        }catch (SQLException e) {
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean insertRating(String persId, Double rating, Double ratingBefore) throws SQLException {
+        if (persId == null || rating == null || ratingBefore == null) {
+            throw new IllegalArgumentException("Parameters cannot be null");
+        }
+        Double finalRating;
+        if (ratingBefore == 0.0) {
+             finalRating = rating;
+        } else {
+            finalRating = (ratingBefore + rating) / 2.0;
+        }
+        String sql = "UPDATE profInf SET rating = ? WHERE persId = ?";
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setDouble(1, finalRating);
+            ps.setString(2, persId);
             int affectedRows = ps.executeUpdate();
             return affectedRows > 0;
         }catch (SQLException e) {

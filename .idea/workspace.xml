@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add doc">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/SkillOut.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/RunApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/RunApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderPSQLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderPSQLTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +101,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/JavaProj/Architec/SkillSwap&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaProj/TheoryJava/Serialization&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -341,15 +342,8 @@
       <workItem from="1734963691453" duration="228000" />
       <workItem from="1734964658940" duration="3985000" />
       <workItem from="1734978605028" duration="1009000" />
-      <workItem from="1735060067473" duration="579000" />
-    </task>
-    <task id="LOCAL-00012" summary="Change logs and tests">
-      <option name="closed" value="true" />
-      <created>1732556435470</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1732556435470</updated>
+      <workItem from="1735060067473" duration="6965000" />
+      <workItem from="1735111580314" duration="3418000" />
     </task>
     <task id="LOCAL-00013" summary="Add methods for working with different types of files">
       <option name="closed" value="true" />
@@ -735,7 +729,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734890026969</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1735060693577</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1735060693578</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -754,7 +756,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add DataProviderCsv with all CRUD operations" />
     <MESSAGE value="Test DataProviderCsv + use junit-jupiter instead junit" />
     <MESSAGE value="Add working with csv documents(CRUD operations)" />
     <MESSAGE value="Clean code" />
@@ -779,6 +780,7 @@
     <MESSAGE value="Add boolean" />
     <MESSAGE value="Add main RunApplication and method, which find by skillName" />
     <MESSAGE value="Add doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add doc" />
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
   </component>
 </project>

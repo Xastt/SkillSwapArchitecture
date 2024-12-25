@@ -2,6 +2,8 @@ package sfedu.xast;
 
 import sfedu.xast.api.DataProviderPSQL;
 import sfedu.xast.models.*;
+import sfedu.xast.utils.Status;
+
 import java.io.IOException;
 import java.sql.*;
 import java.util.Scanner;
@@ -49,13 +51,42 @@ public class RunApplication {
                     String skillFind = sc.nextLine();
                     System.out.println("Вот, что мне удалось найти:");
                     dataProviderPSQL.printProfInfList(dataProviderPSQL.readProfInfBySkillName(skillFind));
-                    //System.out.println("Напиши имя выбранного навыка: ");
-                    //String skillName = sc.nextLine();
-                    //метод который сработает как readProfInf, но достанет человека не по ID, а по skillName, НО проблема
-                    // в том, что я не могу изначально передать какой-то объект, чтобы в него записалось => мне придется создать новый объект
-                    //который никак не будет связан c persInf
-                    //после этого(в случае успешного выполнения того, что выше) уже можно будет найти по айди запись в таблице PersInf.
-                    flag = false;
+                    System.out.println("Скопируй и вставь сюда ID пользователя, чей урок ты хочешь взять (ｏ・_・)ノ");
+                    String neededId = sc.nextLine();
+                    ProfInf retrievedProfInf = dataProviderPSQL.readProfInfWithId(neededId);
+                    System.out.println("Отлично. Информация о уроке по навыку <" + retrievedProfInf.getSkillName() + "> направлена пользователю.\n" +
+                            "Ожидайте обратной связи! (⌒‿⌒) ");
+                    try {
+                        Thread.sleep(6000); //тут они между собой связались, если все получилось, то даже и занятие провели
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                    SkillExchange skillExchange = new SkillExchange(retrievedProfInf.getSkillName(), persInf.getId(), retrievedProfInf.getPersId());
+                    dataProviderPSQL.createSkillExchange(skillExchange);
+
+                    System.out.println("Получилось ли у вас провести занятие?\n" +
+                            "Ответ дайте ДА или НЕТ, без учета регистра(」°ロ°)」");
+                    String answer = sc.nextLine();
+                    if(answer.equalsIgnoreCase("ДА")){
+                        Transaction transaction = new Transaction(Status.COMPLETED, skillExchange.getExchangeId());
+                        dataProviderPSQL.createTransaction(transaction);
+                        System.out.println("Оставьте небольшой отзыв(⌒‿⌒)");
+                        System.out.println("Оценка урока от 1 до 5:");
+                        Double rating = sc.nextDouble();
+                        sc.nextLine();
+                        System.out.println("Ваши впечатления: ");
+                        String comment = sc.nextLine();
+                        Review review = new Review(rating, comment, persInf.getId(), retrievedProfInf.getPersId());
+                        dataProviderPSQL.insertRating(retrievedProfInf.getPersId(), review.getRating(), retrievedProfInf.getRating());
+                        dataProviderPSQL.createReview(review);
+                        System.out.println("Нам очень приятно, что вы выбрали нашу платформу. Удачи!( ˘⌣˘)♡(˘⌣˘ )");
+                        flag = false;
+                    }else{
+                        Transaction transaction = new Transaction(Status.CANCELED, skillExchange.getExchangeId());
+                        dataProviderPSQL.createTransaction(transaction);
+                        System.out.println("Нам очень жаль, что у вас не получилось связаться");
+                        flag = false;
+                    }
                     break;
                 case 2:
                     System.out.println("Отлично, ты хочешь разместить услугу (⌒‿⌒)\n" +
@@ -84,3 +115,5 @@ public class RunApplication {
         }
     }
 }
+
+//update значения по таблице персинф используя лишь айдишник + функция расчета рэйтинга
