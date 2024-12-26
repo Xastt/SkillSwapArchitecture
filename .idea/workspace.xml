@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Finish work">
-      <change afterPath="$PROJECT_DIR$/ArchPractice.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/ClassDiagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/ErDiagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/NotSuccessSkillSwap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/RegistrationUser+Skill.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/SuccessSkillSwap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/UseCaseDiagram.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add README.md" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -347,15 +337,7 @@
       <workItem from="1735133655233" duration="380000" />
       <workItem from="1735134051535" duration="851000" />
       <workItem from="1735144794869" duration="7423000" />
-      <workItem from="1735196624875" duration="1894000" />
-    </task>
-    <task id="LOCAL-00015" summary="fix some problems">
-      <option name="closed" value="true" />
-      <created>1733159396728</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1733159396728</updated>
+      <workItem from="1735196624875" duration="2245000" />
     </task>
     <task id="LOCAL-00016" summary="change YamlUtil">
       <option name="closed" value="true" />
@@ -741,7 +723,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735196672833</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Add README.md">
+      <option name="closed" value="true" />
+      <created>1735198681026</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1735198681027</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -760,7 +750,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Clean code" />
     <MESSAGE value="Show, how tests works" />
     <MESSAGE value="Add lab with Exception/Jdbc" />
     <MESSAGE value="fix" />
@@ -785,6 +774,7 @@
     <MESSAGE value="Commit" />
     <MESSAGE value="Final" />
     <MESSAGE value="Finish work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish work" />
+    <MESSAGE value="Add README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add README.md" />
   </component>
 </project>
