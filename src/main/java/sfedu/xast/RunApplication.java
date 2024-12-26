@@ -20,9 +20,9 @@ public class RunApplication {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Привет! Я, консольный клиент приложения SkillSwap(⌒‿⌒)\n" +
+        System.out.println("Привет! Я, консольный клиент приложения SkillSwap.\n" +
                 "Сперва, давай пройдем регистрацию! \n" +
-                "Тебе нужно будет ввести личные данные(ｏ・_・)ノ\n" +
+                "Тебе нужно будет ввести личные данные.\n" +
                 "Фамилия:");
         String surname = sc.nextLine();
         System.out.println("Имя:");
@@ -33,11 +33,11 @@ public class RunApplication {
         String email = sc.nextLine();
         PersInf persInf = new PersInf(surname, name, phoneNumber, email);
         if(dataProviderPSQL.createPersInf(persInf)){
-            System.out.println("Рад знакомству, " + persInf.getName() + " ( ˘⌣˘)♡(˘⌣˘ )");
+            System.out.println("Рад знакомству, " + persInf.getName());
         };
 
         while(flag) {
-            System.out.println("Давай определимся, что ты хочешь (ｏ・_・)ノ\n" +
+            System.out.println("Давай определимся, что ты хочешь:\n" +
                     "1. Найти услугу\n" +
                     "2. Разместить услугу\n" +
                     "Выбери нужный номер!");
@@ -46,16 +46,16 @@ public class RunApplication {
             sc.nextLine();
             switch (numChoice) {
                 case 1:
-                    System.out.println("Отлично, ты хочешь найти услугу (⌒‿⌒)\n" +
+                    System.out.println("Отлично, ты хочешь найти услугу!\n" +
                             "Введи ее название, а я попробую найти: ");
                     String skillFind = sc.nextLine();
                     System.out.println("Вот, что мне удалось найти:");
                     dataProviderPSQL.printProfInfList(dataProviderPSQL.readProfInfBySkillName(skillFind));
-                    System.out.println("Скопируй и вставь сюда ID пользователя, чей урок ты хочешь взять (ｏ・_・)ノ");
+                    System.out.println("Скопируй и вставь сюда ID пользователя, чей урок ты хочешь взять");
                     String neededId = sc.nextLine();
                     ProfInf retrievedProfInf = dataProviderPSQL.readProfInfWithId(neededId);
                     System.out.println("Отлично. Информация о уроке по навыку <" + retrievedProfInf.getSkillName() + "> направлена пользователю.\n" +
-                            "Ожидайте обратной связи! (⌒‿⌒) ");
+                            "Ожидайте обратной связи!");
                     try {
                         Thread.sleep(6000); //тут они между собой связались, если все получилось, то даже и занятие провели
                     } catch (InterruptedException e) {
@@ -65,12 +65,12 @@ public class RunApplication {
                     dataProviderPSQL.createSkillExchange(skillExchange);
 
                     System.out.println("Получилось ли у вас провести занятие?\n" +
-                            "Ответ дайте ДА или НЕТ, без учета регистра(」°ロ°)」");
+                            "Ответ дайте 1 - ДА или 2 - НЕТ, без учета регистра");
                     String answer = sc.nextLine();
-                    if(answer.equalsIgnoreCase("ДА")){
+                    if(answer.equalsIgnoreCase("1")){
                         Transaction transaction = new Transaction(Status.COMPLETED, skillExchange.getExchangeId());
                         dataProviderPSQL.createTransaction(transaction);
-                        System.out.println("Оставьте небольшой отзыв(⌒‿⌒)");
+                        System.out.println("Оставьте небольшой отзыв");
                         System.out.println("Оценка урока от 1 до 5:");
                         Double rating = sc.nextDouble();
                         sc.nextLine();
@@ -79,7 +79,7 @@ public class RunApplication {
                         Review review = new Review(rating, comment, persInf.getId(), retrievedProfInf.getPersId());
                         dataProviderPSQL.insertRating(retrievedProfInf.getPersId(), review.getRating(), retrievedProfInf.getRating());
                         dataProviderPSQL.createReview(review);
-                        System.out.println("Нам очень приятно, что вы выбрали нашу платформу. Удачи!( ˘⌣˘)♡(˘⌣˘ )");
+                        System.out.println("Нам очень приятно, что вы выбрали нашу платформу. Удачи!");
                         flag = false;
                     }else{
                         Transaction transaction = new Transaction(Status.CANCELED, skillExchange.getExchangeId());
@@ -89,7 +89,7 @@ public class RunApplication {
                     }
                     break;
                 case 2:
-                    System.out.println("Отлично, ты хочешь разместить услугу (⌒‿⌒)\n" +
+                    System.out.println("Отлично, ты хочешь разместить услугу\n" +
                             "Давай заполним информацию о твоем навыке!\n" +
                             "Напиши его название:");
                     String skillName = sc.nextLine();
@@ -104,16 +104,15 @@ public class RunApplication {
                     Double exp = sc.nextDouble();
                     ProfInf profInf = new ProfInf(persInf.getId(),skillName,skillDescription,cost,persDescription,exp,0.0);
                     if(dataProviderPSQL.createProfInf(profInf, persInf)){
-                        System.out.println("Отлично! Все данные записаны (⌒‿⌒)\n" +
+                        System.out.println("Отлично! Все данные записаны\n" +
                                 "Ожидайте, с вами будут связываться заинтересованные люди.");
                     }
                     flag = false;
                     break;
                 default:
-                    System.out.println("Ой, такого номера нет, попробуй снова (」°ロ°)」");
+                    System.out.println("Ой, такого номера нет, попробуй снова");
             }
         }
     }
 }
 
-//update значения по таблице персинф используя лишь айдишник + функция расчета рэйтинга

@@ -21,6 +21,7 @@ public class DataProviderPSQL {
      */
     public static Connection getConnection() throws SQLException, IOException {
         if (connection == null) {
+            //Class.forName("org.postgresql.Driver");
             Properties props = new Properties();
             try(InputStream input = DataProviderPSQL.class.getClassLoader().
                     getResourceAsStream("database.properties")) {
