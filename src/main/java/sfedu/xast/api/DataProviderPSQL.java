@@ -331,7 +331,7 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public boolean createSkillExchange(SkillExchange skillExchange) {
-        String sqlSkillExchange = "INSERT INTO skillExchange (exchangeId, skillOffered, userOffering, userRequesting) VALUES (?,?,?,?)";
+        String sqlSkillExchange = Constants.insertSkillExchange;
         try (PreparedStatement ps = connection.prepareStatement(sqlSkillExchange)) {
             ps.setString(1, skillExchange.getExchangeId());
             ps.setString(2, skillExchange.getSkillOffered());
@@ -352,7 +352,7 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public SkillExchange readSkillExchange(SkillExchange skillExchange) {
-        String sql = "SELECT * FROM skillExchange WHERE exchangeId = ?";
+        String sql = Constants.readSkillExchange;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, skillExchange.getExchangeId());
             ResultSet rs = ps.executeQuery();
@@ -383,7 +383,7 @@ public class DataProviderPSQL {
         if (skillExchange == null) {
             throw new SQLException("SkillExchange object must not be null");
         }
-        String sql = "UPDATE skillExchange SET skillOffered = ?, userOffering = ?, userRequesting = ? WHERE exchangeId = ?";
+        String sql = Constants.updateSkillExchange;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, skillExchange.getSkillOffered());
             ps.setString(2, skillExchange.getUserOffering());
@@ -403,7 +403,7 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public boolean deleteSkillExchange(String exchangeId){
-        String sql = "DELETE FROM skillExchange WHERE exchangeId = ?";
+        String sql = Constants.deleteSkillExchange;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, exchangeId);
             int affectedRows = ps.executeUpdate();
@@ -421,7 +421,7 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public boolean createReview(Review review) {
-        String sqlReview = "INSERT INTO review (reviewId, rating, comment, reviewer, userEvaluated) VALUES (?,?,?,?,?)";
+        String sqlReview = Constants.insertReview;
         try (PreparedStatement ps = connection.prepareStatement(sqlReview)) {
             ps.setString(1, review.getReviewId());
             ps.setDouble(2, review.getRating());
@@ -443,7 +443,7 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public Review readReview(Review review) throws SQLException {
-        String sql = "SELECT * FROM review WHERE reviewId = ?";
+        String sql = Constants.readReview;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, review.getReviewId());
             ResultSet rs = ps.executeQuery();
@@ -471,7 +471,7 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public boolean updateReview(Review review) throws SQLException {
-        String sql = "UPDATE review SET rating = ?, comment = ?, reviewer = ?, userEvaluated = ? WHERE reviewId = ?";
+        String sql = Constants.updateReview;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setDouble(1, review.getRating());
             ps.setString(2, review.getComment());
@@ -492,7 +492,7 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public boolean deleteReview(Review review) throws SQLException {
-        String sql = "DELETE FROM review WHERE reviewId = ?";
+        String sql = Constants.deleteReview;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, review.getReviewId());
             int affectedRows = ps.executeUpdate();
@@ -509,7 +509,7 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public boolean createTransaction(Transaction transaction) throws SQLException {
-        String sqlTransaction = "INSERT INTO transaction(transactionId, date, status, changeId) VALUES (?,?,?,?)";
+        String sqlTransaction = Constants.insertTransaction;
         try (PreparedStatement ps = connection.prepareStatement(sqlTransaction)) {
             ps.setString(1, transaction.getTransactionId());
             ps.setDate(2,  new java.sql.Date(transaction.getDate().getTime()));
@@ -530,7 +530,7 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public Transaction readTransaction(Transaction transaction) throws SQLException {
-        String sql = "SELECT * FROM transaction WHERE transactionId = ?";
+        String sql = Constants.readTransaction;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, transaction.getTransactionId());
             ResultSet rs = ps.executeQuery();
@@ -559,7 +559,7 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public boolean updateTransaction(Transaction transaction) throws SQLException {
-        String sql = "UPDATE transaction SET date = ?, status = ?, changeId = ? WHERE transactionId = ?";
+        String sql = Constants.updateTransaction;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setDate(1, new java.sql.Date(transaction.getDate().getTime()));
             ps.setString(2, String.valueOf(transaction.getStatus()));
@@ -579,7 +579,7 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public boolean deleteTransaction(Transaction transaction) throws SQLException {
-        String sql = "DELETE FROM transaction WHERE transactionId = ?";
+        String sql = Constants.deleteTransaction;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, transaction.getTransactionId());
             int affectedRows = ps.executeUpdate();
@@ -601,7 +601,7 @@ public class DataProviderPSQL {
         } else {
             finalRating = (ratingBefore + rating) / 2.0;
         }
-        String sql = "UPDATE profInf SET rating = ? WHERE persId = ?";
+        String sql = Constants.updateProfInfRating;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setDouble(1, finalRating);
             ps.setString(2, persId);
