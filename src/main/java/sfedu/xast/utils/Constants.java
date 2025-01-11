@@ -36,7 +36,7 @@ public class Constants {
     public static String readReview = "SELECT * FROM review WHERE reviewId = ?";
     public static String updateReview = "UPDATE review SET rating = ?, comment = ?, reviewer = ?, userEvaluated = ? WHERE reviewId = ?";
     public static String deleteReview = "DELETE FROM review WHERE reviewId = ?";
-    //transaction
+    //transactionn
     public static String insertTransaction = "INSERT INTO transaction(transactionId, date, status, changeId) VALUES (?,?,?,?)";
     public static String readTransaction = "SELECT * FROM transaction WHERE transactionId = ?";
     public static String updateTransaction = "UPDATE transaction SET date = ?, status = ?, changeId = ? WHERE transactionId = ?";
