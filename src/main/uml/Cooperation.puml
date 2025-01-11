@@ -1,0 +1,37 @@
+@startuml
+object "Пользователь" as User {
+    +id
+    +Surname
+    +Name
+    +phoneNumber
+    +email
+}
+
+object "Интерфейс пользователя" as UI {
+    +showForm()
+    +getUserInput()
+}
+
+object "Система" as System {
+    +addUserInfo()
+    +findSkill()
+    +provideService()
+}
+
+object "Профиль информации" as ProfInf {
+    +skillName
+    +skillDescription
+    +cost
+    +persDescription
+}
+
+object "Обмен навыками" as SkillExchange {
+    +exchangeId
+}
+
+User -> UI : interacts
+UI -> System : getUserInput()
+System -> ProfInf : addUserInfo()
+System -> SkillExchange : provideService()
+System -> User : showConfirmation()
+@enduml

@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="init" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="module-info" />
+        <option value="UML Class" />
+        <option value="Interface" />
+        <option value="JUnit3 Test Class" />
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="UML Sequence" />
+        <option value="UML Deployment" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2oRS6ALzJvhoryrCquvwlcovTBF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.ConfigurationUtil.executor": "Run",
+    "Application.DataProviderMongo.executor": "Run",
+    "Application.GetDatabaseConnection.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.RunApplication.executor": "Run",
+    "Application.XmlUtil.executor": "Run",
+    "Application.YamlUtil.executor": "Run",
+    "DefaultPlantUmlFileTemplate": "UML Deployment",
+    "JAR Application.SkillSwap-1.0-SNAPSHOT.jar.executor": "Run",
+    "JUnit.ConfigTest.testGetMonths.executor": "Run",
+    "JUnit.ConfigurationTest.executor": "Run",
+    "JUnit.ConfigurationTest.testCRUDWithProperties.executor": "Run",
+    "JUnit.ConfigurationTest.testCRUDWithXML.executor": "Run",
+    "JUnit.ConfigurationTest.testCRUDWithYAML.executor": "Run",
+    "JUnit.DataProviderCsvTest.executor": "Run",
+    "JUnit.DataProviderCsvTest.testDeleteRecord.executor": "Run",
+    "JUnit.DataProviderCsvTest.testGetRecordById.executor": "Run",
+    "JUnit.DataProviderCsvTest.testSaveRecord.executor": "Run",
+    "JUnit.DataProviderMongoTest.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMongoOperations.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDWithMongoDB.executor": "Run",
+    "JUnit.DataProviderPSQLTest.executor": "Run",
+    "JUnit.DataProviderPSQLTest.shouldGetJdbcConnection.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithPersInf.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithProfInf.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithReview.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithSkillExchange.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransaction.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCreatePersInf.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testGetSkillByName.executor": "Run",
+    "JUnit.DataProviderXmlTest.executor": "Run",
+    "JUnit.DataProviderXmlTest.testInitDataSourceLoadsDataFromXml.executor": "Run",
+    "JUnit.FileLoadTest.checkInValidFileName.executor": "Run",
+    "JUnit.FileLoadTest.checkValidFileName.executor": "Run",
+    "JUnit.FileLoadTest.executor": "Debug",
+    "JUnit.HistoryContentRepositoryTest.executor": "Run",
+    "JUnit.HistoryContentRepositoryTest.testSave.executor": "Run",
+    "JUnit.PersInfDaoTest.executor": "Run",
+    "JUnit.PersInfDaoTest.shouldGetJdbcConnection.executor": "Run",
+    "JUnit.PersInfDaoTest.testCRUDMethods.executor": "Run",
+    "JUnit.SkillSwapClientTest.executor": "Run",
+    "Maven.SkillSwap [clean,package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/JavaProj/Architec/SkillSwap",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.24827586",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaProj\Architec\SkillSwap\src\main\uml" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaProj\Architec\SkillSwap\src\main\resources" />
+      <recent name="D:\JavaProj\Architec\SkillSwap\src\main\logs" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="sfedu.xast.utils" />
+      <recent name="sfedu.xast.api" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="sfedu.xast.api" />
+      <recent name="sfedu.xast.utils" />
+      <recent name="sfedu.xast.dao" />
+      <recent name="sfedu.xast.repository" />
+      <recent name="sfedu.xast" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean package" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.RunApplication">
+    <configuration name="RunApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.RunApplication" />
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataProviderPSQLTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderPSQLTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataProviderPSQLTest.shouldGetJdbcConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderPSQLTest" />
+      <option name="METHOD_NAME" value="shouldGetJdbcConnection" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataProviderPSQLTest.testGetSkillByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderPSQLTest" />
+      <option name="METHOD_NAME" value="testGetSkillByName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SkillSwap-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/SkillSwap-1.0-SNAPSHOT.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.RunApplication" />
+        <item itemvalue="JAR Application.SkillSwap-1.0-SNAPSHOT.jar" />
+        <item itemvalue="JUnit.DataProviderPSQLTest.shouldGetJdbcConnection" />
+        <item itemvalue="JUnit.DataProviderPSQLTest.testGetSkillByName" />
+        <item itemvalue="JUnit.DataProviderPSQLTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="" />
+      <created>1730830720445</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730830720445</updated>
+      <workItem from="1730830721664" duration="76000" />
+      <workItem from="1730830808317" duration="120000" />
+      <workItem from="1730994677612" duration="182000" />
+      <workItem from="1731078366814" duration="1102000" />
+      <workItem from="1731134068740" duration="1459000" />
+      <workItem from="1731146544852" duration="14000" />
+      <workItem from="1731149099115" duration="146000" />
+      <workItem from="1731149373316" duration="511000" />
+      <workItem from="1731159897528" duration="555000" />
+      <workItem from="1731176009238" duration="3825000" />
+      <workItem from="1731218548782" duration="3839000" />
+      <workItem from="1731225155949" duration="2489000" />
+      <workItem from="1731259855882" duration="613000" />
+      <workItem from="1731322350704" duration="5107000" />
+      <workItem from="1731349380638" duration="380000" />
+      <workItem from="1731405478611" duration="8739000" />
+      <workItem from="1731418565084" duration="250000" />
+      <workItem from="1731485853426" duration="126000" />
+      <workItem from="1731505578728" duration="19000" />
+      <workItem from="1731603062266" duration="2603000" />
+      <workItem from="1731672676231" duration="103000" />
+      <workItem from="1731676754726" duration="50000" />
+      <workItem from="1731678890135" duration="1318000" />
+      <workItem from="1731686573478" duration="33000" />
+      <workItem from="1731689351769" duration="696000" />
+      <workItem from="1731693499136" duration="515000" />
+      <workItem from="1731738547106" duration="2858000" />
+      <workItem from="1731932081809" duration="571000" />
+      <workItem from="1731942233899" duration="63000" />
+      <workItem from="1732471591749" duration="60000" />
+      <workItem from="1732553577179" duration="3535000" />
+      <workItem from="1732624798577" duration="24000" />
+      <workItem from="1732863766991" duration="244000" />
+      <workItem from="1732871888872" duration="32000" />
+      <workItem from="1732908106165" duration="842000" />
+      <workItem from="1733124127876" duration="299000" />
+      <workItem from="1733128265583" duration="1242000" />
+      <workItem from="1733144966354" duration="5382000" />
+      <workItem from="1733159330519" duration="540000" />
+      <workItem from="1733246120303" duration="26000" />
+      <workItem from="1733246530947" duration="34000" />
+      <workItem from="1733383192061" duration="2604000" />
+      <workItem from="1733386318438" duration="1356000" />
+      <workItem from="1733410692897" duration="23000" />
+      <workItem from="1733481270130" duration="3775000" />
+      <workItem from="1733485686566" duration="1061000" />
+      <workItem from="1733505144845" duration="5020000" />
+      <workItem from="1733513261953" duration="1646000" />
+      <workItem from="1733592583741" duration="5319000" />
+      <workItem from="1733654969382" duration="58000" />
+      <workItem from="1733664434972" duration="3454000" />
+      <workItem from="1733742723522" duration="38000" />
+      <workItem from="1733761979984" duration="4367000" />
+      <workItem from="1733839271074" duration="266000" />
+      <workItem from="1733902473420" duration="16000" />
+      <workItem from="1733991287987" duration="3011000" />
+      <workItem from="1734001978368" duration="3939000" />
+      <workItem from="1734008280078" duration="141000" />
+      <workItem from="1734097151265" duration="3877000" />
+      <workItem from="1734111246484" duration="64000" />
+      <workItem from="1734111481240" duration="6600000" />
+      <workItem from="1734161441458" duration="3645000" />
+      <workItem from="1734280170319" duration="5443000" />
+      <workItem from="1734354528377" duration="52000" />
+      <workItem from="1734355325088" duration="3113000" />
+      <workItem from="1734364003588" duration="5859000" />
+      <workItem from="1734373585057" duration="847000" />
+      <workItem from="1734448019835" duration="20000" />
+      <workItem from="1734458155922" duration="2360000" />
+      <workItem from="1734504204170" duration="6815000" />
+      <workItem from="1734525647751" duration="71000" />
+      <workItem from="1734526149100" duration="4134000" />
+      <workItem from="1734542777846" duration="6966000" />
+      <workItem from="1734624673077" duration="7535000" />
+      <workItem from="1734633212522" duration="681000" />
+      <workItem from="1734634397955" duration="1059000" />
+      <workItem from="1734636616528" duration="275000" />
+      <workItem from="1734694384299" duration="6223000" />
+      <workItem from="1734717830647" duration="5416000" />
+      <workItem from="1734761626727" duration="2673000" />
+      <workItem from="1734766092693" duration="935000" />
+      <workItem from="1734782409198" duration="19000" />
+      <workItem from="1734792935114" duration="3751000" />
+      <workItem from="1734804023019" duration="2899000" />
+      <workItem from="1734855992816" duration="5540000" />
+      <workItem from="1734861762061" duration="1075000" />
+      <workItem from="1734865334769" duration="4426000" />
+      <workItem from="1734870006790" duration="89000" />
+      <workItem from="1734870108075" duration="493000" />
+      <workItem from="1734870617560" duration="2961000" />
+      <workItem from="1734884322567" duration="6763000" />
+      <workItem from="1734934395636" duration="1958000" />
+      <workItem from="1734963691453" duration="228000" />
+      <workItem from="1734964658940" duration="3985000" />
+      <workItem from="1734978605028" duration="1009000" />
+      <workItem from="1735060067473" duration="6965000" />
+      <workItem from="1735111580314" duration="7235000" />
+      <workItem from="1735131218630" duration="2408000" />
+      <workItem from="1735133655233" duration="380000" />
+      <workItem from="1735134051535" duration="851000" />
+      <workItem from="1735144794869" duration="7423000" />
+      <workItem from="1735196624875" duration="3872000" />
+      <workItem from="1735200793976" duration="47000" />
+      <workItem from="1735281597317" duration="482000" />
+      <workItem from="1735307898021" duration="1883000" />
+      <workItem from="1735375281107" duration="317000" />
+      <workItem from="1735376034292" duration="5188000" />
+      <workItem from="1736101139791" duration="48000" />
+      <workItem from="1736328095923" duration="1231000" />
+      <workItem from="1736416495779" duration="25000" />
+      <workItem from="1736493649951" duration="289000" />
+      <workItem from="1736508647050" duration="1377000" />
+      <workItem from="1736538525062" duration="247000" />
+      <workItem from="1736602792490" duration="51000" />
+      <workItem from="1736602873222" duration="33000" />
+      <workItem from="1736603975948" duration="1617000" />
+      <workItem from="1736605677734" duration="126000" />
+    </task>
+    <task id="LOCAL-00020" summary="Change sout to loggers">
+      <option name="closed" value="true" />
+      <created>1733514907984</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1733514907984</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Change pom.xml, DataProviderMongo, HistoryContent">
+      <option name="closed" value="true" />
+      <created>1733593675456</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1733593675456</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Add interaction with MongoDB. Two methdos, are works successfully">
+      <option name="closed" value="true" />
+      <created>1733596364850</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1733596364850</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Add interaction with MongoDB">
+      <option name="closed" value="true" />
+      <created>1733667444509</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1733667444509</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Clean Code">
+      <option name="closed" value="true" />
+      <created>1733667794367</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1733667794367</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Add try/catch in DataProviderMongo">
+      <option name="closed" value="true" />
+      <created>1733765989892</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1733765989892</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Add DataProviderCsv with all CRUD operations">
+      <option name="closed" value="true" />
+      <created>1733993447634</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1733993447634</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Test DataProviderCsv + use junit-jupiter instead junit">
+      <option name="closed" value="true" />
+      <created>1733994284846</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1733994284846</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Add working with csv documents(CRUD operations)">
+      <option name="closed" value="true" />
+      <created>1734005857614</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1734005857614</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Clean code">
+      <option name="closed" value="true" />
+      <created>1734005972121</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1734005972121</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Show, how tests works">
+      <option name="closed" value="true" />
+      <created>1734101376506</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1734101376506</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Add lab with Exception/Jdbc">
+      <option name="closed" value="true" />
+      <created>1734117429523</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1734117429523</updated>
+    </task>
+    <task id="LOCAL-00032" summary="fix">
+      <option name="closed" value="true" />
+      <created>1734118328776</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1734118328776</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fix">
+      <option name="closed" value="true" />
+      <created>1734166432806</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1734166432806</updated>
+    </task>
+    <task id="LOCAL-00034" summary="delete test class">
+      <option name="closed" value="true" />
+      <created>1734166751223</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1734166751223</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Add new class with working with data">
+      <option name="closed" value="true" />
+      <created>1734281878365</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1734281878365</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Add new class with working with data">
+      <option name="closed" value="true" />
+      <created>1734283699971</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1734283699971</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Add new class with working with data">
+      <option name="closed" value="true" />
+      <created>1734283738436</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1734283738436</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Add new class with working with data">
+      <option name="closed" value="true" />
+      <created>1734283860624</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1734283860624</updated>
+    </task>
+    <task id="LOCAL-00039" summary="PersInfDao, ProfInfDao, Status - added">
+      <option name="closed" value="true" />
+      <created>1734284861985</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1734284861985</updated>
+    </task>
+    <task id="LOCAL-00040" summary="add all models">
+      <option name="closed" value="true" />
+      <created>1734285530434</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1734285530434</updated>
+    </task>
+    <task id="LOCAL-00041" summary="add all models">
+      <option name="closed" value="true" />
+      <created>1734285599651</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1734285599651</updated>
+    </task>
+    <task id="LOCAL-00042" summary="add all models">
+      <option name="closed" value="true" />
+      <created>1734285633028</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1734285633028</updated>
+    </task>
+    <task id="LOCAL-00043" summary="change type of id in persinf and profinf and add auto gen id">
+      <option name="closed" value="true" />
+      <created>1734358576105</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1734358576105</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Create all CRUD-operations with models: ProfInf, PersInf">
+      <option name="closed" value="true" />
+      <created>1734507539899</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1734507539899</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Add tests">
+      <option name="closed" value="true" />
+      <created>1734509609257</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1734509609257</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Add tests">
+      <option name="closed" value="true" />
+      <created>1734509668082</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1734509668082</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Change types">
+      <option name="closed" value="true" />
+      <created>1734511071959</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1734511071959</updated>
+    </task>
+    <task id="LOCAL-00048" summary="realize all methods for working with database">
+      <option name="closed" value="true" />
+      <created>1734530209477</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1734530209477</updated>
+    </task>
+    <task id="LOCAL-00049" summary="All crud methods with all models (x_x)">
+      <option name="closed" value="true" />
+      <created>1734549767018</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1734549767018</updated>
+    </task>
+    <task id="LOCAL-00050" summary="All crud methods with all models (x_x)">
+      <option name="closed" value="true" />
+      <created>1734700769703</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1734700769703</updated>
+    </task>
+    <task id="LOCAL-00051" summary="PersInf, ProfInf WORKS!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1734703889626</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1734703889626</updated>
+    </task>
+    <task id="LOCAL-00052" summary="CRUD with PersInf, ProfInf, SkillExchange WORKS!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1734721298438</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1734721298439</updated>
+    </task>
+    <task id="LOCAL-00053" summary="CRUD with PersInf, ProfInf, SkillExchange, Review WORKS!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1734723276121</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1734723276121</updated>
+    </task>
+    <task id="LOCAL-00054" summary="CRUD with all models WORKS!!!!!!!">
+      <option name="closed" value="true" />
+      <created>1734766122879</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1734766122880</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Clean code, add logger">
+      <option name="closed" value="true" />
+      <created>1734766737887</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1734766737887</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Clean code, add logger">
+      <option name="closed" value="true" />
+      <created>1734766996677</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1734766996677</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Clean code, add logger">
+      <option name="closed" value="true" />
+      <created>1734795965489</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1734795965489</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Add boolean">
+      <option name="closed" value="true" />
+      <created>1734870809690</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1734870809690</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Add main RunApplication and method, which find by skillName">
+      <option name="closed" value="true" />
+      <created>1734889969278</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1734889969278</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Add doc">
+      <option name="closed" value="true" />
+      <created>1734890026969</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1734890026969</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1735060693577</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1735060693578</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Final">
+      <option name="closed" value="true" />
+      <created>1735115118938</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1735115118939</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Finish work">
+      <option name="closed" value="true" />
+      <created>1735196672833</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1735196672833</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Add README.md">
+      <option name="closed" value="true" />
+      <created>1735198681026</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1735198681027</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Add README.md">
+      <option name="closed" value="true" />
+      <created>1735198994964</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1735198994964</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Change README.md">
+      <option name="closed" value="true" />
+      <created>1735200272635</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1735200272635</updated>
+    </task>
+    <task id="LOCAL-00067" summary="init">
+      <option name="closed" value="true" />
+      <created>1736604226437</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1736604226437</updated>
+    </task>
+    <task id="LOCAL-00068" summary="init">
+      <option name="closed" value="true" />
+      <created>1736605229039</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1736605229039</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="delete test class" />
+    <MESSAGE value="Add new class with working with data" />
+    <MESSAGE value="PersInfDao, ProfInfDao, Status - added" />
+    <MESSAGE value="add all models" />
+    <MESSAGE value="change type of id in persinf and profinf and add auto gen id" />
+    <MESSAGE value="Create all CRUD-operations with models: ProfInf, PersInf" />
+    <MESSAGE value="Add tests" />
+    <MESSAGE value="Change types" />
+    <MESSAGE value="realize all methods for working with database" />
+    <MESSAGE value="All crud methods with all models (x_x)" />
+    <MESSAGE value="PersInf, ProfInf WORKS!!!!!!!" />
+    <MESSAGE value="CRUD with PersInf, ProfInf, SkillExchange WORKS!!!!!!!" />
+    <MESSAGE value="CRUD with PersInf, ProfInf, SkillExchange, Review WORKS!!!!!!!" />
+    <MESSAGE value="CRUD with all models WORKS!!!!!!!" />
+    <MESSAGE value="Clean code, add logger" />
+    <MESSAGE value="Add boolean" />
+    <MESSAGE value="Add main RunApplication and method, which find by skillName" />
+    <MESSAGE value="Add doc" />
+    <MESSAGE value="Commit" />
+    <MESSAGE value="Final" />
+    <MESSAGE value="Finish work" />
+    <MESSAGE value="Add README.md" />
+    <MESSAGE value="Change README.md" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+</project>

@@ -1,0 +1,21 @@
+@startuml
+
+node "Web Server" as webServer {
+    component "User Interface" as ui
+    component "Application Logic" as appLogic
+}
+
+node "Database Server" as dbServer {
+    database "PostgreSQL" as db
+
+    db --> PersInf
+    db --> ProfInf
+    db --> SkillExchange
+    db --> Review
+    db --> Transaction
+}
+
+ui --> appLogic : User Input
+appLogic --> db : Query/Update
+
+@enduml
