@@ -41,3 +41,4 @@ Caused by: java.net.ConnectException: Connection refused: getsockopt
 12-25 21:37:41 INFO  SkillSwapClientTest - User Home Directory: C:\Users\Артём
 12-25 21:37:41 INFO  SkillSwapClientTest - User Working Directory: D:\JavaProj\Architec\SkillSwap
 12-25 21:37:41 INFO  SkillSwapClientTest - Test INFO logging.
+01-13 18:20:06 ERROR DataProviderPSQL - Can't find person with id 666

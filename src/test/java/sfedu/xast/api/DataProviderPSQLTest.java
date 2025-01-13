@@ -27,7 +27,8 @@ class DataProviderPSQLTest {
     }
 
     @Test
-    void testCRUDMethodsWithPersInf() throws SQLException {
+    void testCRUDMethodsWithPersInfPositive() throws SQLException {
+
         PersInf persInf = new PersInf("Jackie","Chan","+79180540546", "jackie@mail.ru");
 
         dataProviderPSQL.createPersInf(persInf);
@@ -43,7 +44,6 @@ class DataProviderPSQLTest {
         retrievedUser.setName("User");
         dataProviderPSQL.updatePersInf(retrievedUser);
 
-
         PersInf updatedUser = dataProviderPSQL.readPersInf(retrievedUser, retrievedUser.getId());
         assertEquals("Updated", updatedUser.getSurname());
         assertEquals("User", updatedUser.getName());
@@ -52,7 +52,33 @@ class DataProviderPSQLTest {
     }
 
     @Test
-    void testCRUDMethodsWithProfInf() throws SQLException {
+    void testCRUDMethodsWithPersInfNegative() throws SQLException {
+
+        //CreatePersInfWithNull
+        PersInf persInf = null;
+        assertFalse(dataProviderPSQL.createPersInf(persInf));
+
+        //ReadPersInfWithNonExistingId
+        String invalidId = "666";
+        SQLException exception = assertThrows(SQLException.class, () -> {
+            dataProviderPSQL.readPersInf(persInf, invalidId);
+        });
+        assertEquals("Can't find person with id " + invalidId, exception.getMessage());
+
+        //UpdatePersInfWithNull
+        SQLException exceptionNew = assertThrows(SQLException.class, () -> {
+            dataProviderPSQL.updatePersInf(persInf);
+        });
+        assertEquals("PersInf object must not be null", exceptionNew.getMessage());
+
+        //DeletePersInfWithNullId
+        String id = null;
+        boolean res = dataProviderPSQL.deletePersInf(id);
+        assertFalse(res);
+    }
+
+    @Test
+    void testCRUDMethodsWithProfInfPositive() throws SQLException {
         PersInf persInf = new PersInf("Jackie","Chan","+79180540546", "jackie@mail.ru");
         ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
                 "Java backend developer", 5.5, 4.0);
@@ -80,7 +106,34 @@ class DataProviderPSQLTest {
     }
 
     @Test
-    void testCRUDMethodsWithSkillExchange() throws SQLException {
+    void testCRUDMethodsWithProfInfNegative() throws SQLException {
+
+        //CreateProfInfWithNull
+        PersInf persInf = null;
+        ProfInf profInf = null;
+        assertFalse(dataProviderPSQL.createProfInf(profInf, persInf));
+
+        //ReadProfInfWithNonExistingId
+        String invalidId = "666";
+        SQLException exception = assertThrows(SQLException.class, () -> {
+            dataProviderPSQL.readProfInf(profInf, invalidId);
+        });
+        assertEquals("Can't find person with id " + invalidId, exception.getMessage());
+
+        //UpdateProfInfWithNull
+        SQLException exceptionNew = assertThrows(SQLException.class, () -> {
+            dataProviderPSQL.updateProfInf(profInf);
+        });
+        assertEquals("ProfInf object must not be null", exceptionNew.getMessage());
+
+        //DeleteProfInfWithNullId
+        String id = null;
+        boolean res = dataProviderPSQL.deleteProfInf(id);
+        assertFalse(res);
+    }
+
+    @Test
+    void testCRUDMethodsWithSkillExchangePositive() throws SQLException {
         PersInf persInfRequesting = new PersInf("Bober","Curwa","+88005553535", "curwa@mail.ru");
         PersInf persInf = new PersInf("Jackie","Chan","+87005553636", "jackie@mail.ru");
         ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
@@ -111,7 +164,31 @@ class DataProviderPSQLTest {
     }
 
     @Test
-    void testCRUDMethodsWithReview() throws SQLException {
+    void testCRUDMethodsWithSkillExchangeNegative() throws SQLException {
+
+        //CreateSkillExchangeWithNull
+        SkillExchange skillExchange = null;
+        assertFalse(dataProviderPSQL.createSkillExchange(skillExchange));
+
+        //ReadSkillExchangeWithNonExistingId
+        assertThrows(NullPointerException.class, () -> {
+            dataProviderPSQL.readSkillExchange(skillExchange);
+        });
+
+        //UpdateSkillExchangeWithNull
+        SQLException exceptionNew = assertThrows(SQLException.class, () -> {
+            dataProviderPSQL.updateSkillExchange(skillExchange);
+        });
+        assertEquals("SkillExchange object must not be null", exceptionNew.getMessage());
+
+        //DeleteSkillExchangeWithNullId
+        String id = null;
+        boolean res = dataProviderPSQL.deleteSkillExchange(id);
+        assertFalse(res);
+    }
+
+    @Test
+    void testCRUDMethodsWithReviewPositive() throws SQLException {
         PersInf persInfReviewer = new PersInf("Bober","Curwa","+88005553535", "curwa@mail.ru");
         PersInf persInfEvaluated = new PersInf("Jackie","Chan","+87005553636", "jackie@mail.ru");
         ProfInf profInf = new ProfInf(persInfEvaluated.getId(), "Programming","Programming in Java", 2500.00,
@@ -145,7 +222,26 @@ class DataProviderPSQLTest {
     }
 
     @Test
-    void testCRUDMethodsWithTransaction() throws SQLException {
+    void testCRUDMethodsWithReviewNegative() throws SQLException {
+
+        //CreateReviewWithNull
+        Review review = null;
+        assertFalse(dataProviderPSQL.createReview(review));
+
+        //ReadReviewWithNonExistingId
+        assertThrows(NullPointerException.class, () -> {
+            dataProviderPSQL.readReview(review);
+        });
+
+        //UpdateReviewWithNull
+        SQLException exceptionNew = assertThrows(SQLException.class, () -> {
+            dataProviderPSQL.updateReview(review);
+        });
+        assertEquals("Review object must not be null", exceptionNew.getMessage());
+    }
+
+    @Test
+    void testCRUDMethodsWithTransactionPositive() throws SQLException {
         PersInf persInfRequesting = new PersInf("Bober","Curwa","+88005553535", "curwa@mail.ru");
         PersInf persInf = new PersInf("Jackie","Chan","+87005553636", "jackie@mail.ru");
         ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
@@ -178,8 +274,22 @@ class DataProviderPSQLTest {
     }
 
     @Test
-    void testGetSkillByName() throws SQLException {
-        dataProviderPSQL.printProfInfList(dataProviderPSQL.readProfInfBySkillName("java"));
+    void testCRUDMethodsWithTransactionNegative() throws SQLException {
+
+        //CreateTransactionWithNull
+        Transaction transaction = null;
+        assertFalse(dataProviderPSQL.createTransaction(transaction));
+
+        //ReadTransactionWithNonExistingId
+        assertThrows(NullPointerException.class, () -> {
+            dataProviderPSQL.readTransaction(transaction);
+        });
+
+        //UpdateTransactionWithNull
+        SQLException exceptionNew = assertThrows(SQLException.class, () -> {
+            dataProviderPSQL.updateTransaction(transaction);
+        });
+        assertEquals("Transaction object must not be null", exceptionNew.getMessage());
     }
 }
 

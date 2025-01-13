@@ -41,6 +41,9 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public boolean createPersInf(PersInf persInf) {
+        if(persInf==null){
+            return false;
+        }
         String sqlPersInf = Constants.insertPersInf;
         try (PreparedStatement ps = connection.prepareStatement(sqlPersInf)) {
             ps.setString(1, persInf.getId());
@@ -64,7 +67,7 @@ public class DataProviderPSQL {
      * @return PersInf object
      * @throws SQLException
      */
-    public PersInf readPersInf(PersInf persInf, String id)  {
+    public PersInf readPersInf(PersInf persInf, String id) throws SQLException {
         String sql = Constants.readPersInf;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, id);
@@ -83,6 +86,7 @@ public class DataProviderPSQL {
                 }
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            throw e;
         }
         return persInf;
     }
@@ -134,7 +138,10 @@ public class DataProviderPSQL {
      * @param persInf
      * @throws SQLException
      */
-    public boolean createProfInf(ProfInf profInf, PersInf persInf) {
+    public boolean createProfInf(ProfInf profInf, PersInf persInf) throws SQLException {
+        if (persInf == null || profInf == null) {
+            return false;
+        }
         String insertProfSql = Constants.insertProfInf;
         try (PreparedStatement profStmt = connection.prepareStatement(insertProfSql)) {
             profStmt.setString(1, persInf.getId());
@@ -180,6 +187,7 @@ public class DataProviderPSQL {
                 }
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            throw e;
         }
         return profInf;
     }
@@ -191,7 +199,7 @@ public class DataProviderPSQL {
      */
     public boolean updateProfInf(ProfInf profInf) throws SQLException {
         if (profInf == null) {
-            throw new SQLException("Profnf object must not be null");
+            throw new SQLException("ProfInf object must not be null");
         }
         String sql = Constants.updateProfInf;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
@@ -319,9 +327,9 @@ public class DataProviderPSQL {
             }
         } catch (SQLException e) {
             logger.error(e.getMessage());
-            throw e; // Рекомендуется повторно выбрасывать исключение после логирования
+            throw e;
         }
-        return profInf; // Возвращаем новый объект ProfInf
+        return profInf;
     }
 
     /**
@@ -331,6 +339,9 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public boolean createSkillExchange(SkillExchange skillExchange) {
+        if(skillExchange==null){
+            return false;
+        }
         String sqlSkillExchange = Constants.insertSkillExchange;
         try (PreparedStatement ps = connection.prepareStatement(sqlSkillExchange)) {
             ps.setString(1, skillExchange.getExchangeId());
@@ -351,7 +362,7 @@ public class DataProviderPSQL {
      * @return SkillExchange object
      * @throws SQLException
      */
-    public SkillExchange readSkillExchange(SkillExchange skillExchange) {
+    public SkillExchange readSkillExchange(SkillExchange skillExchange) throws SQLException {
         String sql = Constants.readSkillExchange;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setString(1, skillExchange.getExchangeId());
@@ -370,6 +381,7 @@ public class DataProviderPSQL {
 
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            throw e;
         }
         return skillExchange;
     }
@@ -421,6 +433,9 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public boolean createReview(Review review) {
+        if(review == null){
+            return false;
+        }
         String sqlReview = Constants.insertReview;
         try (PreparedStatement ps = connection.prepareStatement(sqlReview)) {
             ps.setString(1, review.getReviewId());
@@ -461,6 +476,7 @@ public class DataProviderPSQL {
                 }
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            throw e;
         }
         return review;
     }
@@ -471,6 +487,9 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public boolean updateReview(Review review) throws SQLException {
+        if (review == null) {
+            throw new SQLException("Review object must not be null");
+        }
         String sql = Constants.updateReview;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setDouble(1, review.getRating());
@@ -509,6 +528,9 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public boolean createTransaction(Transaction transaction) throws SQLException {
+        if(transaction == null){
+            return false;
+        }
         String sqlTransaction = Constants.insertTransaction;
         try (PreparedStatement ps = connection.prepareStatement(sqlTransaction)) {
             ps.setString(1, transaction.getTransactionId());
@@ -549,6 +571,7 @@ public class DataProviderPSQL {
                 }
         }catch (SQLException e) {
             logger.error(e.getMessage());
+            throw e;
         }
         return transaction;
     }
@@ -559,6 +582,9 @@ public class DataProviderPSQL {
      * @throws SQLException
      */
     public boolean updateTransaction(Transaction transaction) throws SQLException {
+        if (transaction == null) {
+            throw new SQLException("Transaction object must not be null");
+        }
         String sql = Constants.updateTransaction;
         try (PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setDate(1, new java.sql.Date(transaction.getDate().getTime()));
