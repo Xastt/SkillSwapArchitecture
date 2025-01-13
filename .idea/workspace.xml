@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add negative tests with psql">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Start doing all crud methods with csv">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderCsvTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderCsvTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +83,7 @@
     "JUnit.ConfigurationTest.testCRUDWithXML.executor": "Run",
     "JUnit.ConfigurationTest.testCRUDWithYAML.executor": "Run",
     "JUnit.DataProviderCsvTest.executor": "Run",
+    "JUnit.DataProviderCsvTest.testCRUDMethodsWithPersInfPositiveCSV.executor": "Run",
     "JUnit.DataProviderCsvTest.testDeleteRecord.executor": "Run",
     "JUnit.DataProviderCsvTest.testGetRecordById.executor": "Run",
     "JUnit.DataProviderCsvTest.testSaveRecord.executor": "Run",
@@ -175,7 +175,7 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.DataProviderCsv">
+  <component name="RunManager" selected="JUnit.DataProviderCsvTest.testCRUDMethodsWithPersInfPositiveCSV">
     <configuration name="DataProviderCsv" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderCsv" />
       <module name="SkillSwap" />
@@ -189,7 +189,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderPSQLTest.testCRUDMethodsWithProfInfNegative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataProviderCsvTest.testCRUDMethodsWithPersInfPositiveCSV" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -198,8 +198,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast.api" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderPSQLTest" />
-      <option name="METHOD_NAME" value="testCRUDMethodsWithProfInfNegative" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderCsvTest" />
+      <option name="METHOD_NAME" value="testCRUDMethodsWithPersInfPositiveCSV" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -255,11 +255,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithPersInfPositiveCSV" />
         <item itemvalue="Application.DataProviderCsv" />
         <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransactionNegative" />
         <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithReviewNegative" />
         <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithSkillExchangeNegative" />
-        <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithProfInfNegative" />
       </list>
     </recent_temporary>
   </component>
@@ -399,15 +399,7 @@
       <workItem from="1736606163493" duration="460000" />
       <workItem from="1736606638243" duration="2539000" />
       <workItem from="1736780380841" duration="3557000" />
-      <workItem from="1736789447937" duration="2668000" />
-    </task>
-    <task id="LOCAL-00024" summary="Clean Code">
-      <option name="closed" value="true" />
-      <created>1733667794367</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1733667794367</updated>
+      <workItem from="1736789447937" duration="3854000" />
     </task>
     <task id="LOCAL-00025" summary="Add try/catch in DataProviderMongo">
       <option name="closed" value="true" />
@@ -793,7 +785,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736783871120</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Start doing all crud methods with csv">
+      <option name="closed" value="true" />
+      <created>1736792447129</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1736792447129</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -812,7 +812,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add new class with working with data" />
     <MESSAGE value="PersInfDao, ProfInfDao, Status - added" />
     <MESSAGE value="add all models" />
     <MESSAGE value="change type of id in persinf and profinf and add auto gen id" />
@@ -837,6 +836,7 @@
     <MESSAGE value="init" />
     <MESSAGE value="Move all sql requests from DataProviderPSQL to Constants" />
     <MESSAGE value="Add negative tests with psql" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add negative tests with psql" />
+    <MESSAGE value="Start doing all crud methods with csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start doing all crud methods with csv" />
   </component>
 </project>

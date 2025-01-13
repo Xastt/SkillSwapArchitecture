@@ -13,9 +13,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
 
+//TODO 1)добавить проверку возвращаемых значений в тестах 2)boolean + проверка на null. 3) Исправить методы так, чтобы возвращался не список, а писалось в объект или обыграть это иначе
+
 public class DataProviderCsv  {
 
-    //works
     public static void writeToCsv(List<String[]> data) throws IOException {
         try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(Constants.csvFilePath));
              CSVWriter csvWriter = new CSVWriter(writer)) {
@@ -34,17 +35,6 @@ public class DataProviderCsv  {
         return data;
     }
 
-    //works
-    public static void printCsvData() throws IOException, CsvException {
-        List<String[]> data = readFromCsv();
-        for (String[] row : data) {
-            System.out.println(String.join(", ", row));
-        }
-    }
-
-
-    // CRUD methods for PersInf
-    //works
     public void createPersInf(PersInf persInf) throws IOException, CsvException {
         List<String[]> data = readFromCsv();
         data.add(new String[]{persInf.getId(), persInf.getSurname(), persInf.getName(),
@@ -52,12 +42,10 @@ public class DataProviderCsv  {
         writeToCsv(data);
     }
 
-    //not works
     public List<String[]> readPersInf() throws IOException, CsvException {
         return readFromCsv();
     }
 
-    //not works
     public void updatePersInf(PersInf updatedPersInf) throws IOException, CsvException {
         List<String[]> data = readFromCsv();
         for (int i = 0; i < data.size(); i++) {
@@ -70,15 +58,9 @@ public class DataProviderCsv  {
         writeToCsv(data);
     }
 
-    //works
     public void deletePersInf(String id) throws IOException, CsvException {
         List<String[]> data = readFromCsv();
         data.removeIf(row -> row[0].equals(id));
         writeToCsv(data);
-    }
-
-    public static void main(String[] args) throws IOException, CsvException {
-        DataProviderCsv dataProviderCsv = new DataProviderCsv();
-       dataProviderCsv.deletePersInf("ddfd19ca-881c-4acf-97f4-32389be4296b");
     }
 }
