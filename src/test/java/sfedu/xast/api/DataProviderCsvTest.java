@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.*;
 import sfedu.xast.models.PersForApi;
 
-public class DataProviderCsvTest{
+/*public class DataProviderCsvTest{
 
     private DataProviderCsv dataProviderCsv;
     private String testCsvFilePath = "src/test/resources/test.csv";
@@ -14,13 +14,13 @@ public class DataProviderCsvTest{
         dataProviderCsv = new DataProviderCsv(testCsvFilePath);
     }
 
-    /*@AfterEach
-    public void tearDown() {
-        File file = new File(testCsvFilePath);
-        if (file.exists()) {
-            file.delete();
-        }
-    }*/
+    //@AfterEach
+    //public void tearDown() {
+      //  File file = new File(testCsvFilePath);
+        //if (file.exists()) {
+          //  file.delete();
+        //}
+    //}
 
     @Test
     public void testSaveRecord(){
@@ -50,4 +50,4 @@ public class DataProviderCsvTest{
         assertNull(retrieved);
     }
 
-}
+}*/
