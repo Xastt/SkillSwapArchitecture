@@ -17,6 +17,8 @@ import java.util.*;
 
 public class DataProviderCsv  {
 
+    Logger logger = LoggerFactory.getLogger(DataProviderCsv.class);
+
     public static void writeToCsv(List<String[]> data) throws IOException {
         try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(Constants.csvFilePath));
              CSVWriter csvWriter = new CSVWriter(writer)) {
@@ -24,7 +26,7 @@ public class DataProviderCsv  {
         }
     }
 
-    public static List<String[]> readFromCsv() throws IOException, CsvException {
+    public  List<String[]> readFromCsv() throws IOException, CsvException {
         List<String[]> data = new ArrayList<>();
         if (Files.exists(Paths.get(Constants.csvFilePath))) {
             try (BufferedReader reader = Files.newBufferedReader(Paths.get(Constants.csvFilePath));
@@ -35,32 +37,79 @@ public class DataProviderCsv  {
         return data;
     }
 
-    public void createPersInf(PersInf persInf) throws IOException, CsvException {
-        List<String[]> data = readFromCsv();
-        data.add(new String[]{persInf.getId(), persInf.getSurname(), persInf.getName(),
-                persInf.getPhoneNumber(), persInf.getEmail()});
-        writeToCsv(data);
-    }
-
-    public List<String[]> readPersInf() throws IOException, CsvException {
-        return readFromCsv();
-    }
-
-    public void updatePersInf(PersInf updatedPersInf) throws IOException, CsvException {
-        List<String[]> data = readFromCsv();
-        for (int i = 0; i < data.size(); i++) {
-            if (data.get(i)[0].equals(updatedPersInf.getId())) {
-                data.set(i, new String[]{updatedPersInf.getId(), updatedPersInf.getSurname(),
-                        updatedPersInf.getName(), updatedPersInf.getPhoneNumber(), updatedPersInf.getEmail()});
-                break;
-            }
+    public boolean createPersInf(PersInf persInf) throws IOException, CsvException {
+        if(persInf==null){
+            return false;
         }
-        writeToCsv(data);
+        try{
+            List<String[]> data = readFromCsv();
+            data.add(new String[]{persInf.getId(), persInf.getSurname(), persInf.getName(),
+                    persInf.getPhoneNumber(), persInf.getEmail()});
+            writeToCsv(data);
+            return true;
+        }catch (CsvException | IOException e){
+            e.printStackTrace();
+            //logger.error(e.getMessage());
+            return false;
+        }
     }
 
-    public void deletePersInf(String id) throws IOException, CsvException {
-        List<String[]> data = readFromCsv();
-        data.removeIf(row -> row[0].equals(id));
-        writeToCsv(data);
+    public PersInf readPersInf(PersInf persInf, String id) throws IOException, CsvException {
+        if(persInf==null){
+            throw new CsvException("PersInf object must not be null");
+        }
+        try{
+            List<String[]> data = readFromCsv();
+            for (String[] row : data){
+                if(row[0].equals(id)){
+                    persInf.setId(row[0]);
+                    persInf.setSurname(row[1]);
+                    persInf.setName(row[2]);
+                    persInf.setPhoneNumber(row[3]);
+                    persInf.setEmail(row[4]);
+                    return persInf;
+                }
+            }
+            throw new CsvException("Can't find person with id " + id);
+        }catch (CsvException | IOException e){
+            e.printStackTrace();
+            //logger.error(e.getMessage());
+            throw e;
+        }
+    }
+
+    public boolean updatePersInf(PersInf updatedPersInf) throws IOException, CsvException {
+        try {
+            List<String[]> data = readFromCsv();
+            boolean found = false;
+            for (int i = 0; i < data.size(); i++) {
+                if (data.get(i)[0].equals(updatedPersInf.getId())) {
+                    data.set(i, new String[]{updatedPersInf.getId(), updatedPersInf.getSurname(),
+                            updatedPersInf.getName(), updatedPersInf.getPhoneNumber(), updatedPersInf.getEmail()});
+                    found = true;
+                    break;
+                }
+            }
+            writeToCsv(data);
+            return found;
+        }catch (CsvException | IOException e){
+            e.printStackTrace();
+            //logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean deletePersInf(String id) {
+        try{
+            List<String[]> data = readFromCsv();
+            data.removeIf(row -> row[0].equals(id));
+            writeToCsv(data);
+            return true;
+        }catch (CsvException | IOException e){
+            e.printStackTrace();
+            //logger.error(e.getMessage());
+            return false;
+        }
+
     }
 }

@@ -43,6 +43,5 @@ public class Constants {
     public static String deleteTransaction = "DELETE FROM transaction WHERE transactionId = ?";
 
     public static String csvFilePath = "src/test/resources/test.csv";
-    public static String testCsvFilePath = "src/test/resources/test.csv";
 }
 
