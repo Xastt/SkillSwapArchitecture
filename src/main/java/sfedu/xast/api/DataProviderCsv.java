@@ -11,6 +11,7 @@ import sfedu.xast.utils.Constants;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.sql.SQLException;
 import java.util.*;
 
 //TODO 1)добавить проверку возвращаемых значений в тестах 2)boolean + проверка на null. 3) Исправить методы так, чтобы возвращался не список, а писалось в объект или обыграть это иначе
@@ -79,6 +80,9 @@ public class DataProviderCsv  {
     }
 
     public boolean updatePersInf(PersInf updatedPersInf) throws IOException, CsvException {
+        if (updatedPersInf == null) {
+            throw new CsvException("PersInf object must not be null");
+        }
         try {
             List<String[]> data = readFromCsv();
             boolean found = false;
@@ -100,6 +104,9 @@ public class DataProviderCsv  {
     }
 
     public boolean deletePersInf(String id) {
+        if(id == null){
+            return false;
+        }
         try{
             List<String[]> data = readFromCsv();
             data.removeIf(row -> row[0].equals(id));
