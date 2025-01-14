@@ -42,7 +42,5 @@ public class DataProviderCsvTest{
 
         assertTrue(dataProviderCsv.deletePersInf(persInf.getId()));
     }
-
-
 }
 
