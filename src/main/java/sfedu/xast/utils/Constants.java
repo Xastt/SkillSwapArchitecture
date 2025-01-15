@@ -42,6 +42,7 @@ public class Constants {
     public static String updateTransaction = "UPDATE transaction SET date = ?, status = ?, changeId = ? WHERE transactionId = ?";
     public static String deleteTransaction = "DELETE FROM transaction WHERE transactionId = ?";
 
-    public static String csvFilePath = "src/test/resources/test.csv";
+    public static String csvPersInfFilePath = "src/test/resources/test.csv";
+    public static String csvPersInfTestFilePath = "src/test/resources/csvFilesTest/persInfTest.csv";
 }
 

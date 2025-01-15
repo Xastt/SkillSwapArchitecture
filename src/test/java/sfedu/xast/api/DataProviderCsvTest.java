@@ -3,11 +3,15 @@ package sfedu.xast.api;
 import com.opencsv.exceptions.CsvException;
 import org.junit.jupiter.api.*;
 import sfedu.xast.models.PersInf;
+import sfedu.xast.utils.Constants;
+
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DataProviderCsvTest{
+
+    String sourceCsvPathPersInf = Constants.csvPersInfTestFilePath;
 
     private DataProviderCsv dataProviderCsv;
 
@@ -18,12 +22,11 @@ public class DataProviderCsvTest{
 
     @Test
     void testCRUDMethodsWithPersInfPositiveCSV() throws IOException, CsvException {
-
         PersInf persInf = new PersInf("Surname", "Name", "PhoneNumber", "Email");
 
-        assertTrue(dataProviderCsv.createPersInf(persInf));
+        assertTrue(dataProviderCsv.createPersInf(persInf, sourceCsvPathPersInf));
 
-        PersInf retrievedUser = dataProviderCsv.readPersInf(persInf, persInf.getId());
+        PersInf retrievedUser = dataProviderCsv.readPersInf(persInf, persInf.getId(), sourceCsvPathPersInf);
         assertNotNull(retrievedUser);
         assertEquals("Surname", retrievedUser.getSurname());
         assertEquals("Name", retrievedUser.getName());
@@ -32,14 +35,14 @@ public class DataProviderCsvTest{
 
         retrievedUser.setSurname("Updated Surname");
         retrievedUser.setName("Updated Name");
-        assertTrue(dataProviderCsv.updatePersInf(retrievedUser));
+        assertTrue(dataProviderCsv.updatePersInf(retrievedUser, sourceCsvPathPersInf));
 
-        PersInf updatedUser = dataProviderCsv.readPersInf(retrievedUser, retrievedUser.getId());
+        PersInf updatedUser = dataProviderCsv.readPersInf(retrievedUser, retrievedUser.getId(), sourceCsvPathPersInf);
         assertNotNull(updatedUser);
         assertEquals("Updated Name", updatedUser.getName());
         assertEquals("Updated Surname", updatedUser.getSurname());
 
-        assertTrue(dataProviderCsv.deletePersInf(persInf.getId()));
+        assertTrue(dataProviderCsv.deletePersInf(persInf.getId(), sourceCsvPathPersInf));
     }
 
     @Test
@@ -47,24 +50,24 @@ public class DataProviderCsvTest{
 
         //CreatePersInfWithNull
         PersInf persInf = null;
-        assertFalse(dataProviderCsv.createPersInf(persInf));
+        assertFalse(dataProviderCsv.createPersInf(persInf, sourceCsvPathPersInf ));
 
         //ReadPersInfWithNull
         String invalidId = "666";
         CsvException exception = assertThrows(CsvException.class, () -> {
-            dataProviderCsv.readPersInf(persInf, invalidId);
+            dataProviderCsv.readPersInf(persInf, invalidId, sourceCsvPathPersInf);
         });
         assertEquals("PersInf object must not be null", exception.getMessage());
 
         //UpdatePersInfWithNull
         CsvException exceptionNew = assertThrows(CsvException.class, () -> {
-            dataProviderCsv.updatePersInf(persInf);
+            dataProviderCsv.updatePersInf(persInf, sourceCsvPathPersInf);
         });
         assertEquals("PersInf object must not be null", exceptionNew.getMessage());
 
         //DeletePersInfWithNullId
         String id = null;
-        boolean res = dataProviderCsv.deletePersInf(id);
+        boolean res = dataProviderCsv.deletePersInf(id, sourceCsvPathPersInf);
         assertFalse(res);
     }
 }
