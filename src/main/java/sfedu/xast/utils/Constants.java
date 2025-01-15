@@ -54,5 +54,11 @@ public class Constants {
     //SkillExchange
     public static String csvSkillExchangeFilePath = "src/main/resources/csvFiles/skillExchange.csv";
     public static String csvSkillExchangeTestFilePath = "src/test/resources/csvFilesTest/skillExchangeTest.csv";
+    //Review
+    public static String csvReviewFilePath = "src/main/resources/csvFiles/review.csv";
+    public static String csvReviewTestFilePath = "src/test/resources/csvFilesTest/reviewTest.csv";
+    //Transaction
+    public static String csvTransactionFilePath = "src/main/resources/csvFiles/transaction.csv";
+    public static String csvTransactionTestFilePath = "src/test/resources/csvFilesTest/transactionTest.csv";
 }
 

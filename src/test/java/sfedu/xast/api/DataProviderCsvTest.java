@@ -15,6 +15,7 @@ public class DataProviderCsvTest{
     String sourceCsvPathPersInf = Constants.csvPersInfTestFilePath;
     String sourceCsvPathProfInf = Constants.csvProfInfTestFilePath;
     String sourceCsvPathSkillExchange = Constants.csvSkillExchangeTestFilePath;
+    String sourceCsvPathReview = Constants.csvReviewTestFilePath;
 
     private DataProviderCsv dataProviderCsv;
 
@@ -178,7 +179,63 @@ public class DataProviderCsvTest{
 
         //DeleteSkillExchangeWithNullId
         String id = null;
-        boolean res = dataProviderCsv.deletePersInf(id, sourceCsvPathPersInf);
+        boolean res = dataProviderCsv.deleteSkillExchange(id, sourceCsvPathSkillExchange);
+        assertFalse(res);
+    }
+
+    @Test
+    void testCRUDMethodsWithReviewPositiveCSV() throws IOException, CsvException {
+        PersInf persInfReviewer = new PersInf("Bober","Curwa","+88005553535", "curwa@mail.ru");
+        PersInf persInfEvaluated = new PersInf("Surname", "Name", "PhoneNumber", "Email");
+        ProfInf profInf = new ProfInf(persInfEvaluated.getId(), "Programming","Programming in Java", 2500.00,
+                "Java backend developer", 5.5, 4.0);
+        Review review = new Review(4.5, "Good job!", persInfReviewer.getId(), profInf.getPersId());
+
+        assertTrue(dataProviderCsv.createPersInf(persInfReviewer, sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.createPersInf(persInfEvaluated, sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.createProfInf(profInf, persInfEvaluated, sourceCsvPathProfInf));
+        assertTrue(dataProviderCsv.createReview(review, sourceCsvPathReview));
+
+        Review retrievedReview = dataProviderCsv.readReview(review, sourceCsvPathReview);
+        assertNotNull(retrievedReview);
+        assertEquals(4.5, retrievedReview.getRating());
+        assertEquals("Good job!", retrievedReview.getComment());
+        assertEquals(persInfReviewer.getId(), retrievedReview.getReviewer());
+        assertEquals(profInf.getPersId(), retrievedReview.getUserEvaluated());
+
+        review.setComment("Not God Job!");
+        dataProviderCsv.updateReview(review, sourceCsvPathReview);
+
+        Review updatedReview = dataProviderCsv.readReview(review, sourceCsvPathReview);
+        assertEquals("Not God Job!", updatedReview.getComment());
+
+        assertTrue(dataProviderCsv.deletePersInf(persInfReviewer.getId(), sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.deleteProfInf(profInf.getPersId(), sourceCsvPathProfInf));
+        assertTrue(dataProviderCsv.deletePersInf(persInfEvaluated.getId(), sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.deleteReview(review, sourceCsvPathReview));
+    }
+
+    @Test
+    void testCRUDMethodsWithReviewNegativeCSV() throws IOException, CsvException {
+
+        //CreateSkillExchangeWithNull
+        Review review = null;
+        assertFalse(dataProviderCsv.createReview(review, sourceCsvPathReview));
+
+        //ReadReviewWithNonExistingId
+        assertThrows(CsvException.class, () -> {
+            dataProviderCsv.readReview(review, sourceCsvPathReview);
+        });
+
+        //UpdateReviewWithNull
+        CsvException exceptionNew = assertThrows(CsvException.class, () -> {
+            dataProviderCsv.updateReview(review, sourceCsvPathReview);
+        });
+        assertEquals("Review object must not be null", exceptionNew.getMessage());
+
+        //DeleteReviewWithNullId
+        String id = null;
+        boolean res = dataProviderCsv.deleteReview(review, sourceCsvPathPersInf);
         assertFalse(res);
     }
 

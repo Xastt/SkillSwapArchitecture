@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Crud csv with ProfInf + pos/neg tests">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/csvFilesTest/skillExchangeTest.csv" afterDir="false" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Crud csv with SkillExchange + pos/neg tests">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/csvFiles/review.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/csvFiles/skillExchange.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/csvFilesTest/reviewTest.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderPSQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderCsvTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderCsvTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderPSQLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderPSQLTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +91,8 @@
     "JUnit.DataProviderCsvTest.testCRUDMethodsWithPersInfPositiveCSV.executor": "Run",
     "JUnit.DataProviderCsvTest.testCRUDMethodsWithProfInfNegativeCSV.executor": "Run",
     "JUnit.DataProviderCsvTest.testCRUDMethodsWithProfInfPositiveCSV.executor": "Run",
+    "JUnit.DataProviderCsvTest.testCRUDMethodsWithReviewNegativeCSV.executor": "Run",
+    "JUnit.DataProviderCsvTest.testCRUDMethodsWithReviewPositiveCSV.executor": "Run",
     "JUnit.DataProviderCsvTest.testCRUDMethodsWithSkillExchangeNegativeCSV.executor": "Run",
     "JUnit.DataProviderCsvTest.testCRUDMethodsWithSkillExchangePositiveCSV.executor": "Run",
     "JUnit.DataProviderCsvTest.testDeleteRecord.executor": "Run",
@@ -182,8 +186,8 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DataProviderCsvTest.testCRUDMethodsWithSkillExchangeNegativeCSV">
-    <configuration name="DataProviderCsvTest.testCRUDMethodsWithPersInfNegativeCSV" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DataProviderPSQLTest.testCRUDMethodsWithReviewNegative">
+    <configuration name="DataProviderCsvTest.testCRUDMethodsWithReviewNegativeCSV" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -193,13 +197,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast.api" />
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderCsvTest" />
-      <option name="METHOD_NAME" value="testCRUDMethodsWithPersInfNegativeCSV" />
+      <option name="METHOD_NAME" value="testCRUDMethodsWithReviewNegativeCSV" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderCsvTest.testCRUDMethodsWithProfInfNegativeCSV" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataProviderCsvTest.testCRUDMethodsWithReviewPositiveCSV" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -209,23 +213,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast.api" />
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderCsvTest" />
-      <option name="METHOD_NAME" value="testCRUDMethodsWithProfInfNegativeCSV" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DataProviderCsvTest.testCRUDMethodsWithProfInfPositiveCSV" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SkillSwap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sfedu.xast.api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderCsvTest" />
-      <option name="METHOD_NAME" value="testCRUDMethodsWithProfInfPositiveCSV" />
+      <option name="METHOD_NAME" value="testCRUDMethodsWithReviewPositiveCSV" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -263,13 +251,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DataProviderPSQLTest.testCRUDMethodsWithReviewNegative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderPSQLTest" />
+      <option name="METHOD_NAME" value="testCRUDMethodsWithReviewNegative" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithReviewNegative" />
+        <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithReviewNegativeCSV" />
         <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithSkillExchangeNegativeCSV" />
+        <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithReviewPositiveCSV" />
         <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithSkillExchangePositiveCSV" />
-        <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithProfInfNegativeCSV" />
-        <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithProfInfPositiveCSV" />
-        <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithPersInfNegativeCSV" />
       </list>
     </recent_temporary>
   </component>
@@ -412,15 +416,7 @@
       <workItem from="1736789447937" duration="4220000" />
       <workItem from="1736857706168" duration="1260000" />
       <workItem from="1736875255836" duration="7202000" />
-      <workItem from="1736958616143" duration="6541000" />
-    </task>
-    <task id="LOCAL-00031" summary="Add lab with Exception/Jdbc">
-      <option name="closed" value="true" />
-      <created>1734117429523</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1734117429523</updated>
+      <workItem from="1736958616143" duration="8121000" />
     </task>
     <task id="LOCAL-00032" summary="fix">
       <option name="closed" value="true" />
@@ -806,7 +802,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736963089917</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Crud csv with SkillExchange + pos/neg tests">
+      <option name="closed" value="true" />
+      <created>1736965280477</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1736965280477</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -825,7 +829,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create all CRUD-operations with models: ProfInf, PersInf" />
     <MESSAGE value="Add tests" />
     <MESSAGE value="Change types" />
     <MESSAGE value="realize all methods for working with database" />
@@ -850,6 +853,7 @@
     <MESSAGE value="Crud methods with PersInf" />
     <MESSAGE value="Crud csv with PersInf + pos/neg tests" />
     <MESSAGE value="Crud csv with ProfInf + pos/neg tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Crud csv with ProfInf + pos/neg tests" />
+    <MESSAGE value="Crud csv with SkillExchange + pos/neg tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crud csv with SkillExchange + pos/neg tests" />
   </component>
 </project>

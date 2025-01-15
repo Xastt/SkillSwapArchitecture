@@ -286,7 +286,7 @@ public class DataProviderCsv  {
     //TODO написать метод readProfInfBySkillName/printProfInfList/readProfInfWithId(300-я строка)
 
     /**
-     * method, which add new data to the table skillExchange
+     * method, which add new data to the csv file skillExchange
      * contains information about users and offering skill
      * @param skillExchange
      * @param csvFilePath
@@ -400,6 +400,123 @@ public class DataProviderCsv  {
             return false;
         }
 
+    }
+    /**
+     * method, which add new data to the csv file Review
+     * contains information about users and offering skill
+     * @param review
+     * @param csvFilePath
+     * @return true or false
+     * @throws IOException
+     * @throws CsvException
+     */
+    public boolean createReview(Review review, String csvFilePath) throws IOException, CsvException {
+        if(review == null){
+            return false;
+        }
+        try{
+            List<String[]> data = readFromCsv(csvFilePath);
+            data.add(new String[]{
+                    review.getReviewId(),
+                    String.valueOf(review.getRating()),
+                    review.getComment(),
+                    review.getReviewer(),
+                    review.getUserEvaluated()
+            });
+            writeToCsv(data, csvFilePath);
+            return true;
+        }catch (CsvException | IOException e){
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * reading records from csv file using id
+     * @param review
+     * @param csvFilePath
+     * @return PersINf object
+     * @throws IOException
+     * @throws CsvException
+     */
+    public Review readReview(Review review, String csvFilePath) throws IOException, CsvException {
+        if(review == null){
+            throw new CsvException("Review object must not be null");
+        }
+        try{
+            List<String[]> data = readFromCsv(csvFilePath);
+            for (String[] row : data){
+                if(row[0].equals(review.getReviewId())){
+                    review.setReviewId(row[0]);
+                    review.setRating(Double.valueOf(row[1]));
+                    review.setComment(row[2]);
+                    review.setReviewer(row[3]);
+                    review.setUserEvaluated(row[4]);
+                    return review;
+                }
+            }
+            throw new CsvException("Can't find review with id " + review.getReviewId());
+        }catch (CsvException | IOException e){
+            logger.error(e.getMessage());
+            throw e;
+        }
+    }
+
+    /**
+     * updating records in csv file by review id
+     * @param review
+     * @param csvFilePath
+     * @return true or false
+     * @throws IOException
+     * @throws CsvException
+     */
+    public boolean updateReview(Review review, String csvFilePath) throws IOException, CsvException {
+        if (review == null) {
+            throw new CsvException("Review object must not be null");
+        }
+        try {
+            List<String[]> data = readFromCsv(csvFilePath);
+            boolean found = false;
+            for (int i = 0; i < data.size(); i++) {
+                if (data.get(i)[0].equals(review.getReviewId())) {
+                    data.set(i, new String[]{
+                            review.getReviewId(),
+                            String.valueOf(review.getRating()),
+                            review.getComment(),
+                            review.getReviewer(),
+                            review.getUserEvaluated()
+                    });
+                    found = true;
+                    break;
+                }
+            }
+            writeToCsv(data, csvFilePath);
+            return found;
+        }catch (CsvException | IOException e){
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * delete records from csv file using reviewId
+     * @param review
+     * @param csvFilePath
+     * @return
+     */
+    public boolean deleteReview(Review review, String csvFilePath) {
+        if(review == null || review.getReviewId() == null){
+            return false;
+        }
+        try{
+            List<String[]> data = readFromCsv(csvFilePath);
+            data.removeIf(row -> row[0].equals(review.getReviewId()));
+            writeToCsv(data, csvFilePath);
+            return true;
+        }catch (CsvException | IOException e){
+            logger.error(e.getMessage());
+            return false;
+        }
     }
 
 }
