@@ -180,7 +180,7 @@ public class DataProviderPSQL {
                         profInf.setExp(rs.getDouble("exp"));
                         profInf.setRating(rs.getDouble("rating"));
                     }else{
-                        throw new SQLException("PersInf object must not be null");
+                        throw new SQLException("ProfInf object must not be null");
                     }
                 }else{
                     throw new SQLException("Can't find person with id " + id);

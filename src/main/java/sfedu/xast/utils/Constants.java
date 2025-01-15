@@ -42,7 +42,12 @@ public class Constants {
     public static String updateTransaction = "UPDATE transaction SET date = ?, status = ?, changeId = ? WHERE transactionId = ?";
     public static String deleteTransaction = "DELETE FROM transaction WHERE transactionId = ?";
 
-    public static String csvPersInfFilePath = "src/test/resources/test.csv";
+    /**
+     * filePath's to csv files
+     */
+    public static String csvPersInfFilePath = "src/main/resources/csvFiles/persInf.csv";
     public static String csvPersInfTestFilePath = "src/test/resources/csvFilesTest/persInfTest.csv";
+    public static String csvProfInfFilePath = "src/main/resources/csvFiles/profInf.csv";
+    public static String csvProfInfTestFilePath = "src/test/resources/csvFilesTest/profInfTest.csv";
 }
 

@@ -2,7 +2,7 @@ package sfedu.xast.api;
 
 import com.opencsv.exceptions.CsvException;
 import org.junit.jupiter.api.*;
-import sfedu.xast.models.PersInf;
+import sfedu.xast.models.*;
 import sfedu.xast.utils.Constants;
 
 import java.io.IOException;
@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class DataProviderCsvTest{
 
     String sourceCsvPathPersInf = Constants.csvPersInfTestFilePath;
+    String sourceCsvPathProfInf = Constants.csvProfInfTestFilePath;
 
     private DataProviderCsv dataProviderCsv;
 
@@ -68,6 +69,58 @@ public class DataProviderCsvTest{
         //DeletePersInfWithNullId
         String id = null;
         boolean res = dataProviderCsv.deletePersInf(id, sourceCsvPathPersInf);
+        assertFalse(res);
+    }
+
+    @Test
+    void testCRUDMethodsWithProfInfPositiveCSV() throws IOException, CsvException {
+        PersInf persInf = new PersInf("Surname", "Name", "PhoneNumber", "Email");
+        ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
+                "Java backend developer", 5.5, 4.0);
+
+        assertTrue(dataProviderCsv.createPersInf(persInf, sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.createProfInf(profInf, persInf, sourceCsvPathProfInf));
+
+        ProfInf retrievedUser = dataProviderCsv.readProfInf(profInf, persInf.getId(), sourceCsvPathProfInf);
+        assertNotNull(retrievedUser);
+        assertEquals("Programming", retrievedUser.getSkillName());
+        assertEquals("Programming in Java", retrievedUser.getSkillDescription());
+        assertEquals(2500.00, retrievedUser.getCost());
+        assertEquals("Java backend developer", retrievedUser.getPersDescription());
+        assertEquals(5.5, retrievedUser.getExp());
+        assertEquals(4.0, retrievedUser.getRating());
+
+        retrievedUser.setSkillName("UpdatedSkill");
+        assertTrue(dataProviderCsv.updateProfInf(retrievedUser, sourceCsvPathProfInf));
+
+        assertTrue(dataProviderCsv.deletePersInf(persInf.getId(), sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.deleteProfInf(profInf.getPersId(), sourceCsvPathProfInf));
+    }
+
+    @Test
+    void testCRUDMethodsWithProfInfNegativeCSV() throws IOException, CsvException {
+
+        //CreateProfInfWithNull
+        PersInf persInf = null;
+        ProfInf profInf = null;
+        assertFalse(dataProviderCsv.createProfInf(profInf, persInf, sourceCsvPathProfInf));
+
+        //ReadProfInfWithNonExistingId
+        String invalidId = "666";
+        CsvException exception = assertThrows(CsvException.class, () -> {
+            dataProviderCsv.readProfInf(profInf, invalidId, sourceCsvPathProfInf);
+        });
+        assertEquals("ProfInf object must not be null", exception.getMessage());
+
+        //UpdateProfInfWithNull
+        CsvException exceptionNew = assertThrows(CsvException.class, () -> {
+            dataProviderCsv.updateProfInf(profInf, sourceCsvPathProfInf);
+        });
+        assertEquals("ProfInf object must not be null", exceptionNew.getMessage());
+
+        //DeleteProfInfWithNullId
+        String id = null;
+        boolean res = dataProviderCsv.deleteProfInf(id,sourceCsvPathProfInf);
         assertFalse(res);
     }
 }
