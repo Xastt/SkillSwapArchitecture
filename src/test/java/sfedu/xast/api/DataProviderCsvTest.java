@@ -4,6 +4,7 @@ import com.opencsv.exceptions.CsvException;
 import org.junit.jupiter.api.*;
 import sfedu.xast.models.*;
 import sfedu.xast.utils.Constants;
+import sfedu.xast.utils.Status;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -16,6 +17,7 @@ public class DataProviderCsvTest{
     String sourceCsvPathProfInf = Constants.csvProfInfTestFilePath;
     String sourceCsvPathSkillExchange = Constants.csvSkillExchangeTestFilePath;
     String sourceCsvPathReview = Constants.csvReviewTestFilePath;
+    String sourceCsvPathTransaction = Constants.csvTransactionTestFilePath;
 
     private DataProviderCsv dataProviderCsv;
 
@@ -237,6 +239,58 @@ public class DataProviderCsvTest{
         String id = null;
         boolean res = dataProviderCsv.deleteReview(review, sourceCsvPathPersInf);
         assertFalse(res);
+    }
+
+    @Test
+    void testCRUDMethodsWithTransactionPositiveCSV() throws IOException, CsvException {
+        PersInf persInfRequesting = new PersInf("Bober","Curwa","+88005553535", "curwa@mail.ru");
+        PersInf persInf = new PersInf("Surname", "Name", "PhoneNumber", "Email");
+        ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
+                "Java backend developer", 5.5, 4.0);
+        SkillExchange skillExchange = new SkillExchange(profInf.getSkillName(),persInfRequesting.getId(),profInf.getPersId());
+        Transaction transaction = new Transaction(Status.COMPLETED, skillExchange.getExchangeId());
+
+        assertTrue(dataProviderCsv.createPersInf(persInfRequesting, sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.createPersInf(persInf, sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.createProfInf(profInf, persInf, sourceCsvPathProfInf));
+        assertTrue(dataProviderCsv.createSkillExchange(skillExchange, sourceCsvPathSkillExchange));
+        assertTrue(dataProviderCsv.createTransaction(transaction, sourceCsvPathTransaction));
+
+        Transaction retrievedTransaction = dataProviderCsv.readTransaction(transaction, sourceCsvPathTransaction);
+        assertNotNull(retrievedTransaction);
+        assertEquals(Status.COMPLETED, retrievedTransaction.getStatus());
+        assertEquals(skillExchange.getExchangeId(), transaction.getChangeId());
+
+        retrievedTransaction.setStatus(Status.IN_PROCESS);
+        dataProviderCsv.updateTransaction(transaction, sourceCsvPathTransaction);
+
+        Transaction updatedTransaction = dataProviderCsv.readTransaction(transaction, sourceCsvPathTransaction);
+        assertEquals(Status.IN_PROCESS, updatedTransaction.getStatus());
+
+        assertTrue(dataProviderCsv.deleteTransaction(transaction, sourceCsvPathTransaction));
+        assertTrue(dataProviderCsv.deletePersInf(persInf.getId(), sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.deleteProfInf(profInf.getPersId(), sourceCsvPathProfInf));
+        assertTrue(dataProviderCsv.deletePersInf(persInfRequesting.getId(), sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.deleteSkillExchange(skillExchange.getExchangeId(), sourceCsvPathSkillExchange));
+    }
+
+    @Test
+    void testCRUDMethodsWithTransactionNegativeCSV() throws IOException, CsvException {
+
+        //CreateTransactionWithNull
+        Transaction transaction = null;
+        assertFalse(dataProviderCsv.createTransaction(transaction, sourceCsvPathTransaction));
+
+        //ReadTransactionWithNonExistingId
+        assertThrows(CsvException.class, () -> {
+            dataProviderCsv.readTransaction(transaction, sourceCsvPathTransaction);
+        });
+
+        //UpdateTransactionWithNull
+        CsvException exceptionNew = assertThrows(CsvException.class, () -> {
+            dataProviderCsv.updateTransaction(transaction, sourceCsvPathTransaction);
+        });
+        assertEquals("Transaction object must not be null", exceptionNew.getMessage());
     }
 
 }

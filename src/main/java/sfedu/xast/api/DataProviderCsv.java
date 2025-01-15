@@ -4,9 +4,12 @@ import com.opencsv.*;
 import com.opencsv.exceptions.CsvException;
 import org.slf4j.*;
 import sfedu.xast.models.*;
+import sfedu.xast.utils.Status;
 
 import java.io.*;
 import java.nio.file.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class DataProviderCsv  {
@@ -283,8 +286,6 @@ public class DataProviderCsv  {
         }
     }
 
-    //TODO написать метод readProfInfBySkillName/printProfInfList/readProfInfWithId(300-я строка)
-
     /**
      * method, which add new data to the csv file skillExchange
      * contains information about users and offering skill
@@ -518,5 +519,127 @@ public class DataProviderCsv  {
             return false;
         }
     }
+    /**
+     * method, which add new data to the csv file Review
+     * contains information about users and offering skill
+     * @param transaction
+     * @param csvFilePath
+     * @return true or false
+     * @throws IOException
+     * @throws CsvException
+     */
+    public boolean createTransaction(Transaction transaction, String csvFilePath) throws IOException, CsvException {
+        if(transaction == null){
+            return false;
+        }
+        try{
+            List<String[]> data = readFromCsv(csvFilePath);
+            data.add(new String[]{
+                    transaction.getTransactionId(),
+                    String.valueOf(transaction.getDate()),
+                    String.valueOf(transaction.getStatus()),
+                    transaction.getChangeId()
+            });
+            writeToCsv(data, csvFilePath);
+            return true;
+        }catch (CsvException | IOException e){
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
 
+    /**
+     * reading records from csv file using id
+     * @param transaction
+     * @param csvFilePath
+     * @return PersINf object
+     * @throws IOException
+     * @throws CsvException
+     */
+    public Transaction readTransaction(Transaction transaction, String csvFilePath) throws IOException, CsvException {
+        if(transaction == null){
+            throw new CsvException("Transaction object must not be null");
+        }
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        try{
+            List<String[]> data = readFromCsv(csvFilePath);
+            for (String[] row : data){
+                if(row[0].equals(transaction.getTransactionId())){
+                    transaction.setTransactionId(row[0]);
+                    try{
+                        Date date = dateFormat.parse(row[1]);
+                        transaction.setDate(date);
+                    }catch (ParseException e){
+                        throw new CsvException("Invalid date format for transaction with id " + transaction.getTransactionId());
+                    }
+                    //transaction.setDate(new Date(row[1]));
+                    transaction.setStatus(Status.valueOf(row[2]));
+                    transaction.setChangeId(row[3]);
+                    return transaction;
+                }
+            }
+            throw new CsvException("Can't find transaction with id " + transaction.getTransactionId());
+        }catch (CsvException | IOException e){
+            e.printStackTrace();
+            //logger.error(e.getMessage());
+            throw e;
+        }
+    }
+
+    /**
+     * updating records in csv file by transaction id
+     * @param transaction
+     * @param csvFilePath
+     * @return true or false
+     * @throws IOException
+     * @throws CsvException
+     */
+    public boolean updateTransaction(Transaction transaction, String csvFilePath) throws IOException, CsvException {
+        if (transaction == null) {
+            throw new CsvException("Transaction object must not be null");
+        }
+        try {
+            List<String[]> data = readFromCsv(csvFilePath);
+            boolean found = false;
+            for (int i = 0; i < data.size(); i++) {
+                if (data.get(i)[0].equals(transaction.getTransactionId())) {
+                    data.set(i, new String[]{
+                            transaction.getTransactionId(),
+                            String.valueOf(transaction.getDate()),
+                            String.valueOf(transaction.getStatus()),
+                            transaction.getChangeId()
+                    });
+                    found = true;
+                    break;
+                }
+            }
+            writeToCsv(data, csvFilePath);
+            return found;
+        }catch (CsvException | IOException e){
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * delete records from csv file using transactionId
+     * @param transaction
+     * @param csvFilePath
+     * @return
+     */
+    public boolean deleteTransaction(Transaction transaction, String csvFilePath) {
+        if(transaction == null || transaction.getTransactionId() == null){
+            return false;
+        }
+        try{
+            List<String[]> data = readFromCsv(csvFilePath);
+            data.removeIf(row -> row[0].equals(transaction.getTransactionId()));
+            writeToCsv(data, csvFilePath);
+            return true;
+        }catch (CsvException | IOException e){
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+    //TODO написать метод readProfInfBySkillName/printProfInfList/readProfInfWithId/insertRating(300/618-я строка)
 }
