@@ -6,6 +6,7 @@ import sfedu.xast.models.*;
 import sfedu.xast.utils.Constants;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,6 +14,7 @@ public class DataProviderCsvTest{
 
     String sourceCsvPathPersInf = Constants.csvPersInfTestFilePath;
     String sourceCsvPathProfInf = Constants.csvProfInfTestFilePath;
+    String sourceCsvPathSkillExchange = Constants.csvSkillExchangeTestFilePath;
 
     private DataProviderCsv dataProviderCsv;
 
@@ -123,5 +125,62 @@ public class DataProviderCsvTest{
         boolean res = dataProviderCsv.deleteProfInf(id,sourceCsvPathProfInf);
         assertFalse(res);
     }
+
+    @Test
+    void testCRUDMethodsWithSkillExchangePositiveCSV() throws IOException, CsvException {
+        PersInf persInfRequesting = new PersInf("Bober","Curwa","+88005553535", "curwa@mail.ru");
+        PersInf persInf = new PersInf("Surname", "Name", "PhoneNumber", "Email");
+        ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
+                "Java backend developer", 5.5, 4.0);
+        SkillExchange skillExchange = new SkillExchange(profInf.getSkillName(),persInfRequesting.getId(),profInf.getPersId());
+
+        assertTrue(dataProviderCsv.createPersInf(persInfRequesting, sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.createPersInf(persInf, sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.createProfInf(profInf, persInf, sourceCsvPathProfInf));
+        assertTrue(dataProviderCsv.createSkillExchange(skillExchange, sourceCsvPathSkillExchange));
+
+        SkillExchange retrievedSkillExchange = dataProviderCsv.readSkillExchange(skillExchange, sourceCsvPathSkillExchange);
+        assertNotNull(retrievedSkillExchange);
+        assertNotNull(retrievedSkillExchange);
+        assertEquals(persInfRequesting.getId(), retrievedSkillExchange.getUserRequesting());
+        assertEquals(profInf.getPersId(), retrievedSkillExchange.getUserOffering());
+        assertEquals(profInf.getSkillName(), retrievedSkillExchange.getSkillOffered());
+
+        retrievedSkillExchange.setSkillOffered("UpdatedSkill");
+        dataProviderCsv.updateSkillExchange(retrievedSkillExchange, sourceCsvPathSkillExchange);
+
+        SkillExchange updatedSkillExchange = dataProviderCsv.readSkillExchange(skillExchange, sourceCsvPathSkillExchange);
+        assertEquals("UpdatedSkill", updatedSkillExchange.getSkillOffered());
+
+        assertTrue(dataProviderCsv.deletePersInf(persInf.getId(), sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.deleteProfInf(profInf.getPersId(), sourceCsvPathProfInf));
+        assertTrue(dataProviderCsv.deletePersInf(persInfRequesting.getId(), sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.deleteSkillExchange(skillExchange.getExchangeId(), sourceCsvPathSkillExchange));
+    }
+
+    @Test
+    void testCRUDMethodsWithSkillExchangeNegativeCSV() throws IOException, CsvException {
+
+        //CreateSkillExchangeWithNull
+        SkillExchange skillExchange = null;
+        assertFalse(dataProviderCsv.createSkillExchange(skillExchange, sourceCsvPathSkillExchange));
+
+        //ReadSkillExchangeWithNonExistingId
+        assertThrows(CsvException.class, () -> {
+            dataProviderCsv.readSkillExchange(skillExchange, sourceCsvPathSkillExchange);
+        });
+
+        //UpdateSkillExchangeWithNull
+        CsvException exceptionNew = assertThrows(CsvException.class, () -> {
+            dataProviderCsv.updateSkillExchange(skillExchange, sourceCsvPathSkillExchange);
+        });
+        assertEquals("SkillExchange object must not be null", exceptionNew.getMessage());
+
+        //DeleteSkillExchangeWithNullId
+        String id = null;
+        boolean res = dataProviderCsv.deletePersInf(id, sourceCsvPathPersInf);
+        assertFalse(res);
+    }
+
 }
 

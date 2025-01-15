@@ -45,9 +45,14 @@ public class Constants {
     /**
      * filePath's to csv files
      */
+    //PersInf
     public static String csvPersInfFilePath = "src/main/resources/csvFiles/persInf.csv";
     public static String csvPersInfTestFilePath = "src/test/resources/csvFilesTest/persInfTest.csv";
+    //ProfInf
     public static String csvProfInfFilePath = "src/main/resources/csvFiles/profInf.csv";
     public static String csvProfInfTestFilePath = "src/test/resources/csvFilesTest/profInfTest.csv";
+    //SkillExchange
+    public static String csvSkillExchangeFilePath = "src/main/resources/csvFiles/skillExchange.csv";
+    public static String csvSkillExchangeTestFilePath = "src/test/resources/csvFilesTest/skillExchangeTest.csv";
 }
 

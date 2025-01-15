@@ -158,7 +158,6 @@ public class DataProviderCsv  {
             logger.error(e.getMessage());
             return false;
         }
-
     }
 
     /**
@@ -285,4 +284,122 @@ public class DataProviderCsv  {
     }
 
     //TODO написать метод readProfInfBySkillName/printProfInfList/readProfInfWithId(300-я строка)
+
+    /**
+     * method, which add new data to the table skillExchange
+     * contains information about users and offering skill
+     * @param skillExchange
+     * @param csvFilePath
+     * @return true or false
+     * @throws IOException
+     * @throws CsvException
+     */
+    public boolean createSkillExchange(SkillExchange skillExchange, String csvFilePath) throws IOException, CsvException {
+        if(skillExchange == null){
+            return false;
+        }
+        try{
+            List<String[]> data = readFromCsv(csvFilePath);
+            data.add(new String[]{
+                    skillExchange.getExchangeId(),
+                    skillExchange.getSkillOffered(),
+                    skillExchange.getUserOffering(),
+                    skillExchange.getUserRequesting()
+            });
+            writeToCsv(data, csvFilePath);
+            return true;
+        }catch (CsvException | IOException e){
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * reading records from csv file using personal id
+     * @param skillExchange
+     * @param csvFilePath
+     * @return PersINf object
+     * @throws IOException
+     * @throws CsvException
+     */
+    public SkillExchange readSkillExchange(SkillExchange skillExchange, String csvFilePath) throws IOException, CsvException {
+        if(skillExchange == null){
+            throw new CsvException("SkillExchange object must not be null");
+        }
+        try{
+            List<String[]> data = readFromCsv(csvFilePath);
+            for (String[] row : data){
+                if(row[0].equals(skillExchange.getExchangeId())){
+                    skillExchange.setExchangeId(row[0]);
+                    skillExchange.setSkillOffered(row[1]);
+                    skillExchange.setUserOffering(row[2]);
+                    skillExchange.setUserRequesting(row[3]);
+                    return skillExchange;
+                }
+            }
+            throw new CsvException("Can't find person with id " + skillExchange.getExchangeId());
+        }catch (CsvException | IOException e){
+            logger.error(e.getMessage());
+            throw e;
+        }
+    }
+
+    /**
+     * updating records in csv file by personal id
+     * @param skillExchange
+     * @param csvFilePath
+     * @return true or false
+     * @throws IOException
+     * @throws CsvException
+     */
+    public boolean updateSkillExchange(SkillExchange skillExchange, String csvFilePath) throws IOException, CsvException {
+        if (skillExchange == null) {
+            throw new CsvException("SkillExchange object must not be null");
+        }
+        try {
+            List<String[]> data = readFromCsv(csvFilePath);
+            boolean found = false;
+            for (int i = 0; i < data.size(); i++) {
+                if (data.get(i)[0].equals(skillExchange.getExchangeId())) {
+                    data.set(i, new String[]{
+                            skillExchange.getExchangeId(),
+                            skillExchange.getSkillOffered(),
+                            skillExchange.getUserOffering(),
+                            skillExchange.getUserRequesting(),
+                            skillExchange.getExchangeId()
+                    });
+                    found = true;
+                    break;
+                }
+            }
+            writeToCsv(data, csvFilePath);
+            return found;
+        }catch (CsvException | IOException e){
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * delete records from csv file using id
+     * @param id
+     * @param csvFilePath
+     * @return
+     */
+    public boolean deleteSkillExchange(String id, String csvFilePath) {
+        if(id == null){
+            return false;
+        }
+        try{
+            List<String[]> data = readFromCsv(csvFilePath);
+            data.removeIf(row -> row[0].equals(id));
+            writeToCsv(data, csvFilePath);
+            return true;
+        }catch (CsvException | IOException e){
+            logger.error(e.getMessage());
+            return false;
+        }
+
+    }
+
 }

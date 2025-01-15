@@ -378,7 +378,6 @@ public class DataProviderPSQL {
                 }else{
                     throw new SQLException("Couldn't find exchange with id: " + skillExchange.getExchangeId());
                 }
-
         }catch (SQLException e) {
             logger.error(e.getMessage());
             throw e;
