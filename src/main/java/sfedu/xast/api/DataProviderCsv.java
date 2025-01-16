@@ -560,7 +560,8 @@ public class DataProviderCsv  {
         if(transaction == null){
             throw new CsvException("Transaction object must not be null");
         }
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
+        dateFormat.setTimeZone(TimeZone.getTimeZone("MSK"));
         try{
             List<String[]> data = readFromCsv(csvFilePath);
             for (String[] row : data){
@@ -572,7 +573,6 @@ public class DataProviderCsv  {
                     }catch (ParseException e){
                         throw new CsvException("Invalid date format for transaction with id " + transaction.getTransactionId());
                     }
-                    //transaction.setDate(new Date(row[1]));
                     transaction.setStatus(Status.valueOf(row[2]));
                     transaction.setChangeId(row[3]);
                     return transaction;
@@ -580,8 +580,7 @@ public class DataProviderCsv  {
             }
             throw new CsvException("Can't find transaction with id " + transaction.getTransactionId());
         }catch (CsvException | IOException e){
-            e.printStackTrace();
-            //logger.error(e.getMessage());
+            logger.error(e.getMessage());
             throw e;
         }
     }

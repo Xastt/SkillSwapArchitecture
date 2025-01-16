@@ -292,6 +292,5 @@ public class DataProviderCsvTest{
         });
         assertEquals("Transaction object must not be null", exceptionNew.getMessage());
     }
-
 }
 

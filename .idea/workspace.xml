@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Crud csv with Review + pos/neg tests">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Crud csv with Transaction + pos/neg tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logs/app.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderCsvTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderCsvTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/csvFilesTest/persInfTest.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/csvFilesTest/persInfTest.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/csvFilesTest/profInfTest.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/csvFilesTest/profInfTest.csv" afterDir="false" />
@@ -117,6 +118,7 @@
     "JUnit.DataProviderPSQLTest.testCRUDMethodsWithSkillExchangeNegative.executor": "Run",
     "JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransaction.executor": "Run",
     "JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransactionNegative.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransactionPositive.executor": "Run",
     "JUnit.DataProviderPSQLTest.testCreatePersInf.executor": "Run",
     "JUnit.DataProviderPSQLTest.testGetSkillByName.executor": "Run",
     "JUnit.DataProviderXmlTest.executor": "Run",
@@ -187,7 +189,7 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DataProviderCsvTest.testCRUDMethodsWithTransactionPositiveCSV">
+  <component name="RunManager" selected="JUnit.DataProviderCsvTest.testCRUDMethodsWithTransactionNegativeCSV">
     <configuration name="DataProviderCsvTest.testCRUDMethodsWithReviewNegativeCSV" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
@@ -199,22 +201,6 @@
       <option name="PACKAGE_NAME" value="sfedu.xast.api" />
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderCsvTest" />
       <option name="METHOD_NAME" value="testCRUDMethodsWithReviewNegativeCSV" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DataProviderCsvTest.testCRUDMethodsWithSkillExchangeNegativeCSV" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SkillSwap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sfedu.xast.api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderCsvTest" />
-      <option name="METHOD_NAME" value="testCRUDMethodsWithSkillExchangeNegativeCSV" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -268,13 +254,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DataProviderPSQLTest.testCRUDMethodsWithTransactionPositive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderPSQLTest" />
+      <option name="METHOD_NAME" value="testCRUDMethodsWithTransactionPositive" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithTransactionPositiveCSV" />
         <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithTransactionNegativeCSV" />
+        <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithTransactionPositiveCSV" />
+        <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransactionPositive" />
         <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithReviewNegative" />
         <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithReviewNegativeCSV" />
-        <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithSkillExchangeNegativeCSV" />
       </list>
     </recent_temporary>
   </component>
@@ -417,15 +419,8 @@
       <workItem from="1736789447937" duration="4220000" />
       <workItem from="1736857706168" duration="1260000" />
       <workItem from="1736875255836" duration="7202000" />
-      <workItem from="1736958616143" duration="10127000" />
-    </task>
-    <task id="LOCAL-00033" summary="fix">
-      <option name="closed" value="true" />
-      <created>1734166432806</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1734166432806</updated>
+      <workItem from="1736958616143" duration="10243000" />
+      <workItem from="1737050571858" duration="2008000" />
     </task>
     <task id="LOCAL-00034" summary="delete test class">
       <option name="closed" value="true" />
@@ -811,7 +806,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736966971481</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Crud csv with Transaction + pos/neg tests">
+      <option name="closed" value="true" />
+      <created>1736968922146</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1736968922146</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -830,7 +833,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change types" />
     <MESSAGE value="realize all methods for working with database" />
     <MESSAGE value="All crud methods with all models (x_x)" />
     <MESSAGE value="PersInf, ProfInf WORKS!!!!!!!" />
@@ -855,6 +857,7 @@
     <MESSAGE value="Crud csv with ProfInf + pos/neg tests" />
     <MESSAGE value="Crud csv with SkillExchange + pos/neg tests" />
     <MESSAGE value="Crud csv with Review + pos/neg tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Crud csv with Review + pos/neg tests" />
+    <MESSAGE value="Crud csv with Transaction + pos/neg tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crud csv with Transaction + pos/neg tests" />
   </component>
 </project>
