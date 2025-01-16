@@ -8,6 +8,7 @@ import sfedu.xast.utils.Status;
 
 import java.io.*;
 import java.nio.file.*;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -204,6 +205,37 @@ public class DataProviderCsv  {
      * @throws CsvException
      */
     public ProfInf readProfInf(ProfInf profInf, String id, String csvFilePath) throws IOException, CsvException {
+        if(profInf == null){
+            throw new CsvException("ProfInf object must not be null");
+        }
+        try{
+            List<String[]> data = readFromCsv(csvFilePath);
+            for (String[] row : data){
+                if(row[0].equals(id)){
+                    profInf.setSkillName(row[1]);
+                    profInf.setSkillDescription(row[2]);
+                    profInf.setCost(Double.valueOf(row[3]));
+                    profInf.setPersDescription(row[4]);
+                    profInf.setExp(Double.valueOf(row[5]));
+                    profInf.setRating(Double.valueOf(row[6]));
+                    return profInf;
+                }
+            }
+            throw new CsvException("Can't find person with id " + id);
+        }catch (CsvException | IOException e){
+            logger.error(e.getMessage());
+            throw e;
+        }
+    }
+
+    /**
+     * read information from table profinf using id
+     * @param id
+     * @return
+     * @throws SQLException
+     */
+    public ProfInf readProfInfWithId(String id, String csvFilePath) throws IOException, CsvException {
+        ProfInf profInf = new ProfInf();
         if(profInf == null){
             throw new CsvException("ProfInf object must not be null");
         }
@@ -640,5 +672,100 @@ public class DataProviderCsv  {
             return false;
         }
     }
-    //TODO написать метод readProfInfBySkillName/printProfInfList/readProfInfWithId/insertRating(300/618-я строка)
+
+    public List<SkillOut> readProfInfBySkillNameFromCsv(String skillPart, String csvFilePath) throws IOException, CsvException {
+        List<SkillOut> profInfList = new ArrayList<>();
+
+        // Читаем данные из CSV
+        List<String[]> data = readFromCsv(csvFilePath);
+
+        for (String[] row : data) {
+            // Предположим, что навык находится в соответствующем столбце (например, 5-й столбец)
+            String skillName = row[5]; // Поменяйте индекс, если столбцы другие
+
+            // Проверяем, содержит ли навык указанную часть названия
+            if (skillName != null && skillName.toLowerCase().contains(skillPart.toLowerCase())) {
+                SkillOut skillOut = new SkillOut();
+
+                skillOut.setId(row[0]);
+                skillOut.setSurname(row[1]);
+                skillOut.setName(row[2]);
+                skillOut.setPhoneNumber(row[3]);
+                skillOut.setEmail(row[4]);
+                skillOut.setSkillName(skillName);
+                skillOut.setSkillDescription(row[6]); // Поменяйте индекс, если столбцы другие
+                skillOut.setCost(Double.parseDouble(row[7])); // Поменяйте индекс, если столбцы другие
+                skillOut.setPersDescription(row[8]); // Поменяйте индекс, если столбцы другие
+                skillOut.setExp(Double.parseDouble(row[9])); // Поменяйте индекс, если столбцы другие
+                skillOut.setRating(Double.parseDouble(row[10])); // Поменяйте индекс, если столбцы другие
+
+                profInfList.add(skillOut);
+            }
+        }
+
+        if (profInfList.isEmpty()) {
+            throw new IOException("Can't find persons with skill name containing: " + skillPart);
+        }
+
+        return profInfList;
+    }
+
+    public void printProfInfListFromCsv(List<SkillOut> skillOutList) {
+        if (skillOutList == null || skillOutList.isEmpty()) {
+            System.out.println("Список профилей пуст.");
+            return;
+        }
+
+        for (SkillOut skillOut : skillOutList) {
+            System.out.println("ID: " + skillOut.getId());
+            System.out.println("Фамилия: " + skillOut.getSurname());
+            System.out.println("Имя: " + skillOut.getName());
+            System.out.println("Номер телефона: " + skillOut.getPhoneNumber());
+            System.out.println("Электронная почта: " + skillOut.getEmail());
+            System.out.println("Навык: " + skillOut.getSkillName());
+            System.out.println("Описание навыка: " + skillOut.getSkillDescription());
+            System.out.println("Стоимость: " + skillOut.getCost());
+            System.out.println("Описание пользователя: " + skillOut.getPersDescription());
+            System.out.println("Опыт: " + skillOut.getExp());
+            System.out.println("Рейтинг: " + skillOut.getRating());
+            System.out.println("-----------------------------");
+        }
+    }
+
+    public boolean insertRatingToCsv(String persId, Double rating, Double ratingBefore, String csvFilePath) throws IOException, CsvException {
+        if (persId == null || rating == null || ratingBefore == null) {
+            throw new IllegalArgumentException("Parameters cannot be null");
+        }
+
+        Double finalRating;
+
+        if (ratingBefore == 0.0) {
+            finalRating = rating;
+        } else {
+            finalRating = (ratingBefore + rating) / 2.0;
+        }
+
+        // Читаем данные из CSV
+        List<String[]> data = readFromCsv(csvFilePath);
+        boolean updated = false;
+
+        // Обновляем данные
+        for (String[] row : data) {
+            if (row[0].equals(persId)) {
+                row[10] = String.valueOf(finalRating); // Предполагается, что рейтинг находится в 11-м столбце (индекс 10)
+                updated = true;
+                break;
+            }
+        }
+
+        // Если запись не была найдена, возвращаем false
+        if (!updated) {
+            return false;
+        }
+
+        // Записываем обновлённые данные обратно в CSV
+        writeToCsv(data, csvFilePath);
+        return true;
+    }
 }
+//TODO проверить как работает с csv
