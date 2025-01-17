@@ -4,6 +4,7 @@ import com.opencsv.*;
 import com.opencsv.exceptions.CsvException;
 import org.slf4j.*;
 import sfedu.xast.models.*;
+import sfedu.xast.utils.Constants;
 import sfedu.xast.utils.Status;
 
 import java.io.*;
@@ -48,17 +49,16 @@ public class DataProviderCsv  {
     /**
      * creating record in csv file
      * @param persInf
-     * @param csvFilePath
      * @return true or false
      * @throws IOException
      * @throws CsvException
      */
-    public boolean createPersInf(PersInf persInf, String csvFilePath) throws IOException, CsvException {
+    public boolean createPersInf(PersInf persInf) throws IOException, CsvException {
         if(persInf==null){
             return false;
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvPersInfFilePath);
             data.add(new String[]{
                     persInf.getId(),
                     persInf.getSurname(),
@@ -66,7 +66,7 @@ public class DataProviderCsv  {
                     persInf.getPhoneNumber(),
                     persInf.getEmail()
             });
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvPersInfFilePath);
             return true;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -78,17 +78,16 @@ public class DataProviderCsv  {
      * reading records from csv file using personal id
      * @param persInf
      * @param id
-     * @param csvFilePath
      * @return PersINf object
      * @throws IOException
      * @throws CsvException
      */
-    public PersInf readPersInf(PersInf persInf, String id, String csvFilePath) throws IOException, CsvException {
+    public PersInf readPersInf(PersInf persInf, String id) throws IOException, CsvException {
         if(persInf==null){
             throw new CsvException("PersInf object must not be null");
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvPersInfFilePath);
             for (String[] row : data){
                 if(row[0].equals(id)){
                     persInf.setId(row[0]);
@@ -109,17 +108,16 @@ public class DataProviderCsv  {
     /**
      * updating records in csv file by personal id
      * @param updatedPersInf
-     * @param csvFilePath
      * @return true or false
      * @throws IOException
      * @throws CsvException
      */
-    public boolean updatePersInf(PersInf updatedPersInf, String csvFilePath) throws IOException, CsvException {
+    public boolean updatePersInf(PersInf updatedPersInf) throws IOException, CsvException {
         if (updatedPersInf == null) {
             throw new CsvException("PersInf object must not be null");
         }
         try {
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvPersInfFilePath);
             boolean found = false;
             for (int i = 0; i < data.size(); i++) {
                 if (data.get(i)[0].equals(updatedPersInf.getId())) {
@@ -134,7 +132,7 @@ public class DataProviderCsv  {
                     break;
                 }
             }
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvPersInfFilePath);
             return found;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -145,17 +143,16 @@ public class DataProviderCsv  {
     /**
      * delete records from csv file using id
      * @param id
-     * @param csvFilePath
      * @return
      */
-    public boolean deletePersInf(String id, String csvFilePath) {
+    public boolean deletePersInf(String id) {
         if(id == null){
             return false;
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvPersInfFilePath);
             data.removeIf(row -> row[0].equals(id));
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvPersInfFilePath);
             return true;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -166,17 +163,16 @@ public class DataProviderCsv  {
     /**
      * creating record in csv file
      * @param persInf
-     * @param csvFilePath
      * @return true or false
      * @throws IOException
      * @throws CsvException
      */
-    public boolean createProfInf(ProfInf profInf, PersInf persInf, String csvFilePath) throws IOException, CsvException {
+    public boolean createProfInf(ProfInf profInf, PersInf persInf) throws IOException, CsvException {
         if(persInf == null || profInf   == null){
             return false;
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvProfInfFilePath);
             data.add(new String[]{
                     persInf.getId(),
                     profInf.getSkillName(),
@@ -186,7 +182,7 @@ public class DataProviderCsv  {
                     String.valueOf(profInf.getExp()),
                     String.valueOf(profInf.getRating())
             });
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvProfInfFilePath);
             return true;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -198,17 +194,16 @@ public class DataProviderCsv  {
      * reading records from csv file using personal id
      * @param profInf
      * @param id
-     * @param csvFilePath
      * @return PersINf object
      * @throws IOException
      * @throws CsvException
      */
-    public ProfInf readProfInf(ProfInf profInf, String id, String csvFilePath) throws IOException, CsvException {
+    public ProfInf readProfInf(ProfInf profInf, String id) throws IOException, CsvException {
         if(profInf == null){
             throw new CsvException("ProfInf object must not be null");
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvProfInfFilePath);
             for (String[] row : data){
                 if(row[0].equals(id)){
                     profInf.setSkillName(row[1]);
@@ -230,16 +225,16 @@ public class DataProviderCsv  {
     /**
      * read information from table profinf using id
      * @param id
-     * @return
+     * @return Profinf
      * @throws SQLException
      */
-    public ProfInf readProfInfWithId(String id, String csvFilePath) throws IOException, CsvException {
+    public ProfInf readProfInfWithId(String id) throws IOException, CsvException {
         ProfInf profInf = new ProfInf();
         if(profInf == null){
             throw new CsvException("ProfInf object must not be null");
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvProfInfFilePath);
             for (String[] row : data){
                 if(row[0].equals(id)){
                     profInf.setSkillName(row[1]);
@@ -261,17 +256,16 @@ public class DataProviderCsv  {
     /**
      * updating records in csv file by personal id
      * @param updatedProfInf
-     * @param csvFilePath
      * @return true or false
      * @throws IOException
      * @throws CsvException
      */
-    public boolean updateProfInf(ProfInf updatedProfInf, String csvFilePath) throws IOException, CsvException {
+    public boolean updateProfInf(ProfInf updatedProfInf) throws IOException, CsvException {
         if (updatedProfInf == null) {
             throw new CsvException("ProfInf object must not be null");
         }
         try {
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvProfInfFilePath);
             boolean found = false;
             for (int i = 0; i < data.size(); i++) {
                 if (data.get(i)[0].equals(updatedProfInf.getPersId())) {
@@ -288,7 +282,7 @@ public class DataProviderCsv  {
                     break;
                 }
             }
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvProfInfFilePath);
             return found;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -299,17 +293,16 @@ public class DataProviderCsv  {
     /**
      * delete records from csv file using id
      * @param id
-     * @param csvFilePath
      * @return
      */
-    public boolean deleteProfInf(String id, String csvFilePath) {
+    public boolean deleteProfInf(String id) {
         if(id == null){
             return false;
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvProfInfFilePath);
             data.removeIf(row -> row[0].equals(id));
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvProfInfFilePath);
             return true;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -321,24 +314,23 @@ public class DataProviderCsv  {
      * method, which add new data to the csv file skillExchange
      * contains information about users and offering skill
      * @param skillExchange
-     * @param csvFilePath
      * @return true or false
      * @throws IOException
      * @throws CsvException
      */
-    public boolean createSkillExchange(SkillExchange skillExchange, String csvFilePath) throws IOException, CsvException {
+    public boolean createSkillExchange(SkillExchange skillExchange) throws IOException, CsvException {
         if(skillExchange == null){
             return false;
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvSkillExchangeFilePath);
             data.add(new String[]{
                     skillExchange.getExchangeId(),
                     skillExchange.getSkillOffered(),
                     skillExchange.getUserOffering(),
                     skillExchange.getUserRequesting()
             });
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvSkillExchangeFilePath);
             return true;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -349,17 +341,16 @@ public class DataProviderCsv  {
     /**
      * reading records from csv file using personal id
      * @param skillExchange
-     * @param csvFilePath
      * @return PersINf object
      * @throws IOException
      * @throws CsvException
      */
-    public SkillExchange readSkillExchange(SkillExchange skillExchange, String csvFilePath) throws IOException, CsvException {
+    public SkillExchange readSkillExchange(SkillExchange skillExchange) throws IOException, CsvException {
         if(skillExchange == null){
             throw new CsvException("SkillExchange object must not be null");
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvSkillExchangeFilePath);
             for (String[] row : data){
                 if(row[0].equals(skillExchange.getExchangeId())){
                     skillExchange.setExchangeId(row[0]);
@@ -384,12 +375,12 @@ public class DataProviderCsv  {
      * @throws IOException
      * @throws CsvException
      */
-    public boolean updateSkillExchange(SkillExchange skillExchange, String csvFilePath) throws IOException, CsvException {
+    public boolean updateSkillExchange(SkillExchange skillExchange) throws IOException, CsvException {
         if (skillExchange == null) {
             throw new CsvException("SkillExchange object must not be null");
         }
         try {
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvSkillExchangeFilePath);
             boolean found = false;
             for (int i = 0; i < data.size(); i++) {
                 if (data.get(i)[0].equals(skillExchange.getExchangeId())) {
@@ -404,7 +395,7 @@ public class DataProviderCsv  {
                     break;
                 }
             }
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvSkillExchangeFilePath);
             return found;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -415,17 +406,16 @@ public class DataProviderCsv  {
     /**
      * delete records from csv file using id
      * @param id
-     * @param csvFilePath
      * @return
      */
-    public boolean deleteSkillExchange(String id, String csvFilePath) {
+    public boolean deleteSkillExchange(String id) {
         if(id == null){
             return false;
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvSkillExchangeFilePath);
             data.removeIf(row -> row[0].equals(id));
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvSkillExchangeFilePath);
             return true;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -437,17 +427,16 @@ public class DataProviderCsv  {
      * method, which add new data to the csv file Review
      * contains information about users and offering skill
      * @param review
-     * @param csvFilePath
      * @return true or false
      * @throws IOException
      * @throws CsvException
      */
-    public boolean createReview(Review review, String csvFilePath) throws IOException, CsvException {
+    public boolean createReview(Review review) throws IOException, CsvException {
         if(review == null){
             return false;
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvReviewFilePath);
             data.add(new String[]{
                     review.getReviewId(),
                     String.valueOf(review.getRating()),
@@ -455,7 +444,7 @@ public class DataProviderCsv  {
                     review.getReviewer(),
                     review.getUserEvaluated()
             });
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvReviewFilePath);
             return true;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -471,12 +460,12 @@ public class DataProviderCsv  {
      * @throws IOException
      * @throws CsvException
      */
-    public Review readReview(Review review, String csvFilePath) throws IOException, CsvException {
+    public Review readReview(Review review) throws IOException, CsvException {
         if(review == null){
             throw new CsvException("Review object must not be null");
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvReviewFilePath);
             for (String[] row : data){
                 if(row[0].equals(review.getReviewId())){
                     review.setReviewId(row[0]);
@@ -497,17 +486,16 @@ public class DataProviderCsv  {
     /**
      * updating records in csv file by review id
      * @param review
-     * @param csvFilePath
      * @return true or false
      * @throws IOException
      * @throws CsvException
      */
-    public boolean updateReview(Review review, String csvFilePath) throws IOException, CsvException {
+    public boolean updateReview(Review review) throws IOException, CsvException {
         if (review == null) {
             throw new CsvException("Review object must not be null");
         }
         try {
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvReviewFilePath);
             boolean found = false;
             for (int i = 0; i < data.size(); i++) {
                 if (data.get(i)[0].equals(review.getReviewId())) {
@@ -522,7 +510,7 @@ public class DataProviderCsv  {
                     break;
                 }
             }
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvReviewFilePath);
             return found;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -533,17 +521,16 @@ public class DataProviderCsv  {
     /**
      * delete records from csv file using reviewId
      * @param review
-     * @param csvFilePath
      * @return
      */
-    public boolean deleteReview(Review review, String csvFilePath) {
+    public boolean deleteReview(Review review) {
         if(review == null || review.getReviewId() == null){
             return false;
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvReviewFilePath);
             data.removeIf(row -> row[0].equals(review.getReviewId()));
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvReviewFilePath);
             return true;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -554,24 +541,23 @@ public class DataProviderCsv  {
      * method, which add new data to the csv file Review
      * contains information about users and offering skill
      * @param transaction
-     * @param csvFilePath
      * @return true or false
      * @throws IOException
      * @throws CsvException
      */
-    public boolean createTransaction(Transaction transaction, String csvFilePath) throws IOException, CsvException {
+    public boolean createTransaction(Transaction transaction) throws IOException, CsvException {
         if(transaction == null){
             return false;
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvTransactionFilePath);
             data.add(new String[]{
                     transaction.getTransactionId(),
                     String.valueOf(transaction.getDate()),
                     String.valueOf(transaction.getStatus()),
                     transaction.getChangeId()
             });
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvTransactionFilePath);
             return true;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -582,19 +568,18 @@ public class DataProviderCsv  {
     /**
      * reading records from csv file using id
      * @param transaction
-     * @param csvFilePath
      * @return PersINf object
      * @throws IOException
      * @throws CsvException
      */
-    public Transaction readTransaction(Transaction transaction, String csvFilePath) throws IOException, CsvException {
+    public Transaction readTransaction(Transaction transaction) throws IOException, CsvException {
         if(transaction == null){
             throw new CsvException("Transaction object must not be null");
         }
         SimpleDateFormat dateFormat = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
         dateFormat.setTimeZone(TimeZone.getTimeZone("MSK"));
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvTransactionFilePath);
             for (String[] row : data){
                 if(row[0].equals(transaction.getTransactionId())){
                     transaction.setTransactionId(row[0]);
@@ -619,17 +604,16 @@ public class DataProviderCsv  {
     /**
      * updating records in csv file by transaction id
      * @param transaction
-     * @param csvFilePath
      * @return true or false
      * @throws IOException
      * @throws CsvException
      */
-    public boolean updateTransaction(Transaction transaction, String csvFilePath) throws IOException, CsvException {
+    public boolean updateTransaction(Transaction transaction) throws IOException, CsvException {
         if (transaction == null) {
             throw new CsvException("Transaction object must not be null");
         }
         try {
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvTransactionFilePath);
             boolean found = false;
             for (int i = 0; i < data.size(); i++) {
                 if (data.get(i)[0].equals(transaction.getTransactionId())) {
@@ -643,7 +627,7 @@ public class DataProviderCsv  {
                     break;
                 }
             }
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvTransactionFilePath);
             return found;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -654,17 +638,16 @@ public class DataProviderCsv  {
     /**
      * delete records from csv file using transactionId
      * @param transaction
-     * @param csvFilePath
      * @return
      */
-    public boolean deleteTransaction(Transaction transaction, String csvFilePath) {
+    public boolean deleteTransaction(Transaction transaction) {
         if(transaction == null || transaction.getTransactionId() == null){
             return false;
         }
         try{
-            List<String[]> data = readFromCsv(csvFilePath);
+            List<String[]> data = readFromCsv(Constants.csvTransactionFilePath);
             data.removeIf(row -> row[0].equals(transaction.getTransactionId()));
-            writeToCsv(data, csvFilePath);
+            writeToCsv(data, Constants.csvTransactionFilePath);
             return true;
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
@@ -675,14 +658,13 @@ public class DataProviderCsv  {
     /**
      * find person, which provide needed skillName
      * @param skillPart
-     * @param csvFilePath
      * @return List<SkillOut>
      * @throws SQLException
      */
-    public List<SkillOut> readProfInfBySkillNameFromCsv(String skillPart, String csvFilePath) throws IOException, CsvException {
+    public List<SkillOut> readProfInfBySkillNameFromCsv(String skillPart) throws IOException, CsvException {
         List<SkillOut> profInfList = new ArrayList<>();
 
-        List<String[]> data = readFromCsv(csvFilePath);
+        List<String[]> data = readFromCsv(Constants.csvProfInfFilePath);
 
         for (String[] row : data) {
             String skillName = row[1];
@@ -731,9 +713,9 @@ public class DataProviderCsv  {
         }
     }
 
-    public boolean insertRatingToCsv(String persId, Double rating, Double ratingBefore, String csvFilePath) throws IOException, CsvException {
+    public boolean insertRatingToCsv(String persId, Double rating, Double ratingBefore) throws IOException, CsvException {
         if (persId == null || rating == null || ratingBefore == null) {
-            throw new IllegalArgumentException("Parameters cannot be null");
+            throw new CsvException("Parameters cannot be null");
         }
 
         Double finalRating;
@@ -744,7 +726,7 @@ public class DataProviderCsv  {
             finalRating = (ratingBefore + rating) / 2.0;
         }
 
-        List<String[]> data = readFromCsv(csvFilePath);
+        List<String[]> data = readFromCsv(Constants.csvProfInfFilePath);
         boolean updated = false;
 
         for (String[] row : data) {
@@ -759,7 +741,7 @@ public class DataProviderCsv  {
             return false;
         }
 
-        writeToCsv(data, csvFilePath);
+        writeToCsv(data, Constants.csvProfInfFilePath);
         return true;
     }
 }

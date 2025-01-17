@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add special functions for working with csv">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="All CRUD with CSV - DONE!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/csvFiles/profInf.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/csvFiles/profInf.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderMongo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderMongo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logs/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderMongoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderMongoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,9 +187,22 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DataProviderCsvTest">
+  <component name="RunManager" selected="Application.DataProviderMongo">
     <configuration name="DataProviderCsv" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderCsv" />
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataProviderMongo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderMongo" />
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -245,29 +261,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderPSQLTest.testCRUDMethodsWithTransactionPositive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SkillSwap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sfedu.xast.api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderPSQLTest" />
-      <option name="METHOD_NAME" value="testCRUDMethodsWithTransactionPositive" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DataProviderMongo" />
         <item itemvalue="JUnit.DataProviderCsvTest" />
         <item itemvalue="Application.DataProviderCsv" />
         <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithTransactionNegativeCSV" />
         <item itemvalue="JUnit.DataProviderCsvTest.testCRUDMethodsWithTransactionPositiveCSV" />
-        <item itemvalue="JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransactionPositive" />
       </list>
     </recent_temporary>
   </component>
@@ -412,15 +412,8 @@
       <workItem from="1736875255836" duration="7202000" />
       <workItem from="1736958616143" duration="10243000" />
       <workItem from="1737050571858" duration="4358000" />
-      <workItem from="1737095692700" duration="1075000" />
-    </task>
-    <task id="LOCAL-00037" summary="Add new class with working with data">
-      <option name="closed" value="true" />
-      <created>1734283738436</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1734283738436</updated>
+      <workItem from="1737095692700" duration="3041000" />
+      <workItem from="1737115324690" duration="1466000" />
     </task>
     <task id="LOCAL-00038" summary="Add new class with working with data">
       <option name="closed" value="true" />
@@ -806,7 +799,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737054612852</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="All CRUD with CSV - DONE!">
+      <option name="closed" value="true" />
+      <created>1737096852401</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1737096852401</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -825,7 +826,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="PersInf, ProfInf WORKS!!!!!!!" />
     <MESSAGE value="CRUD with PersInf, ProfInf, SkillExchange WORKS!!!!!!!" />
     <MESSAGE value="CRUD with PersInf, ProfInf, SkillExchange, Review WORKS!!!!!!!" />
     <MESSAGE value="CRUD with all models WORKS!!!!!!!" />
@@ -850,6 +850,7 @@
     <MESSAGE value="Crud csv with Transaction + pos/neg tests" />
     <MESSAGE value="Crud all CRUD with csv file and models + pos/neg tests" />
     <MESSAGE value="Add special functions for working with csv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add special functions for working with csv" />
+    <MESSAGE value="All CRUD with CSV - DONE!" />
+    <option name="LAST_COMMIT_MESSAGE" value="All CRUD with CSV - DONE!" />
   </component>
 </project>

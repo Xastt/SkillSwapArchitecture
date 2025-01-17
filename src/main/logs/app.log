@@ -44,3 +44,41 @@ Caused by: java.net.ConnectException: Connection refused: getsockopt
 01-13 18:20:06 ERROR DataProviderPSQL - Can't find person with id 66601-16 21:31:25 ERROR DataProviderPSQL - ОШИБКА: столбец "date" имеет тип timestamp without time zone, а выражение - character varying
   Подсказка: Перепишите выражение или преобразуйте его тип.
   Позиция: 75
+01-17 15:25:07 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 15:25:07 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 15:25:07 INFO  cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
+01-17 15:25:07 INFO  connection - Opened connection [connectionId{localValue:1}] to localhost:27017
+01-17 15:25:07 DEBUG cluster - Checking status of localhost:27017
+01-17 15:25:07 DEBUG command - Sending command '{ "ismaster" : 1, "$db" : "admin" }' with request id 4 to database admin on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 15:25:07 DEBUG command - Execution of command with request id 4 completed successfully in 8.06 ms on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 15:25:07 INFO  cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[8, 0, 3]}, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=15932500}
+01-17 15:25:07 DEBUG cluster - Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=15.9 ms, state=CONNECTED}]
+01-17 15:25:07 INFO  connection - Opened connection [connectionId{localValue:2}] to localhost:27017
+01-17 15:25:07 DEBUG command - Sending command '{ "insert" : "PersInf_Collection", "ordered" : true, "$db" : "test", "documents" : [{ "_id" : { "$oid" : "678a4c23f7a3bc1fdce76ef3" }, "id" : "5d41c5ce-3e3a-4e9b-bd98-5f82b6168af0", "surname" : "Surname", "name" : "Name", "phoneNumber" : "PhoneNumber", "email" : "Email" }] }' with request id 8 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:25:07 DEBUG command - Execution of command with request id 8 completed successfully in 50.51 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:25:07 DEBUG command - Sending command '{ "update" : "PersInf_Collection", "ordered" : true, "$db" : "test", "updates" : [{ "q" : { "id" : "5d41c5ce-3e3a-4e9b-bd98-5f82b6168af0" }, "u" : { "$set" : { "surname" : "Surname", "name" : "UpdatedName", "phoneNumber" : "PhoneNumber", "email" : "Email" } } }] }' with request id 9 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:25:07 DEBUG command - Execution of command with request id 9 completed successfully in 25.04 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:26:43 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 15:26:44 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 15:26:44 INFO  cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
+01-17 15:26:44 INFO  connection - Opened connection [connectionId{localValue:1}] to localhost:27017
+01-17 15:26:44 DEBUG cluster - Checking status of localhost:27017
+01-17 15:26:44 DEBUG command - Sending command '{ "ismaster" : 1, "$db" : "admin" }' with request id 4 to database admin on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 15:26:44 DEBUG command - Execution of command with request id 4 completed successfully in 10.97 ms on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 15:26:44 INFO  cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[8, 0, 3]}, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=21056400}
+01-17 15:26:44 DEBUG cluster - Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=21.1 ms, state=CONNECTED}]
+01-17 15:26:44 INFO  connection - Opened connection [connectionId{localValue:2}] to localhost:27017
+01-17 15:26:44 DEBUG command - Sending command '{ "delete" : "PersInf_Collection", "ordered" : true, "$db" : "test", "deletes" : [{ "q" : { "id" : "42386410-912d-4a5e-9f35-a919483cbd31" }, "limit" : 1 }] }' with request id 8 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:26:44 DEBUG command - Execution of command with request id 8 completed successfully in 54.23 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:27:20 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 15:27:20 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 15:27:20 INFO  cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
+01-17 15:27:20 INFO  connection - Opened connection [connectionId{localValue:1}] to localhost:27017
+01-17 15:27:20 DEBUG cluster - Checking status of localhost:27017
+01-17 15:27:20 DEBUG command - Sending command '{ "ismaster" : 1, "$db" : "admin" }' with request id 4 to database admin on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 15:27:20 DEBUG command - Execution of command with request id 4 completed successfully in 5.54 ms on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 15:27:20 INFO  cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[8, 0, 3]}, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=11411800}
+01-17 15:27:20 DEBUG cluster - Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=11.4 ms, state=CONNECTED}]
+01-17 15:27:20 INFO  connection - Opened connection [connectionId{localValue:2}] to localhost:27017
+01-17 15:27:20 DEBUG command - Sending command '{ "delete" : "PersInf_Collection", "ordered" : true, "$db" : "test", "deletes" : [{ "q" : { "id" : "5d41c5ce-3e3a-4e9b-bd98-5f82b6168af0" }, "limit" : 1 }] }' with request id 8 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:27:20 DEBUG command - Execution of command with request id 8 completed successfully in 4.76 ms on connection [connectionId{localValue:2}] to server localhost:27017

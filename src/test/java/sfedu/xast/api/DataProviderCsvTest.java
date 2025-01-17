@@ -11,12 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class DataProviderCsvTest{
 
-    String sourceCsvPathPersInf = Constants.csvPersInfTestFilePath;
-    String sourceCsvPathProfInf = Constants.csvProfInfTestFilePath;
-    String sourceCsvPathSkillExchange = Constants.csvSkillExchangeTestFilePath;
-    String sourceCsvPathReview = Constants.csvReviewTestFilePath;
-    String sourceCsvPathTransaction = Constants.csvTransactionTestFilePath;
-
     private DataProviderCsv dataProviderCsv;
 
     @BeforeEach
@@ -28,9 +22,9 @@ public class DataProviderCsvTest{
     void testCRUDMethodsWithPersInfPositiveCSV() throws IOException, CsvException {
         PersInf persInf = new PersInf("Surname", "Name", "PhoneNumber", "Email");
 
-        assertTrue(dataProviderCsv.createPersInf(persInf, sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.createPersInf(persInf));
 
-        PersInf retrievedUser = dataProviderCsv.readPersInf(persInf, persInf.getId(), sourceCsvPathPersInf);
+        PersInf retrievedUser = dataProviderCsv.readPersInf(persInf, persInf.getId());
         assertNotNull(retrievedUser);
         assertEquals("Surname", retrievedUser.getSurname());
         assertEquals("Name", retrievedUser.getName());
@@ -39,14 +33,14 @@ public class DataProviderCsvTest{
 
         retrievedUser.setSurname("Updated Surname");
         retrievedUser.setName("Updated Name");
-        assertTrue(dataProviderCsv.updatePersInf(retrievedUser, sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.updatePersInf(retrievedUser));
 
-        PersInf updatedUser = dataProviderCsv.readPersInf(retrievedUser, retrievedUser.getId(), sourceCsvPathPersInf);
+        PersInf updatedUser = dataProviderCsv.readPersInf(retrievedUser, retrievedUser.getId());
         assertNotNull(updatedUser);
         assertEquals("Updated Name", updatedUser.getName());
         assertEquals("Updated Surname", updatedUser.getSurname());
 
-        assertTrue(dataProviderCsv.deletePersInf(persInf.getId(), sourceCsvPathPersInf));
+        assertTrue(dataProviderCsv.deletePersInf(persInf.getId()));
     }
 
     @Test
@@ -54,24 +48,24 @@ public class DataProviderCsvTest{
 
         //CreatePersInfWithNull
         PersInf persInf = null;
-        assertFalse(dataProviderCsv.createPersInf(persInf, sourceCsvPathPersInf ));
+        assertFalse(dataProviderCsv.createPersInf(persInf));
 
         //ReadPersInfWithNull
         String invalidId = "666";
         CsvException exception = assertThrows(CsvException.class, () -> {
-            dataProviderCsv.readPersInf(persInf, invalidId, sourceCsvPathPersInf);
+            dataProviderCsv.readPersInf(persInf, invalidId);
         });
         assertEquals("PersInf object must not be null", exception.getMessage());
 
         //UpdatePersInfWithNull
         CsvException exceptionNew = assertThrows(CsvException.class, () -> {
-            dataProviderCsv.updatePersInf(persInf, sourceCsvPathPersInf);
+            dataProviderCsv.updatePersInf(persInf);
         });
         assertEquals("PersInf object must not be null", exceptionNew.getMessage());
 
         //DeletePersInfWithNullId
         String id = null;
-        boolean res = dataProviderCsv.deletePersInf(id, sourceCsvPathPersInf);
+        boolean res = dataProviderCsv.deletePersInf(id);
         assertFalse(res);
     }
 
@@ -81,10 +75,10 @@ public class DataProviderCsvTest{
         ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
                 "Java backend developer", 5.5, 4.0);
 
-        assertTrue(dataProviderCsv.createPersInf(persInf, sourceCsvPathPersInf));
-        assertTrue(dataProviderCsv.createProfInf(profInf, persInf, sourceCsvPathProfInf));
+        assertTrue(dataProviderCsv.createPersInf(persInf));
+        assertTrue(dataProviderCsv.createProfInf(profInf, persInf));
 
-        ProfInf retrievedUser = dataProviderCsv.readProfInf(profInf, persInf.getId(), sourceCsvPathProfInf);
+        ProfInf retrievedUser = dataProviderCsv.readProfInf(profInf, persInf.getId());
         assertNotNull(retrievedUser);
         assertEquals("Programming", retrievedUser.getSkillName());
         assertEquals("Programming in Java", retrievedUser.getSkillDescription());
@@ -94,10 +88,10 @@ public class DataProviderCsvTest{
         assertEquals(4.0, retrievedUser.getRating());
 
         retrievedUser.setSkillName("UpdatedSkill");
-        assertTrue(dataProviderCsv.updateProfInf(retrievedUser, sourceCsvPathProfInf));
+        assertTrue(dataProviderCsv.updateProfInf(retrievedUser));
 
-        assertTrue(dataProviderCsv.deletePersInf(persInf.getId(), sourceCsvPathPersInf));
-        assertTrue(dataProviderCsv.deleteProfInf(profInf.getPersId(), sourceCsvPathProfInf));
+        assertTrue(dataProviderCsv.deletePersInf(persInf.getId()));
+        assertTrue(dataProviderCsv.deleteProfInf(profInf.getPersId()));
     }
 
     @Test
@@ -106,24 +100,24 @@ public class DataProviderCsvTest{
         //CreateProfInfWithNull
         PersInf persInf = null;
         ProfInf profInf = null;
-        assertFalse(dataProviderCsv.createProfInf(profInf, persInf, sourceCsvPathProfInf));
+        assertFalse(dataProviderCsv.createProfInf(profInf, persInf));
 
         //ReadProfInfWithNonExistingId
         String invalidId = "666";
         CsvException exception = assertThrows(CsvException.class, () -> {
-            dataProviderCsv.readProfInf(profInf, invalidId, sourceCsvPathProfInf);
+            dataProviderCsv.readProfInf(profInf, invalidId);
         });
         assertEquals("ProfInf object must not be null", exception.getMessage());
 
         //UpdateProfInfWithNull
         CsvException exceptionNew = assertThrows(CsvException.class, () -> {
-            dataProviderCsv.updateProfInf(profInf, sourceCsvPathProfInf);
+            dataProviderCsv.updateProfInf(profInf);
         });
         assertEquals("ProfInf object must not be null", exceptionNew.getMessage());
 
         //DeleteProfInfWithNullId
         String id = null;
-        boolean res = dataProviderCsv.deleteProfInf(id,sourceCsvPathProfInf);
+        boolean res = dataProviderCsv.deleteProfInf(id);
         assertFalse(res);
     }
 
@@ -135,12 +129,12 @@ public class DataProviderCsvTest{
                 "Java backend developer", 5.5, 4.0);
         SkillExchange skillExchange = new SkillExchange(profInf.getSkillName(),persInfRequesting.getId(),profInf.getPersId());
 
-        assertTrue(dataProviderCsv.createPersInf(persInfRequesting, sourceCsvPathPersInf));
-        assertTrue(dataProviderCsv.createPersInf(persInf, sourceCsvPathPersInf));
-        assertTrue(dataProviderCsv.createProfInf(profInf, persInf, sourceCsvPathProfInf));
-        assertTrue(dataProviderCsv.createSkillExchange(skillExchange, sourceCsvPathSkillExchange));
+        assertTrue(dataProviderCsv.createPersInf(persInfRequesting));
+        assertTrue(dataProviderCsv.createPersInf(persInf));
+        assertTrue(dataProviderCsv.createProfInf(profInf, persInf));
+        assertTrue(dataProviderCsv.createSkillExchange(skillExchange));
 
-        SkillExchange retrievedSkillExchange = dataProviderCsv.readSkillExchange(skillExchange, sourceCsvPathSkillExchange);
+        SkillExchange retrievedSkillExchange = dataProviderCsv.readSkillExchange(skillExchange);
         assertNotNull(retrievedSkillExchange);
         assertNotNull(retrievedSkillExchange);
         assertEquals(persInfRequesting.getId(), retrievedSkillExchange.getUserRequesting());
@@ -148,15 +142,15 @@ public class DataProviderCsvTest{
         assertEquals(profInf.getSkillName(), retrievedSkillExchange.getSkillOffered());
 
         retrievedSkillExchange.setSkillOffered("UpdatedSkill");
-        dataProviderCsv.updateSkillExchange(retrievedSkillExchange, sourceCsvPathSkillExchange);
+        dataProviderCsv.updateSkillExchange(retrievedSkillExchange);
 
-        SkillExchange updatedSkillExchange = dataProviderCsv.readSkillExchange(skillExchange, sourceCsvPathSkillExchange);
+        SkillExchange updatedSkillExchange = dataProviderCsv.readSkillExchange(skillExchange);
         assertEquals("UpdatedSkill", updatedSkillExchange.getSkillOffered());
 
-        assertTrue(dataProviderCsv.deletePersInf(persInf.getId(), sourceCsvPathPersInf));
-        assertTrue(dataProviderCsv.deleteProfInf(profInf.getPersId(), sourceCsvPathProfInf));
-        assertTrue(dataProviderCsv.deletePersInf(persInfRequesting.getId(), sourceCsvPathPersInf));
-        assertTrue(dataProviderCsv.deleteSkillExchange(skillExchange.getExchangeId(), sourceCsvPathSkillExchange));
+        assertTrue(dataProviderCsv.deletePersInf(persInf.getId()));
+        assertTrue(dataProviderCsv.deleteProfInf(profInf.getPersId()));
+        assertTrue(dataProviderCsv.deletePersInf(persInfRequesting.getId()));
+        assertTrue(dataProviderCsv.deleteSkillExchange(skillExchange.getExchangeId()));
     }
 
     @Test
@@ -164,22 +158,22 @@ public class DataProviderCsvTest{
 
         //CreateSkillExchangeWithNull
         SkillExchange skillExchange = null;
-        assertFalse(dataProviderCsv.createSkillExchange(skillExchange, sourceCsvPathSkillExchange));
+        assertFalse(dataProviderCsv.createSkillExchange(skillExchange));
 
         //ReadSkillExchangeWithNonExistingId
         assertThrows(CsvException.class, () -> {
-            dataProviderCsv.readSkillExchange(skillExchange, sourceCsvPathSkillExchange);
+            dataProviderCsv.readSkillExchange(skillExchange);
         });
 
         //UpdateSkillExchangeWithNull
         CsvException exceptionNew = assertThrows(CsvException.class, () -> {
-            dataProviderCsv.updateSkillExchange(skillExchange, sourceCsvPathSkillExchange);
+            dataProviderCsv.updateSkillExchange(skillExchange);
         });
         assertEquals("SkillExchange object must not be null", exceptionNew.getMessage());
 
         //DeleteSkillExchangeWithNullId
         String id = null;
-        boolean res = dataProviderCsv.deleteSkillExchange(id, sourceCsvPathSkillExchange);
+        boolean res = dataProviderCsv.deleteSkillExchange(id);
         assertFalse(res);
     }
 
@@ -191,12 +185,12 @@ public class DataProviderCsvTest{
                 "Java backend developer", 5.5, 4.0);
         Review review = new Review(4.5, "Good job!", persInfReviewer.getId(), profInf.getPersId());
 
-        assertTrue(dataProviderCsv.createPersInf(persInfReviewer, sourceCsvPathPersInf));
-        assertTrue(dataProviderCsv.createPersInf(persInfEvaluated, sourceCsvPathPersInf));
-        assertTrue(dataProviderCsv.createProfInf(profInf, persInfEvaluated, sourceCsvPathProfInf));
-        assertTrue(dataProviderCsv.createReview(review, sourceCsvPathReview));
+        assertTrue(dataProviderCsv.createPersInf(persInfReviewer));
+        assertTrue(dataProviderCsv.createPersInf(persInfEvaluated));
+        assertTrue(dataProviderCsv.createProfInf(profInf, persInfEvaluated));
+        assertTrue(dataProviderCsv.createReview(review));
 
-        Review retrievedReview = dataProviderCsv.readReview(review, sourceCsvPathReview);
+        Review retrievedReview = dataProviderCsv.readReview(review);
         assertNotNull(retrievedReview);
         assertEquals(4.5, retrievedReview.getRating());
         assertEquals("Good job!", retrievedReview.getComment());
@@ -204,15 +198,15 @@ public class DataProviderCsvTest{
         assertEquals(profInf.getPersId(), retrievedReview.getUserEvaluated());
 
         review.setComment("Not God Job!");
-        dataProviderCsv.updateReview(review, sourceCsvPathReview);
+        dataProviderCsv.updateReview(review);
 
-        Review updatedReview = dataProviderCsv.readReview(review, sourceCsvPathReview);
+        Review updatedReview = dataProviderCsv.readReview(review);
         assertEquals("Not God Job!", updatedReview.getComment());
 
-        assertTrue(dataProviderCsv.deletePersInf(persInfReviewer.getId(), sourceCsvPathPersInf));
-        assertTrue(dataProviderCsv.deleteProfInf(profInf.getPersId(), sourceCsvPathProfInf));
-        assertTrue(dataProviderCsv.deletePersInf(persInfEvaluated.getId(), sourceCsvPathPersInf));
-        assertTrue(dataProviderCsv.deleteReview(review, sourceCsvPathReview));
+        assertTrue(dataProviderCsv.deletePersInf(persInfReviewer.getId()));
+        assertTrue(dataProviderCsv.deleteProfInf(profInf.getPersId()));
+        assertTrue(dataProviderCsv.deletePersInf(persInfEvaluated.getId()));
+        assertTrue(dataProviderCsv.deleteReview(review));
     }
 
     @Test
@@ -220,22 +214,22 @@ public class DataProviderCsvTest{
 
         //CreateSkillExchangeWithNull
         Review review = null;
-        assertFalse(dataProviderCsv.createReview(review, sourceCsvPathReview));
+        assertFalse(dataProviderCsv.createReview(review));
 
         //ReadReviewWithNonExistingId
         assertThrows(CsvException.class, () -> {
-            dataProviderCsv.readReview(review, sourceCsvPathReview);
+            dataProviderCsv.readReview(review);
         });
 
         //UpdateReviewWithNull
         CsvException exceptionNew = assertThrows(CsvException.class, () -> {
-            dataProviderCsv.updateReview(review, sourceCsvPathReview);
+            dataProviderCsv.updateReview(review);
         });
         assertEquals("Review object must not be null", exceptionNew.getMessage());
 
         //DeleteReviewWithNullId
         String id = null;
-        boolean res = dataProviderCsv.deleteReview(review, sourceCsvPathPersInf);
+        boolean res = dataProviderCsv.deleteReview(review);
         assertFalse(res);
     }
 
@@ -248,28 +242,28 @@ public class DataProviderCsvTest{
         SkillExchange skillExchange = new SkillExchange(profInf.getSkillName(),persInfRequesting.getId(),profInf.getPersId());
         Transaction transaction = new Transaction(Status.COMPLETED, skillExchange.getExchangeId());
 
-        assertTrue(dataProviderCsv.createPersInf(persInfRequesting, sourceCsvPathPersInf));
-        assertTrue(dataProviderCsv.createPersInf(persInf, sourceCsvPathPersInf));
-        assertTrue(dataProviderCsv.createProfInf(profInf, persInf, sourceCsvPathProfInf));
-        assertTrue(dataProviderCsv.createSkillExchange(skillExchange, sourceCsvPathSkillExchange));
-        assertTrue(dataProviderCsv.createTransaction(transaction, sourceCsvPathTransaction));
+        assertTrue(dataProviderCsv.createPersInf(persInfRequesting));
+        assertTrue(dataProviderCsv.createPersInf(persInf));
+        assertTrue(dataProviderCsv.createProfInf(profInf, persInf));
+        assertTrue(dataProviderCsv.createSkillExchange(skillExchange));
+        assertTrue(dataProviderCsv.createTransaction(transaction));
 
-        Transaction retrievedTransaction = dataProviderCsv.readTransaction(transaction, sourceCsvPathTransaction);
+        Transaction retrievedTransaction = dataProviderCsv.readTransaction(transaction);
         assertNotNull(retrievedTransaction);
         assertEquals(Status.COMPLETED, retrievedTransaction.getStatus());
         assertEquals(skillExchange.getExchangeId(), transaction.getChangeId());
 
         retrievedTransaction.setStatus(Status.IN_PROCESS);
-        dataProviderCsv.updateTransaction(transaction, sourceCsvPathTransaction);
+        dataProviderCsv.updateTransaction(transaction);
 
-        Transaction updatedTransaction = dataProviderCsv.readTransaction(transaction, sourceCsvPathTransaction);
+        Transaction updatedTransaction = dataProviderCsv.readTransaction(transaction);
         assertEquals(Status.IN_PROCESS, updatedTransaction.getStatus());
 
-        assertTrue(dataProviderCsv.deleteTransaction(transaction, sourceCsvPathTransaction));
-        assertTrue(dataProviderCsv.deletePersInf(persInf.getId(), sourceCsvPathPersInf));
-        assertTrue(dataProviderCsv.deleteProfInf(profInf.getPersId(), sourceCsvPathProfInf));
-        assertTrue(dataProviderCsv.deletePersInf(persInfRequesting.getId(), sourceCsvPathPersInf));
-        assertTrue(dataProviderCsv.deleteSkillExchange(skillExchange.getExchangeId(), sourceCsvPathSkillExchange));
+        assertTrue(dataProviderCsv.deleteTransaction(transaction));
+        assertTrue(dataProviderCsv.deletePersInf(persInf.getId()));
+        assertTrue(dataProviderCsv.deleteProfInf(profInf.getPersId()));
+        assertTrue(dataProviderCsv.deletePersInf(persInfRequesting.getId()));
+        assertTrue(dataProviderCsv.deleteSkillExchange(skillExchange.getExchangeId()));
     }
 
     @Test
@@ -277,16 +271,16 @@ public class DataProviderCsvTest{
 
         //CreateTransactionWithNull
         Transaction transaction = null;
-        assertFalse(dataProviderCsv.createTransaction(transaction, sourceCsvPathTransaction));
+        assertFalse(dataProviderCsv.createTransaction(transaction));
 
         //ReadTransactionWithNonExistingId
         assertThrows(CsvException.class, () -> {
-            dataProviderCsv.readTransaction(transaction, sourceCsvPathTransaction);
+            dataProviderCsv.readTransaction(transaction);
         });
 
         //UpdateTransactionWithNull
         CsvException exceptionNew = assertThrows(CsvException.class, () -> {
-            dataProviderCsv.updateTransaction(transaction, sourceCsvPathTransaction);
+            dataProviderCsv.updateTransaction(transaction);
         });
         assertEquals("Transaction object must not be null", exceptionNew.getMessage());
     }

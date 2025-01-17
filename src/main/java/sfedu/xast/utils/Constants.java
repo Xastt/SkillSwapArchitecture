@@ -5,7 +5,7 @@ public class Constants {
     public static final String CONFIG_PROPERTIES = "src/main/resources/constantProperties.properties";
     public static final String CONFIG_YML = "src/main/resources/constantsYAML.yaml";
     public static final String CONFIG_XML = "src/main/resources/constantsXML.xml";
-    public static final String DataBaseUrl = "mongodb://localhost:27017";
+    public static final String DataBaseUrlMongo = "mongodb://localhost:27017";
     public static final String ValidFileName = "src/test/resources/test.txt";
 
     /**
@@ -45,20 +45,19 @@ public class Constants {
     /**
      * filePath's to csv files
      */
-    //PersInf
     public static String csvPersInfFilePath = "src/main/resources/csvFiles/persInf.csv";
-    public static String csvPersInfTestFilePath = "src/test/resources/csvFilesTest/persInfTest.csv";
-    //ProfInf
     public static String csvProfInfFilePath = "src/main/resources/csvFiles/profInf.csv";
-    public static String csvProfInfTestFilePath = "src/test/resources/csvFilesTest/profInfTest.csv";
-    //SkillExchange
     public static String csvSkillExchangeFilePath = "src/main/resources/csvFiles/skillExchange.csv";
-    public static String csvSkillExchangeTestFilePath = "src/test/resources/csvFilesTest/skillExchangeTest.csv";
-    //Review
     public static String csvReviewFilePath = "src/main/resources/csvFiles/review.csv";
-    public static String csvReviewTestFilePath = "src/test/resources/csvFilesTest/reviewTest.csv";
-    //Transaction
     public static String csvTransactionFilePath = "src/main/resources/csvFiles/transaction.csv";
-    public static String csvTransactionTestFilePath = "src/test/resources/csvFilesTest/transactionTest.csv";
+    /**
+     * MongoDB Collections
+     */
+    public static String persInfCollection = "PersInf_Collection";
+    public static String profInfCollection = "ProfInf_Collection";
+    public static String skillExchangeCollection = "SkillExchange_Collection";
+    public static String reviewCollection = "Review_Collection";
+    public static String transactionCollection = "Transaction_Collection";
+    public static String historyContentCollection = "historyContent";
 }
 
