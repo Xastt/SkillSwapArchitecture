@@ -9,8 +9,7 @@ import sfedu.xast.utils.Status;
 import java.io.*;
 import java.nio.file.*;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.text.*;
 import java.util.*;
 
 public class DataProviderCsv  {
@@ -673,31 +672,31 @@ public class DataProviderCsv  {
         }
     }
 
+    /**
+     * find person, which provide needed skillName
+     * @param skillPart
+     * @param csvFilePath
+     * @return List<SkillOut>
+     * @throws SQLException
+     */
     public List<SkillOut> readProfInfBySkillNameFromCsv(String skillPart, String csvFilePath) throws IOException, CsvException {
         List<SkillOut> profInfList = new ArrayList<>();
 
-        // Читаем данные из CSV
         List<String[]> data = readFromCsv(csvFilePath);
 
         for (String[] row : data) {
-            // Предположим, что навык находится в соответствующем столбце (например, 5-й столбец)
-            String skillName = row[5]; // Поменяйте индекс, если столбцы другие
+            String skillName = row[1];
 
-            // Проверяем, содержит ли навык указанную часть названия
             if (skillName != null && skillName.toLowerCase().contains(skillPart.toLowerCase())) {
                 SkillOut skillOut = new SkillOut();
 
                 skillOut.setId(row[0]);
-                skillOut.setSurname(row[1]);
-                skillOut.setName(row[2]);
-                skillOut.setPhoneNumber(row[3]);
-                skillOut.setEmail(row[4]);
-                skillOut.setSkillName(skillName);
-                skillOut.setSkillDescription(row[6]); // Поменяйте индекс, если столбцы другие
-                skillOut.setCost(Double.parseDouble(row[7])); // Поменяйте индекс, если столбцы другие
-                skillOut.setPersDescription(row[8]); // Поменяйте индекс, если столбцы другие
-                skillOut.setExp(Double.parseDouble(row[9])); // Поменяйте индекс, если столбцы другие
-                skillOut.setRating(Double.parseDouble(row[10])); // Поменяйте индекс, если столбцы другие
+                skillOut.setSkillName(row[1]);
+                skillOut.setSkillDescription(row[2]);
+                skillOut.setCost(Double.parseDouble(row[3]));
+                skillOut.setPersDescription(row[4]);
+                skillOut.setExp(Double.parseDouble(row[5]));
+                skillOut.setRating(Double.parseDouble(row[6]));
 
                 profInfList.add(skillOut);
             }
@@ -710,6 +709,10 @@ public class DataProviderCsv  {
         return profInfList;
     }
 
+    /**
+     * print persons with needed skill
+     * @param skillOutList
+     */
     public void printProfInfListFromCsv(List<SkillOut> skillOutList) {
         if (skillOutList == null || skillOutList.isEmpty()) {
             System.out.println("Список профилей пуст.");
@@ -718,10 +721,6 @@ public class DataProviderCsv  {
 
         for (SkillOut skillOut : skillOutList) {
             System.out.println("ID: " + skillOut.getId());
-            System.out.println("Фамилия: " + skillOut.getSurname());
-            System.out.println("Имя: " + skillOut.getName());
-            System.out.println("Номер телефона: " + skillOut.getPhoneNumber());
-            System.out.println("Электронная почта: " + skillOut.getEmail());
             System.out.println("Навык: " + skillOut.getSkillName());
             System.out.println("Описание навыка: " + skillOut.getSkillDescription());
             System.out.println("Стоимость: " + skillOut.getCost());
@@ -745,27 +744,22 @@ public class DataProviderCsv  {
             finalRating = (ratingBefore + rating) / 2.0;
         }
 
-        // Читаем данные из CSV
         List<String[]> data = readFromCsv(csvFilePath);
         boolean updated = false;
 
-        // Обновляем данные
         for (String[] row : data) {
             if (row[0].equals(persId)) {
-                row[10] = String.valueOf(finalRating); // Предполагается, что рейтинг находится в 11-м столбце (индекс 10)
+                row[6] = String.valueOf(finalRating);
                 updated = true;
                 break;
             }
         }
 
-        // Если запись не была найдена, возвращаем false
         if (!updated) {
             return false;
         }
 
-        // Записываем обновлённые данные обратно в CSV
         writeToCsv(data, csvFilePath);
         return true;
     }
 }
-//TODO проверить как работает с csv
