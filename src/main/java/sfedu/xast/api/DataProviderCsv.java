@@ -163,6 +163,7 @@ public class DataProviderCsv  {
     /**
      * creating record in csv file
      * @param persInf
+     * @param profInf
      * @return true or false
      * @throws IOException
      * @throws CsvException
@@ -230,9 +231,6 @@ public class DataProviderCsv  {
      */
     public ProfInf readProfInfWithId(String id) throws IOException, CsvException {
         ProfInf profInf = new ProfInf();
-        if(profInf == null){
-            throw new CsvException("ProfInf object must not be null");
-        }
         try{
             List<String[]> data = readFromCsv(Constants.csvProfInfFilePath);
             for (String[] row : data){
@@ -370,7 +368,6 @@ public class DataProviderCsv  {
     /**
      * updating records in csv file by personal id
      * @param skillExchange
-     * @param csvFilePath
      * @return true or false
      * @throws IOException
      * @throws CsvException
@@ -455,7 +452,6 @@ public class DataProviderCsv  {
     /**
      * reading records from csv file using id
      * @param review
-     * @param csvFilePath
      * @return PersINf object
      * @throws IOException
      * @throws CsvException

@@ -82,3 +82,250 @@ Caused by: java.net.ConnectException: Connection refused: getsockopt
 01-17 15:27:20 INFO  connection - Opened connection [connectionId{localValue:2}] to localhost:27017
 01-17 15:27:20 DEBUG command - Sending command '{ "delete" : "PersInf_Collection", "ordered" : true, "$db" : "test", "deletes" : [{ "q" : { "id" : "5d41c5ce-3e3a-4e9b-bd98-5f82b6168af0" }, "limit" : 1 }] }' with request id 8 to database test on connection [connectionId{localValue:2}] to server localhost:27017
 01-17 15:27:20 DEBUG command - Execution of command with request id 8 completed successfully in 4.76 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:46:42 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 15:46:42 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 15:46:42 DEBUG connection - Closing connection connectionId{localValue:1}
+01-17 15:46:42 INFO  cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketChannelStream.open(SocketChannelStream.java:63)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishTimedConnect(SocketChannelImpl.java:1278)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingConnect(SocketChannelImpl.java:1320)
+	at java.base/sun.nio.ch.SocketAdaptor.connect(SocketAdaptor.java:102)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketChannelStream.initializeSocketChannel(SocketChannelStream.java:72)
+	at com.mongodb.internal.connection.SocketChannelStream.open(SocketChannelStream.java:60)
+	... 3 more
+01-17 15:46:42 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:42 INFO  cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
+01-17 15:46:42 DEBUG connection - Closing connection connectionId{localValue:2}
+01-17 15:46:42 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:43 DEBUG connection - Closing connection connectionId{localValue:3}
+01-17 15:46:43 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:43 DEBUG connection - Closing connection connectionId{localValue:4}
+01-17 15:46:43 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:44 DEBUG connection - Closing connection connectionId{localValue:5}
+01-17 15:46:44 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:44 DEBUG connection - Closing connection connectionId{localValue:6}
+01-17 15:46:44 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:45 DEBUG connection - Closing connection connectionId{localValue:7}
+01-17 15:46:45 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:45 DEBUG connection - Closing connection connectionId{localValue:8}
+01-17 15:46:45 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:46 DEBUG connection - Closing connection connectionId{localValue:9}
+01-17 15:46:46 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:46 DEBUG connection - Closing connection connectionId{localValue:10}
+01-17 15:46:46 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:47 DEBUG connection - Closing connection connectionId{localValue:11}
+01-17 15:46:47 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:48 DEBUG connection - Closing connection connectionId{localValue:12}
+01-17 15:46:48 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:48 DEBUG connection - Closing connection connectionId{localValue:13}
+01-17 15:46:48 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:49 DEBUG connection - Closing connection connectionId{localValue:14}
+01-17 15:46:49 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:49 DEBUG connection - Closing connection connectionId{localValue:15}
+01-17 15:46:49 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:50 DEBUG connection - Closing connection connectionId{localValue:16}
+01-17 15:46:50 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:50 DEBUG connection - Closing connection connectionId{localValue:17}
+01-17 15:46:50 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:51 DEBUG connection - Closing connection connectionId{localValue:18}
+01-17 15:46:51 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:51 DEBUG connection - Closing connection connectionId{localValue:19}
+01-17 15:46:51 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:52 DEBUG connection - Closing connection connectionId{localValue:20}
+01-17 15:46:52 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:52 DEBUG connection - Closing connection connectionId{localValue:21}
+01-17 15:46:52 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:53 DEBUG connection - Closing connection connectionId{localValue:22}
+01-17 15:46:53 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:53 DEBUG connection - Closing connection connectionId{localValue:23}
+01-17 15:46:53 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:54 DEBUG connection - Closing connection connectionId{localValue:24}
+01-17 15:46:54 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:54 DEBUG connection - Closing connection connectionId{localValue:25}
+01-17 15:46:54 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:55 DEBUG connection - Closing connection connectionId{localValue:26}
+01-17 15:46:55 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:55 DEBUG connection - Closing connection connectionId{localValue:27}
+01-17 15:46:55 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:56 DEBUG connection - Closing connection connectionId{localValue:28}
+01-17 15:46:56 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:56 DEBUG connection - Closing connection connectionId{localValue:29}
+01-17 15:46:56 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:57 DEBUG connection - Closing connection connectionId{localValue:30}
+01-17 15:46:57 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:57 DEBUG connection - Closing connection connectionId{localValue:31}
+01-17 15:46:57 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:58 DEBUG connection - Closing connection connectionId{localValue:32}
+01-17 15:46:58 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:58 DEBUG connection - Closing connection connectionId{localValue:33}
+01-17 15:46:58 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:59 DEBUG connection - Closing connection connectionId{localValue:34}
+01-17 15:46:59 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:46:59 DEBUG connection - Closing connection connectionId{localValue:35}
+01-17 15:46:59 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:00 DEBUG connection - Closing connection connectionId{localValue:36}
+01-17 15:47:00 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:00 DEBUG connection - Closing connection connectionId{localValue:37}
+01-17 15:47:00 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:01 DEBUG connection - Closing connection connectionId{localValue:38}
+01-17 15:47:01 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:01 DEBUG connection - Closing connection connectionId{localValue:39}
+01-17 15:47:01 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:02 DEBUG connection - Closing connection connectionId{localValue:40}
+01-17 15:47:02 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:02 DEBUG connection - Closing connection connectionId{localValue:41}
+01-17 15:47:02 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:03 DEBUG connection - Closing connection connectionId{localValue:42}
+01-17 15:47:03 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:03 DEBUG connection - Closing connection connectionId{localValue:43}
+01-17 15:47:03 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:04 DEBUG connection - Closing connection connectionId{localValue:44}
+01-17 15:47:04 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:04 DEBUG connection - Closing connection connectionId{localValue:45}
+01-17 15:47:04 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:05 DEBUG connection - Closing connection connectionId{localValue:46}
+01-17 15:47:05 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:06 DEBUG connection - Closing connection connectionId{localValue:47}
+01-17 15:47:06 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:06 DEBUG connection - Closing connection connectionId{localValue:48}
+01-17 15:47:06 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:07 DEBUG connection - Closing connection connectionId{localValue:49}
+01-17 15:47:07 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:07 DEBUG connection - Closing connection connectionId{localValue:50}
+01-17 15:47:07 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:08 DEBUG connection - Closing connection connectionId{localValue:51}
+01-17 15:47:08 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:08 DEBUG connection - Closing connection connectionId{localValue:52}
+01-17 15:47:08 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:09 DEBUG connection - Closing connection connectionId{localValue:53}
+01-17 15:47:09 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:09 DEBUG connection - Closing connection connectionId{localValue:54}
+01-17 15:47:09 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:10 DEBUG connection - Closing connection connectionId{localValue:55}
+01-17 15:47:10 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:10 DEBUG connection - Closing connection connectionId{localValue:56}
+01-17 15:47:10 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:11 DEBUG connection - Closing connection connectionId{localValue:57}
+01-17 15:47:11 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:11 DEBUG connection - Closing connection connectionId{localValue:58}
+01-17 15:47:11 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:12 DEBUG connection - Closing connection connectionId{localValue:59}
+01-17 15:47:12 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-17 15:47:53 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 15:47:53 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 15:47:53 INFO  cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
+01-17 15:47:53 INFO  connection - Opened connection [connectionId{localValue:1}] to localhost:27017
+01-17 15:47:53 DEBUG cluster - Checking status of localhost:27017
+01-17 15:47:53 DEBUG command - Sending command '{ "ismaster" : 1, "$db" : "admin" }' with request id 4 to database admin on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 15:47:53 DEBUG command - Execution of command with request id 4 completed successfully in 6.40 ms on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 15:47:53 INFO  cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[8, 0, 3]}, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=12977300}
+01-17 15:47:53 DEBUG cluster - Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=13.0 ms, state=CONNECTED}]
+01-17 15:47:53 INFO  connection - Opened connection [connectionId{localValue:2}] to localhost:27017
+01-17 15:47:53 DEBUG command - Sending command '{ "insert" : "PersInf_Collection", "ordered" : true, "$db" : "test", "documents" : [{ "_id" : { "$oid" : "678a5179f7a3bc12544c653c" }, "id" : "d17296b3-4dff-467e-9318-73a57e814e94", "surname" : "Surname", "name" : "Name", "phoneNumber" : "PhoneNumber", "email" : "Email" }] }' with request id 8 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:47:53 DEBUG command - Execution of command with request id 8 completed successfully in 17.80 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:47:53 DEBUG command - Sending command '{ "find" : "PersInf_Collection", "filter" : { "id" : "d17296b3-4dff-467e-9318-73a57e814e94" }, "limit" : 1, "singleBatch" : true, "$db" : "test", "$readPreference" : { "mode" : "primaryPreferred" } }' with request id 9 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:47:53 DEBUG command - Execution of command with request id 9 completed successfully in 19.53 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:47:53 DEBUG command - Sending command '{ "update" : "PersInf_Collection", "ordered" : true, "$db" : "test", "updates" : [{ "q" : { "id" : "d17296b3-4dff-467e-9318-73a57e814e94" }, "u" : { "$set" : { "surname" : "Updated Surname", "name" : "Updated Name", "phoneNumber" : "PhoneNumber", "email" : "Email" } } }] }' with request id 10 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:47:53 DEBUG command - Execution of command with request id 10 completed successfully in 14.13 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:47:53 DEBUG command - Sending command '{ "find" : "PersInf_Collection", "filter" : { "id" : "d17296b3-4dff-467e-9318-73a57e814e94" }, "limit" : 1, "singleBatch" : true, "$db" : "test", "$readPreference" : { "mode" : "primaryPreferred" } }' with request id 11 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:47:53 DEBUG command - Execution of command with request id 11 completed successfully in 2.41 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:47:53 DEBUG command - Sending command '{ "delete" : "PersInf_Collection", "ordered" : true, "$db" : "test", "deletes" : [{ "q" : { "id" : "d17296b3-4dff-467e-9318-73a57e814e94" }, "limit" : 1 }] }' with request id 12 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:47:53 DEBUG command - Execution of command with request id 12 completed successfully in 5.77 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:56:58 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 15:56:58 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 15:56:58 INFO  cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
+01-17 15:56:58 INFO  connection - Opened connection [connectionId{localValue:1}] to localhost:27017
+01-17 15:56:58 DEBUG cluster - Checking status of localhost:27017
+01-17 15:56:58 DEBUG command - Sending command '{ "ismaster" : 1, "$db" : "admin" }' with request id 4 to database admin on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 15:56:58 DEBUG command - Execution of command with request id 4 completed successfully in 6.03 ms on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 15:56:58 INFO  cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[8, 0, 3]}, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=12131400}
+01-17 15:56:58 DEBUG cluster - Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=12.1 ms, state=CONNECTED}]
+01-17 15:56:58 INFO  connection - Opened connection [connectionId{localValue:2}] to localhost:27017
+01-17 15:56:58 DEBUG command - Sending command '{ "insert" : "PersInf_Collection", "ordered" : true, "$db" : "test", "documents" : [{ "_id" : { "$oid" : "678a539af7a3bc21cc391e78" }, "id" : "049d2f40-7df6-4ecb-b198-784175a73c74", "surname" : "Surname", "name" : "Name", "phoneNumber" : "PhoneNumber", "email" : "Email" }] }' with request id 8 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:56:58 DEBUG command - Execution of command with request id 8 completed successfully in 52.32 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:56:58 DEBUG command - Sending command '{ "find" : "PersInf_Collection", "filter" : { "id" : "049d2f40-7df6-4ecb-b198-784175a73c74" }, "limit" : 1, "singleBatch" : true, "$db" : "test", "$readPreference" : { "mode" : "primaryPreferred" } }' with request id 9 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:56:58 DEBUG command - Execution of command with request id 9 completed successfully in 2.41 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:56:58 DEBUG command - Sending command '{ "update" : "PersInf_Collection", "ordered" : true, "$db" : "test", "updates" : [{ "q" : { "id" : "049d2f40-7df6-4ecb-b198-784175a73c74" }, "u" : { "$set" : { "surname" : "Updated Surname", "name" : "Updated Name", "phoneNumber" : "PhoneNumber", "email" : "Email" } } }] }' with request id 10 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:56:58 DEBUG command - Execution of command with request id 10 completed successfully in 2.91 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:56:58 DEBUG command - Sending command '{ "find" : "PersInf_Collection", "filter" : { "id" : "049d2f40-7df6-4ecb-b198-784175a73c74" }, "limit" : 1, "singleBatch" : true, "$db" : "test", "$readPreference" : { "mode" : "primaryPreferred" } }' with request id 11 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:56:58 DEBUG command - Execution of command with request id 11 completed successfully in 2.54 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:56:58 DEBUG command - Sending command '{ "delete" : "PersInf_Collection", "ordered" : true, "$db" : "test", "deletes" : [{ "q" : { "id" : "049d2f40-7df6-4ecb-b198-784175a73c74" }, "limit" : 1 }] }' with request id 12 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:56:58 DEBUG command - Execution of command with request id 12 completed successfully in 2.60 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 15:59:10 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 15:59:10 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 16:00:07 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 16:00:07 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 16:03:20 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 16:03:21 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 16:04:53 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 16:04:53 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 16:04:53 INFO  cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
+01-17 16:04:53 INFO  connection - Opened connection [connectionId{localValue:1}] to localhost:27017
+01-17 16:04:53 DEBUG cluster - Checking status of localhost:27017
+01-17 16:04:53 DEBUG command - Sending command '{ "ismaster" : 1, "$db" : "admin" }' with request id 4 to database admin on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 16:04:53 DEBUG command - Execution of command with request id 4 completed successfully in 5.64 ms on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 16:04:53 INFO  cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[8, 0, 3]}, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=11350600}
+01-17 16:04:53 DEBUG cluster - Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=11.4 ms, state=CONNECTED}]
+01-17 16:04:53 INFO  connection - Opened connection [connectionId{localValue:2}] to localhost:27017
+01-17 16:04:53 DEBUG command - Sending command '{ "find" : "PersInf_Collection", "filter" : { "id" : "666" }, "limit" : 1, "singleBatch" : true, "$db" : "test", "$readPreference" : { "mode" : "primaryPreferred" } }' with request id 8 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:04:53 DEBUG command - Execution of command with request id 8 completed successfully in 2.80 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:06:29 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 16:06:29 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 16:07:22 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 16:07:22 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 16:08:13 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 16:08:13 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 16:08:13 INFO  cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
+01-17 16:08:14 INFO  connection - Opened connection [connectionId{localValue:1}] to localhost:27017
+01-17 16:08:14 DEBUG cluster - Checking status of localhost:27017
+01-17 16:08:14 DEBUG command - Sending command '{ "ismaster" : 1, "$db" : "admin" }' with request id 4 to database admin on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 16:08:14 DEBUG command - Execution of command with request id 4 completed successfully in 6.06 ms on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 16:08:14 INFO  cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[8, 0, 3]}, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=12567600}
+01-17 16:08:14 DEBUG cluster - Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=12.6 ms, state=CONNECTED}]
+01-17 16:08:14 INFO  connection - Opened connection [connectionId{localValue:2}] to localhost:27017
+01-17 16:08:14 DEBUG command - Sending command '{ "insert" : "PersInf_Collection", "ordered" : true, "$db" : "test", "documents" : [{ "_id" : { "$oid" : "678a563df7a3bc371080d6f4" }, "id" : "1d924a7d-a384-4748-a000-2d908faaa3b7", "surname" : "Surname", "name" : "Name", "phoneNumber" : "PhoneNumber", "email" : "Email" }] }' with request id 8 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:08:14 DEBUG command - Execution of command with request id 8 completed successfully in 6.19 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:08:14 DEBUG command - Sending command '{ "find" : "PersInf_Collection", "filter" : { "id" : "1d924a7d-a384-4748-a000-2d908faaa3b7" }, "limit" : 1, "singleBatch" : true, "$db" : "test", "$readPreference" : { "mode" : "primaryPreferred" } }' with request id 9 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:08:14 DEBUG command - Execution of command with request id 9 completed successfully in 2.09 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:08:14 DEBUG command - Sending command '{ "update" : "PersInf_Collection", "ordered" : true, "$db" : "test", "updates" : [{ "q" : { "id" : "1d924a7d-a384-4748-a000-2d908faaa3b7" }, "u" : { "$set" : { "surname" : "Updated Surname", "name" : "Updated Name", "phoneNumber" : "PhoneNumber", "email" : "Email" } } }] }' with request id 10 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:08:14 DEBUG command - Execution of command with request id 10 completed successfully in 2.97 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:08:14 DEBUG command - Sending command '{ "find" : "PersInf_Collection", "filter" : { "id" : "1d924a7d-a384-4748-a000-2d908faaa3b7" }, "limit" : 1, "singleBatch" : true, "$db" : "test", "$readPreference" : { "mode" : "primaryPreferred" } }' with request id 11 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:08:14 DEBUG command - Execution of command with request id 11 completed successfully in 2.05 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:08:14 DEBUG command - Sending command '{ "delete" : "PersInf_Collection", "ordered" : true, "$db" : "test", "deletes" : [{ "q" : { "id" : "1d924a7d-a384-4748-a000-2d908faaa3b7" }, "limit" : 1 }] }' with request id 12 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:08:14 DEBUG command - Execution of command with request id 12 completed successfully in 2.28 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:08:45 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 16:08:45 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 16:09:54 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 16:09:54 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 16:29:02 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 16:29:02 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-17 16:29:02 INFO  cluster - Cluster description not yet available. Waiting for 30000 ms before timing out
+01-17 16:29:02 INFO  connection - Opened connection [connectionId{localValue:1}] to localhost:27017
+01-17 16:29:02 DEBUG cluster - Checking status of localhost:27017
+01-17 16:29:02 DEBUG command - Sending command '{ "ismaster" : 1, "$db" : "admin" }' with request id 4 to database admin on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 16:29:02 DEBUG command - Execution of command with request id 4 completed successfully in 6.41 ms on connection [connectionId{localValue:1}] to server localhost:27017
+01-17 16:29:02 INFO  cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[8, 0, 3]}, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=12512100}
+01-17 16:29:02 DEBUG cluster - Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=12.5 ms, state=CONNECTED}]
+01-17 16:29:02 INFO  connection - Opened connection [connectionId{localValue:2}] to localhost:27017
+01-17 16:29:02 DEBUG command - Sending command '{ "insert" : "PersInf_Collection", "ordered" : true, "$db" : "test", "documents" : [{ "_id" : { "$oid" : "678a5b1ef7a3bc0020cb4056" }, "id" : "3e795ca0-c460-4d12-a638-7d7df991b4f4", "surname" : "Surname", "name" : "Name", "phoneNumber" : "PhoneNumber", "email" : "Email" }] }' with request id 8 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:29:02 DEBUG command - Execution of command with request id 8 completed successfully in 6.66 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:29:02 DEBUG command - Sending command '{ "insert" : "ProfInf_Collection", "ordered" : true, "$db" : "test", "documents" : [{ "_id" : { "$oid" : "678a5b1ef7a3bc0020cb4057" }, "id" : "3e795ca0-c460-4d12-a638-7d7df991b4f4", "SkillName" : "Programming", "SkillDescription" : "Programming in Java", "Cost" : 2500.0, "PersDescription" : "Java backend developer", "Exp" : 5.5, "Rating" : 4.0 }] }' with request id 9 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:29:02 DEBUG command - Execution of command with request id 9 completed successfully in 71.47 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:29:02 DEBUG command - Sending command '{ "find" : "ProfInf_Collection", "filter" : { "id" : "3e795ca0-c460-4d12-a638-7d7df991b4f4" }, "limit" : 1, "singleBatch" : true, "$db" : "test", "$readPreference" : { "mode" : "primaryPreferred" } }' with request id 10 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:29:02 DEBUG command - Execution of command with request id 10 completed successfully in 2.45 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:29:02 DEBUG command - Sending command '{ "update" : "ProfInf_Collection", "ordered" : true, "$db" : "test", "updates" : [{ "q" : { "id" : "3e795ca0-c460-4d12-a638-7d7df991b4f4" }, "u" : { "$set" : { "SkillName" : "UpdatedSkill", "SkillDescription" : "Programming in Java", "Cost" : 2500.0, "PersDescription" : "Java backend developer", "Exp" : 5.5, "Rating" : 4.0 } } }] }' with request id 11 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:29:02 DEBUG command - Execution of command with request id 11 completed successfully in 2.79 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:29:02 DEBUG command - Sending command '{ "delete" : "PersInf_Collection", "ordered" : true, "$db" : "test", "deletes" : [{ "q" : { "id" : "3e795ca0-c460-4d12-a638-7d7df991b4f4" }, "limit" : 1 }] }' with request id 12 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:29:02 DEBUG command - Execution of command with request id 12 completed successfully in 2.33 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:29:02 DEBUG command - Sending command '{ "delete" : "ProfInf_Collection", "ordered" : true, "$db" : "test", "deletes" : [{ "q" : { "id" : "3e795ca0-c460-4d12-a638-7d7df991b4f4" }, "limit" : 1 }] }' with request id 13 to database test on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:29:02 DEBUG command - Execution of command with request id 13 completed successfully in 2.67 ms on connection [connectionId{localValue:2}] to server localhost:27017
+01-17 16:32:26 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-17 16:32:26 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
