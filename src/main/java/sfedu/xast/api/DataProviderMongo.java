@@ -104,7 +104,7 @@ public class DataProviderMongo {
     /**
      * delete records in PersInf_Collection in MongoDB using id
      * @param id
-     * @return
+     * @return true/false
      */
     public boolean deletePersInf(String id) {
         if(id == null){

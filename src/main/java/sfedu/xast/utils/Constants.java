@@ -55,5 +55,14 @@ public class Constants {
     public static String reviewCollection = "Review_Collection";
     public static String transactionCollection = "Transaction_Collection";
     public static String historyContentCollection = "historyContent";
+    /**
+     * filePath's to csv filess
+     */
+    public static String xmlPersInfFilePath = "src/main/resources/xmlFiles/persInf.xml";
+    public static String xmlProfInfFilePath = "src/main/resources/xmlFiles/profInf.xml";
+    public static String xmlSkillExchangeFilePath = "src/main/resources/xmlFiles/skillExchange.xml";
+    public static String xmlReviewFilePath = "src/main/resources/xmlFiles/review.xml";
+    public static String xmlTransactionFilePath = "src/main/resources/xmlFiles/transaction.xml";
+
 }
 
