@@ -3,16 +3,15 @@ package sfedu.xast.api;
 import com.mongodb.MongoException;
 import com.mongodb.client.*;
 import com.mongodb.client.model.Filters;
-import com.opencsv.exceptions.CsvException;
+import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 import sfedu.xast.models.*;
-import sfedu.xast.utils.Constants;
-import sfedu.xast.utils.Status;
+import sfedu.xast.utils.*;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.*;
 
 public class DataProviderMongo {
 
@@ -505,6 +504,8 @@ public class DataProviderMongo {
         return true;
     }
 
+
+
     public void insertHistoryContent(HistoryContent historyContent) {
         try{
             Document doc = new Document("id", historyContent.getId())
@@ -574,6 +575,82 @@ public class DataProviderMongo {
             collection.deleteOne(Filters.eq("id", id));
         }catch (Exception e){
             logger.error("Error in delete data: {}", e.getMessage());
+        }
+    }
+
+    public List<SkillOut> readProfInfBySkillName(String skillPart) throws IOException {
+        List<SkillOut> profInfList = new ArrayList<>();
+
+        String collectionName = Constants.profInfCollection;
+        MongoCollection<Document> collection = mongoClient.getDatabase(databaseName).getCollection(collectionName);
+
+        for (Document doc : collection.find(Filters.regex("SkillName", skillPart, "i"))) {
+            SkillOut skillOut = new SkillOut();
+
+            skillOut.setId(doc.getString("id"));
+            skillOut.setSkillName(doc.getString("SkillName"));
+            skillOut.setSkillDescription(doc.getString("SkillDescription"));
+            skillOut.setCost(doc.getDouble("Cost"));
+            skillOut.setPersDescription(doc.getString("PersDescription"));
+            skillOut.setExp(doc.getDouble("Exp"));
+            skillOut.setRating(doc.getDouble("Rating"));
+
+            profInfList.add(skillOut);
+        }
+
+        if (profInfList.isEmpty()) {
+            throw new IOException("Can't find persons with skill name containing: " + skillPart);
+        }
+
+        return profInfList;
+    }
+
+    /**
+     * print persons with needed skill
+     * @param skillOutList
+     */
+    public void printProfInfList(List<SkillOut> skillOutList) {
+        if (skillOutList == null || skillOutList.isEmpty()) {
+            System.out.println("Список профилей пуст.");
+            return;
+        }
+
+        for (SkillOut skillOut : skillOutList) {
+            System.out.println("ID: " + skillOut.getId());
+            System.out.println("Навык: " + skillOut.getSkillName());
+            System.out.println("Описание навыка: " + skillOut.getSkillDescription());
+            System.out.println("Стоимость: " + skillOut.getCost());
+            System.out.println("Описание пользователя: " + skillOut.getPersDescription());
+            System.out.println("Опыт: " + skillOut.getExp());
+            System.out.println("Рейтинг: " + skillOut.getRating());
+            System.out.println("-----------------------------");
+        }
+    }
+
+    public boolean insertRating(String persId, Double rating, Double ratingBefore) {
+        if (persId == null || rating == null || ratingBefore == null) {
+            throw new IllegalArgumentException("Parameters cannot be null");
+        }
+
+        Double finalRating;
+
+        if (ratingBefore == 0.0) {
+            finalRating = rating;
+        } else {
+            finalRating = (ratingBefore + rating) / 2.0;
+        }
+
+        try {
+            String collectionName = Constants.profInfCollection;
+            MongoCollection<Document> collection = mongoClient.getDatabase(databaseName).getCollection(collectionName);
+
+            Document updateDoc = new Document("$set", new Document("Rating", finalRating));
+            UpdateResult result = collection.updateOne(Filters.eq("id", persId), updateDoc);
+
+            return result.getModifiedCount() > 0;
+        } catch (MongoException e) {
+            logger.error(e.getMessage());
+            return false;
         }
     }
 }

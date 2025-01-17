@@ -691,7 +691,7 @@ public class DataProviderCsv  {
      * print persons with needed skill
      * @param skillOutList
      */
-    public void printProfInfListFromCsv(List<SkillOut> skillOutList) {
+    public void printProfInfList(List<SkillOut> skillOutList) {
         if (skillOutList == null || skillOutList.isEmpty()) {
             System.out.println("Список профилей пуст.");
             return;
@@ -709,7 +709,7 @@ public class DataProviderCsv  {
         }
     }
 
-    public boolean insertRatingToCsv(String persId, Double rating, Double ratingBefore) throws IOException, CsvException {
+    public boolean insertRating(String persId, Double rating, Double ratingBefore) throws IOException, CsvException {
         if (persId == null || rating == null || ratingBefore == null) {
             throw new CsvException("Parameters cannot be null");
         }
