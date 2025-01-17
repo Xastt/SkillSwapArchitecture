@@ -358,7 +358,7 @@ public class DataProviderCsv  {
                     return skillExchange;
                 }
             }
-            throw new CsvException("Can't find person with id " + skillExchange.getExchangeId());
+            throw new CsvException("Can't find exchange with id " + skillExchange.getExchangeId());
         }catch (CsvException | IOException e){
             logger.error(e.getMessage());
             throw e;

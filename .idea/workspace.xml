@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="All CRUD with CSV - DONE!">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add CRUD with MongoDB for PersInf, ProfInf models">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderMongo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderMongo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logs/app.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderMongoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderMongoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/csvFilesTest/persInfTest.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/csvFilesTest/profInfTest.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/csvFilesTest/reviewTest.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/csvFilesTest/skillExchangeTest.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/csvFilesTest/transactionTest.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +103,11 @@
     "JUnit.DataProviderMongoTest.testCRUDMethodsWithPersInfPositiveMongo.executor": "Run",
     "JUnit.DataProviderMongoTest.testCRUDMethodsWithProfInfNegativeMongo.executor": "Run",
     "JUnit.DataProviderMongoTest.testCRUDMethodsWithProfInfPositiveMongo.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithReviewNegativeMongo.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithReviewPositiveMongo.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithSkillExchangeNegativeMongo.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithSkillExchangePositiveCSV.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithTransactionPositiveMongo.executor": "Run",
     "JUnit.DataProviderMongoTest.testCRUDMongoOperations.executor": "Run",
     "JUnit.DataProviderMongoTest.testCRUDWithMongoDB.executor": "Run",
     "JUnit.DataProviderPSQLTest.UpdatePersInfWithNull.executor": "Run",
@@ -197,8 +196,8 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DataProviderMongoTest.testCRUDMethodsWithProfInfNegativeMongo">
-    <configuration name="DataProviderMongoTest.testCRUDMethodsWithPersInfNegativeCSV" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DataProviderMongoTest.testCRUDMethodsWithTransactionNegativeMongo">
+    <configuration name="DataProviderMongoTest.testCRUDMethodsWithReviewNegativeMongo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -208,13 +207,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast.api" />
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderMongoTest" />
-      <option name="METHOD_NAME" value="testCRUDMethodsWithPersInfNegativeCSV" />
+      <option name="METHOD_NAME" value="testCRUDMethodsWithReviewNegativeMongo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderMongoTest.testCRUDMethodsWithPersInfNegativeMongo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataProviderMongoTest.testCRUDMethodsWithReviewPositiveMongo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -224,13 +223,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast.api" />
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderMongoTest" />
-      <option name="METHOD_NAME" value="testCRUDMethodsWithPersInfNegativeMongo" />
+      <option name="METHOD_NAME" value="testCRUDMethodsWithReviewPositiveMongo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderMongoTest.testCRUDMethodsWithPersInfPositiveMongo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataProviderMongoTest.testCRUDMethodsWithSkillExchangeNegativeMongo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -240,13 +239,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast.api" />
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderMongoTest" />
-      <option name="METHOD_NAME" value="testCRUDMethodsWithPersInfPositiveMongo" />
+      <option name="METHOD_NAME" value="testCRUDMethodsWithSkillExchangeNegativeMongo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderMongoTest.testCRUDMethodsWithProfInfNegativeMongo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataProviderMongoTest.testCRUDMethodsWithTransactionNegativeMongo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -256,13 +255,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast.api" />
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderMongoTest" />
-      <option name="METHOD_NAME" value="testCRUDMethodsWithProfInfNegativeMongo" />
+      <option name="METHOD_NAME" value="testCRUDMethodsWithTransactionNegativeMongo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderMongoTest.testCRUDMethodsWithProfInfPositiveMongo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataProviderMongoTest.testCRUDMethodsWithTransactionPositiveMongo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -272,7 +271,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast.api" />
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderMongoTest" />
-      <option name="METHOD_NAME" value="testCRUDMethodsWithProfInfPositiveMongo" />
+      <option name="METHOD_NAME" value="testCRUDMethodsWithTransactionPositiveMongo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -280,11 +279,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DataProviderMongoTest.testCRUDMethodsWithProfInfNegativeMongo" />
-        <item itemvalue="JUnit.DataProviderMongoTest.testCRUDMethodsWithProfInfPositiveMongo" />
-        <item itemvalue="JUnit.DataProviderMongoTest.testCRUDMethodsWithPersInfNegativeMongo" />
-        <item itemvalue="JUnit.DataProviderMongoTest.testCRUDMethodsWithPersInfPositiveMongo" />
-        <item itemvalue="JUnit.DataProviderMongoTest.testCRUDMethodsWithPersInfNegativeCSV" />
+        <item itemvalue="JUnit.DataProviderMongoTest.testCRUDMethodsWithTransactionNegativeMongo" />
+        <item itemvalue="JUnit.DataProviderMongoTest.testCRUDMethodsWithTransactionPositiveMongo" />
+        <item itemvalue="JUnit.DataProviderMongoTest.testCRUDMethodsWithReviewNegativeMongo" />
+        <item itemvalue="JUnit.DataProviderMongoTest.testCRUDMethodsWithReviewPositiveMongo" />
+        <item itemvalue="JUnit.DataProviderMongoTest.testCRUDMethodsWithSkillExchangeNegativeMongo" />
       </list>
     </recent_temporary>
   </component>
@@ -430,15 +429,7 @@
       <workItem from="1736958616143" duration="10243000" />
       <workItem from="1737050571858" duration="4358000" />
       <workItem from="1737095692700" duration="3041000" />
-      <workItem from="1737115324690" duration="5374000" />
-    </task>
-    <task id="LOCAL-00039" summary="PersInfDao, ProfInfDao, Status - added">
-      <option name="closed" value="true" />
-      <created>1734284861985</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1734284861985</updated>
+      <workItem from="1737115324690" duration="9709000" />
     </task>
     <task id="LOCAL-00040" summary="add all models">
       <option name="closed" value="true" />
@@ -824,7 +815,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737117733119</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Add CRUD with MongoDB for PersInf, ProfInf models">
+      <option name="closed" value="true" />
+      <created>1737121474369</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1737121474369</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -843,7 +842,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="CRUD with PersInf, ProfInf, SkillExchange WORKS!!!!!!!" />
     <MESSAGE value="CRUD with PersInf, ProfInf, SkillExchange, Review WORKS!!!!!!!" />
     <MESSAGE value="CRUD with all models WORKS!!!!!!!" />
     <MESSAGE value="Clean code, add logger" />
@@ -868,6 +866,7 @@
     <MESSAGE value="Crud all CRUD with csv file and models + pos/neg tests" />
     <MESSAGE value="Add special functions for working with csv" />
     <MESSAGE value="All CRUD with CSV - DONE!" />
-    <option name="LAST_COMMIT_MESSAGE" value="All CRUD with CSV - DONE!" />
+    <MESSAGE value="Add CRUD with MongoDB for PersInf, ProfInf models" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add CRUD with MongoDB for PersInf, ProfInf models" />
   </component>
 </project>
