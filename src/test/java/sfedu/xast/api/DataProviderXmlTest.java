@@ -68,4 +68,29 @@ class DataProviderXmlTest {
         assertFalse(res);
     }
 
+    @Test
+    void testCRUDMethodsWithProfInfPositiveXML() throws IOException, ParserConfigurationException, XMLParseException, SAXException {
+        PersInf persInf = new PersInf("Surname", "Name", "PhoneNumber", "Email");
+        ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
+                "Java backend developer", 5.5, 4.0);
+
+        assertTrue(dataProviderXml.createPersInf(persInf));
+        assertTrue(dataProviderXml.createProfInf(profInf, persInf));
+
+        ProfInf retrievedUser = dataProviderXml.readProfInf(profInf, persInf.getId());
+        assertNotNull(retrievedUser);
+        assertEquals("Programming", retrievedUser.getSkillName());
+        assertEquals("Programming in Java", retrievedUser.getSkillDescription());
+        assertEquals(2500.00, retrievedUser.getCost());
+        assertEquals("Java backend developer", retrievedUser.getPersDescription());
+        assertEquals(5.5, retrievedUser.getExp());
+        assertEquals(4.0, retrievedUser.getRating());
+
+        retrievedUser.setSkillName("UpdatedSkill");
+        assertTrue(dataProviderXml.updateProfInf(retrievedUser));
+
+        assertTrue(dataProviderXml.deletePersInf(persInf.getId()));
+        assertTrue(dataProviderXml.deleteProfInf(profInf.getPersId()));
+    }
+
 }

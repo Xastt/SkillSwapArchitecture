@@ -224,7 +224,7 @@ public class DataProviderCsv  {
     }
 
     /**
-     * read information from table profinf using id
+     * read information from csv profinf using id
      * @param id
      * @return Profinf
      * @throws SQLException

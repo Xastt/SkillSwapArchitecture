@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add CRUD with MongoDB - DONE!">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/xmlFiles/persInf.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/xmlFiles/profInf.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/xmlFiles/review.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/xmlFiles/skillExchange.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/xmlFiles/transaction.xml" afterDir="false" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="CRUD Methods With XML for PersInf - DONE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderMongo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderMongo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderXml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderXml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/logs/app.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderXmlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderXmlTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,6 +133,7 @@
     "JUnit.DataProviderXmlTest.executor": "Run",
     "JUnit.DataProviderXmlTest.testCRUDMethodsWithPersInfNegativeXML.executor": "Run",
     "JUnit.DataProviderXmlTest.testCRUDMethodsWithPersInfPositiveCSV.executor": "Run",
+    "JUnit.DataProviderXmlTest.testCRUDMethodsWithProfInfPositiveXML.executor": "Run",
     "JUnit.DataProviderXmlTest.testInitDataSourceLoadsDataFromXml.executor": "Run",
     "JUnit.FileLoadTest.checkInValidFileName.executor": "Run",
     "JUnit.FileLoadTest.checkValidFileName.executor": "Run",
@@ -207,20 +201,7 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DataProviderXmlTest.testCRUDMethodsWithPersInfNegativeXML">
-    <configuration name="Constants" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.utils.Constants" />
-      <module name="SkillSwap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sfedu.xast.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.DataProviderXmlTest.testCRUDMethodsWithProfInfPositiveXML">
     <configuration name="DataProviderXml" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderXml" />
       <module name="SkillSwap" />
@@ -281,13 +262,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DataProviderXmlTest.testCRUDMethodsWithProfInfPositiveXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderXmlTest" />
+      <option name="METHOD_NAME" value="testCRUDMethodsWithProfInfPositiveXML" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataProviderXmlTest.testCRUDMethodsWithProfInfPositiveXML" />
         <item itemvalue="JUnit.DataProviderXmlTest.testCRUDMethodsWithPersInfNegativeXML" />
         <item itemvalue="JUnit.DataProviderXmlTest.testCRUDMethodsWithPersInfPositiveCSV" />
         <item itemvalue="JUnit.DataProviderXmlTest" />
         <item itemvalue="Application.DataProviderXml" />
-        <item itemvalue="Application.Constants" />
       </list>
     </recent_temporary>
   </component>
@@ -434,15 +431,8 @@
       <workItem from="1737050571858" duration="4358000" />
       <workItem from="1737095692700" duration="3041000" />
       <workItem from="1737115324690" duration="10005000" />
-      <workItem from="1737134928162" duration="5806000" />
-    </task>
-    <task id="LOCAL-00042" summary="add all models">
-      <option name="closed" value="true" />
-      <created>1734285633028</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1734285633028</updated>
+      <workItem from="1737134928162" duration="6172000" />
+      <workItem from="1737191219641" duration="921000" />
     </task>
     <task id="LOCAL-00043" summary="change type of id in persinf and profinf and add auto gen id">
       <option name="closed" value="true" />
@@ -828,7 +818,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737136994644</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="CRUD Methods With XML for PersInf - DONE">
+      <option name="closed" value="true" />
+      <created>1737141014405</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1737141014405</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -847,7 +845,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="CRUD with all models WORKS!!!!!!!" />
     <MESSAGE value="Clean code, add logger" />
     <MESSAGE value="Add boolean" />
     <MESSAGE value="Add main RunApplication and method, which find by skillName" />
@@ -872,6 +869,7 @@
     <MESSAGE value="All CRUD with CSV - DONE!" />
     <MESSAGE value="Add CRUD with MongoDB for PersInf, ProfInf models" />
     <MESSAGE value="Add CRUD with MongoDB - DONE!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add CRUD with MongoDB - DONE!" />
+    <MESSAGE value="CRUD Methods With XML for PersInf - DONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD Methods With XML for PersInf - DONE" />
   </component>
 </project>
