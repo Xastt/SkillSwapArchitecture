@@ -19,9 +19,7 @@ import java.io.*;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-import java.util.TimeZone;
+import java.util.*;
 
 public class DataProviderXml{
 
@@ -725,6 +723,117 @@ public class DataProviderXml{
 
                 }
             }
+            return true;
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * find person, which provide needed skillName
+     * @param skillPart
+     * @return List<SkillOut>
+     * @throws SQLException
+     */
+    public List<SkillOut> readProfInfBySkillName(String skillPart) throws IOException {
+
+        List<SkillOut> profInfList = new ArrayList<>();
+
+        try {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            Document doc = dbFactory.newDocumentBuilder().parse(new File(Constants.xmlProfInfFilePath));
+            doc.getDocumentElement().normalize();
+
+            NodeList nodeList = doc.getElementsByTagName("person");
+
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element personElement = (Element) nodeList.item(i);
+                String skillName = personElement.getElementsByTagName("SkillName").item(0).getTextContent();
+
+                if (skillName != null && skillName.toLowerCase().contains(skillPart.toLowerCase())) {
+                    SkillOut skillOut = new SkillOut();
+
+                    skillOut.setId(personElement.getAttribute("id"));
+                    skillOut.setSkillName(skillName);
+                    skillOut.setSkillDescription(personElement.getElementsByTagName("SkillDescription").item(0).getTextContent());
+                    skillOut.setCost(Double.parseDouble(personElement.getElementsByTagName("Cost").item(0).getTextContent()));
+                    skillOut.setPersDescription(personElement.getElementsByTagName("PersDescription").item(0).getTextContent());
+                    skillOut.setExp(Double.parseDouble(personElement.getElementsByTagName("Exp").item(0).getTextContent()));
+                    skillOut.setRating(Double.parseDouble(personElement.getElementsByTagName("Rating").item(0).getTextContent()));
+
+                    profInfList.add(skillOut);
+                }
+            }
+
+            if (profInfList.isEmpty()) {
+                throw new IOException("Can't find persons with skill name containing: " + skillPart);
+            }
+
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            throw new IOException("Error reading XML file: " + e.getMessage(), e);
+        }
+        return profInfList;
+    }
+
+    /**
+     * print persons with needed skill
+     * @param skillOutList
+     */
+    public void printProfInfList(List<SkillOut> skillOutList) {
+        if (skillOutList == null || skillOutList.isEmpty()) {
+            System.out.println("Список профилей пуст.");
+            return;
+        }
+
+        for (SkillOut skillOut : skillOutList) {
+            System.out.println("ID: " + skillOut.getId());
+            System.out.println("Навык: " + skillOut.getSkillName());
+            System.out.println("Описание навыка: " + skillOut.getSkillDescription());
+            System.out.println("Стоимость: " + skillOut.getCost());
+            System.out.println("Описание пользователя: " + skillOut.getPersDescription());
+            System.out.println("Опыт: " + skillOut.getExp());
+            System.out.println("Рейтинг: " + skillOut.getRating());
+            System.out.println("-----------------------------");
+        }
+    }
+
+    public boolean insertRating(String persId, Double rating, Double ratingBefore) throws XMLParseException {
+
+        if (persId == null || rating == null || ratingBefore == null) {
+            throw new XMLParseException("Parameters cannot be null");
+        }
+
+        Double finalRating;
+
+        if (ratingBefore == 0.0) {
+            finalRating = rating;
+        } else {
+            finalRating = (ratingBefore + rating) / 2.0;
+        }
+
+        try {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            Document doc = dbFactory.newDocumentBuilder().parse(new File(Constants.xmlProfInfFilePath));
+            doc.getDocumentElement().normalize();
+
+            NodeList nodeList = doc.getElementsByTagName("person");
+            boolean updated = false;
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element personElement = (Element) nodeList.item(i);
+                if (personElement.getAttribute("id").equals(persId)) {
+                    personElement.getElementsByTagName("Rating").item(0).setTextContent(String.valueOf(finalRating));
+                    updated = true;
+                    break;
+                }
+            }
+
+            if (!updated) {
+                return false;
+            }
+
+            saveXml(doc, Constants.xmlProfInfFilePath);
             return true;
         } catch (Exception e) {
             logger.error(e.getMessage());

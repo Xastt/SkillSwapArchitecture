@@ -566,3 +566,4 @@ Caused by: java.net.ConnectException: Connection refused: getsockopt
 01-17 20:52:53 DEBUG command - Execution of command with request id 10 completed successfully in 18.99 ms on connection [connectionId{localValue:2}] to server localhost:27017
 01-17 22:03:39 ERROR DataProviderXml - XML Parse Exception: Can't find person with id a8e0b05a-78a0-485b-afd1-5a6bc9f51dd2
 01-17 22:03:39 ERROR DataProviderXml - XML Parse Exception: Can't find person with id a8e0b05a-78a0-485b-afd1-5a6bc9f51dd2
+01-18 16:03:16 ERROR DataProviderXml - Can't find persons with skill name containing: java

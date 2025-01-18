@@ -655,7 +655,7 @@ public class DataProviderCsv  {
      * @return List<SkillOut>
      * @throws SQLException
      */
-    public List<SkillOut> readProfInfBySkillNameFromCsv(String skillPart) throws IOException, CsvException {
+    public List<SkillOut> readProfInfBySkillName(String skillPart) throws IOException, CsvException {
         List<SkillOut> profInfList = new ArrayList<>();
 
         List<String[]> data = readFromCsv(Constants.csvProfInfFilePath);
