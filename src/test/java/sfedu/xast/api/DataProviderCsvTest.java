@@ -2,9 +2,17 @@ package sfedu.xast.api;
 
 import com.opencsv.exceptions.CsvException;
 import org.junit.jupiter.api.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 import sfedu.xast.models.*;
 import sfedu.xast.utils.*;
 
+import javax.management.modelmbean.XMLParseException;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;

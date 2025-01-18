@@ -1,5 +1,6 @@
 package sfedu.xast.api;
 
+import com.opencsv.exceptions.CsvException;
 import org.slf4j.*;
 import org.xml.sax.SAXException;
 import sfedu.xast.models.*;
@@ -250,7 +251,7 @@ public class DataProviderXml{
      * @return Profinf
      * @throws SQLException
      */
-    public ProfInf readProfInf(String id) throws XMLParseException, ParserConfigurationException, IOException, SAXException {
+    public ProfInf readProfInfWithId(String id) throws XMLParseException, ParserConfigurationException, IOException, SAXException {
         ProfInf profInf = new ProfInf();
         if(profInf==null){
             throw new XMLParseException("ProfInf object must not be null");
@@ -343,6 +344,260 @@ public class DataProviderXml{
             return false;
         }
     }
+
+    /**
+     * method, which add new data to the xml file skillExchange
+     * contains information about users and offering skill
+     * @param skillExchange
+     * @return true or false
+     */
+    public boolean createSkillExchange(SkillExchange skillExchange) {
+        if(skillExchange == null) {
+            return false;
+        }
+        try {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            Document doc = dbFactory.newDocumentBuilder().parse(new File(Constants.xmlSkillExchangeFilePath));
+            doc.getDocumentElement().normalize();
+
+            Element root = doc.getDocumentElement();
+            Element exchange = doc.createElement("exchange");
+
+            exchange.setAttribute("id", skillExchange.getExchangeId());
+            exchange.appendChild(createElementWithTextNode(doc, "SkillOffered", skillExchange.getSkillOffered()));
+            exchange.appendChild(createElementWithTextNode(doc, "UserOffering", skillExchange.getUserOffering()));
+            exchange.appendChild(createElementWithTextNode(doc, "UserRequesting", skillExchange.getUserRequesting()));
+
+            root.appendChild(exchange);
+            saveXml(doc, Constants.xmlSkillExchangeFilePath);
+            return true;
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * reading records from xml file using personal id
+     * @param skillExchange
+     * @return SkillExchange object
+     */
+    public SkillExchange readSkillExchange(SkillExchange skillExchange) throws XMLParseException, ParserConfigurationException, IOException, SAXException {
+        if(skillExchange==null){
+            throw new XMLParseException("SkillExchange object must not be null");
+        }
+        try {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            Document doc = dbFactory.newDocumentBuilder().parse(new File(Constants.xmlSkillExchangeFilePath));
+            doc.getDocumentElement().normalize();
+
+            NodeList nodeList = doc.getElementsByTagName("exchange");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element personElement = (Element) nodeList.item(i);
+                if (personElement.getAttribute("id").equals(skillExchange.getExchangeId())) {
+                    skillExchange.setSkillOffered(personElement.getElementsByTagName("SkillOffered").item(0).getTextContent());
+                    skillExchange.setUserOffering(personElement.getElementsByTagName("UserOffering").item(0).getTextContent());
+                    skillExchange.setUserRequesting(personElement.getElementsByTagName("UserRequesting").item(0).getTextContent());
+                    return skillExchange;
+                }
+            }
+            throw new XMLParseException("Can't find exchange with id " + skillExchange.getExchangeId());
+        } catch (XMLParseException | ParserConfigurationException | SAXException | IOException e) {
+            logger.error(e.getMessage());
+            throw e;
+        }
+    }
+
+    /**
+     * updating records in xml file by personal id
+     * @param skillExchange
+     * @return true or false
+     */
+    public boolean updateSkillExchange(SkillExchange skillExchange) {
+        try {
+            if (skillExchange == null) {
+                return false;
+            }
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            Document doc = dbFactory.newDocumentBuilder().parse(new File(Constants.xmlSkillExchangeFilePath));
+            doc.getDocumentElement().normalize();
+
+            NodeList nodeList = doc.getElementsByTagName("exchange");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element personElement = (Element) nodeList.item(i);
+                if (personElement.getAttribute("id").equals(skillExchange.getExchangeId())) {
+                    personElement.getElementsByTagName("SkillOffered").item(0).setTextContent(skillExchange.getSkillOffered());
+                    personElement.getElementsByTagName("UserOffering").item(0).setTextContent(skillExchange.getUserOffering());
+                    personElement.getElementsByTagName("UserRequesting").item(0).setTextContent(skillExchange.getUserRequesting());
+
+                    saveXml(doc, Constants.xmlSkillExchangeFilePath);
+                }
+            }
+            return true;
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * delete records from xml file using id
+     * @param id
+     * @return true/false
+     */
+    public boolean deleteSkillExchange(String id) {
+        if(id == null){
+            return false;
+        }
+        try {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            Document doc = dbFactory.newDocumentBuilder().parse(new File(Constants.xmlSkillExchangeFilePath));
+            doc.getDocumentElement().normalize();
+
+            NodeList nodeList = doc.getElementsByTagName("exchange");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element personElement = (Element) nodeList.item(i);
+                if (personElement.getAttribute("id").equals(id)) {
+                    personElement.getParentNode().removeChild(personElement);
+                    saveXml(doc, Constants.xmlSkillExchangeFilePath);
+
+                }
+            }
+            return true;
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * method, which add new data to the xml file Review
+     * contains information about users and offering skill
+     * @param review
+     * @return true or false
+     */
+    public boolean createReview(Review review) {
+        if(review == null) {
+            return false;
+        }
+        try {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            Document doc = dbFactory.newDocumentBuilder().parse(new File(Constants.xmlReviewFilePath));
+            doc.getDocumentElement().normalize();
+
+            Element root = doc.getDocumentElement();
+            Element reviewTag = doc.createElement("review");
+
+            reviewTag.setAttribute("id", review.getReviewId());
+            reviewTag.appendChild(createElementWithTextNode(doc, "Rating", String.valueOf(review.getRating())));
+            reviewTag.appendChild(createElementWithTextNode(doc, "Comment", review.getComment()));
+            reviewTag.appendChild(createElementWithTextNode(doc, "Reviewer", review.getReviewer()));
+            reviewTag.appendChild(createElementWithTextNode(doc, "UserEvaluated", review.getUserEvaluated()));
+
+            root.appendChild(reviewTag);
+            saveXml(doc, Constants.xmlReviewFilePath);
+            return true;
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * reading records from xml file using personal id
+     * @param review
+     * @return Review object
+     */
+    public Review readReview(Review review) throws XMLParseException, ParserConfigurationException, IOException, SAXException {
+        if(review==null){
+            throw new XMLParseException("Review object must not be null");
+        }
+        try {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            Document doc = dbFactory.newDocumentBuilder().parse(new File(Constants.xmlReviewFilePath));
+            doc.getDocumentElement().normalize();
+
+            NodeList nodeList = doc.getElementsByTagName("review");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element personElement = (Element) nodeList.item(i);
+                if (personElement.getAttribute("id").equals(review.getReviewId())) {
+                    review.setRating(Double.valueOf(personElement.getElementsByTagName("Rating").item(0).getTextContent()));
+                    review.setComment(personElement.getElementsByTagName("Comment").item(0).getTextContent());
+                    review.setReviewer(personElement.getElementsByTagName("Reviewer").item(0).getTextContent());
+                    review.setUserEvaluated(personElement.getElementsByTagName("UserEvaluated").item(0).getTextContent());
+                    return review;
+                }
+            }
+            throw new XMLParseException("Can't find review with id " + review.getReviewId());
+        } catch (XMLParseException | ParserConfigurationException | SAXException | IOException e) {
+            logger.error(e.getMessage());
+            throw e;
+        }
+    }
+
+    /**
+     * updating records in xml file by personal id
+     * @param review
+     * @return true or false
+     */
+    public boolean updateReview(Review review) {
+        try {
+            if (review == null) {
+                return false;
+            }
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            Document doc = dbFactory.newDocumentBuilder().parse(new File(Constants.xmlReviewFilePath));
+            doc.getDocumentElement().normalize();
+
+            NodeList nodeList = doc.getElementsByTagName("review");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element personElement = (Element) nodeList.item(i);
+                if (personElement.getAttribute("id").equals(review.getReviewId())) {
+                    personElement.getElementsByTagName("Rating").item(0).setTextContent(String.valueOf(review.getRating()));
+                    personElement.getElementsByTagName("Comment").item(0).setTextContent(review.getComment());
+                    personElement.getElementsByTagName("Reviewer").item(0).setTextContent(review.getReviewer());
+                    personElement.getElementsByTagName("UserEvaluated").item(0).setTextContent(review.getUserEvaluated());
+
+                    saveXml(doc, Constants.xmlReviewFilePath);
+                }
+            }
+            return true;
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * delete records from xml file using id
+     * @param review
+     * @return true/false
+     */
+    public boolean deleteReview(Review review) {
+        if(review == null){
+            return false;
+        }
+        try {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            Document doc = dbFactory.newDocumentBuilder().parse(new File(Constants.xmlReviewFilePath));
+            doc.getDocumentElement().normalize();
+
+            NodeList nodeList = doc.getElementsByTagName("review");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element personElement = (Element) nodeList.item(i);
+                if (personElement.getAttribute("id").equals(review.getReviewId())) {
+                    personElement.getParentNode().removeChild(personElement);
+                    saveXml(doc, Constants.xmlReviewFilePath);
+
+                }
+            }
+            return true;
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
 
 
 }

@@ -385,8 +385,7 @@ public class DataProviderCsv  {
                             skillExchange.getExchangeId(),
                             skillExchange.getSkillOffered(),
                             skillExchange.getUserOffering(),
-                            skillExchange.getUserRequesting(),
-                            skillExchange.getExchangeId()
+                            skillExchange.getUserRequesting()
                     });
                     found = true;
                     break;
