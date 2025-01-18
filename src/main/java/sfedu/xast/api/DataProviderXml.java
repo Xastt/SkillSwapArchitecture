@@ -9,6 +9,7 @@ import javax.management.modelmbean.XMLParseException;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.*;
 import sfedu.xast.utils.Constants;
+import sfedu.xast.utils.Status;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.*;
@@ -16,6 +17,11 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 public class DataProviderXml{
 
@@ -598,6 +604,131 @@ public class DataProviderXml{
         }
     }
 
+    /**
+     * method, which add new data to the xml file Transaction
+     * @param transaction
+     * @return true or false
+     */
+    public boolean createTransaction(Transaction transaction) {
+        if(transaction == null) {
+            return false;
+        }
+        try {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            Document doc = dbFactory.newDocumentBuilder().parse(new File(Constants.xmlTransactionFilePath));
+            doc.getDocumentElement().normalize();
 
+            Element root = doc.getDocumentElement();
+            Element transactionTag = doc.createElement("transaction");
 
+            transactionTag.setAttribute("id", transaction.getTransactionId());
+            transactionTag.appendChild(createElementWithTextNode(doc, "Date", String.valueOf(transaction.getDate())));
+            transactionTag.appendChild(createElementWithTextNode(doc, "Status", String.valueOf(transaction.getStatus())));
+            transactionTag.appendChild(createElementWithTextNode(doc, "ChangeId", transaction.getChangeId()));
+            root.appendChild(transactionTag);
+
+            saveXml(doc, Constants.xmlTransactionFilePath);
+            return true;
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * reading records from xml file using id
+     * @param transaction
+     * @return Review object
+     */
+    public Transaction readTransaction(Transaction transaction) throws XMLParseException, ParserConfigurationException, IOException, SAXException, ParseException {
+        if(transaction==null){
+            throw new XMLParseException("Transaction object must not be null");
+        }
+        try {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            Document doc = dbFactory.newDocumentBuilder().parse(new File(Constants.xmlTransactionFilePath));
+            doc.getDocumentElement().normalize();
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH);
+            dateFormat.setTimeZone(TimeZone.getTimeZone("MSK"));
+
+            NodeList nodeList = doc.getElementsByTagName("transaction");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element personElement = (Element) nodeList.item(i);
+                if (personElement.getAttribute("id").equals(transaction.getTransactionId())) {
+                    Date date = dateFormat.parse(personElement.getElementsByTagName("Date").item(0).getTextContent());
+                    transaction.setDate(date);
+                    transaction.setStatus(Status.valueOf(personElement.getElementsByTagName("Status").item(0).getTextContent()));
+                    transaction.setChangeId(personElement.getElementsByTagName("ChangeId").item(0).getTextContent());
+                    return transaction;
+                }
+            }
+            throw new XMLParseException("Can't find transaction with id " + transaction.getTransactionId());
+        } catch (XMLParseException | ParserConfigurationException | SAXException | IOException | ParseException e) {
+            logger.error(e.getMessage());
+            throw e;
+        }
+    }
+
+    /**
+     * updating records in xml file by id
+     * @param transaction
+     * @return true or false
+     */
+    public boolean updateTransaction(Transaction transaction) {
+        try {
+            if (transaction == null) {
+                return false;
+            }
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            Document doc = dbFactory.newDocumentBuilder().parse(new File(Constants.xmlTransactionFilePath));
+            doc.getDocumentElement().normalize();
+
+            NodeList nodeList = doc.getElementsByTagName("transaction");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element personElement = (Element) nodeList.item(i);
+                if (personElement.getAttribute("id").equals(transaction.getTransactionId())) {
+                    personElement.getElementsByTagName("Date").item(0).setTextContent(String.valueOf(transaction.getDate()));
+                    personElement.getElementsByTagName("Status").item(0).setTextContent(String.valueOf(transaction.getStatus()));
+                    personElement.getElementsByTagName("ChangeId").item(0).setTextContent(transaction.getChangeId());
+
+                    saveXml(doc, Constants.xmlTransactionFilePath);
+                }
+            }
+            return true;
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
+
+    /**
+     * delete records from xml file using id
+     * @param transaction
+     * @return true/false
+     */
+    public boolean deleteTransaction(Transaction transaction) {
+        if(transaction == null || transaction.getTransactionId() == null){
+            return false;
+        }
+        try {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            Document doc = dbFactory.newDocumentBuilder().parse(new File(Constants.xmlTransactionFilePath));
+            doc.getDocumentElement().normalize();
+
+            NodeList nodeList = doc.getElementsByTagName("transaction");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                Element personElement = (Element) nodeList.item(i);
+                if (personElement.getAttribute("id").equals(transaction.getTransactionId())) {
+                    personElement.getParentNode().removeChild(personElement);
+                    saveXml(doc, Constants.xmlTransactionFilePath);
+
+                }
+            }
+            return true;
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return false;
+        }
+    }
 }

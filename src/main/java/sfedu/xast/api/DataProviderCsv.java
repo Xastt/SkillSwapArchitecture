@@ -533,8 +533,7 @@ public class DataProviderCsv  {
         }
     }
     /**
-     * method, which add new data to the csv file Review
-     * contains information about users and offering skill
+     * method, which add new data to the csv file Transaction
      * @param transaction
      * @return true or false
      * @throws IOException

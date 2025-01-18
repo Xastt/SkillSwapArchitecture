@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="CRUD Methods With XML for ProfInf - DONE">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="CRUD Methods With XML for ProfInf\SkillExchange - DONE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderCsv.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderXml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/api/DataProviderXml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/csvFiles/profInf.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/csvFiles/profInf.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderCsvTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderCsvTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderXmlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/api/DataProviderXmlTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,9 +135,11 @@
     "JUnit.DataProviderXmlTest.testCRUDMethodsWithPersInfPositiveCSV.executor": "Run",
     "JUnit.DataProviderXmlTest.testCRUDMethodsWithProfInfNegativeXML.executor": "Run",
     "JUnit.DataProviderXmlTest.testCRUDMethodsWithProfInfPositiveXML.executor": "Run",
+    "JUnit.DataProviderXmlTest.testCRUDMethodsWithReviewNegativeXML.executor": "Run",
     "JUnit.DataProviderXmlTest.testCRUDMethodsWithReviewPositiveXML.executor": "Run",
     "JUnit.DataProviderXmlTest.testCRUDMethodsWithSkillExchangeNegativeXML.executor": "Run",
     "JUnit.DataProviderXmlTest.testCRUDMethodsWithSkillExchangePositiveXML.executor": "Run",
+    "JUnit.DataProviderXmlTest.testCRUDMethodsWithTransactionPositiveXML.executor": "Run",
     "JUnit.DataProviderXmlTest.testInitDataSourceLoadsDataFromXml.executor": "Run",
     "JUnit.FileLoadTest.checkInValidFileName.executor": "Run",
     "JUnit.FileLoadTest.checkValidFileName.executor": "Run",
@@ -207,23 +207,7 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DataProviderXmlTest.testCRUDMethodsWithReviewNegativeXML">
-    <configuration name="DataProviderXmlTest.testCRUDMethodsWithProfInfNegativeXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SkillSwap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sfedu.xast.api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderXmlTest" />
-      <option name="METHOD_NAME" value="testCRUDMethodsWithProfInfNegativeXML" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.DataProviderXmlTest.testCRUDMethodsWithTransactionNegativeXML">
     <configuration name="DataProviderXmlTest.testCRUDMethodsWithReviewNegativeXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
@@ -272,7 +256,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataProviderXmlTest.testCRUDMethodsWithSkillExchangePositiveXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataProviderXmlTest.testCRUDMethodsWithTransactionNegativeXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
@@ -282,7 +266,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="sfedu.xast.api" />
       <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderXmlTest" />
-      <option name="METHOD_NAME" value="testCRUDMethodsWithSkillExchangePositiveXML" />
+      <option name="METHOD_NAME" value="testCRUDMethodsWithTransactionNegativeXML" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataProviderXmlTest.testCRUDMethodsWithTransactionPositiveXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast.api" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.api.DataProviderXmlTest" />
+      <option name="METHOD_NAME" value="testCRUDMethodsWithTransactionPositiveXML" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -290,11 +290,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataProviderXmlTest.testCRUDMethodsWithTransactionNegativeXML" />
+        <item itemvalue="JUnit.DataProviderXmlTest.testCRUDMethodsWithTransactionPositiveXML" />
         <item itemvalue="JUnit.DataProviderXmlTest.testCRUDMethodsWithReviewNegativeXML" />
         <item itemvalue="JUnit.DataProviderXmlTest.testCRUDMethodsWithReviewPositiveXML" />
         <item itemvalue="JUnit.DataProviderXmlTest.testCRUDMethodsWithSkillExchangeNegativeXML" />
-        <item itemvalue="JUnit.DataProviderXmlTest.testCRUDMethodsWithSkillExchangePositiveXML" />
-        <item itemvalue="JUnit.DataProviderXmlTest.testCRUDMethodsWithProfInfNegativeXML" />
       </list>
     </recent_temporary>
   </component>
@@ -442,15 +442,8 @@
       <workItem from="1737095692700" duration="3041000" />
       <workItem from="1737115324690" duration="10005000" />
       <workItem from="1737134928162" duration="6172000" />
-      <workItem from="1737191219641" duration="5661000" />
-    </task>
-    <task id="LOCAL-00044" summary="Create all CRUD-operations with models: ProfInf, PersInf">
-      <option name="closed" value="true" />
-      <created>1734507539899</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1734507539899</updated>
+      <workItem from="1737191219641" duration="6084000" />
+      <workItem from="1737203663217" duration="845000" />
     </task>
     <task id="LOCAL-00045" summary="Add tests">
       <option name="closed" value="true" />
@@ -836,7 +829,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737192184947</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="CRUD Methods With XML for ProfInf\SkillExchange - DONE">
+      <option name="closed" value="true" />
+      <created>1737197196482</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1737197196482</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -855,7 +856,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add boolean" />
     <MESSAGE value="Add main RunApplication and method, which find by skillName" />
     <MESSAGE value="Add doc" />
     <MESSAGE value="Commit" />
@@ -880,6 +880,7 @@
     <MESSAGE value="Add CRUD with MongoDB - DONE!" />
     <MESSAGE value="CRUD Methods With XML for PersInf - DONE" />
     <MESSAGE value="CRUD Methods With XML for ProfInf - DONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRUD Methods With XML for ProfInf - DONE" />
+    <MESSAGE value="CRUD Methods With XML for ProfInf\SkillExchange - DONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD Methods With XML for ProfInf\SkillExchange - DONE" />
   </component>
 </project>

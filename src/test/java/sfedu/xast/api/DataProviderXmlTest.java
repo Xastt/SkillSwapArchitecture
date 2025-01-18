@@ -4,11 +4,13 @@ import com.opencsv.exceptions.CsvException;
 import org.junit.jupiter.api.*;
 import org.xml.sax.SAXException;
 import sfedu.xast.models.*;
+import sfedu.xast.utils.Status;
 
 import javax.management.modelmbean.XMLParseException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import java.io.IOException;
+import java.text.ParseException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -222,6 +224,57 @@ class DataProviderXmlTest {
         assertFalse(res);
     }
 
+    @Test
+    void testCRUDMethodsWithTransactionPositiveXML() throws IOException, CsvException, ParserConfigurationException, ParseException, XMLParseException, SAXException {
+        PersInf persInfRequesting = new PersInf("Bober","Curwa","+88005553535", "curwa@mail.ru");
+        PersInf persInf = new PersInf("Surname", "Name", "PhoneNumber", "Email");
+        ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
+                "Java backend developer", 5.5, 4.0);
+        SkillExchange skillExchange = new SkillExchange(profInf.getSkillName(),persInfRequesting.getId(),profInf.getPersId());
+        Transaction transaction = new Transaction(Status.COMPLETED, skillExchange.getExchangeId());
 
+        assertTrue(dataProviderXml.createPersInf(persInfRequesting));
+        assertTrue(dataProviderXml.createPersInf(persInf));
+        assertTrue(dataProviderXml.createProfInf(profInf, persInf));
+        assertTrue(dataProviderXml.createSkillExchange(skillExchange));
+        assertTrue(dataProviderXml.createTransaction(transaction));
 
+        Transaction retrievedTransaction = dataProviderXml.readTransaction(transaction);
+        assertNotNull(retrievedTransaction);
+        assertEquals(Status.COMPLETED, retrievedTransaction.getStatus());
+        assertEquals(skillExchange.getExchangeId(), transaction.getChangeId());
+
+        retrievedTransaction.setStatus(Status.IN_PROCESS);
+        dataProviderXml.updateTransaction(transaction);
+
+        Transaction updatedTransaction = dataProviderXml.readTransaction(transaction);
+        assertEquals(Status.IN_PROCESS, updatedTransaction.getStatus());
+
+        assertTrue(dataProviderXml.deleteTransaction(transaction));
+        assertTrue(dataProviderXml.deletePersInf(persInf.getId()));
+        assertTrue(dataProviderXml.deleteProfInf(profInf.getPersId()));
+        assertTrue(dataProviderXml.deletePersInf(persInfRequesting.getId()));
+        assertTrue(dataProviderXml.deleteSkillExchange(skillExchange.getExchangeId()));
+    }
+
+    @Test
+    void testCRUDMethodsWithTransactionNegativeXML() {
+
+        //CreateWithNull
+        Transaction transaction = null;
+        assertFalse(dataProviderXml.createTransaction(transaction));
+
+        //ReadWithNull
+        assertThrows(XMLParseException.class, () -> {
+            dataProviderXml.readTransaction(transaction);
+        });
+
+        //UpdateWithNull
+        assertFalse(dataProviderXml.updateTransaction(transaction));
+
+        //DeleteWithNullId
+        String id = null;
+        boolean res = dataProviderXml.deleteTransaction(transaction);
+        assertFalse(res);
+    }
 }
