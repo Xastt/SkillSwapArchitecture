@@ -1,3 +1,3 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><catalog>
 
-</catalog>
+<person id="27fdb32a-d054-4226-a55e-f1c4a1ab75da"><SkillName>Java QA</SkillName><SkillDescription>java programming</SkillDescription><Cost>500.0</Cost><PersDescription>java developer</PersDescription><Exp>6.0</Exp><Rating>0.0</Rating></person><person id="a6344a7a-f878-41cc-9274-ffabeb959260"><SkillName>Java-backend</SkillName><SkillDescription>java programming</SkillDescription><Cost>200.0</Cost><PersDescription>java developer</PersDescription><Exp>4.0</Exp><Rating>0.0</Rating></person></catalog>

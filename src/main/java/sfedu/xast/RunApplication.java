@@ -2,10 +2,7 @@ package sfedu.xast;
 
 import com.opencsv.exceptions.CsvException;
 import org.xml.sax.SAXException;
-import sfedu.xast.api.DataProviderCsv;
-import sfedu.xast.api.DataProviderMongo;
-import sfedu.xast.api.DataProviderPSQL;
-import sfedu.xast.api.DataProviderXml;
+import sfedu.xast.api.*;
 import sfedu.xast.models.*;
 import sfedu.xast.utils.Status;
 
@@ -14,6 +11,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.sql.*;
 import java.util.Scanner;
+
+//TODO не отрабатывает только xml и csv
 
 public class RunApplication {
 
@@ -118,7 +117,7 @@ public class RunApplication {
 
                     String skillNameForAns = "";
                     String retrievedId = "";
-                    Double retrievedRating = 0.0;
+                    Double retrievedRating = 4.0;
                     switch (sourceFile){
                         case "CSV":
                             ProfInf retrievedProfInf = dataProviderCsv.readProfInfWithId(neededId);
@@ -154,14 +153,40 @@ public class RunApplication {
                         throw new RuntimeException(e);
                     }
                     SkillExchange skillExchange = new SkillExchange(skillNameForAns, persInf.getId(), retrievedId);
-                    dataProviderPSQL.createSkillExchange(skillExchange);
+                    switch (sourceFile){
+                        case "CSV":
+                            dataProviderCsv.createSkillExchange(skillExchange);
+                            break;
+                        case "XML":
+                            dataProviderXml.createSkillExchange(skillExchange);
+                            break;
+                        case "PostgreSQL":
+                            dataProviderPSQL.createSkillExchange(skillExchange);
+                            break;
+                        case "MongoDB":
+                            dataProviderMongo.createSkillExchange(skillExchange);
+                            break;
+                    }
 
                     System.out.println("Получилось ли у вас провести занятие?\n" +
                             "Ответ дайте 1 - ДА или 2 - НЕТ, без учета регистра");
                     String answer = sc.nextLine();
                     if(answer.equalsIgnoreCase("1")){
                         Transaction transaction = new Transaction(Status.COMPLETED, skillExchange.getExchangeId());
-                        dataProviderPSQL.createTransaction(transaction);
+                        switch (sourceFile){
+                            case "CSV":
+                                dataProviderCsv.createTransaction(transaction);
+                                break;
+                            case "XML":
+                                dataProviderXml.createTransaction(transaction);
+                                break;
+                            case "PostgreSQL":
+                                dataProviderPSQL.createTransaction(transaction);
+                                break;
+                            case "MongoDB":
+                                dataProviderMongo.createTransaction(transaction);
+                                break;
+                        }
                         System.out.println("Оставьте небольшой отзыв");
                         System.out.println("Оценка урока от 1 до 5:");
                         Double rating = sc.nextDouble();
@@ -169,8 +194,24 @@ public class RunApplication {
                         System.out.println("Ваши впечатления: ");
                         String comment = sc.nextLine();
                         Review review = new Review(rating, comment, persInf.getId(), retrievedId);
-                        dataProviderPSQL.insertRating(retrievedId, review.getRating(), retrievedRating);
-                        dataProviderPSQL.createReview(review);
+                        switch (sourceFile){
+                            case "CSV":
+                                dataProviderCsv.createReview(review);
+                                dataProviderCsv.insertRating(retrievedId, review.getRating(), retrievedRating);
+                                break;
+                            case "XML":
+                                dataProviderXml.createReview(review);
+                                dataProviderXml.insertRating(retrievedId, review.getRating(), retrievedRating);
+                                break;
+                            case "PostgreSQL":
+                                dataProviderPSQL.createReview(review);
+                                dataProviderPSQL.insertRating(retrievedId, review.getRating(), retrievedRating);
+                                break;
+                            case "MongoDB":
+                                dataProviderMongo.createReview(review);
+                                dataProviderMongo.insertRating(retrievedId, review.getRating(), retrievedRating);
+                                break;
+                        }
                         System.out.println("Нам очень приятно, что вы выбрали нашу платформу. Удачи!");
                         flag = false;
                     }else{

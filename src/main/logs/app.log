@@ -567,3 +567,87 @@ Caused by: java.net.ConnectException: Connection refused: getsockopt
 01-17 22:03:39 ERROR DataProviderXml - XML Parse Exception: Can't find person with id a8e0b05a-78a0-485b-afd1-5a6bc9f51dd2
 01-17 22:03:39 ERROR DataProviderXml - XML Parse Exception: Can't find person with id a8e0b05a-78a0-485b-afd1-5a6bc9f51dd2
 01-18 16:03:16 ERROR DataProviderXml - Can't find persons with skill name containing: java
+01-18 18:49:37 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-18 18:49:37 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-18 18:49:37 DEBUG connection - Closing connection connectionId{localValue:1}
+01-18 18:49:37 INFO  cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketChannelStream.open(SocketChannelStream.java:63)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishTimedConnect(SocketChannelImpl.java:1278)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingConnect(SocketChannelImpl.java:1320)
+	at java.base/sun.nio.ch.SocketAdaptor.connect(SocketAdaptor.java:102)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketChannelStream.initializeSocketChannel(SocketChannelStream.java:72)
+	at com.mongodb.internal.connection.SocketChannelStream.open(SocketChannelStream.java:60)
+	... 3 more
+01-18 18:49:37 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:49:47 DEBUG connection - Closing connection connectionId{localValue:2}
+01-18 18:49:47 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:49:57 DEBUG connection - Closing connection connectionId{localValue:3}
+01-18 18:49:57 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:50:07 DEBUG connection - Closing connection connectionId{localValue:4}
+01-18 18:50:07 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:50:17 DEBUG connection - Closing connection connectionId{localValue:5}
+01-18 18:50:17 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:50:27 DEBUG connection - Closing connection connectionId{localValue:6}
+01-18 18:50:27 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:50:37 DEBUG connection - Closing connection connectionId{localValue:7}
+01-18 18:50:37 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:50:47 DEBUG connection - Closing connection connectionId{localValue:8}
+01-18 18:50:47 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:50:57 DEBUG connection - Closing connection connectionId{localValue:9}
+01-18 18:50:57 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:51:07 DEBUG connection - Closing connection connectionId{localValue:10}
+01-18 18:51:07 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:51:17 DEBUG connection - Closing connection connectionId{localValue:11}
+01-18 18:51:17 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:51:27 DEBUG connection - Closing connection connectionId{localValue:12}
+01-18 18:51:27 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:51:37 DEBUG connection - Closing connection connectionId{localValue:13}
+01-18 18:51:37 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:51:47 DEBUG connection - Closing connection connectionId{localValue:14}
+01-18 18:51:47 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:55:52 INFO  cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+01-18 18:55:52 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+01-18 18:55:52 DEBUG connection - Closing connection connectionId{localValue:1}
+01-18 18:55:52 INFO  cluster - Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketChannelStream.open(SocketChannelStream.java:63)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishTimedConnect(SocketChannelImpl.java:1278)
+	at java.base/sun.nio.ch.SocketChannelImpl.blockingConnect(SocketChannelImpl.java:1320)
+	at java.base/sun.nio.ch.SocketAdaptor.connect(SocketAdaptor.java:102)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketChannelStream.initializeSocketChannel(SocketChannelStream.java:72)
+	at com.mongodb.internal.connection.SocketChannelStream.open(SocketChannelStream.java:60)
+	... 3 more
+01-18 18:55:52 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:56:02 DEBUG connection - Closing connection connectionId{localValue:2}
+01-18 18:56:02 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:56:12 DEBUG connection - Closing connection connectionId{localValue:3}
+01-18 18:56:12 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:56:22 DEBUG connection - Closing connection connectionId{localValue:4}
+01-18 18:56:22 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:56:32 DEBUG connection - Closing connection connectionId{localValue:5}
+01-18 18:56:32 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+01-18 18:56:42 DEBUG connection - Closing connection connectionId{localValue:6}
+01-18 18:56:42 DEBUG cluster - Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused: getsockopt}}]
+03-04 16:36:20 INFO  HibernateDataProviderTest - Пользователи: [postgres, Ђавс¬]
+03-04 16:36:21 INFO  HibernateDataProviderTest - Названия таблиц: [persinf, skillexchange, profinf, review, transaction]
+03-04 16:36:21 INFO  HibernateDataProviderTest - Размер базы данных: 8292 kB MB
+03-04 16:36:21 INFO  HibernateDataProviderTest - Типы данны: [timestamp without time zone, timestamp without time zone, character varying, character varying, character varying, character varying, character varying]
+03-05 12:00:22 INFO  HibernateDataProviderTest - Пользователи: [postgres, Ђавс¬]
+03-05 12:00:22 INFO  HibernateDataProviderTest - Названия таблиц: [persinf, skillexchange, profinf, review, transaction]
+03-05 12:00:23 INFO  HibernateDataProviderTest - Размер базы данных: 8292 kB
+03-05 12:00:23 INFO  HibernateDataProviderTest - Типы данны: [timestamp without time zone, timestamp without time zone, character varying, character varying, character varying, character varying, character varying]
