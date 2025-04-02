@@ -1,52 +1,58 @@
 
 CREATE TABLE PersInf (
-                         id SERIAL PRIMARY KEY,
-                         Surname VARCHAR(40) NOT NULL,
-                         Name VARCHAR(40) NOT NULL,
+                         id VARCHAR(36) PRIMARY KEY,
+                         surname VARCHAR(40) NOT NULL,
+                         name VARCHAR(40) NOT NULL,
                          phoneNumber VARCHAR(40),
                          email VARCHAR(40),
-                         create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                         update TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+                         createdAT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                         updatedAT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE ProfInf (
-                         PersInfId INTEGER PRIMARY KEY,
+                         persId VARCHAR(36) PRIMARY KEY,
                          skillName VARCHAR(40) NOT NULL,
                          skillDescription TEXT,
                          cost NUMERIC(6,2),
                          persDescription TEXT,
-                         exp INTEGER,
-                         create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                         update TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                         FOREIGN KEY (PersInfId) REFERENCES PersInf(id) ON DELETE CASCADE
+                         exp NUMERIC(6,2),
+                         rating NUMERIC(6,2),
+                         createdAT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                         updatedAT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE SkillExchange (
                                exchangeId VARCHAR PRIMARY KEY,
                                skillOffered VARCHAR(40) NOT NULL,
                                userOffering INTEGER NOT NULL,
-                               userRequesting INTEGER NOT NULL,
-                               FOREIGN KEY (skillOffered) REFERENCES ProfInf(skillName),
-                               FOREIGN KEY (userOffering) REFERENCES ProfInf(PersInfId),
-                               FOREIGN KEY (userRequesting) REFERENCES PersInf(id)
+                               userRequesting INTEGER NOT NULL
 );
 
 CREATE TABLE Review (
-                        reviewId SERIAL PRIMARY KEY,
-                        rating INTEGER NOT NULL,
+                        reviewId VARCHAR(36) PRIMARY KEY,
+                        rating NUMERIC(6,2) NOT NULL,
                         comment TEXT,
-                        reviewer INTEGER NOT NULL,
-                        userEvaluated INTEGER NOT NULL,
-                        create TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                        update TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                        FOREIGN KEY (reviewer) REFERENCES PersInf(id),
-                        FOREIGN KEY (userEvaluated) REFERENCES ProfInf(PersInfId)
+                        reviewer VARCHAR NOT NULL,
+                        userEvaluated VARCHAR NOT NULL,
+                        createdAT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                        updatedAT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE Transaction (
                              transactionId VARCHAR PRIMARY KEY,
                              dateTime TIMESTAMP NOT NULL,
                              status VARCHAR(30) NOT NULL,
-                             changeId VARCHAR NOT NULL,
-                             FOREIGN KEY (changeId) REFERENCES SkillExchange(exchangeId)
+                             changeId VARCHAR NOT NULL
 );
+
+CREATE TABLE test_entity (
+                             id VARCHAR(36) PRIMARY KEY,
+                             name VARCHAR(100) NOT NULL,
+                             description TEXT,
+                             date_created TIMESTAMP NOT NULL,
+                             is_check BOOLEAN NOT NULL DEFAULT false,
+                             street VARCHAR(100),
+                             city VARCHAR(50),
+                             zip_code VARCHAR(10)
+);
+

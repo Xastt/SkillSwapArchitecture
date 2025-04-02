@@ -65,5 +65,6 @@ public class Constants {
     public static String xmlTransactionFilePath = "src/main/resources/xmlFiles/transaction.xml";
 
     public static String LAB1_HBN_CFG = "src/main/resources/lab1_hbn_cfg.xml";
+    public static String HBN_CFG = "src/main/resources/hibernate.cfg.xml";
 }
 

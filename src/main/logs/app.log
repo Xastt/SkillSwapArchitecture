@@ -651,3 +651,66 @@ Caused by: java.net.ConnectException: Connection refused: getsockopt
 03-05 12:00:22 INFO  HibernateDataProviderTest - Названия таблиц: [persinf, skillexchange, profinf, review, transaction]
 03-05 12:00:23 INFO  HibernateDataProviderTest - Размер базы данных: 8292 kB
 03-05 12:00:23 INFO  HibernateDataProviderTest - Типы данны: [timestamp without time zone, timestamp without time zone, character varying, character varying, character varying, character varying, character varying]
+04-01 21:51:31 ERROR DataProviderPSQL - ОШИБКА: отношение "profinf" не существует
+  Position: 15
+04-01 21:51:31 ERROR DataProviderPSQL - ОШИБКА: отношение "persinf" не существует
+  Position: 13
+04-01 21:51:31 ERROR DataProviderPSQL - ОШИБКА: отношение "persinf" не существует
+  Position: 13
+04-01 21:51:31 ERROR DataProviderPSQL - ОШИБКА: отношение "profinf" не существует
+  Position: 13
+04-01 21:51:31 ERROR DataProviderPSQL - ОШИБКА: отношение "skillexchange" не существует
+  Position: 13
+04-01 21:51:31 ERROR DataProviderPSQL - ОШИБКА: отношение "transaction" не существует
+  Position: 13
+04-01 21:51:31 ERROR DataProviderPSQL - ОШИБКА: отношение "transaction" не существует
+  Position: 15
+04-01 21:51:31 ERROR DataProviderPSQL - ОШИБКА: отношение "persinf" не существует
+  Position: 13
+04-01 21:51:31 ERROR DataProviderPSQL - ОШИБКА: отношение "persinf" не существует
+  Position: 13
+04-01 21:51:31 ERROR DataProviderPSQL - ОШИБКА: отношение "profinf" не существует
+  Position: 13
+04-01 21:51:31 ERROR DataProviderPSQL - ОШИБКА: отношение "review" не существует
+  Position: 13
+04-01 21:51:31 ERROR DataProviderPSQL - ОШИБКА: отношение "review" не существует
+  Position: 15
+04-01 21:51:31 ERROR DataProviderPSQL - ОШИБКА: отношение "persinf" не существует
+  Position: 13
+04-01 21:51:31 ERROR DataProviderPSQL - ОШИБКА: отношение "persinf" не существует
+  Position: 15
+04-01 21:51:31 ERROR DataProviderPSQL - This connection has been closed.
+04-01 21:51:31 ERROR DataProviderPSQL - This connection has been closed.
+04-01 21:51:31 ERROR DataProviderPSQL - This connection has been closed.
+04-01 21:51:31 ERROR DataProviderPSQL - This connection has been closed.
+04-01 21:51:31 ERROR DataProviderPSQL - This connection has been closed.
+04-01 21:51:31 ERROR DataProviderPSQL - This connection has been closed.
+04-01 21:51:31 ERROR DataProviderPSQL - This connection has been closed.
+04-01 21:51:31 ERROR DataProviderPSQL - This connection has been closed.
+04-01 21:51:31 ERROR DataProviderPSQL - This connection has been closed.
+04-01 21:51:31 ERROR DataProviderPSQL - This connection has been closed.
+04-01 22:00:45 ERROR DataProviderPSQL - Can't find person with id 666
+04-01 22:00:45 ERROR DataProviderPSQL - ОШИБКА: столбец "useroffering" имеет тип integer, а выражение - character varying
+  Hint: Перепишите выражение или преобразуйте его тип.
+  Position: 98
+04-01 22:00:45 ERROR DataProviderPSQL - ОШИБКА: столбец "date" в таблице "transaction" не существует
+  Position: 40
+04-01 22:00:45 ERROR DataProviderPSQL - Couldn't find transaction with id: 11965368-1b72-4e01-ac8f-4da86ef32c91
+04-01 22:00:45 ERROR DataProviderPSQL - This connection has been closed.
+04-01 22:00:45 ERROR DataProviderPSQL - This connection has been closed.
+04-01 22:00:45 ERROR DataProviderPSQL - This connection has been closed.
+04-01 22:00:45 ERROR DataProviderPSQL - This connection has been closed.
+04-01 22:00:45 ERROR DataProviderPSQL - This connection has been closed.
+04-01 22:00:45 ERROR DataProviderPSQL - This connection has been closed.
+04-01 22:00:45 ERROR DataProviderPSQL - This connection has been closed.
+04-01 22:00:46 ERROR DataProviderPSQL - This connection has been closed.
+04-01 22:00:46 ERROR DataProviderPSQL - This connection has been closed.
+04-01 22:00:46 ERROR DataProviderPSQL - This connection has been closed.
+04-01 22:41:26 INFO  HibernateDataProviderTest - Пользователи: [postgres]
+04-01 22:41:26 INFO  HibernateDataProviderTest - Названия таблиц: [test_entity, persinf, profinf, skillexchange, review, transaction]
+04-01 22:41:26 INFO  HibernateDataProviderTest - Размер базы данных: 7859 kB
+04-01 22:41:26 INFO  HibernateDataProviderTest - Типы данны: [character varying, character varying, character varying, character varying, character varying, timestamp without time zone, timestamp without time zone]
+04-01 22:54:59 INFO  HibernateDataProviderTest - Пользователи: [postgres]
+04-01 22:54:59 INFO  HibernateDataProviderTest - Названия таблиц: [persinf, profinf, skillexchange, review, transaction]
+04-01 22:54:59 INFO  HibernateDataProviderTest - Размер базы данных: 7835 kB
+04-01 22:54:59 INFO  HibernateDataProviderTest - Типы данны: [character varying, character varying, character varying, character varying, character varying, timestamp without time zone, timestamp without time zone]

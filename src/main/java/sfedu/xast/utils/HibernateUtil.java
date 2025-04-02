@@ -1,28 +1,30 @@
 package sfedu.xast.utils;
 
+import lombok.Getter;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
+import sfedu.xast.models.TestEntity;
 
 import java.io.File;
 
-import static sfedu.xast.utils.Constants.LAB1_HBN_CFG;
+import static sfedu.xast.utils.Constants.HBN_CFG;
 
 public class HibernateUtil {
 
+    @Getter
     private static SessionFactory sessionFactory;
 
     /**
      * Создание фабрики
      *
      */
-
     static {
         try {
-            File file = new File(LAB1_HBN_CFG);
-            Configuration configuration = new Configuration().configure(file).addPackage("sfedu.xast.models") ;
+            File file = new File(HBN_CFG);
+            Configuration configuration = new Configuration().configure(file);
 
             ServiceRegistry serviceRegistry
                     = new StandardServiceRegistryBuilder()
@@ -30,7 +32,7 @@ public class HibernateUtil {
                     .build();
 
             MetadataSources metadataSources = new MetadataSources(serviceRegistry);
-            //metadataSources.addResource("named-queries.hbm.xml");
+            metadataSources.addAnnotatedClass(TestEntity.class);
             sessionFactory = metadataSources.buildMetadata().buildSessionFactory();
 
         } catch (Exception e) {
@@ -38,10 +40,6 @@ public class HibernateUtil {
             throw new ExceptionInInitializerError(e);
         }
 
-    }
-
-    public static SessionFactory getSessionFactory() {
-        return sessionFactory;
     }
 
     public static void shutdown() {
