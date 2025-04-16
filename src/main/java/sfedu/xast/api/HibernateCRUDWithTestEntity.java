@@ -13,16 +13,16 @@ public class HibernateCRUDWithTestEntity {
         this.sessionFactory = sessionFactory;
     }
 
-    public Long createTestEntity(TestEntity entity) {
+    public String createTestEntity(TestEntity entity) {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
-            Long id = (Long) session.save(entity);
+            String id = (String) session.save(entity);
             transaction.commit();
             return id;
         }
     }
 
-    public TestEntity readTestEntity(Long id) {
+    public TestEntity readTestEntity(String id) {
         try (Session session = sessionFactory.openSession()) {
             return session.get(TestEntity.class, id);
         }
@@ -36,7 +36,7 @@ public class HibernateCRUDWithTestEntity {
         }
     }
 
-    public void deleteTestEntity(Long id) {
+    public void deleteTestEntity(String id) {
         try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             TestEntity entity = session.get(TestEntity.class, id);
@@ -47,7 +47,7 @@ public class HibernateCRUDWithTestEntity {
         }
     }
 
-    public boolean existsById(Long id) {
+    public boolean existsById(String id) {
         try (Session session = sessionFactory.openSession()) {
             TestEntity entity = session.get(TestEntity.class, id);
             return entity != null;

@@ -1,9 +1,11 @@
 package sfedu.xast.models;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UuidGenerator;
 
-import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;
 
@@ -15,8 +17,8 @@ import java.util.UUID;
 public class TestEntity  {
 
     @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @UuidGenerator(style = UuidGenerator.Style.RANDOM)
+    @Column(name = "id", nullable = false, updatable = false)
     private String id;
 
     @Column(name = "name", nullable = false)
@@ -38,7 +40,6 @@ public class TestEntity  {
     public TestEntity(){}
 
     public TestEntity(String name, String description, Boolean is_check, Address address) {
-        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.description = description;
         this.dateCreated = new Date();

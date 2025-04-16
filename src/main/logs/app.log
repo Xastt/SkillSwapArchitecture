@@ -714,3 +714,11 @@ Caused by: java.net.ConnectException: Connection refused: getsockopt
 04-01 22:54:59 INFO  HibernateDataProviderTest - Названия таблиц: [persinf, profinf, skillexchange, review, transaction]
 04-01 22:54:59 INFO  HibernateDataProviderTest - Размер базы данных: 7835 kB
 04-01 22:54:59 INFO  HibernateDataProviderTest - Типы данны: [character varying, character varying, character varying, character varying, character varying, timestamp without time zone, timestamp without time zone]
+04-11 20:50:51 INFO  HibernateDataProviderTest - Пользователи: [postgres]
+04-11 20:50:51 INFO  HibernateDataProviderTest - Названия таблиц: [persinf, profinf, skillexchange, review, transaction, test_entity]
+04-11 20:50:51 INFO  HibernateDataProviderTest - Размер базы данных: 7851 kB
+04-11 20:50:51 INFO  HibernateDataProviderTest - Типы данны: [character varying, character varying, character varying, character varying, character varying, timestamp without time zone, timestamp without time zone]
+04-11 20:55:27 INFO  HibernateDataProviderTest - Пользователи: [postgres]
+04-11 20:55:27 INFO  HibernateDataProviderTest - Названия таблиц: [persinf, profinf, skillexchange, review, transaction, test_entity]
+04-11 20:55:27 INFO  HibernateDataProviderTest - Размер базы данных: 7851 kB
+04-11 20:55:27 INFO  HibernateDataProviderTest - Типы данны: [character varying, character varying, character varying, character varying, character varying, timestamp without time zone, timestamp without time zone]

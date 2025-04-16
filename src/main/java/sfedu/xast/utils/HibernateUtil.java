@@ -6,6 +6,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
+import sfedu.xast.models.Address;
 import sfedu.xast.models.TestEntity;
 
 import java.io.File;
@@ -17,14 +18,11 @@ public class HibernateUtil {
     @Getter
     private static SessionFactory sessionFactory;
 
-    /**
-     * Создание фабрики
-     *
-     */
     static {
         try {
             File file = new File(HBN_CFG);
-            Configuration configuration = new Configuration().configure(file);
+            Configuration configuration = new Configuration()
+                    .configure(file);
 
             ServiceRegistry serviceRegistry
                     = new StandardServiceRegistryBuilder()
@@ -33,6 +31,7 @@ public class HibernateUtil {
 
             MetadataSources metadataSources = new MetadataSources(serviceRegistry);
             metadataSources.addAnnotatedClass(TestEntity.class);
+            metadataSources.addAnnotatedClass(Address.class);
             sessionFactory = metadataSources.buildMetadata().buildSessionFactory();
 
         } catch (Exception e) {

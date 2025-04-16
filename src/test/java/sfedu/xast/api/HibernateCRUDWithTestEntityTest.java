@@ -27,7 +27,7 @@ class HibernateCRUDWithTestEntityTest {
         // Создаем новую сущность
         Address address = new Address("Street", "City", "Zipcode");
         TestEntity newEntity = new TestEntity("Test Name", "Test Description", true, address);
-        Long id = crudService.createTestEntity(newEntity);
+        String id = crudService.createTestEntity(newEntity);
 
         // Проверяем, что ID был присвоен
         assertNotNull(id, "ID should not be null after creation");
@@ -48,7 +48,7 @@ class HibernateCRUDWithTestEntityTest {
         // Создаем сущность
         Address address = new Address("Street", "City", "Zipcode");
         TestEntity entity = new TestEntity("Test Name1", "Test Description1", true, address);
-        Long id = crudService.createTestEntity(entity);
+        String id = crudService.createTestEntity(entity);
 
         // Обновляем сущность
         TestEntity toUpdate = crudService.readTestEntity(id);
@@ -71,7 +71,7 @@ class HibernateCRUDWithTestEntityTest {
         Address address = new Address("Street", "City", "Zipcode");
         TestEntity newEntity = new TestEntity("To Delete", "Till be deleted", true, address);
         // Создаем сущность
-        Long id = crudService.createTestEntity(newEntity);
+        String id = crudService.createTestEntity(newEntity);
 
         // Удаляем сущность
         crudService.deleteTestEntity(id);
