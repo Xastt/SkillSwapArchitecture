@@ -2,7 +2,7 @@ package sfedu.xast;
 
 import com.opencsv.exceptions.CsvException;
 import org.xml.sax.SAXException;
-import sfedu.xast.api.*;
+//import sfedu.xast.api.*;
 import sfedu.xast.models.*;
 import sfedu.xast.utils.Status;
 
@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 public class RunApplication {
 
-    public static void main(String[] args) throws SQLException, IOException, CsvException, ParserConfigurationException, XMLParseException, SAXException {
+    /*public static void main(String[] args) throws SQLException, IOException, CsvException, ParserConfigurationException, XMLParseException, SAXException {
 
         String sourceFile = " ";
         boolean flag = true;
@@ -271,6 +271,6 @@ public class RunApplication {
                     System.out.println("Ой, такого номера нет, попробуй снова");
             }
         }
-    }
+    }*/
 }
 

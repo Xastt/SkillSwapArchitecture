@@ -6,8 +6,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import sfedu.xast.models.Address;
-import sfedu.xast.models.TestEntity;
+import sfedu.xast.models.*;
 
 import java.io.File;
 
@@ -32,6 +31,11 @@ public class HibernateUtil {
             MetadataSources metadataSources = new MetadataSources(serviceRegistry);
             metadataSources.addAnnotatedClass(TestEntity.class);
             metadataSources.addAnnotatedClass(Address.class);
+            metadataSources.addAnnotatedClass(PersInf.class);
+            metadataSources.addAnnotatedClass(ProfInf.class);
+            metadataSources.addAnnotatedClass(SkillExchange.class);
+            metadataSources.addAnnotatedClass(Review.class);
+            metadataSources.addAnnotatedClass(Transaction.class);
             sessionFactory = metadataSources.buildMetadata().buildSessionFactory();
 
         } catch (Exception e) {
