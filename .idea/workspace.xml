@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="PersInf/ProfInf/Review - hiber + tests - done!">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/SkillExchangeRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/TransactionRepositoryTest.java" afterDir="false" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="All models - hiber + tests - done!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/SkillExchangeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/SkillExchangeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/TransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/TransactionRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +220,7 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TransactionRepositoryTest">
+  <component name="RunManager" selected="JUnit.ReviewRepositoryTest">
     <configuration name="PersInfRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
@@ -303,9 +298,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ReviewRepositoryTest" />
         <item itemvalue="JUnit.TransactionRepositoryTest" />
         <item itemvalue="JUnit.SkillExchangeRepositoryTest" />
-        <item itemvalue="JUnit.ReviewRepositoryTest" />
         <item itemvalue="JUnit.ProfInfRepositoryTest" />
         <item itemvalue="JUnit.PersInfRepositoryTest" />
       </list>
@@ -490,15 +485,7 @@
       <workItem from="1745408529191" duration="2050000" />
       <workItem from="1745503043855" duration="1669000" />
       <workItem from="1745600239070" duration="2506000" />
-      <workItem from="1745604378146" duration="4311000" />
-    </task>
-    <task id="LOCAL-00052" summary="CRUD with PersInf, ProfInf, SkillExchange WORKS!!!!!!!">
-      <option name="closed" value="true" />
-      <created>1734721298438</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1734721298439</updated>
+      <workItem from="1745604378146" duration="5016000" />
     </task>
     <task id="LOCAL-00053" summary="CRUD with PersInf, ProfInf, SkillExchange, Review WORKS!!!!!!!">
       <option name="closed" value="true" />
@@ -884,7 +871,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745608959281</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="All models - hiber + tests - done!">
+      <option name="closed" value="true" />
+      <created>1745611001852</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1745611001852</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -903,7 +898,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Finish work" />
     <MESSAGE value="Add README.md" />
     <MESSAGE value="Change README.md" />
     <MESSAGE value="init" />
@@ -928,7 +922,8 @@
     <MESSAGE value="Change RunApplication" />
     <MESSAGE value="hiber" />
     <MESSAGE value="PersInf/ProfInf/Review - hiber + tests - done!" />
-    <option name="LAST_COMMIT_MESSAGE" value="PersInf/ProfInf/Review - hiber + tests - done!" />
+    <MESSAGE value="All models - hiber + tests - done!" />
+    <option name="LAST_COMMIT_MESSAGE" value="All models - hiber + tests - done!" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

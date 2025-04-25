@@ -78,4 +78,30 @@ class ReviewRepositoryTest {
         assertNull(deletedReview);
     }
 
+    @Test
+    void testUpdateRating_FirstRating() {
+        Review review = new Review(0.0, "Test comment", "reviewer1", "user3");
+        repository.save(review);
+
+        boolean result = repository.updateRating("user3", 4.5, 0.0);
+
+        assertTrue(result);
+
+        Review updatedReview = repository.findById(review.getReviewId());
+        assertEquals(4.5, updatedReview.getRating());
+    }
+
+    @Test
+    void testUpdateRating_UpdateExistingRating() {
+        Review review = new Review(3.0, "Test comment", "reviewer1", "user4");
+        repository.save(review);
+
+        boolean result = repository.updateRating("user4", 5.0, 3.0);
+
+        assertTrue(result);
+
+        Review updatedReview = repository.findById(review.getReviewId());
+        assertEquals(4.0, updatedReview.getRating()); // (3.0 + 5.0) / 2 = 4.0
+    }
+
 }
