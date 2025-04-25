@@ -1,16 +1,15 @@
 package sfedu.xast.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
 import sfedu.xast.utils.Status;
 import java.util.*;
 
+@Entity
 @Getter
 @Setter
+@Table(name = "transaction")
 public class Transaction {
 
     @Id
@@ -18,10 +17,11 @@ public class Transaction {
     @Column(name = "transactionId", nullable = false, updatable = false)
     private String transactionId;
 
-    @Column(name = "date")
+    @Column(name = "date", nullable = false)
     private Date date;
 
-    @Column(name = "status")
+    @Column(name = "status", nullable = false)
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     @OneToOne
@@ -31,10 +31,18 @@ public class Transaction {
     )
     private SkillExchange changeId;
 
+    @PrePersist
+    protected void onCreate() {
+        if (date == null) {
+            date = new Date();
+        }
+    }
+
     public Transaction(Status status, SkillExchange changeId) {
-        this.transactionId = UUID.randomUUID().toString();
-        this.date = new Date();
         this.status = Status.valueOf(status.name());
         this.changeId = changeId;
     }
+
+    public Transaction() {}
+
 }
