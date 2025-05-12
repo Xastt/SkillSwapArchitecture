@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="All models - hiber + tests - done!">
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="New Task">
       <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/PersInfJT.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/PersonJT.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/ProfInfJT.java" afterDir="false" />
@@ -506,7 +506,7 @@
       <workItem from="1745600239070" duration="2506000" />
       <workItem from="1745604378146" duration="5149000" />
       <workItem from="1745988731779" duration="1470000" />
-      <workItem from="1747071069358" duration="4929000" />
+      <workItem from="1747071069358" duration="5543000" />
     </task>
     <task id="LOCAL-00054" summary="CRUD with all models WORKS!!!!!!!">
       <option name="closed" value="true" />
@@ -919,7 +919,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add README.md" />
     <MESSAGE value="Change README.md" />
     <MESSAGE value="init" />
     <MESSAGE value="Move all sql requests from DataProviderPSQL to Constants" />
@@ -944,7 +943,8 @@
     <MESSAGE value="hiber" />
     <MESSAGE value="PersInf/ProfInf/Review - hiber + tests - done!" />
     <MESSAGE value="All models - hiber + tests - done!" />
-    <option name="LAST_COMMIT_MESSAGE" value="All models - hiber + tests - done!" />
+    <MESSAGE value="New Task" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Task" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
