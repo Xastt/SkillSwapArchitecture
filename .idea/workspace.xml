@@ -5,26 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="New Task">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/PersInfJT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/PersonJT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/ProfInfJT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/PersInfMS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/PersonMS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/ProfInfMS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/PersInfST.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/PersonST.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/ProfInfST.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/PersInfTPC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/PersonTPC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/ProfInfTPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/JTPersonRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/MSPersonRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/PersonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/STPersonRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/TSPersonRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/PersInfRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/PersInfRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/ProfInfRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/ProfInfRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/PersInfRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/PersInfRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/ProfInfRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/ProfInfRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,12 +22,12 @@
       <list>
         <option value="module-info" />
         <option value="UML Class" />
-        <option value="Interface" />
         <option value="JUnit3 Test Class" />
         <option value="Enum" />
         <option value="UML Sequence" />
         <option value="UML Deployment" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -506,15 +492,7 @@
       <workItem from="1745600239070" duration="2506000" />
       <workItem from="1745604378146" duration="5149000" />
       <workItem from="1745988731779" duration="1470000" />
-      <workItem from="1747071069358" duration="5543000" />
-    </task>
-    <task id="LOCAL-00054" summary="CRUD with all models WORKS!!!!!!!">
-      <option name="closed" value="true" />
-      <created>1734766122879</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1734766122880</updated>
+      <workItem from="1747071069358" duration="8144000" />
     </task>
     <task id="LOCAL-00055" summary="Clean code, add logger">
       <option name="closed" value="true" />
@@ -900,7 +878,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745611408724</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="New Task">
+      <option name="closed" value="true" />
+      <created>1747080156220</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1747080156220</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
