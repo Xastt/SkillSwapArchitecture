@@ -33,7 +33,7 @@ class PersInfRepositoryTest {
     void clearDatabase() {
         try (Session session = testSessionFactory.openSession()) {
             session.beginTransaction();
-            session.createQuery("DELETE FROM PersInf").executeUpdate();
+            session.createQuery("DELETE FROM PersInfTPC").executeUpdate();
             session.getTransaction().commit();
         }
     }

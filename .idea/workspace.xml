@@ -5,7 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="All models - hiber + tests - done!">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/PersInfJT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/PersonJT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/ProfInfJT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/PersInfMS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/PersonMS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/ProfInfMS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/PersInfST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/PersonST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/ProfInfST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/PersInfTPC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/PersonTPC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/ProfInfTPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/models/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/PersInfRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/PersInfRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/ProfInfRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/ProfInfRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/PersInfRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/PersInfRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/ProfInfRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/ProfInfRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +41,8 @@
         <option value="Enum" />
         <option value="UML Sequence" />
         <option value="UML Deployment" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -220,7 +239,7 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ReviewRepositoryTest">
+  <component name="RunManager" selected="JUnit.ProfInfRepositoryTest">
     <configuration name="PersInfRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
@@ -298,11 +317,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ProfInfRepositoryTest" />
+        <item itemvalue="JUnit.PersInfRepositoryTest" />
         <item itemvalue="JUnit.ReviewRepositoryTest" />
         <item itemvalue="JUnit.TransactionRepositoryTest" />
         <item itemvalue="JUnit.SkillExchangeRepositoryTest" />
-        <item itemvalue="JUnit.ProfInfRepositoryTest" />
-        <item itemvalue="JUnit.PersInfRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -485,15 +504,9 @@
       <workItem from="1745408529191" duration="2050000" />
       <workItem from="1745503043855" duration="1669000" />
       <workItem from="1745600239070" duration="2506000" />
-      <workItem from="1745604378146" duration="5016000" />
-    </task>
-    <task id="LOCAL-00053" summary="CRUD with PersInf, ProfInf, SkillExchange, Review WORKS!!!!!!!">
-      <option name="closed" value="true" />
-      <created>1734723276121</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1734723276121</updated>
+      <workItem from="1745604378146" duration="5149000" />
+      <workItem from="1745988731779" duration="1470000" />
+      <workItem from="1747071069358" duration="4929000" />
     </task>
     <task id="LOCAL-00054" summary="CRUD with all models WORKS!!!!!!!">
       <option name="closed" value="true" />
@@ -879,7 +892,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745611001852</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="All models - hiber + tests - done!">
+      <option name="closed" value="true" />
+      <created>1745611408723</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1745611408724</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

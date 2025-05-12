@@ -12,7 +12,7 @@ public class PersInfRepository extends BaseRepo <PersInf, String> {
     public PersInf findByEmail(String email) {
         try (Session session = getSession()) {
             return session.createQuery(
-                            "SELECT p FROM PersInf p WHERE p.email = :email", PersInf.class)
+                            "SELECT p FROM PersInfMS p WHERE p.email = :email", PersInf.class)
                     .setParameter("email", email)
                     .uniqueResult();
         }
