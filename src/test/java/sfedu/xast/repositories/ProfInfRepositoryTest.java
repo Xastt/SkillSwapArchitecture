@@ -38,8 +38,8 @@ class ProfInfRepositoryTest {
     void clearDatabase() {
         try (Session session = testSessionFactory.openSession()) {
             session.beginTransaction();
-            session.createQuery("DELETE FROM ProfInfMS").executeUpdate();
-            session.createQuery("DELETE FROM PersInfTPC").executeUpdate();
+            session.createQuery("DELETE FROM ProfInf").executeUpdate();
+            session.createQuery("DELETE FROM PersInf").executeUpdate();
             session.getTransaction().commit();
         }
     }

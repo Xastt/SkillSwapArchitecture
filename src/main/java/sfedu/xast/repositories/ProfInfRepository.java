@@ -14,7 +14,7 @@ public class ProfInfRepository extends BaseRepo<ProfInf, String> {
     public List<ProfInf> findByPersId(String persId) {
         try (Session session = getSession()) {
             return session.createQuery(
-                            "SELECT p FROM ProfInfMS p WHERE p.pers.id = :persId", ProfInf.class)
+                            "SELECT p FROM ProfInf p WHERE p.pers.id = :persId", ProfInf.class)
                     .setParameter("persId", persId)
                     .getResultList();
         }
@@ -23,7 +23,7 @@ public class ProfInfRepository extends BaseRepo<ProfInf, String> {
     public List<ProfInf> findBySkillName(String skillName) {
         try (Session session = getSession()) {
             return session.createQuery(
-                            "SELECT p FROM ProfInfMS p WHERE p.skillName LIKE :skillName", ProfInf.class)
+                            "SELECT p FROM ProfInf p WHERE p.skillName LIKE :skillName", ProfInf.class)
                     .setParameter("skillName", "%" + skillName + "%")
                     .getResultList();
         }

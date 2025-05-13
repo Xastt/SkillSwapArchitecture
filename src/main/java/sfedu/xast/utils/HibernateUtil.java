@@ -36,6 +36,24 @@ public class HibernateUtil {
             metadataSources.addAnnotatedClass(SkillExchange.class);
             metadataSources.addAnnotatedClass(Review.class);
             metadataSources.addAnnotatedClass(Transaction.class);
+
+            //TASK WITH STRATEGIES : (
+            //PERSON : ()
+            metadataSources.addAnnotatedClass(sfedu.xast.srtategyTask.JoinedTable.Person.class);
+            metadataSources.addAnnotatedClass(sfedu.xast.srtategyTask.MappedSuperclass.Person.class);
+            metadataSources.addAnnotatedClass(sfedu.xast.srtategyTask.SingleTable.Person.class);
+            metadataSources.addAnnotatedClass(sfedu.xast.srtategyTask.TablePerClass.Person.class);
+            //WITH_KADASTR : )
+            metadataSources.addAnnotatedClass(sfedu.xast.srtategyTask.JoinedTable.PersInf.class);
+            metadataSources.addAnnotatedClass(sfedu.xast.srtategyTask.MappedSuperclass.PersInf.class);
+            metadataSources.addAnnotatedClass(sfedu.xast.srtategyTask.SingleTable.PersInf.class);
+            metadataSources.addAnnotatedClass(sfedu.xast.srtategyTask.TablePerClass.PersInf.class);
+            //DEBTOR : /
+            metadataSources.addAnnotatedClass(sfedu.xast.srtategyTask.JoinedTable.ProfInf.class);
+            metadataSources.addAnnotatedClass(sfedu.xast.srtategyTask.MappedSuperclass.ProfInf.class);
+            metadataSources.addAnnotatedClass(sfedu.xast.srtategyTask.SingleTable.ProfInf.class);
+            metadataSources.addAnnotatedClass(sfedu.xast.srtategyTask.TablePerClass.ProfInf.class);
+
             sessionFactory = metadataSources.buildMetadata().buildSessionFactory();
 
         } catch (Exception e) {

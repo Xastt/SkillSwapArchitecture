@@ -4,13 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="New Task">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/JTPersonRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/MSPersonRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/PersonRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/STPersonRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/TSPersonRepo.java" afterDir="false" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add crud">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/repoImpl/PersInfRepoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/repoImpl/PersonRepoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/repoImpl/ProfInfRepoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/repoImpl/PersInfRepoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/repoImpl/PersonRepoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/repoImpl/ProfInfRepoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/repoImpl/PersInfRepoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/repoImpl/PersonRepoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/repoImpl/ProfInfRepoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/repoImpl/PersInfRepoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/repoImpl/PersonRepoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/repoImpl/ProfInfRepoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/crud/PersInfRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/crud/PersonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/crud/ProfInfRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/strategyTask/JoinedTableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/strategyTask/MappedSuperclassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/strategyTask/SingleTableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/strategyTask/TablePerClassTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/PersInfRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/PersInfRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/ProfInfRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/ProfInfRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/JTPersonRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/PersInfJT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/PersInf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/PersonJT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/ProfInfJT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/ProfInf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/MSPersonRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/PersInfMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/PersInf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/PersonMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/ProfInfMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/ProfInf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/PersInfST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/PersInf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/PersonST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/ProfInfST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/ProfInf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/STPersonRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/PersInfTPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/PersInf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/PersonTPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/ProfInfTPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/ProfInf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/TSPersonRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/PersInfRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/PersInfRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/ProfInfRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/ProfInfRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +189,8 @@
     &quot;JUnit.HibernateDataProviderTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.HistoryContentRepositoryTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.HistoryContentRepositoryTest.testSave.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.JoinedTableTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MappedSuperclassTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PersInfDaoTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PersInfDaoTest.shouldGetJdbcConnection.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.PersInfDaoTest.testCRUDMethods.executor&quot;: &quot;Run&quot;,
@@ -177,7 +214,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/xast/JavaProgs/Architec/SkillSwap&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/xast/JavaProgs/Architec/SkillSwap/src/main/java/sfedu/xast/srtategyTask/TablePerClass&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -198,6 +235,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass" />
+      <recent name="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable" />
+      <recent name="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/repoImpl" />
       <recent name="D:\JavaProj\Architec\SkillSwap\src\main\uml" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -225,17 +265,32 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ProfInfRepositoryTest">
-    <configuration name="PersInfRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TablePerClassTest">
+    <configuration name="JoinedTableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sfedu.xast.repositories.*" />
+          <option name="PATTERN" value="sfedu.xast.strategyTask.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.repositories" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.repositories.PersInfRepositoryTest" />
+      <option name="PACKAGE_NAME" value="sfedu.xast.strategyTask" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.strategyTask.JoinedTableTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MappedSuperclassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SkillSwap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sfedu.xast.strategyTask.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sfedu.xast.strategyTask" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.strategyTask.MappedSuperclassTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -256,46 +311,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReviewRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SingleTableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sfedu.xast.repositories.*" />
+          <option name="PATTERN" value="sfedu.xast.strategyTask.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.repositories" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.repositories.ReviewRepositoryTest" />
+      <option name="PACKAGE_NAME" value="sfedu.xast.strategyTask" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.strategyTask.SingleTableTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SkillExchangeRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TablePerClassTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sfedu.xast.repositories.*" />
+          <option name="PATTERN" value="sfedu.xast.strategyTask.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.repositories" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.repositories.SkillExchangeRepositoryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TransactionRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SkillSwap" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sfedu.xast.repositories.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.repositories" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.repositories.TransactionRepositoryTest" />
+      <option name="PACKAGE_NAME" value="sfedu.xast.strategyTask" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.strategyTask.TablePerClassTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -303,11 +343,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TablePerClassTest" />
+        <item itemvalue="JUnit.SingleTableTest" />
+        <item itemvalue="JUnit.MappedSuperclassTest" />
+        <item itemvalue="JUnit.JoinedTableTest" />
         <item itemvalue="JUnit.ProfInfRepositoryTest" />
-        <item itemvalue="JUnit.PersInfRepositoryTest" />
-        <item itemvalue="JUnit.ReviewRepositoryTest" />
-        <item itemvalue="JUnit.TransactionRepositoryTest" />
-        <item itemvalue="JUnit.SkillExchangeRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -492,7 +532,11 @@
       <workItem from="1745600239070" duration="2506000" />
       <workItem from="1745604378146" duration="5149000" />
       <workItem from="1745988731779" duration="1470000" />
-      <workItem from="1747071069358" duration="8144000" />
+      <workItem from="1747071069358" duration="8170000" />
+      <workItem from="1747137533181" duration="35000" />
+      <workItem from="1747155377996" duration="18000" />
+      <workItem from="1747156669808" duration="51000" />
+      <workItem from="1747156886553" duration="3853000" />
     </task>
     <task id="LOCAL-00055" summary="Clean code, add logger">
       <option name="closed" value="true" />
@@ -905,7 +949,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change README.md" />
     <MESSAGE value="init" />
     <MESSAGE value="Move all sql requests from DataProviderPSQL to Constants" />
     <MESSAGE value="Add negative tests with psql" />
@@ -930,7 +973,8 @@
     <MESSAGE value="PersInf/ProfInf/Review - hiber + tests - done!" />
     <MESSAGE value="All models - hiber + tests - done!" />
     <MESSAGE value="New Task" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Task" />
+    <MESSAGE value="Add crud" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add crud" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
