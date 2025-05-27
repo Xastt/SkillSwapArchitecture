@@ -4,48 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="Add crud">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/repoImpl/PersInfRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/repoImpl/PersonRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/repoImpl/ProfInfRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/repoImpl/PersInfRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/repoImpl/PersonRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/repoImpl/ProfInfRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/repoImpl/PersInfRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/repoImpl/PersonRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/repoImpl/ProfInfRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/repoImpl/PersInfRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/repoImpl/PersonRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/repoImpl/ProfInfRepoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/crud/PersInfRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/crud/PersonRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/crud/ProfInfRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/strategyTask/JoinedTableTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/strategyTask/MappedSuperclassTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/strategyTask/SingleTableTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/strategyTask/TablePerClassTest.java" afterDir="false" />
+    <list default="true" id="715279d4-dd53-44e4-b1d7-7dc3299be23b" name="Changes" comment="HiberCaps">
+      <change afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/QueryPerfomanceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/PersInfRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/PersInfRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/ProfInfRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/repositories/ProfInfRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/JTPersonRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/PersInfJT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/PersInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/PersonJT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/ProfInfJT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/JoinedTable/ProfInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/MSPersonRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/PersInfMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/PersInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/PersonMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/ProfInfMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/MappedSuperclass/ProfInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/PersInfST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/PersInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/PersonST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/ProfInfST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/ProfInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/SingleTable/STPersonRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/PersInfTPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/PersInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/PersonTPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/ProfInfTPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/ProfInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass/TSPersonRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sfedu/xast/utils/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/PersInfRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/PersInfRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/ProfInfRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sfedu/xast/repositories/ProfInfRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,138 +64,141 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.ConfigurationUtil.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Constants.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DataProviderCsv.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DataProviderMongo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.DataProviderXml.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GetDatabaseConnection.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RunApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Task1.executor&quot;: &quot;Run&quot;,
-    &quot;Application.XmlUtil.executor&quot;: &quot;Run&quot;,
-    &quot;Application.YamlUtil.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Deployment&quot;,
-    &quot;JAR Application.SkillSwap-1.0-SNAPSHOT.jar.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ConfigTest.testGetMonths.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ConfigurationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ConfigurationTest.testCRUDWithProperties.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ConfigurationTest.testCRUDWithXML.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ConfigurationTest.testCRUDWithYAML.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderCsvTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderCsvTest.testCRUDMethodsWithPersInfNegativeCSV.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderCsvTest.testCRUDMethodsWithPersInfPositiveCSV.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderCsvTest.testCRUDMethodsWithProfInfNegativeCSV.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderCsvTest.testCRUDMethodsWithProfInfPositiveCSV.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderCsvTest.testCRUDMethodsWithReviewNegativeCSV.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderCsvTest.testCRUDMethodsWithReviewPositiveCSV.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderCsvTest.testCRUDMethodsWithSkillExchangeNegativeCSV.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderCsvTest.testCRUDMethodsWithSkillExchangePositiveCSV.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderCsvTest.testCRUDMethodsWithTransactionNegativeCSV.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderCsvTest.testCRUDMethodsWithTransactionPositiveCSV.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderCsvTest.testDeleteRecord.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderCsvTest.testGetRecordById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderCsvTest.testSaveRecord.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderMongoTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderMongoTest.testCRUDMethodsWithPersInfNegativeCSV.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderMongoTest.testCRUDMethodsWithPersInfNegativeMongo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderMongoTest.testCRUDMethodsWithPersInfPositiveMongo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderMongoTest.testCRUDMethodsWithProfInfNegativeMongo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderMongoTest.testCRUDMethodsWithProfInfPositiveMongo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderMongoTest.testCRUDMethodsWithReviewNegativeMongo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderMongoTest.testCRUDMethodsWithReviewPositiveMongo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderMongoTest.testCRUDMethodsWithSkillExchangeNegativeMongo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderMongoTest.testCRUDMethodsWithSkillExchangePositiveCSV.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderMongoTest.testCRUDMethodsWithTransactionNegativeMongo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderMongoTest.testCRUDMethodsWithTransactionPositiveMongo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderMongoTest.testCRUDMongoOperations.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderMongoTest.testCRUDWithMongoDB.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.UpdatePersInfWithNull.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.shouldGetJdbcConnection.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithPersInf.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithPersInfNegative.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithPersInfPositive.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithProfInf.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithProfInfNegative.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithProfInfPositive.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithReview.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithReviewNegative.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithReviewPositive.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithSkillExchange.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithSkillExchangeNegative.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransaction.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransactionNegative.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransactionPositive.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testCreatePersInf.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderPSQLTest.testGetSkillByName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderXmlTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderXmlTest.testCRUDMethodsWithPersInfNegativeXML.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderXmlTest.testCRUDMethodsWithPersInfPositiveCSV.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderXmlTest.testCRUDMethodsWithProfInfNegativeXML.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderXmlTest.testCRUDMethodsWithProfInfPositiveXML.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderXmlTest.testCRUDMethodsWithReviewNegativeXML.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderXmlTest.testCRUDMethodsWithReviewPositiveXML.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderXmlTest.testCRUDMethodsWithSkillExchangeNegativeXML.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderXmlTest.testCRUDMethodsWithSkillExchangePositiveXML.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderXmlTest.testCRUDMethodsWithTransactionNegativeXML.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderXmlTest.testCRUDMethodsWithTransactionPositiveXML.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataProviderXmlTest.testInitDataSourceLoadsDataFromXml.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FileLoadTest.checkInValidFileName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FileLoadTest.checkValidFileName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FileLoadTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.HibernateCRUDWithTestEntityTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HibernateCRUDWithTestEntityTest.testCreateAndRead.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HibernateDataProviderTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HistoryContentRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HistoryContentRepositoryTest.testSave.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.JoinedTableTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.MappedSuperclassTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PersInfDaoTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PersInfDaoTest.shouldGetJdbcConnection.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PersInfDaoTest.testCRUDMethods.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PersInfRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PersInfRepositoryTest.testSaveAndFindById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PersInfRepositoryTest.testUpdate.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProfInfRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ReviewRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SkillExchangeRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SkillSwapClientTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestCRUDOperations.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestEntityCRUDTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestEntityProviderTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TransactionRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SkillSwap [clean,package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/xast/JavaProgs/Architec/SkillSwap/src/main/java/sfedu/xast/srtategyTask/TablePerClass&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.24827586&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.ConfigurationUtil.executor": "Run",
+    "Application.Constants.executor": "Run",
+    "Application.DataProviderCsv.executor": "Run",
+    "Application.DataProviderMongo.executor": "Run",
+    "Application.DataProviderXml.executor": "Run",
+    "Application.GetDatabaseConnection.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.RunApplication.executor": "Run",
+    "Application.Task1.executor": "Run",
+    "Application.XmlUtil.executor": "Run",
+    "Application.YamlUtil.executor": "Run",
+    "DefaultPlantUmlFileTemplate": "UML Deployment",
+    "JAR Application.SkillSwap-1.0-SNAPSHOT.jar.executor": "Run",
+    "JUnit.ConfigTest.testGetMonths.executor": "Run",
+    "JUnit.ConfigurationTest.executor": "Run",
+    "JUnit.ConfigurationTest.testCRUDWithProperties.executor": "Run",
+    "JUnit.ConfigurationTest.testCRUDWithXML.executor": "Run",
+    "JUnit.ConfigurationTest.testCRUDWithYAML.executor": "Run",
+    "JUnit.DataProviderCsvTest.executor": "Run",
+    "JUnit.DataProviderCsvTest.testCRUDMethodsWithPersInfNegativeCSV.executor": "Run",
+    "JUnit.DataProviderCsvTest.testCRUDMethodsWithPersInfPositiveCSV.executor": "Run",
+    "JUnit.DataProviderCsvTest.testCRUDMethodsWithProfInfNegativeCSV.executor": "Run",
+    "JUnit.DataProviderCsvTest.testCRUDMethodsWithProfInfPositiveCSV.executor": "Run",
+    "JUnit.DataProviderCsvTest.testCRUDMethodsWithReviewNegativeCSV.executor": "Run",
+    "JUnit.DataProviderCsvTest.testCRUDMethodsWithReviewPositiveCSV.executor": "Run",
+    "JUnit.DataProviderCsvTest.testCRUDMethodsWithSkillExchangeNegativeCSV.executor": "Run",
+    "JUnit.DataProviderCsvTest.testCRUDMethodsWithSkillExchangePositiveCSV.executor": "Run",
+    "JUnit.DataProviderCsvTest.testCRUDMethodsWithTransactionNegativeCSV.executor": "Run",
+    "JUnit.DataProviderCsvTest.testCRUDMethodsWithTransactionPositiveCSV.executor": "Run",
+    "JUnit.DataProviderCsvTest.testDeleteRecord.executor": "Run",
+    "JUnit.DataProviderCsvTest.testGetRecordById.executor": "Run",
+    "JUnit.DataProviderCsvTest.testSaveRecord.executor": "Run",
+    "JUnit.DataProviderMongoTest.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithPersInfNegativeCSV.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithPersInfNegativeMongo.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithPersInfPositiveMongo.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithProfInfNegativeMongo.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithProfInfPositiveMongo.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithReviewNegativeMongo.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithReviewPositiveMongo.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithSkillExchangeNegativeMongo.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithSkillExchangePositiveCSV.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithTransactionNegativeMongo.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMethodsWithTransactionPositiveMongo.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDMongoOperations.executor": "Run",
+    "JUnit.DataProviderMongoTest.testCRUDWithMongoDB.executor": "Run",
+    "JUnit.DataProviderPSQLTest.UpdatePersInfWithNull.executor": "Run",
+    "JUnit.DataProviderPSQLTest.executor": "Run",
+    "JUnit.DataProviderPSQLTest.shouldGetJdbcConnection.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithPersInf.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithPersInfNegative.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithPersInfPositive.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithProfInf.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithProfInfNegative.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithProfInfPositive.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithReview.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithReviewNegative.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithReviewPositive.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithSkillExchange.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithSkillExchangeNegative.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransaction.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransactionNegative.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCRUDMethodsWithTransactionPositive.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testCreatePersInf.executor": "Run",
+    "JUnit.DataProviderPSQLTest.testGetSkillByName.executor": "Run",
+    "JUnit.DataProviderXmlTest.executor": "Run",
+    "JUnit.DataProviderXmlTest.testCRUDMethodsWithPersInfNegativeXML.executor": "Run",
+    "JUnit.DataProviderXmlTest.testCRUDMethodsWithPersInfPositiveCSV.executor": "Run",
+    "JUnit.DataProviderXmlTest.testCRUDMethodsWithProfInfNegativeXML.executor": "Run",
+    "JUnit.DataProviderXmlTest.testCRUDMethodsWithProfInfPositiveXML.executor": "Run",
+    "JUnit.DataProviderXmlTest.testCRUDMethodsWithReviewNegativeXML.executor": "Run",
+    "JUnit.DataProviderXmlTest.testCRUDMethodsWithReviewPositiveXML.executor": "Run",
+    "JUnit.DataProviderXmlTest.testCRUDMethodsWithSkillExchangeNegativeXML.executor": "Run",
+    "JUnit.DataProviderXmlTest.testCRUDMethodsWithSkillExchangePositiveXML.executor": "Run",
+    "JUnit.DataProviderXmlTest.testCRUDMethodsWithTransactionNegativeXML.executor": "Run",
+    "JUnit.DataProviderXmlTest.testCRUDMethodsWithTransactionPositiveXML.executor": "Run",
+    "JUnit.DataProviderXmlTest.testInitDataSourceLoadsDataFromXml.executor": "Run",
+    "JUnit.FileLoadTest.checkInValidFileName.executor": "Run",
+    "JUnit.FileLoadTest.checkValidFileName.executor": "Run",
+    "JUnit.FileLoadTest.executor": "Debug",
+    "JUnit.HibernateCRUDWithTestEntityTest.executor": "Run",
+    "JUnit.HibernateCRUDWithTestEntityTest.testCreateAndRead.executor": "Run",
+    "JUnit.HibernateDataProviderTest.executor": "Run",
+    "JUnit.HistoryContentRepositoryTest.executor": "Run",
+    "JUnit.HistoryContentRepositoryTest.testSave.executor": "Run",
+    "JUnit.JoinedTableTest.executor": "Run",
+    "JUnit.MappedSuperclassTest.executor": "Run",
+    "JUnit.PersInfDaoTest.executor": "Run",
+    "JUnit.PersInfDaoTest.shouldGetJdbcConnection.executor": "Run",
+    "JUnit.PersInfDaoTest.testCRUDMethods.executor": "Run",
+    "JUnit.PersInfRepositoryTest.executor": "Run",
+    "JUnit.PersInfRepositoryTest.testSaveAndFindById.executor": "Run",
+    "JUnit.PersInfRepositoryTest.testUpdate.executor": "Run",
+    "JUnit.ProfInfRepositoryTest.executor": "Run",
+    "JUnit.QueryPerfomanceTest.executor": "Run",
+    "JUnit.ReviewRepositoryTest.executor": "Run",
+    "JUnit.SingleTableTest.executor": "Run",
+    "JUnit.SkillExchangeRepositoryTest.executor": "Run",
+    "JUnit.SkillSwapClientTest.executor": "Run",
+    "JUnit.TablePerClassTest.executor": "Run",
+    "JUnit.TestCRUDOperations.executor": "Run",
+    "JUnit.TestEntityCRUDTest.executor": "Run",
+    "JUnit.TestEntityProviderTest.executor": "Run",
+    "JUnit.TransactionRepositoryTest.executor": "Run",
+    "Maven.SkillSwap [clean,package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/xast/JavaProgs/Architec/SkillSwap",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.24827586",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mongo&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/sfedu/xast/srtategyTask/TablePerClass" />
@@ -265,7 +231,7 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TablePerClassTest">
+  <component name="RunManager" selected="JUnit.QueryPerfomanceTest">
     <configuration name="JoinedTableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
@@ -296,16 +262,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProfInfRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QueryPerfomanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SkillSwap" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sfedu.xast.repositories.*" />
+          <option name="PATTERN" value="sfedu.xast.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="sfedu.xast.repositories" />
-      <option name="MAIN_CLASS_NAME" value="sfedu.xast.repositories.ProfInfRepositoryTest" />
+      <option name="PACKAGE_NAME" value="sfedu.xast" />
+      <option name="MAIN_CLASS_NAME" value="sfedu.xast.QueryPerfomanceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -343,11 +309,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.QueryPerfomanceTest" />
+        <item itemvalue="JUnit.JoinedTableTest" />
         <item itemvalue="JUnit.TablePerClassTest" />
         <item itemvalue="JUnit.SingleTableTest" />
         <item itemvalue="JUnit.MappedSuperclassTest" />
-        <item itemvalue="JUnit.JoinedTableTest" />
-        <item itemvalue="JUnit.ProfInfRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -537,14 +503,13 @@
       <workItem from="1747155377996" duration="18000" />
       <workItem from="1747156669808" duration="51000" />
       <workItem from="1747156886553" duration="3853000" />
-    </task>
-    <task id="LOCAL-00055" summary="Clean code, add logger">
-      <option name="closed" value="true" />
-      <created>1734766737887</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1734766737887</updated>
+      <workItem from="1747160753531" duration="527000" />
+      <workItem from="1747205090389" duration="898000" />
+      <workItem from="1747206250112" duration="2000" />
+      <workItem from="1747211568047" duration="474000" />
+      <workItem from="1747341846100" duration="2000" />
+      <workItem from="1747460962514" duration="19000" />
+      <workItem from="1748334732318" duration="3256000" />
     </task>
     <task id="LOCAL-00056" summary="Clean code, add logger">
       <option name="closed" value="true" />
@@ -930,7 +895,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747080156220</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="HiberCaps">
+      <option name="closed" value="true" />
+      <created>1747162256159</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1747162256160</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -949,7 +922,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="init" />
     <MESSAGE value="Move all sql requests from DataProviderPSQL to Constants" />
     <MESSAGE value="Add negative tests with psql" />
     <MESSAGE value="Start doing all crud methods with csv" />
@@ -974,7 +946,8 @@
     <MESSAGE value="All models - hiber + tests - done!" />
     <MESSAGE value="New Task" />
     <MESSAGE value="Add crud" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add crud" />
+    <MESSAGE value="HiberCaps" />
+    <option name="LAST_COMMIT_MESSAGE" value="HiberCaps" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
